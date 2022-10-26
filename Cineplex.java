@@ -9,7 +9,6 @@ public class Cineplex{
 
 
 byee
-my mother salakau leader
 bruhh
 hello mark
-
+harloo
