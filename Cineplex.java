@@ -5,3 +5,5 @@ public class Cineplex{
         System.out.println("bye");
     }
 }
+
+my mother salakau leader
