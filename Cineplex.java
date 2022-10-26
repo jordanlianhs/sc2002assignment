@@ -7,9 +7,9 @@ public class Cineplex{
     }
 }
 
-<<<<<<< Updated upstream
+
 byee
-=======
 my mother salakau leader
 bruhh
->>>>>>> Stashed changes
+hello mark
+
