@@ -1,6 +1,7 @@
+package Model;
 
 public class SeatingPlan {
-	private Seat[][] seatPlan; 
+	public Seat[][] seatPlan; 
 	
 	public SeatingPlan() {
 		seatPlan = new Seat[10][16];
