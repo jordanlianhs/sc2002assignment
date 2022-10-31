@@ -14,8 +14,6 @@ public class LoginUI {
 	    	System.out.println("Password: ");
 	    	pass = sc.next();
 	    	
-	    	System.out.println(usr +" "+ pass);
-	    	
 	    	if (!usr.equals("admin")  || !pass.equals("123") ) {
 	    		System.out.println("Username or Password is incorrect!");
 	    		token = 0;
