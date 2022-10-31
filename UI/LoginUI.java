@@ -10,14 +10,14 @@ public class LoginUI {
     	do {
 	    	System.out.println("***Login UI***");
 	    	System.out.println("Username: ");
-	    	usr = sc.nextLine();
+	    	usr = sc.next();
 	    	System.out.println("Password: ");
-	    	pass = sc.nextLine();
+	    	pass = sc.next();
 	    	
-	    	if (usr != "admin" || pass != "123321") {
+	    	System.out.println(usr +" "+ pass);
+	    	
+	    	if (!usr.equals("admin")  || !pass.equals("123") ) {
 	    		System.out.println("Username or Password is incorrect!");
-	    		usr = null; //Resetting login credentials
-	    		pass = null;
 	    		token = 0;
 	    	}else {
 	    		System.out.println("Login as Administrator Successful");
