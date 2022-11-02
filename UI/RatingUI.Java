@@ -34,7 +34,9 @@ public class Rating{
 
         // if num of ratings == 1 {display "NA"}
 
+        FileWriter fw = new FileWriter("./Database/movie.txt", true); // appends to movie.txt
         
+
 
 	}
 }
