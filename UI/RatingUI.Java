@@ -1,10 +1,23 @@
 package Model;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Rating{
 
     static Scanner s = new Scanner(System.in);
 
     public static void main(String arg[]) {
+
+
 
         System.out.println("Rate the movie " + Movie.getTitle + " on a scale of 1 to 5: ");
         int rateMovie = s.nextInt();
