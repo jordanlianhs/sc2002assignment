@@ -56,8 +56,13 @@ public class Movie {
      */
     private ArrayList<Review> reviews; 
 
+    private int sales;
 
-    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews) {
+
+    
+
+
+    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews, int sales) {
         this.movieName = movieName;
         this.movieType = movieType;
         this.synopsis = synopsis;
@@ -68,6 +73,7 @@ public class Movie {
         this.director = director;
         this.cast = cast;
         this.reviews = reviews;
+        this.sales = sales;
     }
 
 
@@ -149,6 +155,14 @@ public class Movie {
 
     public void setReviews(ArrayList<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public int getSales() {
+        return sales;
+    }
+
+    public void setSales(int sales) {
+        this.sales = sales;
     }
 
     
