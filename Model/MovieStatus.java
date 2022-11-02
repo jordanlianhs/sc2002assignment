@@ -1,3 +1,5 @@
+package Model;
+
 public enum MovieStatus {
     COMING_SOON("Coming soon"),
     PREVIEW("Preview"),
