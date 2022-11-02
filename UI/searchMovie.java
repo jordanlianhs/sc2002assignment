@@ -11,20 +11,23 @@ public class searchMovie {
 	};
 
 	public void find(String n) throws Exception {
+		try {
+			File file = new File("./Database/movie.txt");
+			Scanner sc = new Scanner(file);
 
-		File file = new File("./Database/movie.txt");
-
-		Scanner sc = new Scanner(file);
-		// Condition holds true till
-		// there is character in a string
-		sc.useDelimiter(",");
-		while (sc.hasNext()) {
-			String st = sc.nextLine().toLowerCase().toString();
-			// Print the string
-			if (st.contains(n)) {
-				System.out.println(st);
+			sc.useDelimiter(",");
+			while (sc.hasNext()) {
+				String st = sc.nextLine().toLowerCase().toString();
+				// Print the string
+				if (st.contains(n)) {
+					System.out.print(st);
+				}
 			}
-		}
+			sc.close();
 
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
 	}
 }
