@@ -12,8 +12,8 @@ public class searchMovie {
 
 	public void find(String n) throws Exception {
 
-		File file = new File(
-				"C:\\Users\\Joel\\Desktop\\Eclipse Workspace\\SC2002_MOBLIMA\\sc2002assignment\\Database\\movie.txt");
+		File file = new File("./Database/movie.txt");
+
 		Scanner sc = new Scanner(file);
 		// Condition holds true till
 		// there is character in a string
@@ -25,5 +25,6 @@ public class searchMovie {
 				System.out.println(st);
 			}
 		}
+
 	}
 }
