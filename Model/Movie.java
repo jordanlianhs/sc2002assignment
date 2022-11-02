@@ -5,19 +5,16 @@ import java.util.*;
 
 
 public class Movie {
-    /** This is the movie's unique ID
-    */
-    private int id;
-    
+        
     /**
      * This movie's title
      */
-    private String title;
+    private String movieName;
 
     /**
      * This movie's type
      */
-    private MovieType type;
+    private MovieType movieType;
 
     /**
      * This movie's synopsis
@@ -60,10 +57,9 @@ public class Movie {
     private ArrayList<Review> reviews; 
 
 
-    public Movie(int id, String title, MovieType type, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews) {
-        this.id = id;
-        this.title = title;
-        this.type = type;
+    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews) {
+        this.movieName = movieName;
+        this.movieType = movieType;
         this.synopsis = synopsis;
         this.rating = rating;
         this.duration = duration;
@@ -74,28 +70,21 @@ public class Movie {
         this.reviews = reviews;
     }
 
-    public int getId() {
-        return this.id;
+
+    public String getmovieName() {
+        return this.movieName;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public void setmoveiName(String movieName) {
+        this.movieName = movieName;
     }
 
     public MovieType getType() {
-        return this.type;
+        return this.movieType;
     }
 
-    public void setType(MovieType type) {
-        this.type = type;
+    public void setType(MovieType movieType) {
+        this.movieType = movieType;
     }
 
     public String getSynopsis() {
