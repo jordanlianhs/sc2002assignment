@@ -3,7 +3,13 @@ import java.util.*;
 
 
 public class MainUI {
-    public static void main(String[] args) {
+    /**
+     * Main function driving the view
+     * @param args null argument can be used to drive the function
+	 * @throws Exception Throws Exception
+     */
+    
+    public static void main(String[] args) throws Exception {
 
         boolean exit = false;
         while(!exit){
