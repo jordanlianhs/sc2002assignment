@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CheckSeatUI {
 	
-	static Scanner s = new Scanner(System.in);
+	Scanner s = new Scanner(System.in);
 	private Session sessiono;
 	
 	public CheckSeatUI(Session SessionNo) {
