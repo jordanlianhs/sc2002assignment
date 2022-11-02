@@ -12,7 +12,7 @@ public class CheckSeatUI {
 	}
 	
 	public void checkAvailableSeat() {
-		sessiono.seatPlan.printLayout();
+		sessiono.getSeatPlan().printLayout();
 	}
 	
 	public void bookSeat() {
@@ -21,7 +21,7 @@ public class CheckSeatUI {
 		char seatR = s.next().charAt(0);
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
-		sessiono.seatPlan.assign(seatR, seatC);
+		sessiono.getSeatPlan().assign(seatR, seatC);
 	}
 	
 	public void cancelSeat() {
@@ -30,7 +30,7 @@ public class CheckSeatUI {
 		char seatR = s.next().charAt(0);
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
-		sessiono.seatPlan.clear(seatR, seatC);
+		sessiono.getSeatPlan().unassign(seatR, seatC);
 	}
 	
 	
