@@ -17,10 +17,12 @@ public class searchMovie {
 
 			sc.useDelimiter(",");
 			while (sc.hasNext()) {
-				String st = sc.nextLine().toLowerCase().toString();
+				String st = sc.nextLine();// To get current string with all Capitalisation
+				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				// Print the string
-				if (st.contains(n)) {
-					System.out.print(st);
+				if (st2.contains(n)) {
+					System.out.print(st + "\n\n"); // Display original capitalised version
+
 				}
 			}
 			sc.close();
