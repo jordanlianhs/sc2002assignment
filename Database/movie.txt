@@ -1,0 +1,13 @@
+Inception,true,Blockbuster,End of showing,PG13,An incredible thriller,Matthew ROn,Jason Tye,Yamini Gautam
+The Adventures of Robin Hood,false,Drama,Preview,Restricted,This swashbuckling costume epic stars Errol Flynn in arguably his greatest role as the titular prince of thieves.,Michael Curtiz,Errol Flynn,Olivia de Havilland,Basil Rathbone,Claude Rains,Melville Cooper,Ian Hunter
+The African Queen,true,Action,Coming soon!,General,Humphrey Bogart and Katharine Hepburn's odd-couple chemistry anchors John Huston's 1951 romantic adventure.,John Huston,Humphrey Bogart,Katharine Hepburn,Robert Morley
+All About Eve,false,Comedy,Now showing,PG13,This acerbic Oscar-sweeping drama stars Bette Davis as an aging Broadway dame and Anne Baxter as a scheming young social climber.,Joseph L. Mankiewicz,
+Trouble in Paradise,true,Horror,Now Showing,PG13,An exquisite and bubbly work by Ernst Lubitsch. his good-natured 1932 comedy follows a pair of con artists en route to romance.,Ernst Lubitsch,Herbert Marshall, Miriam Hopkins, Kay Francis
+A Space Odyssey,false,Drama,Preview,Restricted,Movie on a space mission,Stanley Kubrick,Keir Dullea,Gary Lockwood
+Vertigo,true,Horror,Now showing,Restricted,James Stewart stars as the acrophobic detective at the heart of this 1958 tale of obsession also from the Hitchock canon.,Alfred Hitchcock,James Stewart,Kim Novak,Barbara Bel Geddes,Tom Helmore
+West Side Story,true,Comedy,End of showing,General,Star-crossed love gets the spotlight via Natalie Wood & Richard Beymer and music by Leonard Bernstein and Stephen Sondheim.,Robert Wise,Natalie Wood,Richard Beymer,Rita Moreno,Russ Tamblyn,George Chakiris
+The Wild Bunch,false,Action,Now showing,PG13,This controversial 1969 Western was one of the most brutal of its day with plenty of stomach-turning violence courtesy of Sam Peckinpah.,Sam Peckinpah,William Holden,Ernest Borgnine,Warren Oates,Ben Johnson,Robert Ryan,Emilio Fernandez
+The Wizard of Oz,false,Horror,Preview,General,Victor Fleming's timeless 1939 musical boasts some of the most loved songs in movie history as well as a star turn by Judy Garland.,Victor Fleming,Judy Garland,Ray Bolger,Jack Haley,Bert Lahr,Margaret Hamilton
+Wuthering Heights,true,Drama,End of showing,PG13,Laurence Olivier brings Emily Bronte's Heathcliff to life in this brooding 1939 adaptation of the famous love story set on the moors.,William Wyler,Merle Oberon,Laurence Olivier,David Niven,Geraldine Fitzgerald
+Batman,true,Action,Now showing,General,Life story of a bat.,Prof x1,person 1,person2,person 3
+Hello world,true,Horror,Coming soon!,PG13,Welcoming java to the world!,Group 1,student 2,student 5
