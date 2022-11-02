@@ -14,8 +14,6 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-<<<<<<< Updated upstream
-=======
 	<filteredResources>
 		<filter>
 			<id>1667359549617</id>
@@ -27,5 +25,4 @@
 			</matcher>
 		</filter>
 	</filteredResources>
->>>>>>> Stashed changes
 </projectDescription>
