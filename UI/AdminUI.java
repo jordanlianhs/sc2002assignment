@@ -9,7 +9,7 @@ public class AdminUI {
 	 * @param args null argument can be used to drive the function
 	 * @throws Exception Throws Exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public void AdminUI() throws Exception {
 		String id, pass;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("ADMIN LOGIN PAGE");
@@ -24,7 +24,6 @@ public class AdminUI {
 		System.out.println();
 		// AdminFunctions.main(null);
 		System.out.println();
-		sc.close();
 	}
 
 	/**
@@ -32,7 +31,7 @@ public class AdminUI {
 	 * 
 	 * @return Flag that indicates the state of login
 	 */
-	public static int auth(String usr, String pass) {
+	public int auth(String usr, String pass) {
 		int token = 0;
 		// Scanner sc = new Scanner(System.in);
 		do {
@@ -40,6 +39,7 @@ public class AdminUI {
 			if (!usr.equals("admin") || !pass.equals("123")) {
 				System.out.println("Username or Password is incorrect!");
 				token = 0;
+				break;
 			} else {
 				System.out.println("Login as Administrator Successful");
 				token = 1;

@@ -1,18 +1,20 @@
 package UI;
-import java.util.*;
 
+import java.util.*;
 
 public class MainUI {
     /**
      * Main function driving the view
+     * 
      * @param args null argument can be used to drive the function
-	 * @throws Exception Throws Exception
+     * @throws Exception Throws Exception
      */
-    
+
     public static void main(String[] args) throws Exception {
 
         boolean exit = false;
-        while(!exit){
+        while (!exit) {
+
             Scanner sc = new Scanner(System.in);
             System.out.println("-----------------------------------");
             System.out.println("========|Welcome to MOBLIMA|=======");
@@ -22,13 +24,14 @@ public class MainUI {
             System.out.println("2: User Module");
             System.out.println("3: Exit");
             System.out.print("Please enter the module you want to access: ");
-            
-            switch(sc.nextInt()){
+
+            switch (sc.nextInt()) {
                 case 1:
-				    
-				    break;
+                    AdminUI adm = new AdminUI();
+                    adm.AdminUI();
+                    break;
                 case 2:
-                    
+
                     break;
                 case 3:
                     exit = true;
@@ -36,8 +39,8 @@ public class MainUI {
                     break;
                 default:
                     System.out.println("\nWrong input!\n");
+                    break;
             }
-			
-		}
+        }
     }
 }
