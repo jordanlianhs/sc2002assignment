@@ -32,6 +32,7 @@ public class AdminUI {
 				System.out.println("(1) Manage Holidays");
 				System.out.println("(5) Quit Admin Module");
 				choice = sc.nextInt();
+				sc.nextLine();
 				switch (choice) {
 					case 1:
 						HolidayUI.main(null);

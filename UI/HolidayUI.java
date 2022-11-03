@@ -27,8 +27,7 @@ public class HolidayUI {
 					System.out.print("Enter the NAME of Holiday: ");
 					holName = sc.nextLine();
 
-					// System.out.print("Enter the DATE of Holiday (DD/MM/YYYY): ");
-					System.out.println("Enter the exact entry you want to delete: "); // Change this to check for date
+					System.out.print("Enter the DATE of Holiday (DD/MM/YYYY): ");
 					date = sc.nextLine();
 
 					// Validate if its a valid date
@@ -42,7 +41,8 @@ public class HolidayUI {
 					break;
 				case 2:
 					// Parse file for input date
-					System.out.println("Enter the date of holiday to delete (dd/MM/YYYY): ");
+					// System.out.println("Enter the date of holiday to delete (dd/MM/YYYY): ");
+					System.out.println("Enter the exact entry you want to delete: "); // Change this to check for date
 					date = sc.nextLine();
 					delHol(date);
 					// Remove entry from the file
