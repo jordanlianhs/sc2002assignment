@@ -27,15 +27,14 @@ public class MainUI {
 
             switch (sc.nextInt()) {
                 case 1:
-                    AdminUI adm = new AdminUI();
-                    adm.AdminUI();
+                    AdminUI.main(null);
                     break;
                 case 2:
-
                     break;
                 case 3:
                     exit = true;
                     System.out.println("\nExiting MOBLIMA....");
+                    sc.close();
                     break;
                 default:
                     System.out.println("\nWrong input!\n");

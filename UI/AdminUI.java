@@ -9,8 +9,9 @@ public class AdminUI {
 	 * @param args null argument can be used to drive the function
 	 * @throws Exception Throws Exception
 	 */
-	public void AdminUI() throws Exception {
+	public static void main(String[] args) throws Exception {
 		String id, pass;
+		int choice = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("ADMIN LOGIN PAGE");
 
@@ -19,11 +20,30 @@ public class AdminUI {
 		id = sc.nextLine();
 		System.out.print("Password: ");
 		pass = sc.nextLine();
-		auth(id, pass);
 
 		System.out.println();
 		// AdminFunctions.main(null);
 		System.out.println();
+
+		// If login successful
+		if (auth(id, pass) == true) {
+			do {
+				System.out.println("===Admin System===");
+				System.out.println("(1) Manage Holidays");
+				System.out.println("(5) Quit Admin Module");
+				choice = sc.nextInt();
+				switch (choice) {
+					case 1:
+						HolidayUI.main(null);
+						break;
+					case 5:
+						return;
+					default:
+						break;
+				}
+			} while (choice != 5);
+		} else
+			return;
 	}
 
 	/**
@@ -31,21 +51,18 @@ public class AdminUI {
 	 * 
 	 * @return Flag that indicates the state of login
 	 */
-	public int auth(String usr, String pass) {
-		int token = 0;
+	public static boolean auth(String usr, String pass) {
+		boolean token;
 		// Scanner sc = new Scanner(System.in);
-		do {
 
-			if (!usr.equals("admin") || !pass.equals("123")) {
-				System.out.println("Username or Password is incorrect!");
-				token = 0;
-				break;
-			} else {
-				System.out.println("Login as Administrator Successful");
-				token = 1;
-			}
+		if (!usr.equals("admin") || !pass.equals("123")) {
+			System.out.println("Username or Password is incorrect!");
+			token = false;
+		} else {
+			System.out.println("Login as Administrator Successful");
+			token = true;
+		}
 
-		} while (token != 1);
 		return token;
 	}
 }

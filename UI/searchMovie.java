@@ -6,7 +6,6 @@ import java.io.*;
 public class searchMovie {
 	String title;
 
-	// Input your diretory of DATABASE here
 	public searchMovie() {
 	};
 
