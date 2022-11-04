@@ -7,6 +7,7 @@ import java.io.*;
 public class HolidayUI {
 	static Scanner sc = new Scanner(System.in); // Console
 	static File file = new File("./Database/holiday.txt");
+	static int count = 11; // To track num of elements in list
 
 	public static void main(String[] args) throws Exception {
 		int choice;
@@ -40,11 +41,25 @@ public class HolidayUI {
 					}
 					break;
 				case 2:
+					int deleteChoice;
+					String rez[] = new String[count];
 					// Parse file for input date
 					// System.out.println("Enter the date of holiday to delete (dd/MM/YYYY): ");
 					System.out.println("Enter the exact entry you want to delete: "); // Change this to check for date
 					date = sc.nextLine();
-					delHol(date);
+
+					rez = findHol(date);
+
+					for (int i = 0; i < rez.length; i++) {
+
+						System.out.println(i + ": " + rez[i]);
+					}
+					System.out.println("Which would you like to delete?");
+					deleteChoice = sc.nextInt();
+					// Check Date
+					// Search for all entries and select
+					delHol(rez[deleteChoice]);
+
 					// Remove entry from the file
 
 					break;
@@ -120,7 +135,7 @@ public class HolidayUI {
 	// DELHOL WIP ()
 
 	/**
-	 * Searches for an entry with the input name and deletes it
+	 * Deletes the input entry
 	 * 
 	 * @param n
 	 * @throws Exception
@@ -159,16 +174,52 @@ public class HolidayUI {
 			} else {
 				System.out.println("Deleted: " + n);
 			}
-
 			// Rename the new file to the filename the original file had.
 			if (!tempFile.renameTo(inputFile))
 				System.out.println("Could not rename file");
-
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	/**
+	 * Finds all entries in the holiday list
+	 * 
+	 * @param n
+	 * @return
+	 */
+
+	public static String[] findHol(String n) {
+		String[] searchResults = new String[count];
+		int i = 0;
+		try {
+			File file = new File("./Database/holiday.txt");
+			Scanner sc = new Scanner(file);
+			sc.useDelimiter(",");
+			while (sc.hasNext()) {
+				String st = sc.nextLine();// To get current string with all Capitalisation
+				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				n = n.toLowerCase(); // Convert input string toLower to compare
+				// Print the string
+				System.out.println(); // Just formatting line
+				if (st2.contains(n)) {
+					if (!st2.equals(null)) {
+						System.out.println(st); // Display original capitalised version
+						System.out.println();
+						searchResults[i] = st;
+						i++;
+					}
+				}
+			}
+			sc.close();
+			// return searchResults;
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		return searchResults;
 	}
 
 	// GregorianCalendar [] hols = new GregorianCalendar[11];
