@@ -44,15 +44,17 @@ public class HolidayUI {
 					int deleteChoice;
 					String rez[] = new String[count];
 					// Parse file for input date
-					// System.out.println("Enter the date of holiday to delete (dd/MM/YYYY): ");
-					System.out.println("Enter the exact entry you want to delete: "); // Change this to check for date
+					System.out.println("Enter the date of holiday to delete (dd/MM/YYYY): ");
 					date = sc.nextLine();
 
 					rez = findHol(date);
 
-					for (int i = 0; i < rez.length; i++) {
-
+					for (int i = 0; i < count; i++) {
+						if (rez[i] == null) {
+							break;
+						}
 						System.out.println(i + ": " + rez[i]);
+
 					}
 					System.out.println("Which would you like to delete?");
 					deleteChoice = sc.nextInt();
@@ -92,15 +94,18 @@ public class HolidayUI {
 						Scanner sc = new Scanner(file);
 
 						sc.useDelimiter(",");
+						System.out.println("===============");
+						System.out.println("List of Holidays:");
 						while (sc.hasNext()) {
 							// Print the string
-							System.out.print(sc.nextLine() + "\n\n"); // Display original capitalised version
-
+							System.out.println(sc.nextLine()); // Display original capitalised version
 						}
+						System.out.println("===============");
 						if (file.length() == 0) {
 							System.out.println("No entries!");
 						}
 						sc.close();
+						System.out.println();
 
 					} catch (FileNotFoundException e) {
 						System.out.println("An error occurred.");
@@ -203,11 +208,9 @@ public class HolidayUI {
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 				// Print the string
-				System.out.println(); // Just formatting line
+
 				if (st2.contains(n)) {
 					if (!st2.equals(null)) {
-						System.out.println(st); // Display original capitalised version
-						System.out.println();
 						searchResults[i] = st;
 						i++;
 					}
