@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HolidayUI",
+            "request": "launch",
+            "mainClass": "UI.HolidayUI",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch CheckBookingUI",
+            "request": "launch",
+            "mainClass": "UI.CheckBookingUI",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch SmallMainUI",
+            "request": "launch",
+            "mainClass": "UI.SmallMainUI",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch check",
+            "request": "launch",
+            "mainClass": "Model.check",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch searchMovieAPP",
+            "request": "launch",
+            "mainClass": "UI.searchMovieAPP",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
             "name": "Launch SmallRun",
             "request": "launch",
             "mainClass": "Model.SmallRun",

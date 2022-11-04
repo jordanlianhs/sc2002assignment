@@ -16,6 +16,10 @@ public class SeatingPlan {
 		}
 		
 	}
+
+	public Seat getSeat(int i,int j){
+		return seatPlan[i][j];
+	}
 	
 	public void printLayout() {
 		int count = 0;
