@@ -3,6 +3,12 @@ package Model;
 import java.time.*;
 import java.util.*;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class Movie {
         
@@ -75,6 +81,19 @@ public class Movie {
         this.reviews = reviews;
         this.sales = sales;
     }
+    
+    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast) {
+        this.movieName = movieName;
+        this.movieType = movieType;
+        this.synopsis = synopsis;
+        this.rating = rating;
+        this.duration = duration;
+        this.movieReleaseDate = movieReleaseDate;
+        this.movieEndDate = movieEndDate;
+        this.director = director;
+        this.cast = cast;
+    }
+    
 
 
     public String getmovieName() {
@@ -165,7 +184,30 @@ public class Movie {
         this.sales = sales;
     }
 
-    
+    public void writeMovie(){
+        try{
+            File file = new File("Database/MovieCollection.txt");
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            PrintWriter pr = new PrintWriter(br);
+            String cast= String.join(",", this.getCast());
+            //String review= String.join(",", this.getReviews());
+            String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + rating 
+            + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
+            + "," + director + cast; 
+            pr.println(shit);
+            pr.close();
+            br.close();
+            fr.close();
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
     
     public static void main(String[] args) {
         System.out.println("Hello world");

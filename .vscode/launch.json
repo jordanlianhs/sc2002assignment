@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SmallRun",
+            "request": "launch",
+            "mainClass": "Model.SmallRun",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
             "name": "Launch TestBooking",
             "request": "launch",
             "mainClass": "Model.TestBooking",

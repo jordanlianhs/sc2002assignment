@@ -14,15 +14,15 @@ public class Booking {
 
     //private LocalDateTime movietime;
 
-    //private Movie movie;
+    private Movie movie;
 
     private String ticketID;
 
     private int price;
 
-    public Booking(Guest guest){
+    public Booking(Guest guest, Session session){
         this.guest = guest;
-        //this.movie = movie;
+        this.movie = session.getMovie();
         //this.movietime = movie.getMovieTime;
         Random rand = new Random();
         this.ticketID = String.valueOf(rand.nextInt(10));
@@ -31,11 +31,11 @@ public class Booking {
 
     public void writebookingstatement() throws IOException{
         try{
-            File file = new File("BookingStatement.txt");
+            File file = new File("Database/BookingStatement.txt");
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
-            String shit = ticketID + "," + price;
+            String shit = ticketID + "," + price + "," + movie.getmovieName();
             pr.println(shit);
             pr.close();
             br.close();
@@ -50,5 +50,5 @@ public class Booking {
         }
 
     }
-    
+
 }
