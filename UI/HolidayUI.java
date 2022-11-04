@@ -7,8 +7,14 @@ import java.io.*;
 public class HolidayUI {
 	static Scanner sc = new Scanner(System.in); // Console
 	static File file = new File("./Database/holiday.txt");
-	static int count = 11; // To track num of elements in list
+	static int count = 20; // To track num of elements in list
 
+	/**
+	 * Driver for Creating/Deleting/Clearing Holidays
+	 * 
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		int choice;
 		String del;
@@ -41,29 +47,29 @@ public class HolidayUI {
 					}
 					break;
 				case 2:
-					int deleteChoice;
+					// Delete and entry
+					int dChoice;
 					String rez[] = new String[count];
 					// Parse file for input date
-					System.out.println("Enter the date of holiday to delete (dd/MM/YYYY): ");
+					System.out.println("Search for something to delete: ");
 					date = sc.nextLine();
 
-					rez = findHol(date);
+					rez = findHol(date); // Search for all entries with input term
 
+					// Prints out all options for the user
 					for (int i = 0; i < count; i++) {
 						if (rez[i] == null) {
 							break;
 						}
 						System.out.println(i + ": " + rez[i]);
-
 					}
+
+					// Scan for deletion choice
 					System.out.println("Which would you like to delete?");
-					deleteChoice = sc.nextInt();
-					// Check Date
-					// Search for all entries and select
-					delHol(rez[deleteChoice]);
 
-					// Remove entry from the file
-
+					dChoice = sc.nextInt();
+					// Delete Entry
+					delHol(rez[dChoice]);
 					break;
 				case 3:
 					// Clear all holdays
@@ -119,9 +125,14 @@ public class HolidayUI {
 					break;
 			}
 		} while (choice != 5);
-
 	}
 
+	/**
+	 * Check for Valid Date
+	 * 
+	 * @param input
+	 * @return
+	 */
 	public static boolean checkDate(String input) {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -140,7 +151,7 @@ public class HolidayUI {
 	// DELHOL WIP ()
 
 	/**
-	 * Deletes the input entry
+	 * Deletes the input entry (entries with the same name)
 	 * 
 	 * @param n
 	 * @throws Exception
@@ -202,7 +213,7 @@ public class HolidayUI {
 		try {
 			File file = new File("./Database/holiday.txt");
 			Scanner sc = new Scanner(file);
-			sc.useDelimiter(",");
+			// sc.useDelimiter(",");
 			while (sc.hasNext()) {
 				String st = sc.nextLine();// To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
@@ -224,30 +235,4 @@ public class HolidayUI {
 		}
 		return searchResults;
 	}
-
-	// GregorianCalendar [] hols = new GregorianCalendar[11];
-
-	// public HolidayUI() {
-	// //Initialise all holidays
-	// //Year Month Day
-	// hols[0] = new GregorianCalendar(2022, 0,1); //New Year
-	// hols[1] = new GregorianCalendar(2022, 1,1); //CNY
-	// hols[2] = new GregorianCalendar(2022, 1,2); //CNY
-	// hols[3] = new GregorianCalendar(2022, 3,15); //Good Friday
-	// hols[4] = new GregorianCalendar(2022, 4, 1); //Labour Day
-	// hols[5] = new GregorianCalendar(2022, 4, 3); //Hari Raya Puasa
-	// hols[6] = new GregorianCalendar(2022, 4,15); //Vesak Day
-	// hols[7] = new GregorianCalendar(2022, 6,10); //Hari Raya Haji
-	// hols[8] = new GregorianCalendar(2022, 7,9); //National Day
-	// hols[9] = new GregorianCalendar(2022, 9,24); //Deepavali
-	// hols[10] = new GregorianCalendar(2022, 11,25); //Christmas
-	// }
-
-	// public GregorianCalendar getHols(int i) {
-	// return hols[i];
-	// }
-
-	// public int getLength() {
-	// return hols.length;
-	// }
 }
