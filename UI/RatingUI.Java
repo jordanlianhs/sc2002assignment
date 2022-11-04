@@ -1,4 +1,4 @@
-package Model;
+package UI;
 import java.io.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,9 +33,66 @@ public class Rating{
 
         // if num of ratings == 1 {display "NA"}
 
-        FileWriter fw = new FileWriter("./Database/movie.txt", true); // appends to movie.txt
         
+    String newRating = "";
+
+    editRating(file, movieTitle, newRating);
 
 
 	}
+}
+
+
+public static void editRating(String file, String movieTitle, String newRating)
+{
+  String tempFile = "./Database/temp.txt";
+  File oldFile = new File(file);
+  File newFile = new File(tempFile);
+  String avgRating = "";
+
+  try
+  {
+    FileWriter fw = new FileWriter(tempFile, true); // appends to movie.txt
+    BufferedWriter bw = new BufferedWriter(fw);
+    PrintWriter pw = new PrintWriter(bw);
+    x = new Scanner(new File(file));
+    x.useDelimeter("[,\n]");
+
+    int i=0;
+    while(x.hasNext()){
+      item = x.next();
+      if (i=0 && //found movie title)
+      {
+        /* eg
+         * genre = x.next;
+         * actors = x.next;
+         * avgRating = x.next;
+         */
+
+        pw.print(//movie title + "," + genre + "," + actors + "," + avgRating);
+
+        i=4; // change index to point to aft avgRating
+        continue;
+      }
+
+      else{
+        pw.print("," + item);
+        if (i = //num of items in line-1)
+        {
+          pw.print("\n");
+          i=0;
+          continue;
+        }
+        i++;
+      }
+
+      x.close();
+      pw.flush();
+      oldFile.delete();
+      File dump = new File(file);
+      newFile.renameTo(dump);
+
+    }
+  }
+
 }
