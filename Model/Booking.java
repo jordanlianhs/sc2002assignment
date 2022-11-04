@@ -2,12 +2,10 @@ package Model;
 
 import java.time.LocalDateTime;
 import java.util.Random;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.time.*;
+import java.util.*;
+import java.time.format.DateTimeFormatter;
+import java.io.*;
 
 public class Booking {
     private Guest guest;
@@ -16,13 +14,16 @@ public class Booking {
 
     private Movie movie;
 
+    private String seatNumber;
+
     private String ticketID;
 
     private int price;
 
-    public Booking(Guest guest, Session session){
+    public Booking(Guest guest, Session session, String seatNumber){
         this.guest = guest;
         this.movie = session.getMovie();
+        this.seatNumber = seatNumber;
         //this.movietime = movie.getMovieTime;
         Random rand = new Random();
         this.ticketID = String.valueOf(rand.nextInt(10));
@@ -35,7 +36,7 @@ public class Booking {
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
-            String shit = ticketID + "," + price + "," + movie.getmovieName();
+            String shit = guest.getEmail() + "," + ticketID + "," + price + "," + movie.getmovieName() + "," + seatNumber;
             pr.println(shit);
             pr.close();
             br.close();
@@ -50,5 +51,4 @@ public class Booking {
         }
 
     }
-
 }

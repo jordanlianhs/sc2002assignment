@@ -60,13 +60,13 @@ public class Movie {
     /**
      * This movie's list of reviews
      */
-    private ArrayList<Review> reviews; 
+    //private ArrayList<Review> reviews; 
 
     private int sales;
 
 
     
-
+    /*
 
     public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews, int sales) {
         this.movieName = movieName;
@@ -81,8 +81,8 @@ public class Movie {
         this.reviews = reviews;
         this.sales = sales;
     }
-    
-    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast) {
+    */
+    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, int sales) {
         this.movieName = movieName;
         this.movieType = movieType;
         this.synopsis = synopsis;
@@ -92,6 +92,7 @@ public class Movie {
         this.movieEndDate = movieEndDate;
         this.director = director;
         this.cast = cast;
+        this.sales = sales;
     }
     
 
@@ -167,7 +168,7 @@ public class Movie {
     public void setCast(ArrayList<String> cast) {
         this.cast = cast;
     }
-
+    /* 
     public ArrayList<Review> getReviews() {
         return this.reviews;
     }
@@ -175,7 +176,7 @@ public class Movie {
     public void setReviews(ArrayList<Review> reviews) {
         this.reviews = reviews;
     }
-
+    */
     public int getSales() {
         return sales;
     }
@@ -186,7 +187,7 @@ public class Movie {
 
     public void writeMovie(){
         try{
-            File file = new File("Database/MovieCollection.txt");
+            File file = new File("Database/SessionRecords.txt");
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
@@ -194,8 +195,8 @@ public class Movie {
             //String review= String.join(",", this.getReviews());
             String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + rating 
             + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
-            + "," + director + cast; 
-            pr.println(shit);
+            + "," + director + "," + this.getCast().size() + ","+ cast + "," + String.valueOf(sales); 
+            pr.printf(shit+",");
             pr.close();
             br.close();
             fr.close();
