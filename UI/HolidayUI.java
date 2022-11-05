@@ -1,11 +1,12 @@
 package UI;
 
 import java.util.*;
-import java.util.spi.LocaleServiceProvider;
+// import java.util.spi.LocaleServiceProvider;
 import java.text.*;
 import java.io.*;
+// import java.time.format.DateTimeFormatter;
+// import java.time.format.DateTimeParseException;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 
 public class HolidayUI {
 	static Scanner sc = new Scanner(System.in); // Console
@@ -37,7 +38,7 @@ public class HolidayUI {
 					System.out.print("Enter the NAME of Holiday: ");
 					holName = sc.nextLine();
 
-					System.out.print("Enter the DATE of Holiday (DD/MM/YYYY): ");
+					System.out.print("Enter the DATE of Holiday (DD-MM-YYYY): ");
 					date = sc.nextLine();
 
 					// Validate if its a valid date
@@ -137,8 +138,22 @@ public class HolidayUI {
 	 * @return
 	 */
 	public static boolean checkDate(String input) {
-		LocalDate date = LocalDate.parse(input, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		System.out.println("Date input: " + date); // This is just for debugging
+		// if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
+		// System.out.println("Date Input: " + input); // Debugging Purposes
+		// return true;
+		// } else
+		// return false;
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		try {
+			Date date = sdf.parse(input);
+			System.out.println("Date input: " + date); // This is just for debugging
+
+		} catch (ParseException e) {
+			// e.printStackTrace();
+			System.out.println("INVALID DATE!");
+			return false;
+		}
 		return true;
 	}
 
