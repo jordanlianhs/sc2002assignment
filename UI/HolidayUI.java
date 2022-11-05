@@ -77,7 +77,7 @@ public class HolidayUI {
 					try {
 						System.out.println("Are you sure you want to delete all Holidays? (Y/N)");
 						del = sc.nextLine();
-						del.toLowerCase();
+						del = del.toLowerCase();
 						if (del.equals("y")) {
 							// Deletes all entries
 							FileWriter DR = new FileWriter(file, false);
