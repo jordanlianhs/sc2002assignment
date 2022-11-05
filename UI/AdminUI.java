@@ -15,7 +15,6 @@ public class AdminUI {
 		int choice = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("ADMIN LOGIN PAGE");
-
 		System.out.println("****************");
 		System.out.print("Username: ");
 		id = sc.nextLine();
@@ -23,16 +22,17 @@ public class AdminUI {
 		pass = sc.nextLine();
 
 		System.out.println();
-		// AdminFunctions.main(null);
-		System.out.println();
 
 		// If login successful
-		if (auth(id, pass) == true) {
+		if (auth(id, pass)) {
 			do {
 				System.out.println("===Admin System===");
 				System.out.println("(1) Manage Holidays");
 				System.out.println("(2) Search Movie Test"); // Remove this before pushing
-				System.out.println("(5) Quit Admin Module");
+				System.out.println("(3) Manage Ticket Price");
+				System.out.println("(4) Manage User Search Access");
+				System.out.println("(5) Go Back");
+				System.out.println("(6) Quit Admin Module");
 				choice = sc.nextInt();
 				sc.nextLine();
 				switch (choice) {
@@ -40,14 +40,21 @@ public class AdminUI {
 						HolidayUI.main(null);
 						break;
 					case 2:
-						searchMovie.main(null);
+						SearchMovie.main(null);
+						break;
+					case 3:
+						break;
+					case 4:
 						break;
 					case 5:
+						MainUI.main(null);
+						break;
+					case 6:
 						return;
 					default:
 						break;
 				}
-			} while (choice != 5);
+			} while (choice != 6);
 		} else
 			return;
 	}

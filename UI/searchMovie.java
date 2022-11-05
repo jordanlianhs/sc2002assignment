@@ -3,17 +3,21 @@ package UI;
 import java.util.*;
 import java.io.*;
 
-public class searchMovie {
+public class SearchMovie {
 
+	/**
+	 * The main function for this view, searches the movie the user wants 
+	 * @param args for the main function
+	 * @throws Exception to throw the exception
+	 */
 	public static void main(String[] args) throws Exception {
 		String input;
 		Scanner sc = new Scanner(System.in);
 		do {
-			System.out.println("Enter \"esc\" to quit searching UI");
+			System.out.println("\nEnter \"esc\" to quit movie search UI");
 			System.out.print("Enter a search term: ");
-
 			input = sc.nextLine();
-			searchMovie look = new searchMovie();
+			SearchMovie look = new SearchMovie();
 			look.find(input);
 		} while (!input.toLowerCase().equals("esc"));
 	}
@@ -24,8 +28,9 @@ public class searchMovie {
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
+			System.out.println("The movie details are as follows : ");
 			while (sc.hasNext()) {
-				String st = sc.nextLine();// To get current string with all Capitalisation
+				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 				// Print the string
@@ -37,6 +42,7 @@ public class searchMovie {
 				}
 			}
 			sc.close();
+			
 
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");

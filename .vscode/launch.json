@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SearchMovie",
+            "request": "launch",
+            "mainClass": "UI.SearchMovie",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainUI",
+            "request": "launch",
+            "mainClass": "UI.MainUI",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
+            "name": "Launch UserUI",
+            "request": "launch",
+            "mainClass": "UI.UserUI",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
+            "name": "Launch AdminUI",
+            "request": "launch",
+            "mainClass": "UI.AdminUI",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
             "name": "Launch HolidayUI",
             "request": "launch",
             "mainClass": "UI.HolidayUI",

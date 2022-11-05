@@ -33,26 +33,31 @@ public class UserUI {
 				System.out.print("Please enter your choice: ");
 				choice = sc.nextInt();
 				System.out.println();
-			}
 			
-			if(choice == 1) {
-				;
-			}else if (choice == 2) {
-				;
-			}else if(choice == 3) {
-				;
-			}else if(choice == 4) {
-				;
-			}else if(choice == 5) {
-				;
-			}else if(choice == 6) {
-				;
-			}else if(choice == 7){
-				MainUI.main(null);
-			}else if(choice == 8) {
-				System.out.println("Thanks for using MOBLIMA!");
-				System.exit(0);
-			}
+			
+                if(choice == 1) {
+                    SearchMovie.main(null);
+                }else if (choice == 2) {
+                    MovieDetails.main(null);
+                }else if(choice == 3) {
+                    ;
+                }else if(choice == 4) {
+                    ;
+                }else if(choice == 5) {
+                    ;
+                }else if(choice == 6) {
+                    ;
+                }else if(choice == 7){
+                    MainUI.main(null);
+                }else if(choice == 8) {
+                    System.out.println("Thanks for using MOBLIMA!");
+                    System.exit(0);
+                }
+                else{
+                    System.out.println("\nWrong input!\n");
+                    System.out.println("Please try again!\n");
+                }
+            }
 		}
 		
 	}
