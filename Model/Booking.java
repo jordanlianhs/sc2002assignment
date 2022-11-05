@@ -1,10 +1,6 @@
 package Model;
 
-import java.time.LocalDateTime;
 import java.util.Random;
-import java.time.*;
-import java.util.*;
-import java.time.format.DateTimeFormatter;
 import java.io.*;
 
 public class Booking {

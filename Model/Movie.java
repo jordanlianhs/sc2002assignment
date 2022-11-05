@@ -28,9 +28,14 @@ public class Movie {
     private String synopsis;
 
     /**
-     * This movie's rating
+     * This movie's ageRating
      */
-    private String rating;
+    private String ageRating;
+
+    /**
+     * This movie's starRating
+     */
+    private float starRating;
 
     /**
      * This movie's duration
@@ -68,11 +73,11 @@ public class Movie {
     
     /*
 
-    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews, int sales) {
+    public Movie(String movieName, MovieType movieType, String synopsis, String ageRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews, int sales) {
         this.movieName = movieName;
         this.movieType = movieType;
         this.synopsis = synopsis;
-        this.rating = rating;
+        this.ageRating = ageRating;
         this.duration = duration;
         this.movieReleaseDate = movieReleaseDate;
         this.movieEndDate = movieEndDate;
@@ -82,11 +87,12 @@ public class Movie {
         this.sales = sales;
     }
     */
-    public Movie(String movieName, MovieType movieType, String synopsis, String rating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, int sales) {
+    public Movie(String movieName, MovieType movieType, String synopsis, String ageRating, float starRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, int sales, ArrayList<String> cast) {
         this.movieName = movieName;
         this.movieType = movieType;
         this.synopsis = synopsis;
-        this.rating = rating;
+        this.ageRating = ageRating;
+        this.starRating = starRating;
         this.duration = duration;
         this.movieReleaseDate = movieReleaseDate;
         this.movieEndDate = movieEndDate;
@@ -121,14 +127,21 @@ public class Movie {
         this.synopsis = synopsis;
     }
 
-    public String getRating() {
-        return this.rating;
+    public String getageRating() {
+        return this.ageRating;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setageRating(String ageRating) {
+        this.ageRating = ageRating;
     }
 
+    public float getstarRating() {
+        return this.starRating;
+    }
+
+    public void setstarRating(float starRating) {
+        this.starRating = starRating;
+    }
     public double getDuration() {
         return this.duration;
     }
@@ -193,7 +206,7 @@ public class Movie {
             PrintWriter pr = new PrintWriter(br);
             String cast= String.join(",", this.getCast());
             //String review= String.join(",", this.getReviews());
-            String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + rating 
+            String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + ageRating 
             + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
             + "," + director + "," + this.getCast().size() + ","+ cast + "," + String.valueOf(sales); 
             pr.printf(shit+",");
