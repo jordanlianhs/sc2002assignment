@@ -1,8 +1,11 @@
 package UI;
 
 import java.util.*;
+import java.util.spi.LocaleServiceProvider;
 import java.text.*;
 import java.io.*;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 public class HolidayUI {
 	static Scanner sc = new Scanner(System.in); // Console
@@ -134,17 +137,8 @@ public class HolidayUI {
 	 * @return
 	 */
 	public static boolean checkDate(String input) {
-
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		try {
-			Date date = sdf.parse(input);
-			System.out.println("Date input: " + date); // This is just for debugging
-
-		} catch (ParseException e) {
-			// e.printStackTrace();
-			System.out.println("INVALID DATE!");
-			return false;
-		}
+		LocalDate date = LocalDate.parse(input, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		System.out.println("Date input: " + date); // This is just for debugging
 		return true;
 	}
 
@@ -234,5 +228,30 @@ public class HolidayUI {
 			e.printStackTrace();
 		}
 		return searchResults;
+	}
+
+	/**
+	 * Returns all holdays in the list as an array
+	 * 
+	 * @return
+	 */
+	public static String[] getHols() {
+		String[] arr = new String[count];
+		int i = 0;
+		try {
+			File file = new File("./Database/holiday.txt");
+			Scanner sc = new Scanner(file);
+			// sc.useDelimiter(",");
+			while (sc.hasNext()) {
+				arr[i] = sc.nextLine();
+				i++;
+			}
+			sc.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+
+		return arr;
 	}
 }
