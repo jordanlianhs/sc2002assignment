@@ -2,6 +2,8 @@ package Model;
 
 import java.util.Random;
 import java.io.*;
+import java.text.*;
+import java.util.*;
 
 public class Booking {
     private Guest guest;
@@ -12,17 +14,24 @@ public class Booking {
 
     private String seatNumber;
 
-    private String ticketID;
+    private String ticketID;    
+
+    private String cinemaCode;
 
     private int price;
 
-    public Booking(Guest guest, Session session, String seatNumber){
+    public Booking(Guest guest, Session session, String seatNumber, String cinemaCode){
         this.guest = guest;
-        this.movie = session.getMovie();
+        //this.movie = session.getMovie();
         this.seatNumber = seatNumber;
         //this.movietime = movie.getMovieTime;
-        Random rand = new Random();
-        this.ticketID = String.valueOf(rand.nextInt(10));
+
+        //timestamp is formatted current time
+        String timestamp = new SimpleDateFormat("YYYYMMddHHmm").format(new Date());
+        
+        this.ticketID = cinemaCode + timestamp;
+        System.out.println(ticketID);
+        //price hardcoded
         this.price = 10;
     }
 
@@ -32,8 +41,8 @@ public class Booking {
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
-            String shit = guest.getEmail() + "," + ticketID + "," + price + "," + movie.getmovieName() + "," + seatNumber;
-            pr.println(shit);
+            String statement = guest.getEmail() + "," +guest.getPhone() + "," + ticketID + "," + movie.getmovieName();
+            pr.println(statement);
             pr.close();
             br.close();
             fr.close();
@@ -46,5 +55,9 @@ public class Booking {
             e.printStackTrace();
         }
 
+    }
+
+    public String getTicketID() {
+        return ticketID;
     }
 }
