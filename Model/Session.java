@@ -113,23 +113,21 @@ public class Session {
 				String movieName = sc.next();
 				String movieType = sc.next();
 				String synopsis = sc.next();
-				String rating = sc.next();
+				String ageRating = sc.next();
+				//String starRating = sc.next();
 				String duration = sc.next();
 				String movieReleaseDate = sc.next();
 				String movieEndDate = sc.next();
 				String director = sc.next();
 				String sizeofCast = sc.next();
-				ArrayList<String> cast = new ArrayList<>();
-				for(int i=0; i<Integer.valueOf(sizeofCast); i++){
-					cast.add(sc.next());
-				}
 				String sales = sc.next();
+
+				
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
 				LocalDate releaseDateTime = LocalDate.parse(movieReleaseDate, formatter);
 				LocalDate endDateTime = LocalDate.parse(movieEndDate, formatter);
 
-				Movie movieinstance = new Movie(movieName, MovieType.valueOf(movieType), synopsis, rating, Double.valueOf(duration), releaseDateTime, endDateTime, director, cast, Integer.valueOf(sales));
-				this.movie = movieinstance;
+
 
 				
 				String bookingtime = sc.next();
@@ -148,6 +146,14 @@ public class Session {
 							seatPlan.getSeat(i,j).book();
 						}
 					}
+				}
+
+				ArrayList<String> cast = new ArrayList<>();
+				for(int i=0; i<Integer.valueOf(sizeofCast); i++){
+					cast.add(sc.next());
+
+				Movie movieinstance = new Movie(movieName, MovieType.valueOf(movieType), synopsis, ageRating, Float.valueOf(starRating), Double.valueOf(duration), releaseDateTime, endDateTime, director, Integer.valueOf(sales), cast);
+				this.movie = movieinstance;
 				}
 			
 			sc.close();

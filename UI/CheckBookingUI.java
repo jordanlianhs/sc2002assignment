@@ -1,9 +1,6 @@
 package UI;
 
-import Model.*;
-import java.time.*;
 import java.util.*;
-import java.time.format.DateTimeFormatter;
 import java.io.*;
 
 public class CheckBookingUI {
