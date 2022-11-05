@@ -23,10 +23,11 @@ public class CheckBookingUI {
 				String price = elements[2];
 				String movieName = elements[3];
 				String seatNumber = elements[4];
+                String cinemaCode = elements[5];
                 //ystem.out.println("hey");
                 if(eName.equals(emailName)){
                     k=1;
-                    System.out.println(" TicketID: " + ticketID + " Price: " + price + " Movie: " + movieName + " Seat: " + seatNumber);
+                    System.out.println(" TicketID: " + ticketID + " Price: " + price + " Movie: " + movieName + " Seat: " + seatNumber + "CinemaCode: " + cinemaCode);
                 }
             }
             if(k==0){

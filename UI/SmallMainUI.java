@@ -24,7 +24,7 @@ public class SmallMainUI{
         //login to user
         Guest Xiaoming = new Guest("Xiaoming", 50, "1234", "Xiaoming@gmail.com");
         //book movie
-        CheckSeatUI curCheckSeat = new CheckSeatUI(Xiaoming, Sessionsfrombackside.get(0));
+        CheckSeatUI curCheckSeat = new CheckSeatUI(Xiaoming, Sessionsfrombackside.get(0), "cinemacode");
         curCheckSeat.main();
         //check booking
         CheckBookingUI curBooking = new CheckBookingUI();

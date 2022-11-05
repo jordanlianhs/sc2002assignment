@@ -10,10 +10,13 @@ public class CheckSeatUI {
 
 	private Guest user;
 
+	private String cinemaCode;
+
 	
-	public CheckSeatUI(Guest user, Session SessionNo) {
+	public CheckSeatUI(Guest user, Session SessionNo, String cinemaCode) {
 		this.user = user;
 		sessiono = SessionNo;
+		this.cinemaCode = cinemaCode;
 	}
 	
 	public void checkAvailableSeat() {
@@ -29,7 +32,8 @@ public class CheckSeatUI {
 		int seatC = s.nextInt();
 		sessiono.getSeatPlan().assign(seatR, seatC);
 		//nid write back to SessionRecord?
-		Booking book = new Booking(user, sessiono, "B3");
+		String seatNo = seatR + String.valueOf(seatC);
+		Booking book = new Booking(user, sessiono, seatNo, cinemaCode);
         book.writebookingstatement();
 		
 	}
