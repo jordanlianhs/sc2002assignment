@@ -229,4 +229,29 @@ public class HolidayUI {
 		}
 		return searchResults;
 	}
+
+	/**
+	 * Returns all holdays in the list as an array
+	 * 
+	 * @return
+	 */
+	public static String[] getHols() {
+		String[] arr = new String[count];
+		int i = 0;
+		try {
+			File file = new File("./Database/holiday.txt");
+			Scanner sc = new Scanner(file);
+			// sc.useDelimiter(",");
+			while (sc.hasNext()) {
+				arr[i] = sc.nextLine();
+				i++;
+			}
+			sc.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+
+		return arr;
+	}
 }
