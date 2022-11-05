@@ -4,6 +4,7 @@ import java.util.*;
 import java.io.*;
 
 public class AdminUI {
+
 	/**
 	 * Main function driving the view
 	 * 
@@ -28,9 +29,9 @@ public class AdminUI {
 			do {
 				System.out.println("===Admin System===");
 				System.out.println("(1) Manage Holidays");
-				System.out.println("(2) Search Movie Test"); // Remove this before pushing
-				System.out.println("(3) Manage Ticket Price");
-				System.out.println("(4) Manage User Search Access");
+				System.out.println("(2) Movie CRUD"); 
+				System.out.println("(3) Seat CRUD");
+				System.out.println("(4) Configure System Settings");
 				System.out.println("(5) Go Back");
 				System.out.println("(6) Quit Admin Module");
 				choice = sc.nextInt();
@@ -40,11 +41,13 @@ public class AdminUI {
 						HolidayUI.main(null);
 						break;
 					case 2:
-						SearchMovie.main(null);
+						
 						break;
 					case 3:
+					
 						break;
 					case 4:
+
 						break;
 					case 5:
 						MainUI.main(null);
