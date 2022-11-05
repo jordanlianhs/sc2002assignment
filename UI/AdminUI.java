@@ -1,6 +1,7 @@
 package UI;
 
 import java.util.*;
+import java.io.*;
 
 public class AdminUI {
 	/**
@@ -56,18 +57,29 @@ public class AdminUI {
 	 * 
 	 * @return Flag that indicates the state of login
 	 */
-	public static boolean auth(String usr, String pass) {
-		boolean token;
-		// Scanner sc = new Scanner(System.in);
+	public static boolean auth(String usr, String pass) throws Exception {
+		boolean token = false;
 
-		if (!usr.equals("admin") || !pass.equals("123")) {
-			System.out.println("Username or Password is incorrect!");
-			token = false;
-		} else {
-			System.out.println("Login as Administrator Successful");
-			token = true;
+		try {
+			File adminFile = new File("./Database/admin.txt");
+			Scanner ar = new Scanner(adminFile); // adminreader, ar
+
+			ar.useDelimiter(",");
+			String UN = ar.next();
+			String PW = ar.next();
+
+			// System.out.println(UN + " " + PW);
+
+			if (!usr.equals(UN) || !pass.equals(PW)) {
+				System.out.println("Username or Password is incorrect!");
+				token = false;
+			} else {
+				System.out.println("Login as Administrator Successful");
+				token = true;
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
-
 		return token;
 	}
 }
