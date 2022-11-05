@@ -30,7 +30,7 @@ public class MainUI {
                     AdminUI.main(null);
                     break;
                 case 2:
-                    
+                    UserUI.main(null);
                     break;
                 case 3:
                     exit = true;
