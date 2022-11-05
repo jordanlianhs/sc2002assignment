@@ -10,9 +10,12 @@ public class CheckSeatUI {
 
 	private Guest user;
 
-	public CheckSeatUI(Guest user, Session SessionNo) {
+	private String cinemaCode;
+
+	public CheckSeatUI(Guest user, Session SessionNo, String cinemaCode) {
 		this.user = user;
 		sessiono = SessionNo;
+		this.cinemaCode = cinemaCode;
 	}
 
 	public void checkAvailableSeat() {

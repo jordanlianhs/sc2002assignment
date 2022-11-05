@@ -1,2 +1,2 @@
-Wilsonlim@com,4,10,Salakau,A2
-Xiaoming@gmail.com,4,10,Salakau,B3
+Wilsonlim@com,999,CinemaCode202211060226,Salakau,A2,CinemaCode
+Xiaoming@gmail.com,1234,cinemacode202211060226,Salakau,A12,cinemacode

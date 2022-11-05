@@ -14,7 +14,7 @@ public class SmallRun {
         Session mysession = new Session(Salakau,LocalDateTime.of(2022, 2, 26, 6, 45));
         Guest Wilson = new Guest("Wilson", 22, "999", "Wilsonlim@com");
 
-        Booking book = new Booking(Wilson, mysession, "A2");
+        Booking book = new Booking(Wilson, mysession, "A2", "CinemaCode");
         mysession.writeSession();
         book.writebookingstatement();
     } 

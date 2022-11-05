@@ -22,7 +22,7 @@ public class SeatingPlan {
 	}
 	
 	public void printLayout() {
-		int count = 0;
+		int count = -1;
 		for(char alpha = 'K'; alpha >='A'; alpha--) {	
 			if(alpha=='K') {
 				System.out.print(" ");
@@ -33,20 +33,13 @@ public class SeatingPlan {
 			}
 			for(int i = 0; i<16; i++) {
 				if(alpha=='K') {
-					if(i>9) {
-						System.out.print(" "+ i);
+					if(i>8) {
+						System.out.print(" "+ (i+1));
 					}
 					else {
-						System.out.print(" "+ i + " ");
+						System.out.print(" "+ (i+1) + " ");
 					}
 
-				}
-				else if(i<=1 && alpha>='F' && alpha<'K') {
-					System.out.print("   ");
-				}
-				
-				else if(i>=8 && i<=9 && alpha=='A') {
-					System.out.print("   ");
 				}
 				
 				else if(seatPlan[count][i].checkTaken() == true) {
@@ -63,8 +56,8 @@ public class SeatingPlan {
 				
 			}
 			System.out.println();
+			count++;
 		}
-		count++;
 	}
 	
 	public void assign(char row1, int column1) {
@@ -78,7 +71,7 @@ public class SeatingPlan {
 			}
 		}
 		
-		seatPlan[count][column1].book();
+		seatPlan[count][column1-1].book();
 	}
 	
 	public void unassign(char row1, int column1) {
