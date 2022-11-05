@@ -8,6 +8,23 @@ public class ListTop5UI {
     public void main() {
         Scanner sc = new Scanner(System.in);
 
+        //reading movie file
+        String filename = "./Database/movie.txt";
+        try(Scanner fileReader = new Scanner(filename)){
+            while(fileReader.hasNextLine()){
+                String line = fileReader.nextLine();
+                String[] parts = line.split(",");
+                //TODO
+                // get sales                
+                // int sales = Integer.valueOf(parts[]);
+                // get user ratings
+                // int ratings = Integer.valueOf(parts[]);
+            }
+            
+        } catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+
         System.out.println("1: List top 5 movies by ticket sales");
         System.out.println("2: List top 5 movies by overall ratings");
         System.out.println("3: Go back");
@@ -31,7 +48,7 @@ public class ListTop5UI {
     
     public void listTop5Sales(){
         //read movie txt sales number
-        //sort
+        //sort (sort by collections by reading movie as objects using comparator)
         //print
         ;
     }
