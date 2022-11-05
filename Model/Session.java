@@ -66,7 +66,6 @@ public class Session {
     }
 
 	public void writeSession() throws IOException{
-		movie.writeMovie();
         try{
             File file = new File("Database/SessionRecords.txt");
             FileWriter fr = new FileWriter(file, true);
@@ -86,7 +85,7 @@ public class Session {
 			}
 			DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
             String shit = seshDateTime.format(formatter2) + "," + something ;
-            pr.println(shit);
+            pr.print(shit);
             pr.close();
             br.close();
             fr.close();
@@ -98,6 +97,7 @@ public class Session {
         catch(IOException e){
             e.printStackTrace();
         }
+		movie.writeMovie();
 	}
 
 	public void read(int octo) throws IOException {
@@ -109,12 +109,30 @@ public class Session {
 			for(int line = 0; line<octo; line++){
 				sc.nextLine();
 			}
+
+			String bookingtime = sc.next();
+			DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
+			LocalDateTime bookingtiming = LocalDateTime.parse(bookingtime,formatter2);
+			this.seshDateTime = bookingtiming;
+
+			String ss;
+			for(int i=0; i<10; i++){
+				for(int j =0; j<16; j++){
+					ss = sc.next();
+					if(ss.equals("o")){
+						seatPlan.getSeat(i,j).clear();
+					} 
+					else{
+						seatPlan.getSeat(i,j).book();
+					}
+				}
+			}
 			
 				String movieName = sc.next();
 				String movieType = sc.next();
 				String synopsis = sc.next();
 				String ageRating = sc.next();
-				//String starRating = sc.next();
+				String starRating = sc.next();
 				String duration = sc.next();
 				String movieReleaseDate = sc.next();
 				String movieEndDate = sc.next();
@@ -127,36 +145,14 @@ public class Session {
 				LocalDate releaseDateTime = LocalDate.parse(movieReleaseDate, formatter);
 				LocalDate endDateTime = LocalDate.parse(movieEndDate, formatter);
 
-
-
-				
-				String bookingtime = sc.next();
-				DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
-				LocalDateTime bookingtiming = LocalDateTime.parse(bookingtime,formatter2);
-				this.seshDateTime = bookingtiming;
-
-				String ss;
-				for(int i=0; i<10; i++){
-					for(int j =0; j<16; j++){
-						ss = sc.next();
-						if(ss.equals("o")){
-							seatPlan.getSeat(i,j).clear();
-						} 
-						else{
-							seatPlan.getSeat(i,j).book();
-						}
-					}
-				}
-
 				ArrayList<String> cast = new ArrayList<>();
-				for(int i=0; i<Integer.valueOf(sizeofCast); i++){
+				for(int u=0; u<Integer.valueOf(sizeofCast); u++){
 					cast.add(sc.next());
-
+				}
 				Movie movieinstance = new Movie(movieName, MovieType.valueOf(movieType), synopsis, ageRating, Float.valueOf(starRating), Double.valueOf(duration), releaseDateTime, endDateTime, director, Integer.valueOf(sales), cast);
 				this.movie = movieinstance;
-				}
-			
-			sc.close();
+
+				sc.close();
 
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");

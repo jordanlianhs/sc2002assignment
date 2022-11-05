@@ -206,10 +206,10 @@ public class Movie {
             PrintWriter pr = new PrintWriter(br);
             String cast= String.join(",", this.getCast());
             //String review= String.join(",", this.getReviews());
-            String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + ageRating 
+            String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + ageRating + "," + String.valueOf(starRating)
             + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
-            + "," + director + "," + this.getCast().size() + ","+ cast + "," + String.valueOf(sales); 
-            pr.printf(shit+",");
+            + "," + director + "," + this.getCast().size() + "," + String.valueOf(sales) + "," + cast; 
+            pr.println(shit+",");
             pr.close();
             br.close();
             fr.close();
