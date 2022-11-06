@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CineplexRun",
+            "request": "launch",
+            "mainClass": "Model.CineplexRun",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainUI",
+            "request": "launch",
+            "mainClass": "UI.MainUI",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
             "name": "Launch SearchMovie",
             "request": "launch",
             "mainClass": "UI.SearchMovie",

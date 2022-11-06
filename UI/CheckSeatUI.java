@@ -1,29 +1,86 @@
 package UI;
 
 import Model.*;
-import java.util.Scanner;
+import java.util.*;
 import java.io.*;
 
 public class CheckSeatUI {
 
-	private Session sessiono;
+	private static Session sessiono= new Session();
 
-	private Guest user;
+	//private static Guest user = new Guest();
 
-	private String cinemaCode;
+	//private static String cinemaCode = null;
 
-	public CheckSeatUI(Guest user, Session SessionNo, String cinemaCode) {
-		this.user = user;
-		sessiono = SessionNo;
-		this.cinemaCode = cinemaCode;
-	}
+	//public CheckSeatUI(Guest user, Session SessionNo, String cinemaCode) {
+	//	this.user = user;
+	//	sessiono = SessionNo;
+	//	this.cinemaCode = cinemaCode;
+	//}
 
-	public void checkAvailableSeat() {
-		sessiono.getSeatPlan().printLayout();
-	}
-
-	public void bookSeat() throws IOException {
+	public static void checkAvailableSeat(Cineplex A, Cineplex B, Cineplex C) {
+		//sessiono.getSeatPlan().printLayout();
 		Scanner s = new Scanner(System.in);
+		System.out.println("Enter your Cineplex Code");
+		String cpCode = s.next();
+		int i = 0;
+		int number = 0;
+		ArrayList<Session> temp;
+		if(cpCode.equals("ABC")){
+			temp =  A.getSessionList();
+		}
+
+		else if(cpCode.equals("BBC")){
+			temp =  A.getSessionList();
+		}
+
+		else{
+			temp =  C.getSessionList();
+		}
+		int size = temp.size();
+		int count =0;
+		while(count <size){
+			System.out.print(i+1);
+			temp.get(count).printSession();
+			count++;
+		}
+		
+		System.out.println("Choose your Session");
+		number = s.nextInt();
+
+		temp.get(number-1).getSeatPlan().printLayout();
+	}
+
+	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C) throws IOException {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter your Cineplex Code");
+		String cpCode = s.next();
+		int i = 0;
+		int number = 0;
+		ArrayList<Session> temp;
+		if(cpCode.equals("ABC")){
+			temp =  A.getSessionList();
+		}
+
+		else if(cpCode.equals("BBC")){
+			temp =  A.getSessionList();
+		}
+
+		else{
+			temp =  C.getSessionList();
+		}
+		int size = temp.size();
+		int count =0;
+		while(count <size){
+			System.out.print(i+1);
+			temp.get(count).printSession();
+			count++;
+		}
+		
+		System.out.println("Choose your Session");
+		number = s.nextInt();
+		
+		
 		System.out.println("Choose your Seat");
 		System.out.println("Enter row (A to J)");
 		char seatR = s.next().charAt(0);
@@ -31,12 +88,12 @@ public class CheckSeatUI {
 		int seatC = s.nextInt();
 		sessiono.getSeatPlan().assign(seatR, seatC);
 		// nid write back to SessionRecord?
-		Booking book = new Booking(user, sessiono, "B3", "KKB");
+		Booking book = new Booking(user, temp.get(number-1), "B3", "KKB");
 		book.writebookingstatement();
 
 	}
 
-	public void cancelSeat() {
+	public static void cancelSeat(Cineplex A, Cineplex B, Cineplex C) {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Choose your Seat");
 		System.out.println("Enter row (A to J)");
@@ -47,7 +104,7 @@ public class CheckSeatUI {
 
 	}
 
-	public void main() throws IOException {
+	public static void main(String[] args, Guest user, Cineplex A, Cineplex B, Cineplex C) throws IOException {
 		Scanner s = new Scanner(System.in);
 		boolean k = true;
 
@@ -60,13 +117,13 @@ public class CheckSeatUI {
 
 			switch (choice) {
 				case 1:
-					checkAvailableSeat();
+					checkAvailableSeat(A,B,C);
 					break;
 				case 2:
-					bookSeat();
+					bookSeat(user, A,B,C);
 					break;
 				case 3:
-					cancelSeat();
+					cancelSeat(A,B,C);
 					break;
 				case 4:
 					System.out.println("Exit SeatUI");

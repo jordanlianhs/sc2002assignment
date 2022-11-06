@@ -11,6 +11,8 @@ public class Guest {
 
     private boolean student;
 
+    public Guest(){};
+
     public Guest(String name, int age, String phone, String email, boolean student) {
         this.name = name;
         this.age = age;

@@ -1,6 +1,7 @@
 package UI;
 import java.util.*;
-
+import java.io.*;
+import Model.*;
 
 public class UserUI {
     /**
@@ -8,12 +9,26 @@ public class UserUI {
 	 * @param args for the main function
 	 * @throws Exception to throw the exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args, Cineplex A, Cineplex B, Cineplex C) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		
 		/**
 		 * to keep track of when to exit the used module
 		 */
+        System.out.println("USER PAGE");
+        System.out.println("****************");
+
+        System.out.println("Enter your name");
+        String name = sc.next();
+        System.out.println("Enter your age");
+        int age = sc.nextInt();
+        System.out.println("Enter your phone number");
+        String phone = sc.next();
+        System.out.println("Enter your email");
+        String email = sc.next();
+        System.out.println("Are you a student? (Enter 'true' or 'false')");
+        boolean student = sc.nextBoolean();
+        Guest user = new Guest(name, age, phone, email, student);
 		int exit = 0;
 		while(exit != 1) {
 			
@@ -40,7 +55,7 @@ public class UserUI {
                 }else if (choice == 2) {
                     MovieDetails.main(null);
                 }else if(choice == 3) {
-                    ;
+                    CheckSeatUI.main (null,user,A,B,C);
                 }else if(choice == 4) {
                     ;
                 }else if(choice == 5) {

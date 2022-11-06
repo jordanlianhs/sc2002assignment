@@ -17,7 +17,7 @@ public class SmallMainUI{
         }
         for(int j =0; j<i; j++){
             Sessionsfrombackside.add(new Session());
-            Sessionsfrombackside.get(j).read("ABC", 0);
+            Sessionsfrombackside.get(j).read("ABC", 04);
         }
 
 

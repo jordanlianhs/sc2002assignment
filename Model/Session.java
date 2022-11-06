@@ -68,6 +68,10 @@ public class Session {
         }
     }
 
+	public void printSession(){
+		System.out.println("Timing: " + seshDateTime + "Movie Name: " + movie + "CinemaCode: " + cinemaCode);
+	}
+
 	public void writeSession(String cineplexNumber) throws IOException{
         try{
 			//String fileName= "Database/SessionRecord" + CineplexNumber +".txt";

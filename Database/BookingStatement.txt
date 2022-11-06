@@ -11,3 +11,7 @@ Wilsonlim@com,999,CinemaCode202211061811,Salakau,A2,CinemaCode
 Wilsonlim@com,999,CinemaCode202211061818,Salakau,A2,CinemaCode
 Wilsonlim@com,999,CinemaCode202211061818,Salakau,A2,CinemaCode
 Wilsonlim@com,999,CinemaCode202211061834,Salakau,A2,CinemaCode
+Wilsonlim@com,999,CinemaCode202211062201,Salakau,A2,CinemaCode
+Wilsonlim@com,999,CinemaCode202211062202,Salakau,A2,CinemaCode
+Wilsonlim@com,999,CinemaCode202211062203,Salakau,A2,CinemaCode
+lol,777,KKB202211062341,Salakau,B3,KKB
