@@ -30,7 +30,7 @@ public class AdminUI {
 				System.out.println("===Admin System===");
 				System.out.println("(1) Manage Holidays");
 				System.out.println("(2) Movie CRUD");
-				System.out.println("(3) Seat CRUD");
+				System.out.println("(3) Session CRUD");
 				System.out.println("(4) Configure System Settings");
 				System.out.println("(5) Quit Admin Module");
 				choice = sc.nextInt();
