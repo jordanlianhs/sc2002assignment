@@ -29,11 +29,10 @@ public class AdminUI {
 			do {
 				System.out.println("===Admin System===");
 				System.out.println("(1) Manage Holidays");
-				System.out.println("(2) Movie CRUD"); 
+				System.out.println("(2) Movie CRUD");
 				System.out.println("(3) Seat CRUD");
 				System.out.println("(4) Configure System Settings");
-				System.out.println("(5) Go Back");
-				System.out.println("(6) Quit Admin Module");
+				System.out.println("(5) Quit Admin Module");
 				choice = sc.nextInt();
 				sc.nextLine();
 				switch (choice) {
@@ -41,18 +40,15 @@ public class AdminUI {
 						HolidayUI.main(null);
 						break;
 					case 2:
-						
+
 						break;
 					case 3:
-					
+
 						break;
 					case 4:
 
 						break;
 					case 5:
-						MainUI.main(null);
-						break;
-					case 6:
 						return;
 					default:
 						break;
