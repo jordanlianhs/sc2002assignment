@@ -4,7 +4,7 @@ import Model.*;
 import java.util.*;
 import java.time.*;
 
-public class Ticket {
+public class TicketPrice {
 
     /**
      * Calculate the ticket price based on Customer Type, Day of the week, Pub
@@ -84,6 +84,9 @@ public class Ticket {
                     }
                 }
             }
+        }
+        if (type == MovieType.BLOCKBUSTER) {
+            price++;
         }
         return price;
     }

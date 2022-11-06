@@ -41,7 +41,7 @@ public class HolidayUI {
 					System.out.print("Enter the NAME of Holiday: ");
 					holName = sc.nextLine();
 
-					System.out.print("Enter the DATE of Holiday (DD-MM-YYYY): ");
+					System.out.print("Enter the DATE of Holiday (YYYY-MM-DD): ");
 					date = sc.nextLine();
 
 					// Validate if its a valid date
@@ -147,7 +147,7 @@ public class HolidayUI {
 		// } else
 		// return false;
 
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			Date date = sdf.parse(input);
 			System.out.println("Date input: " + date); // This is just for debugging
