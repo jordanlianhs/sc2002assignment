@@ -48,9 +48,9 @@ public class Rating {
             Scanner sc = new Scanner(file);
             sc.useDelimiter(",");
             
-            float curAvgRating;
-            int numOfRatingsi;
-            double firstRatingf;
+            float curAvgRating=0;
+            int numOfRatingsi=0;
+            double firstRatingf=0;
             String newRating;
 
             while (sc.hasNext()) {
@@ -162,11 +162,11 @@ public class Rating {
 
               if (movietitle1 == movieName)
               {       
-                pw.print(movieName + "," + movieType + "," + synopsis + "," + ageRating + "," + newRating + "," + duration + "," + movieReleaseDate + "," movieEndDate + "," + director + "," + sizeofCast + "," + sales);
+                pw.print(movieName + "," + movieType + "," + synopsis + "," + ageRating + "," + newRating + "," + duration + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sizeofCast + "," + sales);
               }
         
               else{
-                pw.print(movietitle1 + "," + movieType + "," + synopsis + "," + ageRating + "," + starRating1 + "," + duration + "," + movieReleaseDate + "," movieEndDate + "," + director + "," + sizeofCast + "," + sales);
+                pw.print(movietitle1 + "," + movieType + "," + synopsis + "," + ageRating + "," + starRating1 + "," + duration + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sizeofCast + "," + sales);
               }
         
               y.close();
@@ -174,7 +174,9 @@ public class Rating {
               oldFile1.delete();
               File dump = new File(file1);
               newFile1.renameTo(dump);
-            }          
+            }   
+            
+            sc.close();
         }
         catch(FileNotFoundException e){
             e.printStackTrace();
