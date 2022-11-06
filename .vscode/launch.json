@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestListTop",
+            "request": "launch",
+            "mainClass": "Testing.TestListTop",
+            "projectName": "sc2002assignment_a88d77e4"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestListTop",
+            "request": "launch",
+            "mainClass": "UI.TestListTop",
+            "projectName": "sc2002assignment_a88d77e4"
+        },
+        {
+            "type": "java",
             "name": "Launch SearchMovie",
             "request": "launch",
             "mainClass": "UI.SearchMovie",
