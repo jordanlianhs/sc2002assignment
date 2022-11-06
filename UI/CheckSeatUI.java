@@ -31,7 +31,7 @@ public class CheckSeatUI {
 		int seatC = s.nextInt();
 		sessiono.getSeatPlan().assign(seatR, seatC);
 		// nid write back to SessionRecord?
-		Booking book = new Booking(user, sessiono, "B3");
+		Booking book = new Booking(user, sessiono, "B3", "KKB");
 		book.writebookingstatement();
 
 	}
@@ -43,7 +43,7 @@ public class CheckSeatUI {
 		char seatR = s.next().charAt(0);
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
-		sessiono.getSeatPlan().unassign(seatR, seatC);
+		//sessiono.getSeatPlan().unassign(seatR, seatC);
 
 	}
 

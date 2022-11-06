@@ -11,11 +11,11 @@ public class SmallRun {
         Movie Salakau = new Movie("Salakau", MovieType.THREE_D, "Malay vs Chinese", "Fucking Bad",10, 2, LocalDate.of(2002, 9, 17), LocalDate.of(2002, 12, 20), "Sakamoto", 500, casting);
         //Salakau.writeMovie();
         
-        Session mysession = new Session(Salakau,LocalDateTime.of(2022, 2, 26, 6, 45));
-        Guest Wilson = new Guest("Wilson", 22, "999", "Wilsonlim@com");
+        Session mysession = new Session(Salakau,LocalDateTime.of(2022, 2, 26, 6, 45),"ABC");
+        Guest Wilson = new Guest("Wilson", 22, "999", "Wilsonlim@com", false);
 
         Booking book = new Booking(Wilson, mysession, "A2", "CinemaCode");
-        mysession.writeSession();
+        mysession.writeSession("ABC");
         book.writebookingstatement();
     } 
 }

@@ -3,12 +3,9 @@ package Model;
 import java.time.*;
 import java.util.*;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
+
+import java.time.format.DateTimeFormatter;
 
 public class Movie {
         
@@ -100,6 +97,8 @@ public class Movie {
         this.cast = cast;
         this.sales = sales;
     }
+
+    public Movie(){};
     
 
 
@@ -200,7 +199,7 @@ public class Movie {
 
     public void writeMovie(){
         try{
-            File file = new File("Database/SessionRecords.txt");
+            File file = new File("Database/MovieCollectionNew.txt");
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
@@ -208,7 +207,7 @@ public class Movie {
             //String review= String.join(",", this.getReviews());
             String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + ageRating + "," + String.valueOf(starRating)
             + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
-            + "," + director + "," + this.getCast().size() + "," + String.valueOf(sales) + "," + cast; 
+            + "," + director + "," + String.valueOf(sales) + "," + this.getCast().size()  + "," + cast; 
             pr.println(shit+",");
             pr.close();
             br.close();
@@ -225,6 +224,57 @@ public class Movie {
     
     public static void main(String[] args) {
         System.out.println("Hello world");
+    }
+
+    public void readMovie(String movieMingZhi){
+        String text;
+        try {
+			File file = new File("./Database/MovieCollectionNew.txt");
+			Scanner scanfile = new Scanner(file);
+
+			while(scanfile.hasNextLine()){
+                text = scanfile.nextLine();
+                String[] elements = text.split(",");
+                String movieName = elements[0];
+                String movieType = elements[1];
+                String synopsis = elements[2];
+                String ageRating = elements[3];
+                String starRating = elements[4];
+                String duration = elements[5];
+                String movieReleaseDate = elements[6];
+                String movieEndDate = elements[7];
+                String director = elements[8];
+                String sales = elements[9];
+                String sizeOfCast = elements[10];
+                ArrayList<String> cast = new ArrayList<>();
+                for(int u=11; u<(Integer.valueOf(sizeOfCast)+11); u++){
+                    cast.add(elements[u]);
+                }
+                if(movieName.equals(movieMingZhi)){
+                    this.movieName = movieName;
+                    this.movieType = MovieType.valueOf(movieType);
+                    this.synopsis = synopsis;
+                    this.ageRating = ageRating;
+                    this.starRating = Float.valueOf(starRating);
+                    this.duration = Double.valueOf(duration);
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
+                    LocalDate releaseDateTime = LocalDate.parse(movieReleaseDate, formatter);
+                    LocalDate endDateTime = LocalDate.parse(movieEndDate, formatter);
+                    this.movieReleaseDate = releaseDateTime;
+                    this.movieEndDate = endDateTime;
+                    this.director = director;
+                    this.sales = Integer.valueOf(sales);
+                    this.cast = cast;
+                    break;
+                }
+            }
+			scanfile.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+    
     }
 }
 

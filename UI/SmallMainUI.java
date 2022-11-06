@@ -17,12 +17,12 @@ public class SmallMainUI{
         }
         for(int j =0; j<i; j++){
             Sessionsfrombackside.add(new Session());
-            Sessionsfrombackside.get(j).read(j);
+            Sessionsfrombackside.get(j).read("ABC", 0);
         }
 
 
         //login to user
-        Guest Xiaoming = new Guest("Xiaoming", 50, "1234", "Xiaoming@gmail.com");
+        Guest Xiaoming = new Guest("Xiaoming", 50, "1234", "Xiaoming@gmail.com", false);
         //book movie
         CheckSeatUI curCheckSeat = new CheckSeatUI(Xiaoming, Sessionsfrombackside.get(0), "cinemacode");
         curCheckSeat.main();
