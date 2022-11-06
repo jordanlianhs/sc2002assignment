@@ -51,7 +51,7 @@ public class Ticket {
      */
 
     public double calculateTix(Guest g, Movie M, Session S) { // Still need to include the Cinema Class and Seat
-                                                              // Type and
+                                                              // Type
         // Holiday
         double price = 0;
         boolean stu = g.getStudent(); // Student?
@@ -59,7 +59,7 @@ public class Ticket {
         MovieType type = M.getType(); // Get the movie Type
         int age = g.getAge(); // Get the age of the guest
 
-        if (weekend == true || isHoliday(S)) { // If its IS a weekend (weekday)
+        if (weekend == true || isHoliday(S)) { // If its IS a weekend OR a Holiday
             if (type == MovieType.THREE_D) {
                 price = 11;
             } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
