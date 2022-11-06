@@ -264,6 +264,7 @@ public class Movie {
                 if(movieName.equals(movieMingZhi)){
                     this.movieName = movieName;
                     this.movieType = MovieType.valueOf(movieType);
+                    this.movieStatus = MovieStatus.valueOf(movieStatus);
                     this.synopsis = synopsis;
                     this.ageRating = ageRating;
                     this.starRating = Float.valueOf(starRating);
