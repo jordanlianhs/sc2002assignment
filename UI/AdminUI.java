@@ -40,7 +40,7 @@ public class AdminUI {
 						HolidayUI.main(null);
 						break;
 					case 2:
-						
+						MovieCRUD.main(null);
 						break;
 					case 3:
 

@@ -19,9 +19,9 @@ public class MovieCRUD {
 			sc.nextLine(); // Clear scanner buffer
 			switch (choice) {
                 case 1:
-					
+					CreateMovie.main(null);
                 case 2:
-
+				
                 case 3:
 
                 case 4:

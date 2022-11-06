@@ -26,17 +26,18 @@ public class ListTop5UI {
                 
                 String movieName = parts[0]; 
                 MovieType movieType = MovieType.valueOf(parts[1]); 
-                String synopsis = parts[2]; 
-                String ageRating = parts[3]; 
-                float starRating = Float.valueOf(parts[4]);
-                double duration = Double.valueOf(parts[5]);
+                MovieStatus movieStatus = MovieStatus.valueOf(parts[2]);
+                String synopsis = parts[3]; 
+                String ageRating = parts[4]; 
+                float starRating = Float.valueOf(parts[5]);
+                double duration = Double.valueOf(parts[6]);
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDate movieReleaseDate = LocalDate.parse(parts[6], formatter);
-                LocalDate movieEndDate = LocalDate.parse(parts[7], formatter);
-                String director = parts[8];
-                int sales = Integer.valueOf(parts[9]);
-                ArrayList<String> cast = new ArrayList<>(Arrays.asList(parts[10]));
-                movieList.add(new Movie(movieName, movieType, synopsis, ageRating, starRating, duration, movieReleaseDate, movieEndDate, director, sales, cast));
+                LocalDate movieReleaseDate = LocalDate.parse(parts[7], formatter);
+                LocalDate movieEndDate = LocalDate.parse(parts[8], formatter);
+                String director = parts[9];
+                int sales = Integer.valueOf(parts[10]);
+                ArrayList<String> cast = new ArrayList<>(Arrays.asList(parts[11]));
+                movieList.add(new Movie(movieName, movieType,movieStatus, synopsis, ageRating, starRating, duration, movieReleaseDate, movieEndDate, director, sales, cast));
             }
         } catch (Exception e){
             System.out.println("Error: " + e.getMessage());

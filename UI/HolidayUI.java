@@ -140,7 +140,7 @@ public class HolidayUI {
 	 * @param input
 	 * @return
 	 */
-	public static boolean checkDate(String input) {
+	public static boolean checkDate(String input) throws Exception{
 		// if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
 		// System.out.println("Date Input: " + input); // Debugging Purposes
 		// return true;

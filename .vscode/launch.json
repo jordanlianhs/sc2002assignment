@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CreateMovie",
+            "request": "launch",
+            "mainClass": "UI.CreateMovie",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
             "name": "Launch CineplexRun",
             "request": "launch",
             "mainClass": "Model.CineplexRun",

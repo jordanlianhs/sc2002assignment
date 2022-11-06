@@ -20,6 +20,11 @@ public class Movie {
     private MovieType movieType;
 
     /**
+     * This movie's type
+     */
+    private MovieStatus movieStatus;
+
+    /**
      * This movie's synopsis
      */
     private String synopsis;
@@ -84,9 +89,10 @@ public class Movie {
         this.sales = sales;
     }
     */
-    public Movie(String movieName, MovieType movieType, String synopsis, String ageRating, float starRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, int sales, ArrayList<String> cast) {
+    public Movie(String movieName, MovieType movieType, MovieStatus movieStatus, String synopsis, String ageRating, float starRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, int sales, ArrayList<String> cast) {
         this.movieName = movieName;
         this.movieType = movieType;
+        this.movieStatus = movieStatus;
         this.synopsis = synopsis;
         this.ageRating = ageRating;
         this.starRating = starRating;
@@ -116,6 +122,14 @@ public class Movie {
 
     public void setType(MovieType movieType) {
         this.movieType = movieType;
+    }
+
+    public MovieStatus getMovieStatus() {
+        return this.movieStatus;
+    }
+
+    public void setMovieStatus(MovieStatus movieStatus) {
+        this.movieStatus = movieStatus;
     }
 
     public String getSynopsis() {
@@ -205,7 +219,7 @@ public class Movie {
             PrintWriter pr = new PrintWriter(br);
             String cast= String.join(",", this.getCast());
             //String review= String.join(",", this.getReviews());
-            String shit = movieName + "," + movieType.toString() + "," + synopsis + "," + ageRating + "," + String.valueOf(starRating)
+            String shit = movieName + "," + movieType.toString() + "," + movieStatus.toString() + "," + synopsis + "," + ageRating + "," + String.valueOf(starRating)
             + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
             + "," + director + "," + String.valueOf(sales) + "," + this.getCast().size()  + "," + cast; 
             pr.println(shit+",");
@@ -221,10 +235,6 @@ public class Movie {
             e.printStackTrace();
         }
     }
-    
-    public static void main(String[] args) {
-        System.out.println("Hello world");
-    }
 
     public void readMovie(String movieMingZhi){
         String text;
@@ -237,17 +247,18 @@ public class Movie {
                 String[] elements = text.split(",");
                 String movieName = elements[0];
                 String movieType = elements[1];
-                String synopsis = elements[2];
-                String ageRating = elements[3];
-                String starRating = elements[4];
-                String duration = elements[5];
-                String movieReleaseDate = elements[6];
-                String movieEndDate = elements[7];
-                String director = elements[8];
-                String sales = elements[9];
-                String sizeOfCast = elements[10];
+                String movieStatus = elements[2];
+                String synopsis = elements[3];
+                String ageRating = elements[4];
+                String starRating = elements[5];
+                String duration = elements[6];
+                String movieReleaseDate = elements[7];
+                String movieEndDate = elements[8];
+                String director = elements[9];
+                String sales = elements[10];
+                String sizeOfCast = elements[11];
                 ArrayList<String> cast = new ArrayList<>();
-                for(int u=11; u<(Integer.valueOf(sizeOfCast)+11); u++){
+                for(int u=12; u<(Integer.valueOf(sizeOfCast)+12); u++){
                     cast.add(elements[u]);
                 }
                 if(movieName.equals(movieMingZhi)){
