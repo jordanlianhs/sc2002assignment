@@ -40,7 +40,7 @@ public class AdminUI {
 						HolidayUI.main(null);
 						break;
 					case 2:
-
+						
 						break;
 					case 3:
 
@@ -49,7 +49,7 @@ public class AdminUI {
 
 						break;
 					case 5:
-						return;
+						return; //go back to the MainUI
 					default:
 						break;
 				}

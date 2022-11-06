@@ -11,9 +11,9 @@ public class MovieCRUD {
 		do {
 			System.out.println("===Conifure Movie Listing UI===");
 			System.out.println("(1) Create Movie");
-			System.out.println("(2) Delete Movie");
-			System.out.println("(3) Clear all Movie");
-			System.out.println("(4) List all Movies");
+			System.out.println("(2) Remove Movie");
+			System.out.println("(3) Update Movie");
+			System.out.println("(4) Delete Movies");
 			System.out.println("(5) Quit Configure Movie UI");
 			choice = sc.nextInt();
 			sc.nextLine(); // Clear scanner buffer
@@ -27,7 +27,7 @@ public class MovieCRUD {
                 case 4:
 
                 case 5:
-
+					return;
                 default:
                     break;
             }
