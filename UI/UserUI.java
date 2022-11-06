@@ -59,7 +59,7 @@ public class UserUI {
                 }else if(choice == 4) {
                     ;
                 }else if(choice == 5) {
-                    ;
+                    ListTop5UI.main();
                 }else if(choice == 6) {
                     ;
                 }else if(choice == 7){

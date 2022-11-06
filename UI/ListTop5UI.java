@@ -7,17 +7,15 @@ import java.io.*;
 
 public class ListTop5UI {
     
-    private ArrayList<Movie> movieList;
+    static ArrayList<Movie> movieList;
+    
 
-    public ListTop5UI(){
-        this.movieList = new ArrayList<Movie>();
-    }
-
-    public void main() {
+    public static void main() {
         Scanner sc = new Scanner(System.in);
         
         //scan movieList from movie.txt
-        String filename = "./Database/movie2.txt";
+        movieList = new ArrayList<Movie>();
+        String filename = "./Database/MovieCollectionNew.txt";
         File file = new File(filename);
         try(Scanner fileReader = new Scanner(file)){
             while(fileReader.hasNextLine()){
@@ -50,6 +48,7 @@ public class ListTop5UI {
         System.out.println("1: List top 5 movies by ticket sales");
         System.out.println("2: List top 5 movies by overall ratings");
         System.out.println("3: Go back");
+        System.out.println("Please enter your choice:");
 
         
         choice = sc.nextInt();
@@ -67,7 +66,7 @@ public class ListTop5UI {
         } while (choice != 3);
     }
     
-    public void listTop5Sales(){        
+    public static void listTop5Sales(){        
         
         //sort (sort by collections by reading movie as objects using comparator)
         Collections.sort(movieList, new SortSales());
@@ -79,21 +78,23 @@ public class ListTop5UI {
 		else{
 			numMovies = 5;
 		}
+        System.out.println("Top 5 movies by Sales");
         for(int i=0; i<numMovies; i++){
             System.out.print(movieList.get(i).getmovieName() + ": ");
             System.out.println(movieList.get(i).getSales() + " ticket sales");
         }
+        System.out.println();
         
     }
 
-    class SortSales implements Comparator<Movie>{
+    static class SortSales implements Comparator<Movie>{
         public int compare(Movie a, Movie b){
             //compares in reverse since collections sort in ascending and we want descending order
             return b.getSales() - a.getSales();
         }
     }
 
-    public void listTop5Ratings(){
+    public static void listTop5Ratings(){
         //sort (sort by collections by reading movie as objects using comparator)
         Collections.sort(movieList, new SortRatings());        
         int numMovies = 0;
@@ -103,12 +104,14 @@ public class ListTop5UI {
 		else{
 			numMovies = 5;
 		}
+        System.out.println("Top 5 movies by star ratings");
         for(int i=0; i<numMovies; i++){
             System.out.print(movieList.get(i).getmovieName() + ": ");
             System.out.println(movieList.get(i).getstarRating() + " star rating");
         }
+        System.out.println();
     }
-    class SortRatings implements Comparator<Movie>{
+    static class SortRatings implements Comparator<Movie>{
         public int compare(Movie a, Movie b){
             //compares in reverse since collections sort in ascending and we want descending order
             if(b.getstarRating() - a.getstarRating() > 0){
@@ -123,35 +126,7 @@ public class ListTop5UI {
         }
     }
 
-    //Deprecated code, changed to just read from Movie sales variable
-
-    // class SortSales implements Comparator<Movie> {
-    //     public int compare(Movie a, Movie b) {            
-    //         int salesA = 0, salesB = 0;
-    //         //read booking statements file
-    //         String filename = "./Database/BookingStatement.txt";
-    //         try(Scanner fileReader = new Scanner(filename)){
-    //             while(fileReader.hasNextLine()){
-    //                 String line = fileReader.nextLine();
-    //                 String[] parts = line.split(",");
-    //                 String movieTitle = parts[3];
-    //                 if(a.getmovieName().equals(movieTitle)){
-    //                     salesA++;
-    //                 }  
-    //                 if(b.getmovieName().equals(movieTitle)){
-    //                     salesB++;
-    //                 }              
-    //                 // int sales = Integer.valueOf(parts[]);
-    //                 // get user ratings
-    //                 // int ratings = Integer.valueOf(parts[]);
-    //             }
-                
-    //         } catch(Exception e){
-    //             System.out.println("Error: " + e.getMessage());
-    //         }
-    //             return salesA - salesB;
-    //         }
-    // }
+    
 
     
 
