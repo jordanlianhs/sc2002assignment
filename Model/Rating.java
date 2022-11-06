@@ -98,7 +98,7 @@ public class Rating {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             Scanner x = new Scanner(new File("./Database/rating.txt"));
-            x.useDelimeter("[,\n]");
+            x.useDelimiter("[,\n]");
         
             while(x.hasNext()){
               movietitle = x.next();
@@ -145,7 +145,7 @@ public class Rating {
             BufferedWriter bw1 = new BufferedWriter(fw1);
             PrintWriter pw1 = new PrintWriter(bw1);
             Scanner y = new Scanner(new File(file1));
-            y.useDelimeter("[,\n]");
+            y.useDelimiter("[,\n]");
 
             while(y.hasNext()){
               movietitle1 = y.next();
