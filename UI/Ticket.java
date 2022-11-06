@@ -12,40 +12,60 @@ public class Ticket {
      * 
      * @param args
      */
-    public static void main(String[] args) {
-        ArrayList<String> casting = new ArrayList<>(Arrays.asList("wilson", "wilsonagain"));
 
-        Guest G = new Guest("Bob", 21, "999", "bob@gmail.com", true); // Student
-        Guest oldG = new Guest("Greg", 62, "789", "greg@gmail.com", false); // Senior
+    // public static void main(String[] args) {
+    // ArrayList<String> casting = new ArrayList<>(Arrays.asList("wilson",
+    // "wilsonagain"));
 
-        Movie m = new Movie("Story of my Life", MovieType.TWO_D, "SYNOPSIS", "PG13", 4, 60, LocalDate.of(2022, 9, 17),
-                LocalDate.of(2022, 10, 17), "WILSON",
-                100, casting);
-        Movie m1 = new Movie("Story of my Life", MovieType.THREE_D, "SYNOPSIS", "PG13", 4, 60,
-                LocalDate.of(2022, 9, 17),
-                LocalDate.of(2022, 10, 17), "WILSON",
-                100, casting);
+    // Guest G = new Guest("Bob", 21, "999", "bob@gmail.com", true); // Student
+    // Guest oldG = new Guest("Greg", 62, "789", "greg@gmail.com", false); // Senior
 
-        Session S = new Session(m, LocalDateTime.of(2022, 10, 3, 23, 00));
-        Session S1 = new Session(m1, LocalDateTime.of(2022, 10, 3, 23, 00));
+    // Movie m = new Movie("Story of my Life", MovieType.TWO_D, "SYNOPSIS", "PG13",
+    // 4, 60, LocalDate.of(2022, 9, 17),
+    // LocalDate.of(2022, 10, 17), "WILSON",
+    // 100, casting);
+    // Movie m1 = new Movie("Story of my Life", MovieType.THREE_D, "SYNOPSIS",
+    // "PG13", 4, 60,
+    // LocalDate.of(2022, 9, 17),
+    // LocalDate.of(2022, 10, 17), "WILSON",
+    // 100, casting);
 
-        System.out.println("Price of " + S.isWeekend() + " ticket = " + calculateTix(G, m, S));
-        System.out.println("Price of " + S1.isWeekend() + " Senior Ticket: " + calculateTix(oldG, m1, S1));
+    // Session S = new Session(m, LocalDateTime.of(2022, 01, 1, 23, 00));
+    // Session S1 = new Session(m1, LocalDateTime.of(2022, 10, 3, 23, 00));
 
-    }
+    // System.out.println("Price of ticket = " + calculateTix(G, m, S));
+    // System.out.println("Price of Senior Ticket: " + calculateTix(oldG, m1, S1));
 
-    public static float calculateTix(Guest g, Movie M, Session S) { // Still need to include the Cinema Class and Seat
-                                                                    // Type and
+    // // System.out.println(isHoliday(S)); //Debugging stuff
+    // // System.out.println(isHoliday(S1));
+
+    // }
+
+    /**
+     * Calculates ticket prices
+     * 
+     * @param g
+     * @param M
+     * @param S
+     * @return
+     */
+
+    public double calculateTix(Guest g, Movie M, Session S) { // Still need to include the Cinema Class and Seat
+                                                              // Type and
         // Holiday
-        float price = 0;
+        double price = 0;
         boolean stu = g.getStudent(); // Student?
         boolean weekend = S.isWeekend(); // Weekend?
         MovieType type = M.getType(); // Get the movie Type
         int age = g.getAge(); // Get the age of the guest
 
-        String[] hols = HolidayUI.getHols();
-
-        if (weekend == false) { // If its NOT a weekend (weekday)
+        if (weekend == true || isHoliday(S)) { // If its IS a weekend (weekday)
+            if (type == MovieType.THREE_D) {
+                price = 11;
+            } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
+                price = 15;
+            }
+        } else { // If it is NOT a weekend
             // Non PH/Weekend
             if (age > 55) { // Senior Citizen
                 price = 4;
@@ -56,16 +76,29 @@ public class Ticket {
                     } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
                         price = 7;
                     }
+                } else {
+                    if (type == MovieType.THREE_D) {
+                        price = 11;
+                    } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
+                        price = 8.5;
+                    }
                 }
-            }
-        } else { // If it IS a weekend
-            if (type == MovieType.THREE_D) {
-                price = 11;
-            } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                price = 15;
             }
         }
 
         return price;
+    }
+
+    public boolean isHoliday(Session S) {
+        LocalDateTime dateTime = S.getSeshDateTime(); // To check for holidays
+        String DT = dateTime.toLocalDate().toString(); // Converti to JUST date, then to string, so i can search
+
+        // System.out.println("DT: " + DT); //For debugging
+
+        if (HolidayUI.findHol(DT)) {
+            return true;
+        } else
+            return false;
+
     }
 }

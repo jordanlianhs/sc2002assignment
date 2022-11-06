@@ -1,6 +1,9 @@
 package UI;
 
 import java.util.*;
+
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 // import java.util.spi.LocaleServiceProvider;
 import java.text.*;
 import java.io.*;
@@ -58,7 +61,7 @@ public class HolidayUI {
 					System.out.println("Search for something to delete: ");
 					date = sc.nextLine();
 
-					rez = findHol(date); // Search for all entries with input term
+					rez = searchHol(date); // Search for all entries with input term
 
 					// Prints out all options for the user
 					for (int i = 0; i < count; i++) {
@@ -210,13 +213,13 @@ public class HolidayUI {
 	}
 
 	/**
-	 * Finds all entries in the holiday list
+	 * Finds all entries in the holiday list (Lenient Search)
 	 * 
 	 * @param n
 	 * @return
 	 */
 
-	public static String[] findHol(String n) {
+	public static String[] searchHol(String n) {
 		String[] searchResults = new String[count];
 		int i = 0;
 		try {
@@ -268,5 +271,39 @@ public class HolidayUI {
 		}
 
 		return arr;
+	}
+
+	/**
+	 * Strictly Finds a specific date
+	 * 
+	 * @param n
+	 * @return
+	 */
+
+	public static boolean findHol(String n) {
+		try {
+			File file = new File("./Database/holiday.txt");
+			Scanner sc = new Scanner(file);
+			// sc.useDelimiter(",");
+			while (sc.hasNext()) {
+				String st = sc.nextLine();// To get current string with all Capitalisation
+				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				n = n.toLowerCase(); // Convert input string toLower to compare
+				// Print the string
+
+				if (st2.contains(n)) { // Makes this a strict search
+					if (!st2.equals(null)) {
+						return true;
+					}
+				}
+			}
+			sc.close();
+			// return searchResults;
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+			return false;
+		}
+		return false;
 	}
 }
