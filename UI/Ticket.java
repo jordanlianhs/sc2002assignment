@@ -85,7 +85,6 @@ public class Ticket {
                 }
             }
         }
-
         return price;
     }
 
@@ -99,6 +98,5 @@ public class Ticket {
             return true;
         } else
             return false;
-
     }
 }
