@@ -33,11 +33,11 @@ public class Review {
     }
 
     public String getMovieName() {
-        return this.username;
+        return this.movieName;
     }
 
     public void setMovieName(String moviename) {
-        this.username = moviename;
+        this.movieName = moviename;
     }
 
     public String getUsername() {
