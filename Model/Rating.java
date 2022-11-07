@@ -63,7 +63,9 @@ public class Rating {
         }
       }
 
-      // Default cases before new input (calculating ag rating)
+      sc.close();
+
+      // Default cases before new input (calculating avg rating)
 
       if (numOfRatingsi == 0) {
         newRating = "-1";
@@ -83,9 +85,8 @@ public class Rating {
       String firstRating = String.valueOf(firstRatingd);
 
       appendRatingTXT(movieName, newRating, numOfRatings, firstRating);
-      //appendMovieTXT(movieName, newRating);
+      appendMovieTXT(movieName, newRating);
 
-      sc.close();
     } 
     
     catch (FileNotFoundException e) {
@@ -113,10 +114,10 @@ public class Rating {
       String oldNumOfRatings = "";
       String oldFirstRating = "";
 
-      FileWriter fw = new FileWriter(tempFile, true); // appends to rating.txt
+      FileWriter fw = new FileWriter(newFile, true); // appends to rating.txt
       BufferedWriter bw = new BufferedWriter(fw);
       PrintWriter pw = new PrintWriter(bw);
-      Scanner x = new Scanner(new File(file));
+      Scanner x = new Scanner(oldFile);
       x.useDelimiter("[,\n]");
 
       while (x.hasNext()) {
@@ -126,26 +127,29 @@ public class Rating {
         oldFirstRating = x.next();
 
         if (movietitle.toLowerCase().equals(movieName.toLowerCase())) {
-          pw.println(movietitle + "," + newRating + "," + numOfRatings + "," + firstRating);
+          pw.print(movietitle + "," + newRating + "," + numOfRatings + "," + firstRating + "\n");
+          pw.flush();
         }
 
         else {
-          pw.print(movietitle + "," + starRating + "," + oldNumOfRatings + "," + oldFirstRating);
+          pw.print(movietitle + "," + starRating + "," + oldNumOfRatings + "," + oldFirstRating + "\n");
+          pw.flush();
         }
 
       }
       x.close();
-      pw.flush();
       pw.close();
-      if (oldFile.delete()) System.out.println("deleted");
+      bw.close();
+      fw.close();
+
+      oldFile.delete();
       File dump = new File(file);
       newFile.renameTo(dump);
       
-      //if (newFile.delete()) System.out.println("deleted");
     }
 
     catch (Exception e) {
-      System.out.println("Rating File Error");
+      e.printStackTrace();
     }
 
 
@@ -160,58 +164,86 @@ public class Rating {
       File oldFile1 = new File(file1);
       File newFile1 = new File(tempFile1);
 
-      String movietitle1 = "";
-      String movieType = "";
-      String synopsis = "";
-      String ageRating = "";
-      String starRating1 = "";
-      String duration = "";
-      String movieReleaseDate = "";
-      String movieEndDate = "";
-      String director = "";
-      String sizeofCast = "";
-      String sales = "";
+      // String movietitle1 = "";
+      // String movieType = "";
+      // String synopsis = "";
+      // String ageRating = "";
+      // String starRating1 = "";
+      // String duration = "";
+      // String movieReleaseDate = "";
+      // String movieEndDate = "";
+      // String director = "";
+      // String sizeofCast = "";
+      // String sales = "";
 
-      FileWriter fw1 = new FileWriter(tempFile1, true); // appends to movie.txt
+      FileWriter fw1 = new FileWriter(newFile1, true); // appends to movie.txt
       BufferedWriter bw1 = new BufferedWriter(fw1);
       PrintWriter pw1 = new PrintWriter(bw1);
       Scanner y = new Scanner(new File(file1));
       y.useDelimiter("[,\n]");
 
-      while (y.hasNext()) {
-        movietitle1 = y.next();
-        movieType = y.next();
-        synopsis = y.next();
-        ageRating = y.next();
-        starRating1 = y.next();
-        duration = y.next();
-        movieReleaseDate = y.next();
-        movieEndDate = y.next();
-        director = y.next();
-        sizeofCast = y.next();
-        sales = y.next();
+      String text;
+
+      while (y.hasNextLine()) {
+        // movietitle1 = y.next();
+        // movieType = y.next();
+        // synopsis = y.next();
+        // ageRating = y.next();
+        // starRating1 = y.next();
+        // duration = y.next();
+        // movieReleaseDate = y.next();
+        // movieEndDate = y.next();
+        // director = y.next();
+        // sizeofCast = y.next();
+        // sales = y.next();
+
+
+        text = y.nextLine();
+        String[] elements = text.split(",");
+        String movietitle1 = elements[0];
+        String movieType = elements[1];
+        String movieStatus = elements[2];
+        String synopsis = elements[3];
+        String ageRating = elements[4];
+        String starRating1 = elements[5];
+        String duration = elements[6];
+        String movieReleaseDate = elements[7];
+        String movieEndDate = elements[8];
+        String director = elements[9];
+        String sales = elements[10];
+        String sizeOfCast = elements[11];
+        ArrayList<String> cast = new ArrayList<>();
+        for(int u=12; u<(Integer.valueOf(sizeOfCast)+12); u++){
+            cast.add(elements[u]);
+        }
+        String castStr= String.join(",", cast);
 
         if (movietitle1.toLowerCase().equals(movieName.toLowerCase())) {
-          pw1.print(movieName + "," + movieType + "," + synopsis + "," + ageRating + "," + newRating + "," + duration
-              + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sizeofCast + "," + sales);
+          pw1.print(movieName + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + newRating + "," + duration
+              + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
+          pw1.flush();
         }
 
         else {
-          pw1.print(movietitle1 + "," + movieType + "," + synopsis + "," + ageRating + "," + starRating1 + "," + duration
-              + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sizeofCast + "," + sales);
+          pw1.print(movietitle1 + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating1 + "," + duration
+              + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
+          pw1.flush();
         }
 
       }
+
       y.close();
-      pw1.flush();
       pw1.close();
+      bw1.close();
+      fw1.close();
+
       oldFile1.delete();
       File dump1 = new File(file1);
       newFile1.renameTo(dump1);
     }
 
     catch (Exception e) {
-      System.out.println("Movie File Error");
+      e.printStackTrace();
     }
 
   }

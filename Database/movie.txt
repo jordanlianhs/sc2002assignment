@@ -1,1 +1,13 @@
-Inception,THREE_D,SYNOPSIS,PG13,5,2,2022-10-1,2022-10-30,DIRECTOR,2,500
+Inception,THREE_D,Coming Soon,SYNOPSIS,PG13,3.9,2,2022-10-1,2022-10-30,DIRECTOR,500,3,wilson,wilsonagain,wilsonagainagain
+Salakau1,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,5.0,2.0,2002-09-17,2002-12-20,Sakamoto,498,2,wilson,wilsonagain
+Salakau2,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,4.5,2.0,2002-09-17,2002-12-20,Sakamoto,900,2,wilson,wilsonagain
+Salakau3,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,4.8,2.0,2002-09-17,2002-12-20,Sakamoto,342,2,wilson,wilsonagain
+Future,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,2.4,2.0,2002-09-17,2002-12-20,Sakamoto,588,2,wilson,wilsonagain
+Police,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,1.4,2.0,2002-09-17,2002-12-20,Sakamoto,367,2,wilson,wilsonagain
+Salak,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,1.3,2.0,2002-09-17,2002-12-20,Sakamoto,456,2,wilson,wilsonagain
+Salaka,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,4.3,2.0,2002-09-17,2002-12-20,Sakamoto,577,2,wilson,wilsonagain
+Salakau5,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,3.8,2.0,2002-09-17,2002-12-20,Sakamoto,688,2,wilson,wilsonagain
+Salaka2,THREE_DComing Soon,,Malay vs Chinese,Fucking Bad,4.9,2.0,2002-09-17,2002-12-20,Sakamoto,688,2,wilson,wilsonagain
+Salaka3,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,4.8,2.0,2002-09-17,2002-12-20,Sakamoto,349,2,wilson,wilsonagain
+Salaka4,THREE_D,Coming Soon,Malay vs Chinese,Fucking Bad,3.9,2.0,2002-09-17,2002-12-20,Sakamoto,545,2,wilson,wilsonagain
+Your Mom,THREE_D,Coming Soon,asfd,Fucking Bad,3.5,4.0,2002-09-20,2002-11-13,Wilson,423,2,wilson,wilsonagain
