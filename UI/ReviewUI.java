@@ -21,7 +21,7 @@ public class ReviewUI {
         Review racket = new Review(moviename, email, stars, comment);
         racket.writereview();
 
-        Rating star = new Rating(moviename, stars);
-        star.editAvgRating();
+        //Rating star = new Rating(moviename, stars);
+        //star.editAvgRating();
     }
 }
