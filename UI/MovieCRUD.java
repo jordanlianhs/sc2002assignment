@@ -17,7 +17,7 @@ public class MovieCRUD {
 			System.out.println("(1) Create Movie");
 			System.out.println("(2) Remove Movie");
 			System.out.println("(3) Update Movie");
-			System.out.println("(4) Delete Movies");
+			System.out.println("(4) List Movies");
 			System.out.println("(5) Quit Configure Movie UI");
 			choice = sc.nextInt();
 			sc.nextLine(); // Clear scanner buffer
@@ -53,12 +53,13 @@ public class MovieCRUD {
 
 					dChoice = sc.nextInt();
 					// Delete Entry
-					SM.delMovie(rez[dChoice]);
+					SearchMovie.delMovie(rez[dChoice]);
 					break;
 				case 3:
 
 				case 4:
-
+					SearchMovie.listMovie();
+					break;
 				case 5:
 					return;
 				default:

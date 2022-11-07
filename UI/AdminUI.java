@@ -14,6 +14,7 @@ public class AdminUI {
 	public static void main(String[] args) throws Exception {
 		String id, pass;
 		int choice = 0;
+		int choice2 = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("ADMIN LOGIN PAGE");
 		System.out.println("****************");
@@ -28,28 +29,40 @@ public class AdminUI {
 		if (auth(id, pass)) {
 			do {
 				System.out.println("===Admin System===");
-				System.out.println("(1) Manage Holidays");
-				System.out.println("(2) Movie CRUD");
-				System.out.println("(3) Session CRUD");
-				System.out.println("(4) Configure System Settings");
+				// System.out.println("(1) Manage Holidays");
+				System.out.println("(1) Movie CRUD");
+				System.out.println("(2) Session CRUD");
+				System.out.println("(3) Configure System Settings");
 				System.out.println("(5) Quit Admin Module");
 				choice = sc.nextInt();
 				sc.nextLine();
 				switch (choice) {
 					case 1:
-						HolidayUI.main(null);
+						MovieCRUD.main(null);
 						break;
 					case 2:
-						MovieCRUD.main(null);
+
 						break;
 					case 3:
 
 						break;
 					case 4:
+						System.out.println("Select item to configure: ");
+						System.out.println("(1) Manage Holidays ");
+						System.out.println("(2) Configure Ticket Prices ");
+						choice2 = sc.nextInt();
+						sc.nextLine();
+						if (choice2 == 1) {
+							HolidayUI.main(null);
+						} else if (choice == 2) {
+							// Configure Ticket prices
+						} else {
+							System.out.println("Invalid input!");
+						}
 
 						break;
 					case 5:
-						return; //go back to the MainUI
+						return; // go back to the MainUI
 					default:
 						break;
 				}

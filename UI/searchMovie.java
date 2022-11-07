@@ -31,7 +31,7 @@ public class SearchMovie {
 	 * Lists all movies
 	 */
 
-	public void listMovie() {
+	public static void listMovie() {
 		try {
 			// File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file);
@@ -56,7 +56,7 @@ public class SearchMovie {
 	 * @param n
 	 * @throws Exception
 	 */
-	public void find(String n) throws Exception {
+	public static void find(String n) throws Exception {
 		try {
 			// File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file);
@@ -114,7 +114,7 @@ public class SearchMovie {
 		return searchResults;
 	}
 
-	public void delMovie(String n) {
+	public static void delMovie(String n) {
 		// Note need to add options for deleting
 		try {
 
