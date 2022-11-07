@@ -24,12 +24,15 @@ public class SessionCRUD {
 			switch (choice) {
                 case 1:
 					CreateSession.main(null);
+                    break;
                 case 2:
-				
+                    RemoveSession.main(null);
+                    break;
                 case 3:
 
                 case 4:
                     DisplaySession.main(null);
+                    break;
                 case 5:
 					return;
                 default:

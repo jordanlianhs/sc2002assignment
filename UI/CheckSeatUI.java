@@ -72,7 +72,7 @@ public class CheckSeatUI {
 		int size = temp.size();
 		int count =0;
 		while(count <size){
-			System.out.print(i+1);
+			System.out.print((count+1) + " ");
 			temp.get(count).printSession();
 			count++;
 		}
@@ -166,24 +166,24 @@ public class CheckSeatUI {
 		file3.delete();
 		
 		
-			int size = temp1.size();
-			int count =0;
-			while(count <size){
-				temp1.get(count).writeSession("AMK");
-				count++;
-			}
-			size = temp2.size();
-			count =0;
-			while(count <size){
-				temp2.get(count).writeSession("BBK");
-				count++;
-			}
-			size = temp3.size();
-			count =0;
-			while(count <size){
-				temp1.get(count).writeSession("CCK");
-				count++;
-			}
+		int size = temp1.size();
+		int count =0;
+		while(count <size){
+			temp1.get(count).writeSession("AMK");
+			count++;
+		}
+		size = temp2.size();
+		count =0;
+		while(count <size){
+			temp2.get(count).writeSession("BBK");
+			count++;
+		}
+		size = temp3.size();
+		count =0;
+		while(count <size){
+			temp1.get(count).writeSession("CCK");
+			count++;
+		}
 		
 	}
 
