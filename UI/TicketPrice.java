@@ -3,6 +3,7 @@ package UI;
 import Model.*;
 import java.util.*;
 import java.time.*;
+import java.io.*;
 
 public class TicketPrice {
 
@@ -45,48 +46,61 @@ public class TicketPrice {
      * Calculates ticket prices
      * 
      * @param g
-     * @param M
      * @param S
      * @return
      */
 
-    public double calculateTix(Guest g, Movie M, Session S) { // Still need to include the Cinema Class and Seat
-                                                              // Type
-        // Holiday
+    public double calculateTix(Guest g, Session S, Booking B) throws Exception { // Still need to include the Cinema
+                                                                                 // Class and
         double price = 0;
         boolean stu = g.getStudent(); // Student?
         boolean weekend = S.isWeekend(); // Weekend?
-        MovieType type = M.getType(); // Get the movie Type
+        MovieType type = S.getMovie().getType(); // Get the movie Type
         int age = g.getAge(); // Get the age of the guest
 
-        if (weekend == true || isHoliday(S)) { // If its IS a weekend OR a Holiday
-            if (type == MovieType.THREE_D) {
-                price = 11;
-            } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                price = 15;
-            }
-        } else { // If it is NOT a weekend
-            // Non PH/Weekend
-            if (age > 55) { // Senior Citizen
-                price = 4;
-            } else { // Not a senior
-                if (stu = true) {// Student Price
-                    if (type == MovieType.THREE_D) {
-                        price = 9;
-                    } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                        price = 7;
-                    }
-                } else {
-                    if (type == MovieType.THREE_D) {
-                        price = 11;
-                    } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                        price = 8.5;
+        // Ammending price based on SPECIAL seats
+        String seat = B.getSeatNumber();
+        if ((seat.contains("A") || seat.contains("B") || seat.contains("C")) && type == MovieType.THREE_D) {
+            return price = 17.5;
+        } else if (seat.contains("A") || seat.contains("B") || seat.contains("C") && type == MovieType.THREE_D_BB) {
+            return price = 18.5;
+        } else if ((seat.contains("A") || seat.contains("B") || seat.contains("C")) && type == MovieType.TWO_D) {
+            return price = 15.5;
+        } else if (seat.contains("A") || seat.contains("B") || seat.contains("C") && type == MovieType.TWO_D_BB) {
+            return price = 16.5;
+        } else {
+            // Normal Seat
+            // Prices based on Age
+            if (weekend == true || isHoliday(S)) { // If its IS a weekend OR a Holiday
+                if (type == MovieType.THREE_D) {
+                    price = 11;
+                } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
+                    price = 15;
+                }
+            } else { // If it is NOT a weekend
+                // Non PH/Weekend
+                if (age > 55) { // Senior Citizen
+                    price = 4;
+                } else { // Not a senior
+                    if (stu) {// Student Price
+                        if (type == MovieType.THREE_D) {
+                            price = 9;
+                        } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
+                            price = 7;
+                        }
+                    } else {
+                        if (type == MovieType.THREE_D) {
+                            price = 11;
+                        } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
+                            price = 8.5;
+                        }
                     }
                 }
             }
-        }
-        if (type == MovieType.BLOCKBUSTER) {
-            price++;
+
+            if (type == MovieType.TWO_D_BB || type == MovieType.THREE_D_BB) { // If its a blockbuster
+                price++;
+            }
         }
         return price;
     }

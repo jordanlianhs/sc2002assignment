@@ -7,6 +7,9 @@ import javax.swing.text.StyledEditorKit.BoldAction;
 // import java.util.spi.LocaleServiceProvider;
 import java.text.*;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 // import java.time.format.DateTimeFormatter;
 // import java.time.format.DateTimeParseException;
 import java.time.*;
@@ -14,7 +17,7 @@ import java.time.*;
 public class HolidayUI {
 	static Scanner sc = new Scanner(System.in); // Console
 	static File file = new File("./Database/holiday.txt");
-	static int count = 20; // To track num of elements in list
+	static int count = 0; // To track num of elements in list
 
 	/**
 	 * Driver for Creating/Deleting/Clearing Holidays
@@ -26,6 +29,8 @@ public class HolidayUI {
 		int choice;
 		String del;
 		String holName, date;
+		lineCounter l = new lineCounter();
+		count = l.counter(file);
 		do {
 			System.out.println("===HolidayUI===");
 			System.out.println("(1) Create Holiday");
@@ -140,7 +145,7 @@ public class HolidayUI {
 	 * @param input
 	 * @return
 	 */
-	public static boolean checkDate(String input) throws Exception{
+	public static boolean checkDate(String input) throws Exception {
 		// if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
 		// System.out.println("Date Input: " + input); // Debugging Purposes
 		// return true;
@@ -306,4 +311,20 @@ public class HolidayUI {
 		}
 		return false;
 	}
+
+	// public static int getNumLines(File f) {
+
+	// int numLines = 0;
+	// try {
+	// Scanner s = new Scanner(f);
+	// while (s.hasNextLine()) {
+	// s.nextLine();
+	// numLines++;
+	// }
+	// s.close();
+	// } catch (FileNotFoundException e) {
+	// e.printStackTrace();
+	// }
+	// return numLines;
+	// }
 }
