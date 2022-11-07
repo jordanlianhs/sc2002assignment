@@ -11,9 +11,7 @@ public class MovieCRUD {
 	public static void main(String[] args) throws Exception {
 		int choice;
 		String date;
-		File f = new File("./Database/MovieCollectionNew.txt");
-		lineCounter l = new lineCounter();
-		count = l.counter(f);
+
 		do {
 			System.out.println("===Conifure Movie Listing UI===");
 			System.out.println("(1) Create Movie");
@@ -30,6 +28,9 @@ public class MovieCRUD {
 					break;
 				case 2:
 					// Delete and entry
+					File f = new File("./Database/MovieCollectionNew.txt");
+					lineCounter l = new lineCounter();
+					count = l.counter(f);
 					SearchMovie SM = new SearchMovie();
 					int dChoice;
 					String rez[] = new String[count];
