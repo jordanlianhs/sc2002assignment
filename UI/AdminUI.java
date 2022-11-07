@@ -56,7 +56,7 @@ public class AdminUI {
 							HolidayUI.main(null);
 						} else if (choice == 2) {
 							// Configure Ticket prices
-							
+							TicketPrice.configurePrice(null);
 						} else {
 							System.out.println("Invalid input!");
 						}
