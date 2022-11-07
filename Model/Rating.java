@@ -158,8 +158,8 @@ public class Rating {
   public static void appendMovieTXT(String movieName, String newRating)
   {
     try {
-      // append movie.txt
-      String file1 = "./Database/movie.txt";
+      // append MovieCollectionNew.txt
+      String file1 = "./Database/MovieCollectionNew.txt";
       String tempFile1 = "./Database/temp1.txt";
       File oldFile1 = new File(file1);
       File newFile1 = new File(tempFile1);
