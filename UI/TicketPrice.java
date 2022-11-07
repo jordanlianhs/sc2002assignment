@@ -2,45 +2,13 @@ package UI;
 
 import Model.*;
 import java.util.*;
+
 import java.time.*;
 import java.io.*;
 
 public class TicketPrice {
-
-    /**
-     * Calculate the ticket price based on Customer Type, Day of the week, Pub
-     * Holiday, Movie Type, Seat Type
-     * 
-     * @param args
-     */
-
-    // public static void main(String[] args) {
-    // ArrayList<String> casting = new ArrayList<>(Arrays.asList("wilson",
-    // "wilsonagain"));
-
-    // Guest G = new Guest("Bob", 21, "999", "bob@gmail.com", true); // Student
-    // Guest oldG = new Guest("Greg", 62, "789", "greg@gmail.com", false); // Senior
-
-    // Movie m = new Movie("Story of my Life", MovieType.TWO_D, "SYNOPSIS", "PG13",
-    // 4, 60, LocalDate.of(2022, 9, 17),
-    // LocalDate.of(2022, 10, 17), "WILSON",
-    // 100, casting);
-    // Movie m1 = new Movie("Story of my Life", MovieType.THREE_D, "SYNOPSIS",
-    // "PG13", 4, 60,
-    // LocalDate.of(2022, 9, 17),
-    // LocalDate.of(2022, 10, 17), "WILSON",
-    // 100, casting);
-
-    // Session S = new Session(m, LocalDateTime.of(2022, 01, 1, 23, 00));
-    // Session S1 = new Session(m1, LocalDateTime.of(2022, 10, 3, 23, 00));
-
-    // System.out.println("Price of ticket = " + calculateTix(G, m, S));
-    // System.out.println("Price of Senior Ticket: " + calculateTix(oldG, m1, S1));
-
-    // // System.out.println(isHoliday(S)); //Debugging stuff
-    // // System.out.println(isHoliday(S1));
-
-    // }
+    static File f = new File("./Database/TicketPrice.txt");
+    static double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, surcharge;
 
     /**
      * Calculates ticket prices
@@ -49,9 +17,289 @@ public class TicketPrice {
      * @param S
      * @return
      */
+    // public static void main(String[] args) throws Exception {
+    // TicketPrice tp = new TicketPrice();
+    // tp.configurePrice();
+    // }
 
-    public double calculateTix(Guest g, Session S, Booking B) throws Exception { // Still need to include the Cinema
-                                                                                 // Class and
+    public void configurePrice() throws Exception {
+        // Initialise all the variables to their original values
+        try {
+            Scanner sc = new Scanner(f);
+            sc.useDelimiter(",");
+            while (sc.hasNext()) {
+                // System.out.println(sc.next());
+                SP2D = Double.parseDouble(sc.next());
+                SP2DB = Double.parseDouble(sc.next());
+                SP3D = Double.parseDouble(sc.next());
+                SP3DB = Double.parseDouble(sc.next());
+                senior = Double.parseDouble(sc.next());
+                STU2D = Double.parseDouble(sc.next());
+                STU3D = Double.parseDouble(sc.next());
+                N2D = Double.parseDouble(sc.next());
+                N3D = Double.parseDouble(sc.next());
+                PH2D = Double.parseDouble(sc.next());
+                PH3D = Double.parseDouble(sc.next());
+                surcharge = Double.parseDouble(sc.next());
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // Scanning for user input
+        Scanner s = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("What would you like to configure? Select an option");
+            System.out.println("(1) Special Seat 2D \t| (2) Special Seat 2D BlockBuster");
+            System.out.println("(3) Special Seat 3D \t| (4) Special Seat 3D BlockBuster");
+            System.out.println("(5) Senior Citizen \t| (6) Student 2D");
+            System.out.println("(7) Student 3D \t\t| (8) Normal 2D");
+            System.out.println("(9) Normal 3D \t\t| (10) Holiday 2D");
+            System.out.println("(11) Holiday 3D \t| (12) BlockBuster Surcharge");
+            System.out.println("(13) List Prices \t| (14) Quit");
+            choice = s.nextInt();
+            s.nextLine();
+            switch (choice) {
+                case 1:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        SP2D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 2:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        SP2DB = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 3:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        SP3D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 4:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        SP3DB = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 5:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        senior = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 6:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        STU2D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 7:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        STU3D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 8:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        N2D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 9:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        N3D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 10:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        PH2D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 11:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        PH3D = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 12:
+                    try {
+                        FileWriter fw = new FileWriter(f, false);
+                        System.out.println("Enter new value: ");
+                        surcharge = s.nextDouble();
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + surcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
+                    break;
+                case 13:
+                    System.out.println("Special Seat 2D: " + SP2D);
+                    System.out.println("Special Seat 2D Blockbuster: " + SP2DB);
+                    System.out.println("Special Seat 3D: " + SP3D);
+                    System.out.println("Special Seat 3D Blockbuster: " + SP3DB);
+                    System.out.println("Senior: " + senior);
+                    System.out.println("Student 2D: " + STU2D);
+                    System.out.println("Student 3D: " + STU3D);
+                    System.out.println("Normal 2D: " + N2D);
+                    System.out.println("Normal 3D: " + N3D);
+                    System.out.println("Holiday 2D: " + PH2D);
+                    System.out.println("Holiday 3D: " + PH3D);
+                    System.out.println("Blockbuster Surcharge: " + surcharge);
+                    break;
+                case 14:
+                    s.close();
+                    return;
+                default:
+                    break;
+            }
+        } while (choice != 14);
+    }
+
+    public double calculateTix(Guest g, Session S, Booking B) throws Exception {
+        try {
+            Scanner sc = new Scanner(f);
+            sc.useDelimiter(",");
+            while (sc.hasNext()) {
+                // System.out.println(sc.next());
+                SP2D = Double.parseDouble(sc.next());
+                SP2DB = Double.parseDouble(sc.next());
+                SP3D = Double.parseDouble(sc.next());
+                SP3DB = Double.parseDouble(sc.next());
+                senior = Double.parseDouble(sc.next());
+                STU2D = Double.parseDouble(sc.next());
+                STU3D = Double.parseDouble(sc.next());
+                N2D = Double.parseDouble(sc.next());
+                N3D = Double.parseDouble(sc.next());
+                PH2D = Double.parseDouble(sc.next());
+                PH3D = Double.parseDouble(sc.next());
+                surcharge = Double.parseDouble(sc.next());
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         double price = 0;
         boolean stu = g.getStudent(); // Student?
         boolean weekend = S.isWeekend(); // Weekend?
@@ -61,45 +309,45 @@ public class TicketPrice {
         // Ammending price based on SPECIAL seats
         String seat = B.getSeatNumber();
         if ((seat.contains("A") || seat.contains("B") || seat.contains("C")) && type == MovieType.THREE_D) {
-            return price = 17.5;
+            return price = SP3D;
         } else if (seat.contains("A") || seat.contains("B") || seat.contains("C") && type == MovieType.THREE_D_BB) {
-            return price = 18.5;
+            return price = SP3DB;
         } else if ((seat.contains("A") || seat.contains("B") || seat.contains("C")) && type == MovieType.TWO_D) {
-            return price = 15.5;
+            return price = SP2D;
         } else if (seat.contains("A") || seat.contains("B") || seat.contains("C") && type == MovieType.TWO_D_BB) {
-            return price = 16.5;
+            return price = SP2DB;
         } else {
             // Normal Seat
             // Prices based on Age
             if (weekend == true || isHoliday(S)) { // If its IS a weekend OR a Holiday
                 if (type == MovieType.THREE_D) {
-                    price = 11;
+                    price = PH3D;
                 } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                    price = 15;
+                    price = PH2D;
                 }
             } else { // If it is NOT a weekend
                 // Non PH/Weekend
                 if (age > 55) { // Senior Citizen
-                    price = 4;
+                    price = senior;
                 } else { // Not a senior
                     if (stu) {// Student Price
                         if (type == MovieType.THREE_D) {
-                            price = 9;
+                            price = STU3D;
                         } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                            price = 7;
+                            price = STU2D;
                         }
                     } else {
                         if (type == MovieType.THREE_D) {
-                            price = 11;
+                            price = N3D;
                         } else if (type == MovieType.TWO_D) { // Using 2D as normal/Digital Movies
-                            price = 8.5;
+                            price = N2D;
                         }
                     }
                 }
             }
 
             if (type == MovieType.TWO_D_BB || type == MovieType.THREE_D_BB) { // If its a blockbuster
-                price++;
+                price += surcharge;
             }
         }
         return price;

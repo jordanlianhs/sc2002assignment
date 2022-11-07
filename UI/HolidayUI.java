@@ -52,7 +52,6 @@ public class HolidayUI {
 					// Validate if its a valid date
 					if (checkDate(date)) {
 						// If it is, write to file holiday.txt
-
 						FR.write(holName + "," + date + System.lineSeparator());
 						System.out.println("Date added!");
 						FR.close();
