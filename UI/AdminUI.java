@@ -43,7 +43,7 @@ public class AdminUI {
 						MovieCRUD.main(null);
 						break;
 					case 3:
-
+						SessionCRUD.main(null);
 						break;
 					case 4:
 

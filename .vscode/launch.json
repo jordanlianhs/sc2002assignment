@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CreateSession",
+            "request": "launch",
+            "mainClass": "UI.CreateSession",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
             "name": "Launch CreateMovie",
             "request": "launch",
             "mainClass": "UI.CreateMovie",
