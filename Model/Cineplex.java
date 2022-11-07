@@ -28,13 +28,17 @@ public class Cineplex{
         this.cineplexCode = cineplexCode;
         this.sessionList = new ArrayList<>();
         String fileName = "DataBase/SessionRecord" + cineplexCode + ".txt";
+        File Document = new File(fileName);
+        //String fileName = "DataBase/SessionRecordAMK.txt";
 
-        Scanner sc = new Scanner(fileName);
+        Scanner sc = new Scanner(Document);
         int i=0;
         while(sc.hasNextLine()){
             sc.nextLine();
+            //System.out.println(txt);
             i++;
         }
+        
         for(int j =0; j<i; j++){
             this.sessionList.add(new Session());
             this.sessionList.get(j).read(cineplexCode, j);
