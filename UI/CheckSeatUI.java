@@ -86,14 +86,16 @@ public class CheckSeatUI {
 		char seatR = s.next().charAt(0);
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
-		temp.get(number-1).getSeatPlan().assign(seatR, seatC);
-		//skip sales part first
-		//String movieNameToPay = temp.get(number-1).getMovie().getmovieName();
+		temp.get(number-1).getSeatPlan().assign(seatR, seatC);	
 
 		
 
 		Booking book = new Booking(user, temp.get(number-1), "B3", temp.get(number-1).getCinemaCode());
 		book.writebookingstatement();
+		//increment sales in movie.txt
+		changeMovieSales(temp.get(number-1).getMovie().getmovieName());
+
+
 		TicketPrice calculator = new TicketPrice();
 		double ticketPrice = calculator.calculateTix(user, temp.get(number-1), book);
 		System.out.println("Ticket Price = $" + ticketPrice);
@@ -184,5 +186,78 @@ public class CheckSeatUI {
 			}
 		
 	}
+
+	public static void changeMovieSales(String movieName)
+  {
+    try {
+      // append movie.txt
+      String file1 = "./Database/MovieCollectionNew.txt";
+      String tempFile1 = "./Database/temp1.txt";
+      File oldFile1 = new File(file1);
+      File newFile1 = new File(tempFile1);
+
+      FileWriter fw1 = new FileWriter(newFile1, true); // appends to movie.txt
+      BufferedWriter bw1 = new BufferedWriter(fw1);
+      PrintWriter pw1 = new PrintWriter(bw1);
+      Scanner y = new Scanner(new File(file1));
+      y.useDelimiter("[,\n]");
+
+      String text;
+
+      while (y.hasNextLine()) {
+        
+        text = y.nextLine();
+        String[] elements = text.split(",");
+        String movietitle1 = elements[0];
+        String movieType = elements[1];
+        String movieStatus = elements[2];
+        String synopsis = elements[3];
+        String ageRating = elements[4];
+        String starRating = elements[5];
+        String duration = elements[6];
+        String movieReleaseDate = elements[7];
+        String movieEndDate = elements[8];
+        String director = elements[9];
+        String salesOld = elements[10];
+        String sizeOfCast = elements[11];
+        ArrayList<String> cast = new ArrayList<>();
+        for(int u=12; u<(Integer.valueOf(sizeOfCast)+12); u++){
+            cast.add(elements[u]);
+        }
+        String castStr= String.join(",", cast);
+		int salesInt = Integer.valueOf(salesOld);        
+		salesInt = salesInt + 1;       
+		String salesNew = String.valueOf(salesInt);
+        
+
+        if (movietitle1.toLowerCase().equals(movieName.toLowerCase())) {
+          pw1.print(movieName + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
+              + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + salesNew + "," + sizeOfCast + "," + castStr + "\n");
+          pw1.flush();
+        }
+
+        else {
+          pw1.print(movietitle1 + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
+              + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + salesOld + "," + sizeOfCast + "," + castStr + "\n");
+          pw1.flush();
+        }
+
+      }
+
+      y.close();
+      pw1.close();
+      bw1.close();
+      fw1.close();
+
+      oldFile1.delete();
+      File dump1 = new File(file1);
+      newFile1.renameTo(dump1);
+    }
+
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+
+  }
 
 }
