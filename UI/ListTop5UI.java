@@ -10,7 +10,7 @@ public class ListTop5UI {
     static ArrayList<Movie> movieList;
     
 
-    public static void main() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
         //scan movieList from movie.txt
@@ -112,6 +112,7 @@ public class ListTop5UI {
         }
         System.out.println();
     }
+    
     static class SortRatings implements Comparator<Movie>{
         public int compare(Movie a, Movie b){
             //compares in reverse since collections sort in ascending and we want descending order

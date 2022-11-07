@@ -13,15 +13,14 @@ public class ReviewUI {
         String email = s.nextLine();
 
         System.out.println("Number of stars for the movie");
-        double stars = s.nextDouble();
-        
-        String test = s.nextLine();
+        String temp = s.nextLine();
+        double stars = Double.valueOf(temp);
 
         System.out.println("Enter your comments");
         String comment = s.nextLine();
 
-        Review racket = new Review(moviename, email, stars, comment);
-        racket.writereview();
+        Review review = new Review(moviename, email, stars, comment);
+        review.writereview();
 
         Rating star = new Rating(moviename, stars);
         star.editAvgRating();

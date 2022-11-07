@@ -58,11 +58,10 @@ public class UserUI {
                     CheckSeatUI.main (null,user);
                 }else if(choice == 4) {
                     CheckBookingUI.main(null);
-                    ;
                 }else if(choice == 5) {
-                    ListTop5UI.main();
+                    ListTop5UI.main(null);
                 }else if(choice == 6) {
-                    ;
+                    ReviewUI.main(null);
                 }else if(choice == 7){
                     MainUI.main(null);
                 }else if(choice == 8) {
