@@ -53,6 +53,13 @@ public class Session {
 		this.seatPlan = seatPlan;
 	}
 
+	public String getCinemaCode(){
+		return cinemaCode;
+	}
+
+	public void setCinemaCode(String cinemaCode){
+		this.cinemaCode = cinemaCode;
+	}
 	
 	//get start time of movie sesh
 	public LocalTime getStartTime() {

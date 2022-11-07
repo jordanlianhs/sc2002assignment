@@ -88,7 +88,7 @@ public class CheckSeatUI {
 		int seatC = s.nextInt();
 		temp.get(number-1).getSeatPlan().assign(seatR, seatC);
 		// nid write back to SessionRecord?
-		Booking book = new Booking(user, temp.get(number-1), "B3", "KKB");
+		Booking book = new Booking(user, temp.get(number-1), "B3", temp.get(number-1).getCinemaCode());
 		book.writebookingstatement();
 
 	}

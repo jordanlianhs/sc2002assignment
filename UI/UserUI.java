@@ -57,6 +57,7 @@ public class UserUI {
                 }else if(choice == 3) {
                     CheckSeatUI.main (null,user,A,B,C);
                 }else if(choice == 4) {
+                    CheckBookingUI.main(null);
                     ;
                 }else if(choice == 5) {
                     ListTop5UI.main();
