@@ -164,18 +164,6 @@ public class Rating {
       File oldFile1 = new File(file1);
       File newFile1 = new File(tempFile1);
 
-      // String movietitle1 = "";
-      // String movieType = "";
-      // String synopsis = "";
-      // String ageRating = "";
-      // String starRating1 = "";
-      // String duration = "";
-      // String movieReleaseDate = "";
-      // String movieEndDate = "";
-      // String director = "";
-      // String sizeofCast = "";
-      // String sales = "";
-
       FileWriter fw1 = new FileWriter(newFile1, true); // appends to movie.txt
       BufferedWriter bw1 = new BufferedWriter(fw1);
       PrintWriter pw1 = new PrintWriter(bw1);
@@ -185,19 +173,6 @@ public class Rating {
       String text;
 
       while (y.hasNextLine()) {
-        // movietitle1 = y.next();
-        // movieType = y.next();
-        // synopsis = y.next();
-        // ageRating = y.next();
-        // starRating1 = y.next();
-        // duration = y.next();
-        // movieReleaseDate = y.next();
-        // movieEndDate = y.next();
-        // director = y.next();
-        // sizeofCast = y.next();
-        // sales = y.next();
-
-
         text = y.nextLine();
         String[] elements = text.split(",");
         String movietitle1 = elements[0];
@@ -216,7 +191,7 @@ public class Rating {
         for(int u=12; u<(Integer.valueOf(sizeOfCast)+12); u++){
             cast.add(elements[u]);
         }
-        String castStr= String.join(",", cast);
+        String castStr = String.join(",", cast);
 
         if (movietitle1.toLowerCase().equals(movieName.toLowerCase())) {
           pw1.print(movieName + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + newRating + "," + duration
