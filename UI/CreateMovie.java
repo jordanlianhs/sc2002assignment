@@ -28,7 +28,7 @@ public class CreateMovie {
         System.out.println("-----------------------------------");
 		System.out.println("Create Movie");
 		System.out.println("-----------------------------------");
-		
+
 		System.out.print("Movie Name: ");
         movieName = sc.nextLine();
 
@@ -39,8 +39,8 @@ public class CreateMovie {
         System.out.println("3: 2D Blockbuster");
         System.out.println("4: 3D Blockbuster");
 		System.out.println("Enter your option:");
-
-        switch(sc.nextInt()){
+        temp = sc.nextLine();
+        switch(Integer.valueOf(temp)){
             case 1:
                 movieType = MovieType.TWO_D;
                 break;
@@ -59,14 +59,14 @@ public class CreateMovie {
         }
 
         System.out.println();
-        System.out.println();
 		System.out.println("Movie Status: ");
 		System.out.println("1: Coming soon!");
 		System.out.println("2: Preview");
 		System.out.println("3: Now showing");
 		System.out.println("4: End of showing");
         System.out.println("Enter your option:");
-        switch(sc.nextInt()){
+        temp = sc.nextLine();
+        switch(Integer.valueOf(temp)){
             case 1:
                 movieStatus = MovieStatus.COMINGSOON;
                 break;
@@ -87,7 +87,6 @@ public class CreateMovie {
         System.out.println();
 		System.out.print("Movie Synopsis: ");
 		synopsis = sc.nextLine();
-        sc.nextLine();
 
         System.out.println();
 		System.out.print("Movie Age Rating: ");
@@ -95,12 +94,13 @@ public class CreateMovie {
 
         System.out.println();
 		System.out.print("Movie Star Rating: ");
-		starRating = sc.nextFloat();
+        temp = sc.nextLine();
+		starRating = Float.valueOf(temp);
 
         System.out.println();
 		System.out.print("Movie Duration: ");
-		duration = sc.nextDouble();
-        sc.nextLine();
+		temp = sc.nextLine();
+		duration = Double.valueOf(temp);
 
         System.out.print("Release Date of the Movie (yyyy-MM-dd): ");
         temp = sc.nextLine();
@@ -128,8 +128,8 @@ public class CreateMovie {
 
         System.out.println();
 		System.out.print("Sales: ");
-		sales = sc.nextInt();
-        sc.nextLine();
+		temp = sc.nextLine();
+        sales = Integer.valueOf(temp);
 
         System.out.println();
 		System.out.println("Movie Cast (Separate cast by commas): ");
@@ -145,7 +145,6 @@ public class CreateMovie {
         System.out.println("Movie Created Successfully!!!");
         System.out.println();
     }
-
 
     /**
 	 * Check for Valid Date
