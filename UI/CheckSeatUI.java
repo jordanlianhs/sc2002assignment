@@ -86,7 +86,7 @@ public class CheckSeatUI {
 		char seatR = s.next().charAt(0);
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
-		sessiono.getSeatPlan().assign(seatR, seatC);
+		temp.get(number-1).getSeatPlan().assign(seatR, seatC);
 		// nid write back to SessionRecord?
 		Booking book = new Booking(user, temp.get(number-1), "B3", "KKB");
 		book.writebookingstatement();
