@@ -26,3 +26,9 @@ you,889,CinemaCode202211072309,null,B3,CinemaCode
 ito,99,CinemaCode202211072317,null,B3,CinemaCode
 uiu,9990,CinemaCode202211072327,Salakau1,B3,CinemaCode
 uil,688,CinemaCode202211072350,Salakau1,B3,CinemaCode
+asmdk,312,CinemaCode202211080124,Salakau1,B3,CinemaCode
+sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
+sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
+sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
+sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
+msad,4133,CinemaCode202211080143,Salakau1,B3,CinemaCode

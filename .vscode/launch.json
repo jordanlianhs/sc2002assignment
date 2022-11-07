@@ -6,10 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch TicketPrice",
+            "name": "Launch DisplaySession",
             "request": "launch",
-            "mainClass": "UI.TicketPrice",
-            "projectName": "sc2002assignment_ef99fc60"
+            "mainClass": "UI.DisplaySession",
+            "projectName": "sc2002assignment_3ed0f619"
         },
         {
             "type": "java",
