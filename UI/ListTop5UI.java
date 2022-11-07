@@ -8,12 +8,14 @@ import java.io.*;
 public class ListTop5UI {
     
     static ArrayList<Movie> movieList;
+    static int setting = 1;
     
+    public static void setSetting(int newSetting){
+        setting = newSetting;
+    }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        //scan movieList from movie.txt
+    public static void init(){
+        //scan movieList from movie database
         movieList = new ArrayList<Movie>();
         String filename = "./Database/MovieCollectionNew.txt";
         File file = new File(filename);
@@ -41,31 +43,78 @@ public class ListTop5UI {
             }
         } catch (Exception e){
             System.out.println("Error: " + e.getMessage());
-        }       
+        } 
+    }
+
+    public static void main() {
+        Scanner sc = new Scanner(System.in);    
+              
         
 
         int choice = 0;
-        do{
-        System.out.println("1: List top 5 movies by ticket sales");
-        System.out.println("2: List top 5 movies by overall ratings");
-        System.out.println("3: Go back");
-        System.out.println("Please enter your choice:");
-
+        if(setting == 1){
+            do{
+                System.out.println("1: List top 5 movies by ticket sales");
+                System.out.println("2: List top 5 movies by overall ratings");
+                System.out.println("3: Go back");
+                System.out.println("Please enter your choice:");
         
-        choice = sc.nextInt();
-            switch(choice){
-                case 1:
-                    //list by sales
-                    listTop5Sales();
-                    break;
-                case 2:
-                    //list by ratings
-                    listTop5Ratings();
-                    break;
+                
+                choice = sc.nextInt();
+                    switch(choice){
+                        case 1:
+                            //list by sales
+                            listTop5Sales();
+                            break;
+                        case 2:
+                            //list by ratings
+                            listTop5Ratings();
+                            break;
+                    }
+        
+                } while (choice != 3);
             }
-
-        } while (choice != 3);
-    }
+            else if(setting == 2){
+                do{
+                    System.out.println("1: List top 5 movies by ticket sales");                
+                    System.out.println("2: Go back");
+                    System.out.println("Please enter your choice:");
+            
+                    
+                    choice = sc.nextInt();
+                        switch(choice){
+                            case 1:
+                                //list by sales
+                                listTop5Sales();
+                                break;
+                            
+                        }
+            
+                    } while (choice != 2);
+                }
+            else{
+                do{
+                    System.out.println("1: List top 5 movies by overall ratings");                
+                    System.out.println("2: Go back");
+                    System.out.println("Please enter your choice:");
+            
+                    
+                    choice = sc.nextInt();
+                        switch(choice){
+                            case 1:
+                                //list by sales
+                                listTop5Ratings();
+                                break;
+                            
+                        }
+            
+                    } while (choice != 2);
+                }
+            }
+        
+        
+        
+        
     
     public static void listTop5Sales(){        
         
