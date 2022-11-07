@@ -12,9 +12,6 @@ public class MainUI {
      */
 
     public static void main(String[] args) throws Exception {
-        Cineplex A = new Cineplex("angmokio", "ABC");
-        Cineplex B = new Cineplex("bishan", "BBC");
-        Cineplex C = new Cineplex("choachukang", "CCB");
 
         boolean exit = false;
         while (!exit) {
@@ -34,7 +31,7 @@ public class MainUI {
                     AdminUI.main(null);
                     break;
                 case 2:
-                    UserUI.main(null,A,B,C);
+                    UserUI.main(null);
                     break;
                 case 3:
                     exit = true;

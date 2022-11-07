@@ -9,7 +9,7 @@ public class UserUI {
 	 * @param args for the main function
 	 * @throws Exception to throw the exception
 	 */
-	public static void main(String[] args, Cineplex A, Cineplex B, Cineplex C) throws Exception {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		
 		/**
@@ -55,7 +55,7 @@ public class UserUI {
                 }else if (choice == 2) {
                     MovieDetails.main(null);
                 }else if(choice == 3) {
-                    CheckSeatUI.main (null,user,A,B,C);
+                    CheckSeatUI.main (null,user);
                 }else if(choice == 4) {
                     CheckBookingUI.main(null);
                     ;

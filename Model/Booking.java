@@ -20,6 +20,10 @@ public class Booking {
 
     //private int price;
 
+    public String getSeatNumber(){
+        return this.seatNumber;
+    }
+
     public Booking(Guest guest, Session session, String seatNumber, String cinemaCode){
         this.guest = guest;
         this.movie = session.getMovie();
@@ -30,7 +34,7 @@ public class Booking {
         String timestamp = new SimpleDateFormat("YYYYMMddHHmm").format(new Date());
         
         this.ticketID = cinemaCode + timestamp;
-        System.out.println(ticketID);
+        //System.out.println(ticketID);
         //price hardcoded
         //this.price = 10;
     }

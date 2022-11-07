@@ -18,3 +18,11 @@ lol,777,KKB202211062341,Salakau,B3,KKB
 dk,7554,KKB202211070135,Salakau,B3,KKB
 iii,123,KKB202211071845,null,B3,KKB
 JJJ@gmail.com,999,CinemaCode202211072051,null,B3,CinemaCode
+wen@gmail.com,8888,CinemaCode202211072148,null,B3,CinemaCode
+Wilsonlim@com,999,CinemaCode202211072158,Salakau,A2,CinemaCode
+Wilsonlim@com,999,CinemaCode202211072200,Salakau,A2,CinemaCode
+lol,77,CinemaCode202211072301,null,B3,CinemaCode
+you,889,CinemaCode202211072309,null,B3,CinemaCode
+ito,99,CinemaCode202211072317,null,B3,CinemaCode
+uiu,9990,CinemaCode202211072327,Salakau1,B3,CinemaCode
+uil,688,CinemaCode202211072350,Salakau1,B3,CinemaCode

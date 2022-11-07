@@ -76,7 +76,7 @@ public class Session {
     }
 
 	public void printSession(){
-		System.out.println("Timing: " + seshDateTime + "Movie Name: " + movie + "CinemaCode: " + cinemaCode);
+		System.out.println("Timing: " + seshDateTime + "Movie Name: " + movie.getmovieName() + "CinemaCode: " + cinemaCode);
 	}
 
 	public void writeSession(String cineplexNumber) throws IOException{
@@ -84,14 +84,14 @@ public class Session {
 			//String fileName= "Database/SessionRecord" + CineplexNumber +".txt";
             //File file = new File(fileName);
 			File file;
-			if(cineplexNumber.equals("ABC")){
-				file = new File("Database/SessionRecordABC.txt");
+			if(cineplexNumber.equals("AMK")){
+				file = new File("Database/SessionRecordAMK.txt");
 			}
-			else if(cineplexNumber.equals("BBC")){
-				file = new File("Database/SessionRecordBBC.txt");
+			else if(cineplexNumber.equals("BBK")){
+				file = new File("Database/SessionRecordBBK.txt");
 			}
 			else{
-				file = new File("Database/SessionRecordCCB.txt");
+				file = new File("Database/SessionRecordCCK.txt");
 			}
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
@@ -124,7 +124,7 @@ public class Session {
         catch(IOException e){
             e.printStackTrace();
         }
-		movie.writeMovie();
+		//movie.writeMovie();
 	}
 
 	public void read(String CineplexNumber, int octo) throws IOException {
