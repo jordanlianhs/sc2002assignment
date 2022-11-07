@@ -5,8 +5,6 @@ import java.io.*;
 
 public class SearchMovie {
 	static File file = new File("./Database/MovieCollectionNew.txt"); // Edit this if you wana to change directory
-	static lineCounter l = new lineCounter();
-	static int count = l.counter(file); // Count is the total num of elements in file
 
 	/**
 	 * The main function for this view, searches the movie the user wants
@@ -86,6 +84,8 @@ public class SearchMovie {
 
 	public static String[] getSearchedMovie(String n) {
 		// Stores in index i of an array
+		lineCounter l = new lineCounter();
+		int count = l.counter(file); // Count is the total num of elements in file
 		String[] searchResults = new String[count];
 		int i = 0;
 		try {
