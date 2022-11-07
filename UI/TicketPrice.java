@@ -11,16 +11,12 @@ public class TicketPrice {
     static double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, surcharge;
 
     /**
-     * Calculates ticket prices
+     * Edits Ticket Prices
      * 
      * @param g
      * @param S
      * @return
      */
-    // public static void main(String[] args) throws Exception {
-    // TicketPrice tp = new TicketPrice();
-    // tp.configurePrice();
-    // }
 
     public void configurePrice() throws Exception {
         // Initialise all the variables to their original values
@@ -277,6 +273,14 @@ public class TicketPrice {
         } while (choice != 14);
     }
 
+    /**
+     * Caculates Ticket Prices
+     * 
+     * @param g
+     * @param S
+     * @param B
+     * @return
+     */
     public double calculateTix(Guest g, Session S, Booking B) throws Exception {
         try {
             Scanner sc = new Scanner(f);
