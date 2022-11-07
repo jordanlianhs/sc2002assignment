@@ -1,3 +1,0 @@
-Salakau,THREE_D,COMINGSOON,Malay vs Chinese,PG 13,3.5,3.3,2002-09-17,2002-12-20,Sakamotowilson,100, wilsonagain
-Movie 2,THREE_D,COMINGSOON,Malay vs Chinese,PG 13,2.9,3.3,2002-09-17,2002-12-20,Sakamotowilson,10000, wilsonagain
-Salakau3,THREE_D,COMINGSOON,Malay vs Chinese,PG 13,3.6,3.3,2002-09-17,2002-12-20,Sakamotowilson,10, wilsonagain
