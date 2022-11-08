@@ -69,6 +69,9 @@ public class Movie {
      */
     //private ArrayList<Review> reviews; 
 
+    /**
+     * This is the number of tickets sold 
+     */
     private int sales;
 
 

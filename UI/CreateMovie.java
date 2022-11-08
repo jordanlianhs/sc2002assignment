@@ -136,7 +136,6 @@ public class CreateMovie {
 		temp = sc.nextLine();
 		String[] tempArr = temp.split("\\s*,\\s*");
         for(String s:tempArr){
-            System.out.println(s);
             cast.add(s);
         }
 

@@ -37,7 +37,7 @@ public class SearchMovie {
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
-			System.out.println("List of Movies: ");
+			System.out.println("\nList of Movies: ");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				System.out.println(st);
@@ -150,6 +150,7 @@ public class SearchMovie {
 			// Rename the new file to the filename the original file had.
 			if (!tempFile.renameTo(inputFile))
 				System.out.println("Could not rename file");
+			
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		} catch (IOException ex) {

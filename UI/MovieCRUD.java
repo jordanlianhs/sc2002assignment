@@ -89,12 +89,19 @@ public class MovieCRUD {
 					System.out.println("Which movie's details would you like to edit?");
 					String choosedmovie = sc.nextLine();		
 					
+					boolean flag = false;
 					int movieIndex;
 					for(movieIndex =0;movieIndex<movieArray.size(); movieIndex++){
-						if(movieArray.get(movieIndex).getmovieName().toLowerCase().equals(choosedmovie.toLowerCase())){
+						if(flag = movieArray.get(movieIndex).getmovieName().toLowerCase().equals(choosedmovie.toLowerCase())){
 							break;
 						}
 					}
+					if (flag== false){
+						System.out.println("\nWrong input, movie name does not exist\n");
+						break;
+					}
+
+					System.out.println(movieIndex);
 					
 					
 
@@ -195,9 +202,7 @@ public class MovieCRUD {
 					bw1.close();
 					fw1.close();
 			  
-									
-				
-				break;
+					break;
 
 				case 4:
 					SearchMovie.listMovie();
