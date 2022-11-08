@@ -222,7 +222,7 @@ public class Movie {
             String shit = movieName + "," + movieType.toString() + "," + movieStatus.toString() + "," + synopsis + "," + ageRating + "," + String.valueOf(starRating)
             + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
             + "," + director + "," + String.valueOf(sales) + "," + this.getCast().size()  + "," + cast; 
-            pr.println(shit+",");
+            pr.println(shit);
             pr.close();
             br.close();
             fr.close();

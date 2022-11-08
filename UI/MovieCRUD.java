@@ -95,7 +95,7 @@ public class MovieCRUD {
 							break;
 						}
 					}
-					System.out.println(movieIndex);
+					
 					
 
 					// Scan for update choice
