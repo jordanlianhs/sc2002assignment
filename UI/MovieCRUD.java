@@ -110,10 +110,7 @@ public class MovieCRUD {
 
 					int choosed = sc.nextInt();
 					
-
-					String useless = sc.nextLine();
 					String updateChoice;
-
 					//date formatter for release and end dates
 					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
