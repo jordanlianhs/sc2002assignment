@@ -59,9 +59,20 @@ public class UpdateSession {
         }
 
         else if(i==2){
-            System.out.print("Enter New Movie Name: ");
-            //print list of available movie Nmae
-            lol = sc.next();
+            System.out.println("List of Available Movies: ");
+            for(int j=0; j<temp.size(); j++){
+                System.out.println(temp.get(j).getMovie().getmovieName());
+            }
+            int c = 0;
+            do{
+                System.out.println("Enter New Movie Name: ");
+                lol = sc.next();
+                movie.readMovie(lol);
+                if(movie.getmovieName()!=null){
+                    c=1;
+                }
+            }while(c==0);
+            
             movie.readMovie(lol);
             temp.get(number-1).setMovie(movie);
         }

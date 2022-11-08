@@ -21,15 +21,17 @@ public class CheckBookingUI {
                 text = scanfile.nextLine();
                 String[] elements = text.split(",");
                 String eName = elements[0];
-				String ticketID = elements[1];
+                String phone = elements[1];
 				String price = elements[2];
-				String movieName = elements[3];
-				String seatNumber = elements[4];
-                String cinemaCode = elements[5];
+				String ticketID = elements[3];
+				String movieName = elements[4];
+				String seatNumber = elements[5];
+                String cinemaCode = elements[6];
                 //ystem.out.println("hey");
                 if(eName.equals(emailName)){
                     k=1;
-                    System.out.println(" TicketID: " + ticketID + " Price: " + price + " Movie: " + movieName + " Seat: " + seatNumber + "CinemaCode: " + cinemaCode);
+                    System.out.println(" TicketID: " + ticketID+ " Movie: " + movieName  + " Price: " + price 
+                    + " CinemaCode: " + cinemaCode + " Seat: " + seatNumber  + " Phone: " + phone);
                 }
             }
             if(k==0){

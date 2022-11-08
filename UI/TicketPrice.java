@@ -264,7 +264,6 @@ public class TicketPrice {
                     System.out.println("Blockbuster Surcharge: " + surcharge);
                     break;
                 case 14:
-                    s.close();
                     return;
                 default:
                     break;
@@ -367,4 +366,6 @@ public class TicketPrice {
         } else
             return false;
     }
+
+
 }
