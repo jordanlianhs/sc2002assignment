@@ -23,7 +23,7 @@ public class MovieDetails {
 
     public void details(String input) throws Exception{
         try{
-            File file = new File("./Database/MovieCollection.txt");
+            File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
 
             while(sc.hasNext()){

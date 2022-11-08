@@ -66,6 +66,7 @@ public class UserUI {
                 }else if(choice == 7){
                     MainUI.main(null);
                 }else if(choice == 8) {
+                    String anything = sc.nextLine();
                     System.out.println("Thanks for using MOBLIMA!");
                     System.exit(0);
                 }
