@@ -52,9 +52,9 @@ public class AdminUI {
 						sc.nextLine();
 						if (choice2 == 1) {
 							HolidayUI.main(null);
-						} else if (choice == 2) {
+						} else if (choice2 == 2) {
 							// Configure Ticket prices (not working)
-							//TicketPrice.configurePrice(null);
+							TicketPrice.configurePrice();
 						} else {
 							System.out.println("Invalid input!");
 						}

@@ -26,6 +26,5 @@ public class ReviewUI {
                 Rating star = new Rating(moviename, stars);
                 star.editAvgRating();
 
-                s.close();
         }
 }

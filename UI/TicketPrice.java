@@ -18,7 +18,7 @@ public class TicketPrice {
      * @return
      */
 
-    public void configurePrice() throws Exception {
+    public static void configurePrice() throws Exception {
         // Initialise all the variables to their original values
         try {
             Scanner sc = new Scanner(f);
@@ -38,7 +38,6 @@ public class TicketPrice {
                 PH3D = Double.parseDouble(sc.next());
                 surcharge = Double.parseDouble(sc.next());
             }
-            sc.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
