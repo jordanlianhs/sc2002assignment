@@ -16,7 +16,7 @@ public class MovieCRUD {
 		String date;
 
 		do {
-			System.out.println("===Conifure Movie Listing UI===");
+			System.out.println("===Configure Movie Listing UI===");
 			System.out.println("(1) Create Movie");
 			System.out.println("(2) Remove Movie");
 			System.out.println("(3) Update Movie");
@@ -35,7 +35,6 @@ public class MovieCRUD {
 					File f = new File("./Database/MovieCollectionNew.txt");
 					lineCounter l = new lineCounter();
 					count = l.counter(f);
-					SearchMovie SM = new SearchMovie();
 					int dChoice;
 					String rez[] = new String[count];
 					// Parse file for input date
@@ -63,14 +62,9 @@ public class MovieCRUD {
 					// Update a variable of movie
 
 					String file1 = "./Database/MovieCollectionNew.txt";
-					String tempFile1 = "./Database/temp1.txt";
-					File oldFile1 = new File(file1);
-					File newFile1 = new File(tempFile1);
-			  
-					FileWriter fw1 = new FileWriter(newFile1, true); // appends to movie.txt
-					BufferedWriter bw1 = new BufferedWriter(fw1);
-					PrintWriter pw1 = new PrintWriter(bw1);
-					Scanner y = new Scanner(oldFile1);
+					File movieFile = new File(file1);		  
+					
+					Scanner y = new Scanner(movieFile);
 					y.useDelimiter("[,\n]");
 			  
 					
@@ -101,8 +95,6 @@ public class MovieCRUD {
 						System.out.println("\nWrong input, movie name does not exist\n");
 						break;
 					}
-
-					System.out.println(movieIndex);
 					
 					// Scan for update choice
 					System.out.println("What would you like to update? (Key in int)");
@@ -161,13 +153,13 @@ public class MovieCRUD {
 							break;
 						case 6:
 							//movieReleaseDate
-							System.out.println("What is the updated value?");
+							System.out.println("What is the updated value? (Enter as: yyyy-MM-dd)");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setMovieReleaseDate(LocalDate.parse(updateChoice,formatter));
 							break;
 						case 7:
 							//movieEndDate
-							System.out.println("What is the updated value?");
+							System.out.println("What is the updated value? (Enter as: yyyy-MM-dd)");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setMovieEndDate(LocalDate.parse(updateChoice,formatter));
 							break;
@@ -187,19 +179,13 @@ public class MovieCRUD {
 							break;
 					}
 					//deletes old file
-					PrintWriter writer = new PrintWriter(oldFile1);
+					PrintWriter writer = new PrintWriter(movieFile);
 					writer.print("");
 					writer.close();
 					
 					for(Movie movie: movieArray){
 						movie.writeMovie();
-					}
-
-			  
-					
-					pw1.close();
-					bw1.close();
-					fw1.close();
+					}	  
 			  
 					break;
 
