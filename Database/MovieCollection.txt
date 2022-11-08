@@ -1,3 +1,0 @@
-Salakau,THREE_D,Malay vs Chinese,Fucking Bad,2.0,2002-09-17,2002-12-20,Sakamotowilson,wilsonagain
-Hello,TWO_D,Malay vs Chinese,Fucking Bad,2.0,2002-09-17,2002-12-20,Sakamotowilson,wilsonagain
-World,ONE_D,Malay vs Chinese,Fucking Bad,2.0,2002-09-17,2002-12-20,Sakamotowilson,wilsonagain

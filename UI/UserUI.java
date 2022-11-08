@@ -29,6 +29,7 @@ public class UserUI {
         System.out.println("Are you a student? (Enter 'true' or 'false')");
         boolean student = sc.nextBoolean();
         Guest user = new Guest(name, age, phone, email, student);
+        
 		int exit = 0;
 		while(exit != 1) {
 			
