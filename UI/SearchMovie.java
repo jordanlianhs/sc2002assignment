@@ -68,7 +68,6 @@ public class SearchMovie {
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 				// Print the string
-				System.out.println(); // Just formatting line
 				if (st2.contains(n)) {
 					System.out.println(st); // Display original capitalised version
 					// System.out.println();
