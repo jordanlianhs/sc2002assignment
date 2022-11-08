@@ -22,8 +22,9 @@ public class MovieCRUD {
 			System.out.println("(3) Update Movie");
 			System.out.println("(4) List Movies");
 			System.out.println("(5) Quit Configure Movie UI");
-			choice = sc.nextInt();
-			sc.nextLine(); // Clear scanner buffer
+			date = sc.nextLine();
+			choice = Integer.valueOf(date);
+
 			switch (choice) {
 				case 1:
 					// Create Movie
@@ -103,8 +104,6 @@ public class MovieCRUD {
 
 					System.out.println(movieIndex);
 					
-					
-
 					// Scan for update choice
 					System.out.println("What would you like to update? (Key in int)");
 					System.out.println("(1) Movie Type");
