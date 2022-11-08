@@ -33,7 +33,7 @@ public class SearchMovie {
 
 	public static void listMovie() {
 		try {
-			// File file = new File("./Database/MovieCollectionNew.txt");
+			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
