@@ -3,6 +3,9 @@ package UI;
 import java.util.*;
 import UI.*;
 import java.io.*;
+import Model.*;
+import java.time.*;
+import java.time.format.*;
 
 public class MovieCRUD {
 	static Scanner sc = new Scanner(System.in); // Console
@@ -66,36 +69,34 @@ public class MovieCRUD {
 					FileWriter fw1 = new FileWriter(newFile1, true); // appends to movie.txt
 					BufferedWriter bw1 = new BufferedWriter(fw1);
 					PrintWriter pw1 = new PrintWriter(bw1);
-					Scanner y = new Scanner(new File(file1));
+					Scanner y = new Scanner(oldFile1);
 					y.useDelimiter("[,\n]");
 			  
-					String text;
+					
+					ArrayList<Movie> movieArray = new ArrayList<Movie>();
 			  
 					while (y.hasNextLine()) {
-					  text = y.nextLine();
-					  String[] elements = text.split(",");
-					  String movietitle = elements[0];
-					  String movieType = elements[1];
-					  String movieStatus = elements[2];
-					  String synopsis = elements[3];
-					  String ageRating = elements[4];
-					  String starRating = elements[5];
-					  String duration = elements[6];
-					  String movieReleaseDate = elements[7];
-					  String movieEndDate = elements[8];
-					  String director = elements[9];
-					  String sales = elements[10];
-					  String sizeOfCast = elements[11];
-					  ArrayList<String> cast = new ArrayList<>();
-					  for(int u=12; u<(Integer.valueOf(sizeOfCast)+12); u++){
-						  cast.add(elements[u]);
-					  }
-					  String castStr = String.join(",", cast);
-
+						//add list of movies to array
+						String line = y.nextLine();
+						String[] parts = line.split(",");
+						Movie m = new Movie();
+						m.readMovie(parts[0]);						
+						movieArray.add(m);	        
+                
+					}
 
 					// Scan for movie to update
 					System.out.println("Which movie's details would you like to edit?");
-					String choosedmovie = sc.nextLine();
+					String choosedmovie = sc.nextLine();		
+					
+					int movieIndex;
+					for(movieIndex =0;movieIndex<movieArray.size(); movieIndex++){
+						if(movieArray.get(movieIndex).getmovieName().toLowerCase().equals(choosedmovie.toLowerCase())){
+							break;
+						}
+					}
+					System.out.println(movieIndex);
+					
 
 					// Scan for update choice
 					System.out.println("What would you like to update? (Key in int)");
@@ -107,191 +108,96 @@ public class MovieCRUD {
 					System.out.println("(6) Movie Release Date");
 					System.out.println("(7) Movie End Date");
 					System.out.println("(8) Director");
-					System.out.println("(9) Size Of Cast");
-					System.out.println("(10) Cast");
+					System.out.println("(9) Cast");
 
 					int choosed = sc.nextInt();
+					
 
 					String useless = sc.nextLine();
 					String updateChoice;
+
+					//date formatter for release and end dates
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 					switch (choosed){
 						case 1:
 							//movieType
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + updateChoice + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							
+							movieArray.get(movieIndex).setType(MovieType.valueOf(updateChoice));
 							break;
 
 						case 2:
 							//movieStatus
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + updateChoice + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							movieArray.get(movieIndex).setMovieStatus(MovieStatus.valueOf(updateChoice));
 							break;
 
 						case 3:
 							//synopsis
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + updateChoice + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							movieArray.get(movieIndex).setSynopsis(updateChoice);
 							break;
 						case 4:
 							//ageRating
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + updateChoice + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							movieArray.get(movieIndex).setageRating(updateChoice);
 							break;
 						case 5:
 							//duration
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + updateChoice
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							movieArray.get(movieIndex).setDuration(Double.valueOf(updateChoice));
 							break;
 						case 6:
 							//movieReleaseDate
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + updateChoice + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							movieArray.get(movieIndex).setMovieReleaseDate(LocalDate.parse(updateChoice,formatter));
 							break;
 						case 7:
 							//movieEndDate
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + updateChoice + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							movieArray.get(movieIndex).setMovieEndDate(LocalDate.parse(updateChoice,formatter));
 							break;
 						case 8:
 							//director
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + updateChoice + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-							break;
+							movieArray.get(movieIndex).setDirector(updateChoice);
+							break;						
 						case 9:
-							//sizeOfCast
-							System.out.println("What is the updated value?");
-							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + updateChoice + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-							break;
-						case 10:
 							//castStr
 							System.out.println("What is the updated value? (Separated by commas)");
 							updateChoice = sc.nextLine();
-							if (movietitle.toLowerCase().equals(choosedmovie.toLowerCase())) {
-								pw1.print(choosedmovie + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
-					
-							else {
-								pw1.print(movietitle + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + starRating + "," + duration
-									+ "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
-								pw1.flush();
-							}
+							String[] newCastSplit = updateChoice.split(",");
+							ArrayList<String> newCast = new ArrayList<>(Arrays.asList(newCastSplit));
+							movieArray.get(movieIndex).setCast(newCast);
 							break;
+					}
+					//deletes old file
+					PrintWriter writer = new PrintWriter(oldFile1);
+					writer.print("");
+					writer.close();
+					
+					for(Movie movie: movieArray){
+						movie.writeMovie();
 					}
 
 			  
-					y.close();
+					
 					pw1.close();
 					bw1.close();
 					fw1.close();
 			  
-					oldFile1.delete();
-					File dump1 = new File(file1);
-					newFile1.renameTo(dump1);
+									
 				
-				}
-
+				break;
 
 				case 4:
 					SearchMovie.listMovie();
@@ -300,7 +206,8 @@ public class MovieCRUD {
 					return;
 				default:
 					break;
-			}
-		} while (choice != 5);
+				}
+			} while (choice != 5);
+		 
 	}
 }
