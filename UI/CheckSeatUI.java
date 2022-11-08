@@ -86,11 +86,12 @@ public class CheckSeatUI {
 		char seatR = s.next().charAt(0);
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
-		temp.get(number-1).getSeatPlan().assign(seatR, seatC);	
+		temp.get(number-1).getSeatPlan().assign(seatR, seatC);
+		String adam = seatR+String.valueOf(seatC);	
 
 		
 
-		Booking book = new Booking(user, temp.get(number-1), "B3", temp.get(number-1).getCinemaCode());
+		Booking book = new Booking(user, temp.get(number-1), adam, temp.get(number-1).getCinemaCode());
 		book.writebookingstatement();
 		//increment sales in movie.txt
 		changeMovieSales(temp.get(number-1).getMovie().getmovieName());
