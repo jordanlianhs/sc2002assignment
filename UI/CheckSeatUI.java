@@ -158,12 +158,15 @@ public class CheckSeatUI {
 		String fileName1= "Database/SessionRecordAMK.txt";
 		String fileName2= "Database/SessionRecordBBK.txt";
 		String fileName3= "Database/SessionRecordCCK.txt";
-		File file1 = new File(fileName1);
-		File file2 = new File(fileName2);
-		File file3 = new File(fileName3);
-		file1.delete();
-		file2.delete();
-		file3.delete();
+		PrintWriter writer1 = new PrintWriter(fileName1);
+        writer1.print("");
+        writer1.close();
+		PrintWriter writer2 = new PrintWriter(fileName2);
+        writer2.print("");
+        writer2.close();
+		PrintWriter writer3 = new PrintWriter(fileName3);
+        writer3.print("");
+        writer3.close();
 		
 		
 		int size = temp1.size();
@@ -181,7 +184,7 @@ public class CheckSeatUI {
 		size = temp3.size();
 		count =0;
 		while(count <size){
-			temp1.get(count).writeSession("CCK");
+			temp3.get(count).writeSession("CCK");
 			count++;
 		}
 		

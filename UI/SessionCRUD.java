@@ -29,7 +29,8 @@ public class SessionCRUD {
                     RemoveSession.main(null);
                     break;
                 case 3:
-
+                    UpdateSession.main(null);
+                    break;
                 case 4:
                     DisplaySession.main(null);
                     break;

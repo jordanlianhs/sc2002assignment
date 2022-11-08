@@ -127,6 +127,53 @@ public class Session {
 		//movie.writeMovie();
 	}
 
+	public void writeSession2(String cineplexNumber) throws IOException{
+        try{
+			//String fileName= "Database/SessionRecord" + CineplexNumber +".txt";
+            //File file = new File(fileName);
+			File file;
+			if(cineplexNumber.equals("AMK")){
+				file = new File("Database/SessionRecordAMK.txt");
+			}
+			else if(cineplexNumber.equals("BBK")){
+				file = new File("Database/SessionRecordBBK.txt");
+			}
+			else{
+				file = new File("Database/SessionRecordCCK.txt");
+			}
+            FileWriter fr = new FileWriter(file, false);
+            BufferedWriter br = new BufferedWriter(fr);
+            PrintWriter pr = new PrintWriter(br);
+			String something = "";
+			something+= movie.getmovieName() + ",";
+			DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+			something += seshDateTime.format(formatter2) + ",";
+			something += cinemaCode + ",";
+			for(int i=0; i<10; i++){
+				for(int j=0; j<16; j++){
+					if(seatPlan.getSeat(i,j).checkTaken()==false){
+						something+="o";
+					}
+					else{
+						something+="x";
+					}
+					something+=",";
+				}
+			}
+            pr.println(something);
+            pr.close();
+            br.close();
+            fr.close();
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+
+        catch(IOException e){
+            e.printStackTrace();
+        }
+		//movie.writeMovie();
+	}
 	public void read(String CineplexNumber, int octo) throws IOException {
 
 		try {

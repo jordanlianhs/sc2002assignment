@@ -32,3 +32,7 @@ sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
 sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
 sfddsfsd,312,CinemaCode202211080131,Salakau1,B3,CinemaCode
 msad,4133,CinemaCode202211080143,Salakau1,B3,CinemaCode
+opop,1923,ONE202211081530,Future,B3,ONE
+oop,0909,THR202211081610,Future,B3,THR
+200i,0898,THR202211081613,Future,B3,THR
+j,82,THR202211081725,Future,B3,THR

@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UpdateSession",
+            "request": "launch",
+            "mainClass": "UI.UpdateSession",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch AdminUI",
+            "request": "launch",
+            "mainClass": "UI.AdminUI",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
+            "name": "Launch RemoveSession",
+            "request": "launch",
+            "mainClass": "UI.RemoveSession",
+            "projectName": "sc2002assignment_3ed0f619"
+        },
+        {
+            "type": "java",
             "name": "Launch DisplaySession",
             "request": "launch",
             "mainClass": "UI.DisplaySession",

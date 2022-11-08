@@ -1,6 +1,4 @@
 Date,Name,Day,Observance,Observance Strategy
-2022-01-01,New Year's Day,Saturday,2022-01-01,actual_day
-2022-02-01,Chinese New Year Day 1,Tuesday,2022-02-01,actual_day
 2022-02-02,Chinese New Year Day 2,Wednesday,2022-02-02,actual_day
 2022-04-15,Good Friday,Friday,2022-04-15,actual_day
 2022-05-01,Labour Day,Sunday,2022-05-01,next_monday
