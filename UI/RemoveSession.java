@@ -13,9 +13,9 @@ public class RemoveSession {
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
         Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
         String cpCode;
-        System.out.println("Enter your Cineplex Code");
+        System.out.println("Enter your Cineplex Code (AMK, BBK, CCK):");
         cpCode = sc.next();
-        int i = 0;
+
         int number = 0;
         ArrayList<Session> temp;
         if(cpCode.equals("AMK")){

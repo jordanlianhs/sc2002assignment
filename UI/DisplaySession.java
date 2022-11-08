@@ -20,7 +20,6 @@ public class DisplaySession {
         System.out.print("Enter Cineplex Code (AMK, BBK, CCK): ");
         cpCode = sc.nextLine();
 
-		int i = 0;
 		ArrayList<Session> temp;
 		if(cpCode.equals("AMK")){
 			temp =  A.getSessionList();

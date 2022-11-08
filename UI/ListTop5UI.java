@@ -177,8 +177,4 @@ public class ListTop5UI {
         }
     }
 
-    
-
-    
-
 }
