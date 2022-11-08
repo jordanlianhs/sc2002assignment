@@ -62,44 +62,44 @@ public class MovieCRUD {
 					// Update a variable of movie
 
 					String file1 = "./Database/MovieCollectionNew.txt";
-					File movieFile = new File(file1);		  
-					
+					File movieFile = new File(file1);
+
 					Scanner y = new Scanner(movieFile);
 					y.useDelimiter("[,\n]");
-			  
-					
+
 					ArrayList<Movie> movieArray = new ArrayList<Movie>();
-			  
+
 					while (y.hasNextLine()) {
-						//add list of movies to array
+						// add list of movies to array
 						String line = y.nextLine();
 						String[] parts = line.split(",");
 						Movie m = new Movie();
-						m.readMovie(parts[0]);						
-						movieArray.add(m);	        
-                
+						m.readMovie(parts[0]);
+						movieArray.add(m);
+
 					}
 
 					// Scan for movie to update
 					System.out.println("Which movie's details would you like to edit?");
-					String choosedmovie = sc.nextLine();		
-					
+					String choosedmovie = sc.nextLine();
+
 					boolean flag = false;
 					int movieIndex;
-					for(movieIndex =0;movieIndex<movieArray.size(); movieIndex++){
-						if(flag = movieArray.get(movieIndex).getmovieName().toLowerCase().equals(choosedmovie.toLowerCase())){
+					for (movieIndex = 0; movieIndex < movieArray.size(); movieIndex++) {
+						if (flag = movieArray.get(movieIndex).getmovieName().toLowerCase()
+								.equals(choosedmovie.toLowerCase())) {
 							break;
 						}
 					}
-					if (flag== false){
+					if (flag == false) {
 						System.out.println("\nWrong input, movie name does not exist\n");
 						break;
 					}
-					
+
 					// Scan for update choice
 					System.out.println("What would you like to update? (Key in int)");
 					System.out.println("(1) Movie Type");
-					System.out.println("(2) Movie Status"); 
+					System.out.println("(2) Movie Status");
 					System.out.println("(3) Synopsis");
 					System.out.println("(4) Age Rating");
 					System.out.println("(5) Duration");
@@ -109,65 +109,67 @@ public class MovieCRUD {
 					System.out.println("(9) Cast");
 
 					int choosed = sc.nextInt();
-					
+
+					// String useless = sc.nextLine();
 					String updateChoice;
-					//date formatter for release and end dates
+
+					// date formatter for release and end dates
 					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-					switch (choosed){
+					switch (choosed) {
 						case 1:
-							//movieType
+							// movieType
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
-							
+
 							movieArray.get(movieIndex).setType(MovieType.valueOf(updateChoice));
 							break;
 
 						case 2:
-							//movieStatus
+							// movieStatus
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setMovieStatus(MovieStatus.valueOf(updateChoice));
 							break;
 
 						case 3:
-							//synopsis
+							// synopsis
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setSynopsis(updateChoice);
 							break;
 						case 4:
-							//ageRating
+							// ageRating
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setageRating(updateChoice);
 							break;
 						case 5:
-							//duration
+							// duration
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setDuration(Double.valueOf(updateChoice));
 							break;
 						case 6:
-							//movieReleaseDate
+							// movieReleaseDate
 							System.out.println("What is the updated value? (Enter as: yyyy-MM-dd)");
 							updateChoice = sc.nextLine();
-							movieArray.get(movieIndex).setMovieReleaseDate(LocalDate.parse(updateChoice,formatter));
+							movieArray.get(movieIndex).setMovieReleaseDate(LocalDate.parse(updateChoice, formatter));
 							break;
 						case 7:
-							//movieEndDate
+							// movieEndDate
 							System.out.println("What is the updated value? (Enter as: yyyy-MM-dd)");
 							updateChoice = sc.nextLine();
-							movieArray.get(movieIndex).setMovieEndDate(LocalDate.parse(updateChoice,formatter));
+							movieArray.get(movieIndex).setMovieEndDate(LocalDate.parse(updateChoice, formatter));
 							break;
 						case 8:
-							//director
+							// director
 							System.out.println("What is the updated value?");
 							updateChoice = sc.nextLine();
 							movieArray.get(movieIndex).setDirector(updateChoice);
-							break;						
+							break;
 						case 9:
-							//castStr
+							// castStr
 							System.out.println("What is the updated value? (Separated by commas)");
 							updateChoice = sc.nextLine();
 							String[] newCastSplit = updateChoice.split(",");
@@ -175,15 +177,15 @@ public class MovieCRUD {
 							movieArray.get(movieIndex).setCast(newCast);
 							break;
 					}
-					//deletes old file
+					// deletes old file
 					PrintWriter writer = new PrintWriter(movieFile);
 					writer.print("");
 					writer.close();
-					
-					for(Movie movie: movieArray){
+
+					for (Movie movie : movieArray) {
 						movie.writeMovie();
-					}	  
-			  
+					}
+
 					break;
 
 				case 4:
@@ -193,8 +195,8 @@ public class MovieCRUD {
 					return;
 				default:
 					break;
-				}
-			} while (choice != 5);
-		 
+			}
+		} while (choice != 5);
+
 	}
 }

@@ -150,7 +150,7 @@ public class SearchMovie {
 			// Rename the new file to the filename the original file had.
 			if (!tempFile.renameTo(inputFile))
 				System.out.println("Could not rename file");
-			
+
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		} catch (IOException ex) {
