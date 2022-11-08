@@ -55,6 +55,7 @@ public class MovieCRUD {
 					System.out.println("Which would you like to delete?");
 
 					dChoice = sc.nextInt();
+					sc.nextLine();
 					// Delete Entry
 					SearchMovie.delMovie(rez[dChoice]);
 					break;
@@ -109,6 +110,7 @@ public class MovieCRUD {
 					System.out.println("(9) Cast");
 
 					int choosed = sc.nextInt();
+					sc.nextLine();
 
 					// String useless = sc.nextLine();
 					String updateChoice;
