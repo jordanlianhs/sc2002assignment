@@ -28,6 +28,7 @@ public class UserUI {
         String email = sc.next();
         System.out.println("Are you a student? (Enter 'true' or 'false')");
         boolean student = sc.nextBoolean();
+
         Guest user = new Guest(name, age, phone, email, student);
         
 		int exit = 0;
@@ -41,7 +42,7 @@ public class UserUI {
 				System.out.println("1. Search all movies");
 				System.out.println("2. Movie details");
 				System.out.println("3. Book seats");
-				System.out.println("4. History");
+				System.out.println("4. Check Booking History");
 				System.out.println("5. Top movies");
 				System.out.println("6. Movie review");
 				System.out.println("7. Go Back");
@@ -65,7 +66,7 @@ public class UserUI {
                 }else if(choice == 6) {
                     ReviewUI.main(null);
                 }else if(choice == 7){
-                    MainUI.main(null);
+                    return;
                 }else if(choice == 8) {
                     String anything = sc.nextLine();
                     System.out.println("Thanks for using MOBLIMA!");

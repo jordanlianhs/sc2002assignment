@@ -28,9 +28,14 @@ public class CreateSession {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         seshDateTime = LocalDateTime.parse(temp, formatter);
 
-        System.out.print("Enter movie name: ");
-        temp = sc.nextLine();
-        movie.readMovie(temp);
+        do{
+            System.out.print("Enter movie name: ");
+            temp = sc.nextLine();
+            movie.readMovie(temp);
+            if(movie.getmovieName()==null){
+                System.out.println("Movie Name does not exist");
+            }
+        }while(movie.getmovieName() == null);
 
         System.out.print("Enter Cinema Code (ONE, TWO, THR): ");
         temp = sc.nextLine();

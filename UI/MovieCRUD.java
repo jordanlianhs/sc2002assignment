@@ -69,7 +69,7 @@ public class MovieCRUD {
 					y.useDelimiter("[,\n]");
 
 					ArrayList<Movie> movieArray = new ArrayList<Movie>();
-
+					
 					while (y.hasNextLine()) {
 						// add list of movies to array
 						String line = y.nextLine();
@@ -77,8 +77,9 @@ public class MovieCRUD {
 						Movie m = new Movie();
 						m.readMovie(parts[0]);
 						movieArray.add(m);
-
 					}
+
+
 
 					// Scan for movie to update
 					System.out.println("Which movie's details would you like to edit?");

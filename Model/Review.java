@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.*;
 
 public class Review {
      /**
@@ -24,6 +25,8 @@ public class Review {
        */
       private String additionalComment;
 
+    public Review(){
+    }
 
     public Review(String moviename, String username, double numOfStars, String additionalComment) {
         this.movieName = moviename;
@@ -84,6 +87,37 @@ public class Review {
             e.printStackTrace();
         }
 
+    }
+
+    public void search(String n) throws Exception{
+        
+        try {
+			File file = new File("Database/Review.txt");
+			Scanner sc = new Scanner(file);
+
+			sc.useDelimiter(",");
+			System.out.println("The movie reviews are as follows: ");
+			while (sc.hasNext()) {
+				String st = sc.nextLine(); // To get current string with all Capitalisation
+				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				n = n.toLowerCase(); // Convert input string toLower to compare
+                String[] stToken = st2.split(",");
+				// Print the string
+				System.out.println(); // Just formatting line
+				if (stToken[0].equals(n)) {
+					System.out.println(st); // Display original capitalised version
+					// System.out.println();
+				}
+                else{
+                    System.out.print("");
+                }
+			}
+			sc.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
     }
 
     

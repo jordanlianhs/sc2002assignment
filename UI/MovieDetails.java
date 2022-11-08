@@ -1,5 +1,5 @@
 package UI;
-
+import Model.*;
 import java.util.*;
 import java.io.*;
 
@@ -25,18 +25,34 @@ public class MovieDetails {
         try{
             File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
-
+            Scanner sc1 = new Scanner(System.in);
+            boolean flag = false;
             while(sc.hasNext()){
                 String st = sc.nextLine();// To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
                 
                 String[] stToken = st2.split(",");
 
-                if(stToken[0].equals(input.toLowerCase())){
+                if(flag = stToken[0].equals(input.toLowerCase())){
                     System.out.println("The movie details requested are as follows : ");
-                    System.out.println(st);
+                    System.out.println(st); 
+                    String temp;
+
+                    do{
+                        System.out.println("Do you want to view this Movie's Reviews: " + stToken[0] + " (Y/N)");
+                        temp = sc1.nextLine();
+                        if(!temp.equals("Y") && !temp.equals("N"))
+                            System.out.println("Wrong input!!! ");
+                    }while(!temp.equals("Y") && !temp.equals("N"));
+                    if(temp.equals("Y")){
+                        Review rev = new Review();
+                        rev.search(stToken[0]);
+                    }
                     break;
                 }
+            }
+            if(flag == false){
+                System.out.println("Movie does not exist! ");
             }
             sc.close();
         }

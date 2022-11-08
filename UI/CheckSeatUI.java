@@ -23,7 +23,7 @@ public class CheckSeatUI {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter your Cineplex Code");
 		String cpCode = s.next();
-		int i = 0;
+
 		int number = 0;
 		ArrayList<Session> temp;
 		if(cpCode.equals("AMK")){
@@ -40,7 +40,7 @@ public class CheckSeatUI {
 		int size = temp.size();
 		int count =0;
 		while(count <size){
-			System.out.print(i+1);
+			System.out.print(count+1);
 			temp.get(count).printSession();
 			count++;
 		}
@@ -79,14 +79,31 @@ public class CheckSeatUI {
 		
 		System.out.println("Choose your Session");
 		number = s.nextInt();
+		char seatR;
+		int seatC;
+		do{
+			System.out.println("Choose your Seat");
+			
+			do{
+				System.out.println("Enter row (A to J)");
+				seatR = s.next().charAt(0);
+			}while(seatR<'A' || seatR>'J');
+
+			do{
+				System.out.println("Enter column (1 to 16)");
+				seatC = s.nextInt();
+			}while(seatC<1 || seatC>16);
+
+			if(!temp.get(number-1).getSeatPlan().getSeat((seatR-'J')*-1, seatC-1).checkTaken()){
+				temp.get(number-1).getSeatPlan().assign(seatR, seatC);
+				break;
+			}
+			else{
+				System.out.println("Seat is taken!");
+			}
+		}while(temp.get(number-1).getSeatPlan().getSeat((seatR-'J')*-1, seatC-1).checkTaken());
 		
 		
-		System.out.println("Choose your Seat");
-		System.out.println("Enter row (A to J)");
-		char seatR = s.next().charAt(0);
-		System.out.println("Enter row (0 to 15)");
-		int seatC = s.nextInt();
-		temp.get(number-1).getSeatPlan().assign(seatR, seatC);
 		String adam = seatR+String.valueOf(seatC);	
 
 		

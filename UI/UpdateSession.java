@@ -59,10 +59,6 @@ public class UpdateSession {
         }
 
         else if(i==2){
-            System.out.println("List of Available Movies: ");
-            for(int j=0; j<temp.size(); j++){
-                System.out.println(temp.get(j).getMovie().getmovieName());
-            }
             int c = 0;
             do{
                 System.out.println("Enter New Movie Name: ");
@@ -70,6 +66,9 @@ public class UpdateSession {
                 movie.readMovie(lol);
                 if(movie.getmovieName()!=null){
                     c=1;
+                }
+                else{
+                    System.out.println("Movie Name does not exist");
                 }
             }while(c==0);
             
