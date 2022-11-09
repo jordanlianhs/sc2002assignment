@@ -1,18 +1,14 @@
 package UI;
 
 import java.util.*;
-
-import javax.swing.text.StyledEditorKit.BoldAction;
-
-// import java.util.spi.LocaleServiceProvider;
 import java.text.*;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-// import java.time.format.DateTimeFormatter;
-// import java.time.format.DateTimeParseException;
-import java.time.*;
+
+/**
+ * HoidayUI implements the functions and the driver code to add/remove and list
+ * holidays for
+ * the ticketing system TicketPrice.java
+ */
 
 public class HolidayUI {
 	static Scanner sc = new Scanner(System.in); // Console
@@ -22,7 +18,7 @@ public class HolidayUI {
 	/**
 	 * Driver for Creating/Deleting/Clearing Holidays
 	 * 
-	 * @param args
+	 * @param args Main arument args
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
@@ -139,10 +135,12 @@ public class HolidayUI {
 	}
 
 	/**
-	 * Check for Valid Date
+	 * Check for Valid Date format
 	 * 
-	 * @param input
-	 * @return
+	 * @param input check the input string against a set date format
+	 * @return returns true if the format is correct
+	 * @exception parseException Signals that an error has been reached unexpectedly
+	 *                           while parsing. input
 	 */
 	public static boolean checkDate(String input) throws Exception {
 		// if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
@@ -164,13 +162,11 @@ public class HolidayUI {
 		return true;
 	}
 
-	// DELHOL WIP ()
-
 	/**
 	 * Deletes the input entry (entries with the same name)
 	 * 
-	 * @param n
-	 * @throws Exception
+	 * @param n Input String to be deleted (Exact match)
+	 * @throws Exception if a file cannot be found or the wrong path is initialised
 	 */
 	public static void delHol(String n) throws Exception {
 
@@ -217,10 +213,11 @@ public class HolidayUI {
 	}
 
 	/**
-	 * Finds all entries in the holiday list (Lenient Search)
+	 * Searches for all entries containing the input string then returns all results
+	 * as an array (Lenient Search)
 	 * 
-	 * @param n
-	 * @return
+	 * @param n Input search string
+	 * @return Array of entries that match the search term
 	 */
 
 	public static String[] searchHol(String n) {
@@ -253,9 +250,9 @@ public class HolidayUI {
 	}
 
 	/**
-	 * Returns all holdays in the list as an array
+	 * Returns ALL holdays in holiday.txt as an array
 	 * 
-	 * @return
+	 * @return String array containing 1 line per entry
 	 */
 	public static String[] getHols() {
 		String[] arr = new String[count];
@@ -280,8 +277,8 @@ public class HolidayUI {
 	/**
 	 * Strictly Finds a specific date
 	 * 
-	 * @param n
-	 * @return
+	 * @param n Input string to find
+	 * @return If the specific date is found, return true, else return false
 	 */
 
 	public static boolean findHol(String n) {
