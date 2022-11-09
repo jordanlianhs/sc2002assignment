@@ -378,6 +378,9 @@ public class TicketPrice {
                 PH2D = Double.parseDouble(sc.next());
                 PH3D = Double.parseDouble(sc.next());
                 DBsurcharge = Double.parseDouble(sc.next());
+                RegSurcharge = Double.parseDouble(sc.next());
+                GoldSurcharge = Double.parseDouble(sc.next());
+                PlatSurcharge = Double.parseDouble(sc.next());
             }
             sc.close();
         } catch (FileNotFoundException e) {
