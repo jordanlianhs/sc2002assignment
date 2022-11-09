@@ -214,7 +214,7 @@ public class Rating {
         String castStr = String.join(",", cast);
 
         if (movietitle1.toLowerCase().equals(movieName.toLowerCase())) {
-          pw1.print(movieName + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + newRating + "," + duration
+          pw1.print(movietitle1 + "," + movieType + "," + movieStatus + "," + synopsis + "," + ageRating + "," + newRating + "," + duration
               + "," + movieReleaseDate + "," + movieEndDate + "," + director + "," + sales + "," + sizeOfCast + "," + castStr + "\n");
           pw1.flush();
         }

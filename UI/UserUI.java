@@ -41,10 +41,10 @@ public class UserUI {
                 
 				System.out.println("1. Search all movies");
 				System.out.println("2. Movie details");
-				System.out.println("3. Book seats");
+				System.out.println("3. Book seat(s)");
 				System.out.println("4. Check Booking History");
 				System.out.println("5. Top movies");
-				System.out.println("6. Movie review");
+				System.out.println("6. Review movie");
 				System.out.println("7. Go Back");
 				System.out.println("8. Exit");
 				System.out.print("Please enter your choice: ");

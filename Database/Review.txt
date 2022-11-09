@@ -1,3 +1,43 @@
-Future,wilson,2.0,very bad
+Future,wilson@gmail.com,2.0,very bad
 Future,Wilson@gmail.com,4.5,Very good
 Future,987@gmail.com,4.5,WAOW
+Power Ranger,hello@gmail.com,2.0,i dont like
+Power Ranger,student@gmail.com,1.0,too boring
+Power Ranger,bestprof@gmail.com,4.7,so exciting
+Power Ranger,wilson@gmail.com,3.1,can be better
+Power Ranger,someone@gmail.com,2.0,no plot
+Power Ranger 2,student@e.ntu.edu.sg,4.5,the colours so pretty
+Doraemon,cat@hotmail.com,4.0,cute cat
+Doraemon,fish@gmail.com,1.0,i dont like cat
+Future,hello@gmail.com,2.4,hello world
+Future,student@gmail.com,4.5,exciting
+Future,wilson@gmail.com,3.7,wow
+Salak,hello@gmail.com,2.5,acting soso
+Salak,hmm@gmail.com,1.5,too many trees
+Salak,someone@gmail.com,4.4,very interesting
+Salak,cat@hotmail.com,4.6,i like
+Salaka,nsman@gmail.com,4.3,funny
+Salaka,nameless@e.ntu.edu.sg,4.4,interesting plot
+Salaka,coder@gmail.com,4.2,good acting
+Salaka,bestprof@gmail.com,3.3,can improve
+Salaka,newfriend@e.ntu.edu.sg,4.4,fresh idea
+Salaka,student@gmail.com,1.2,not nice
+Salaka,hello@gmail.com,1.3,not funny
+Dropout,coder@gmail.com,3.8,cool concept
+Dropout,newfriend@e.ntu.edu.sg,2.3,not nice
+Dropout 2,coder@gmail.com,4.9,good life advice
+Dropout 3,wilson@gmail.com,4.7,i love it
+Dropout 3,mark@gmail.com,4.5,good idea
+Dropout 3,joel@gmail.com,4.6,so entertaining
+Dropout 3,jordan@gmail.com,4.8,good element of surprise
+Dropout 3,mavis@gmail.com,4.9,nice plot
+Past,cat@hotmail.com,2.5,average
+Past,student@gmail.com,2.4,not good
+Past,coder@gmail.com,4.6,i like to leave it in the past
+Past,bestprof@gmail.com,3.3,i used to be a student
+Past,hello@gmail.com,4.3,hello past
+Clash of Clan live action,someone@gmail.com,4.0,very interesting
+Clash of Clan live action,hello@gmail.com,1.5,not enough fight scenes
+Ah Boy To Women,girl@gmail.com,3.0,intriguing
+Future,someone@gmail.com,1.0,looks bleak
+Ah Boy To Women,someone@gmail.com,4.9,no gender discrimination!

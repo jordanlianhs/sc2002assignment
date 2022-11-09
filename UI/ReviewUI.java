@@ -7,6 +7,8 @@ import Model.*;
 public class ReviewUI {
         public static void main(String arg[], Guest user) throws IOException {
                 Scanner s = new Scanner(System.in);
+                
+                // check if movie exists
                 System.out.println("Enter the name of movie to review");
                 String moviename = s.nextLine();
 
