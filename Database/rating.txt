@@ -1,6 +1,12 @@
-Inception,3.9,3,3.5
-The Adventures of Robin Hood,-1,1,3.0
-The African Queen,-1,0,0
-hi,-1,0,-1
-hello,-1,0,-1
-Latest,-1,0,-1
+Power Ranger,2,5,2
+Power Ranger 2,4.5,1,4.5
+Doraemon,4.8,12,4.0
+Future,2.4,9,2.4
+Salak,2.5,4,2.5
+Salaka,4.3,7,4.3
+Dropout,3.8,11,3.8
+Dropout 2,4.9,19,4.9
+Dropout 3,4.8,15,4.7
+Past,2.4,5,2.5
+Clash of Clan live action,4.4,14,4.0
+Ah Boy To Women,3.0,8,3.0
