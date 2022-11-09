@@ -68,13 +68,15 @@ public class TicketPrice {
             switch (choice) {
                 case 1:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         SP2D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -84,13 +86,14 @@ public class TicketPrice {
                     break;
                 case 2:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         SP2DB = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -100,13 +103,14 @@ public class TicketPrice {
                     break;
                 case 3:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         SP3D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -116,13 +120,14 @@ public class TicketPrice {
                     break;
                 case 4:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         SP3DB = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -132,13 +137,14 @@ public class TicketPrice {
                     break;
                 case 5:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         senior = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -148,13 +154,14 @@ public class TicketPrice {
                     break;
                 case 6:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         STU2D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -164,13 +171,14 @@ public class TicketPrice {
                     break;
                 case 7:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         STU3D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -180,13 +188,14 @@ public class TicketPrice {
                     break;
                 case 8:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         N2D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -196,13 +205,15 @@ public class TicketPrice {
                     break;
                 case 9:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         N3D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -212,13 +223,15 @@ public class TicketPrice {
                     break;
                 case 10:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         PH2D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -228,13 +241,15 @@ public class TicketPrice {
                     break;
                 case 11:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         PH3D = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -244,13 +259,15 @@ public class TicketPrice {
                     break;
                 case 12:
                     try {
-                        FileWriter fw = new FileWriter(f, false);
                         System.out.println("Enter new value: ");
                         DBsurcharge = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
                         // s.nextLine();
                         fw.write(
                                 SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
                                         + System.lineSeparator());
                         fw.close();
                         System.out.println("Change applied!");
@@ -259,10 +276,58 @@ public class TicketPrice {
                     }
                     break;
                 case 13:
+                    try {
+                        System.out.println("Enter new value: ");
+                        RegSurcharge = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
                     break;
                 case 14:
+                    try {
+                        System.out.println("Enter new value: ");
+                        GoldSurcharge = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
                     return;
                 case 15:
+                    try {
+                        System.out.println("Enter new value: ");
+                        PlatSurcharge = s.nextDouble();
+                        FileWriter fw = new FileWriter(f, false);
+
+                        // s.nextLine();
+                        fw.write(
+                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
+                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                        + System.lineSeparator());
+                        fw.close();
+                        System.out.println("Change applied!");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                    }
                     break;
                 case 16:
                     System.out.println("Special Seat 2D: " + SP2D);
@@ -313,6 +378,9 @@ public class TicketPrice {
                 PH2D = Double.parseDouble(sc.next());
                 PH3D = Double.parseDouble(sc.next());
                 DBsurcharge = Double.parseDouble(sc.next());
+                RegSurcharge = Double.parseDouble(sc.next());
+                GoldSurcharge = Double.parseDouble(sc.next());
+                PlatSurcharge = Double.parseDouble(sc.next());
             }
             sc.close();
         } catch (FileNotFoundException e) {
@@ -367,6 +435,14 @@ public class TicketPrice {
             if (type == MovieType.TWO_D_BB || type == MovieType.THREE_D_BB) { // If its a blockbuster
                 price += DBsurcharge;
             }
+            if (S.getCinemaCode() == "ONE") {
+                price += RegSurcharge;
+            } else if (S.getCinemaCode() == "TWO") {
+                price += GoldSurcharge;
+            } else if (S.getCinemaCode() == "THR") {
+                price += PlatSurcharge;
+            }
+
         }
         return price;
     }

@@ -116,8 +116,13 @@ public class CheckSeatUI {
 		MovieStatus moviestatus;
 		do{
 			System.out.println("Choose your Session");
+			System.out.println("Enter 0 to quit");
 			number = s.nextInt();
+			if(number == 0){
+				return;
+			}
 			moviestatus = temp.get(number-1).getMovie().getMovieStatus();
+
 			if(moviestatus.equals(MovieStatus.ENDOFSHOWING)){
 				System.out.println("Movie has ended, no longer available!!!");			
 			}
