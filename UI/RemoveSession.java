@@ -72,7 +72,7 @@ public class RemoveSession {
         if(cpCode.equals("AMK")){
             while(count <size){
                 temp.get(count).writeSession("AMK");
-                System.out.println(size);
+                //System.out.println(size);
                 count++;
             }
         }
@@ -147,7 +147,7 @@ public class RemoveSession {
             if(cpCode.equals("AMK")){
                 while(count <size){
                     temp.get(count).writeSession("AMK");
-                    System.out.println(size);
+                    //System.out.println(size);
                     count++;
                 }
             }

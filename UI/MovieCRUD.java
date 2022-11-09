@@ -58,6 +58,7 @@ public class MovieCRUD {
 					sc.nextLine();
 					// Delete Entry
 					RemoveSession.removeAllSession(date);
+					sc.close();
 					SearchMovie.delMovie(rez[dChoice]);
 					
 

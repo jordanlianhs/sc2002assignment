@@ -3,10 +3,11 @@ import Model.*;
 import java.util.*;
 import java.io.*;
 
+
 public class MovieDetails {
     /**
-     * 
-     * @param args
+     * MovieDetails asks for user input to find a movie and returns the details of said movie
+     * @param args null
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
