@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MainUI",
+            "request": "launch",
+            "mainClass": "UI.MainUI",
+            "projectName": "sc2002assignment_4ea44189"
+        },
+        {
+            "type": "java",
             "name": "Launch TicketPrice",
             "request": "launch",
             "mainClass": "UI.TicketPrice",

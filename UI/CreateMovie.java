@@ -3,6 +3,12 @@ import java.util.*;
 import java.time.*;
 import java.text.*;
 import Model.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.BufferedWriter;
 
 
 public class CreateMovie {
@@ -23,6 +29,7 @@ public class CreateMovie {
         int sales;
         ArrayList<String> cast = new ArrayList<String>();
         String temp;
+        double numofstars = -1;
 
 
         System.out.println("-----------------------------------");
@@ -141,6 +148,10 @@ public class CreateMovie {
 
         Movie movie = new Movie(movieName, movieType, movieStatus, synopsis, ageRating, starRating, duration, movieReleaseDate, movieEndDate, director, sales,cast);
         movie.writeMovie();
+
+        Rating rating = new Rating(movieName, numofstars);
+        rating.createMovieRating();
+        
         System.out.println("Movie Created Successfully!!!");
         System.out.println();
     }

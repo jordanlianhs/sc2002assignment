@@ -16,7 +16,7 @@ public class CheckBookingUI {
         try {
 			File file = new File("./Database/BookingStatement.txt");
 			Scanner scanfile = new Scanner(file);
-
+            String cinemaType = " ";
 			while(scanfile.hasNextLine()){
                 text = scanfile.nextLine();
                 String[] elements = text.split(",");
@@ -27,11 +27,23 @@ public class CheckBookingUI {
 				String movieName = elements[4];
 				String seatNumber = elements[5];
                 String cinemaCode = elements[6];
+                
                 //ystem.out.println("hey");
                 if(eName.equals(emailName)){
                     k=1;
+                    if(cinemaCode.equals("ONE")){
+                        cinemaType = "Normal";
+                    }
+
+                    else if(cinemaCode.equals("TWO")){
+                        cinemaType = "Gold";
+                    }
+
+                    else{
+                        cinemaType = "Platinum";
+                    }
                     System.out.println(" TicketID: " + ticketID+ " Movie: " + movieName  + " Price: " + price 
-                    + " CinemaCode: " + cinemaCode + " Seat: " + seatNumber  + " Phone: " + phone);
+                    + " CinemaCode: " + cinemaCode + " CinemaType: " + cinemaType + " Seat: " + seatNumber  + " Phone: " + phone);
                 }
             }
             if(k==0){

@@ -36,7 +36,7 @@ public class Booking {
         
         //price
         File f = new File("./Database/TicketPrice.txt");
-        Double SP2D  = 0.0, SP2DB = 0.0, SP3D = 0.0, SP3DB  = 0.0, senior  = 0.0, STU2D  = 0.0, STU3D = 0.0, N2D = 0.0, N3D = 0.0, PH2D = 0.0, PH3D = 0.0, surcharge = 0.0;
+        Double SP2D  = 0.0, SP2DB = 0.0, SP3D = 0.0, SP3DB  = 0.0, senior  = 0.0, STU2D  = 0.0, STU3D = 0.0, N2D = 0.0, N3D = 0.0, PH2D = 0.0, PH3D = 0.0, DBsurcharge = 0.0, RegSurcharge =0.0, GoldSurcharge = 0.0, PlatSurcharge = 0.0;
         try {
             Scanner sc = new Scanner(f);
             sc.useDelimiter(",");
@@ -53,7 +53,10 @@ public class Booking {
                 N3D = Double.parseDouble(sc.next());
                 PH2D = Double.parseDouble(sc.next());
                 PH3D = Double.parseDouble(sc.next());
-                surcharge = Double.parseDouble(sc.next());
+                DBsurcharge = Double.parseDouble(sc.next());
+                RegSurcharge = Double.parseDouble(sc.next());
+                GoldSurcharge = Double.parseDouble(sc.next());
+                PlatSurcharge = Double.parseDouble(sc.next());
             }
             sc.close();
         } catch (FileNotFoundException e) {
@@ -106,7 +109,7 @@ public class Booking {
             }
 
             if (type == MovieType.TWO_D_BB || type == MovieType.THREE_D_BB) { // If its a blockbuster
-                temp += surcharge;
+                temp += DBsurcharge;
             }
         }
         this.price = temp;

@@ -99,6 +99,26 @@ public class Rating {
 
   }
 
+  public void createMovieRating(){
+    try {
+      File file = new File("./Database/rating.txt");
+      FileWriter fr = new FileWriter(file, true);
+      BufferedWriter br = new BufferedWriter(fr);
+      PrintWriter pr = new PrintWriter(br);
+      pr.println(movieName + "," + -1 + "," + 0 + "," + -1);
+      pr.close();
+      br.close();
+      fr.close();
+    }
+
+    catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 
   public static void appendRatingTXT(String movieName, String newRating, String numOfRatings, String firstRating)
   {
