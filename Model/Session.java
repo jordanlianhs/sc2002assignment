@@ -76,7 +76,19 @@ public class Session {
     }
 
 	public void printSession(){
-		System.out.println("Timing: " + seshDateTime + " Movie Name: " + movie.getmovieName() + " CinemaCode: " + cinemaCode);
+		String cinemaType = " ";
+		if(cinemaCode.equals("ONE")){
+			cinemaType = "Normal";
+		}
+
+		else if(cinemaCode.equals("TWO")){
+			cinemaType = "Gold";
+		}
+
+		else{
+			cinemaType = "Platinum";
+		}
+		System.out.println("Timing: " + seshDateTime + " Movie Name: " + movie.getmovieName() + " CinemaType: " + cinemaType);
 	}
 
 	public void writeSession(String cineplexNumber) throws IOException{

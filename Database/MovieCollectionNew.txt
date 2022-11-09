@@ -1,6 +1,6 @@
 Salakau1,THREE_D,COMINGSOON,Malay vs Chinese,Fucking Bad,-1,2.0,2002-09-17,2002-12-20,Sakamoto,515,2,wilson,wilsonagain
 Salakau2,THREE_D,COMINGSOON,Malay vs Chinese,Fucking Bad,4.5,2.0,2002-09-17,2002-12-20,Sakamoto,901,2,wilson,wilsonagain
-Salakau3,THREE_D,COMINGSOON,Malay vs Chinese,Fucking Bad,4.8,2.0,2002-09-17,2002-12-20,Sakamoto,343,2,wilson,wilsonagain
+Salakau3,THREE_D,NOWSHOWING,Malay vs Chinese,Fucking Bad,4.8,2.0,2002-09-17,2002-12-20,Sakamoto,345,2,wilson,wilsonagain
 Future,TWO_D,ENDOFSHOWING,your mother pass away,hello world,2.4,2.1,2022-01-21,2022-11-01,wilson,593,2,your mom,wilson
 Salak,THREE_D,COMINGSOON,Malay vs Chinese,Fucking Bad,-1,2.0,2002-09-17,2002-12-20,Sakamoto,457,2,wilson,wilsonagain
 Salaka,THREE_D,COMINGSOON,Malay vs Chinese,Fucking Bad,4.3,2.0,2002-09-17,2002-12-20,Sakamoto,578,2,wilson,wilsonagain
