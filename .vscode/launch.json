@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SearchMovie",
+            "request": "launch",
+            "mainClass": "UI.SearchMovie",
+            "projectName": "sc2002assignment_4ea44189"
+        },
+        {
+            "type": "java",
+            "name": "Launch CreateMovie",
+            "request": "launch",
+            "mainClass": "UI.CreateMovie",
+            "projectName": "sc2002assignment_4ea44189"
+        },
+        {
+            "type": "java",
             "name": "Launch MainUI",
             "request": "launch",
             "mainClass": "UI.MainUI",

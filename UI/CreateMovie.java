@@ -29,7 +29,6 @@ public class CreateMovie {
         int sales;
         ArrayList<String> cast = new ArrayList<String>();
         String temp;
-        double numofstars = -1;
 
 
         System.out.println("-----------------------------------");
@@ -99,10 +98,7 @@ public class CreateMovie {
 		System.out.print("Movie Age Rating: ");
 		ageRating = sc.nextLine();
 
-        System.out.println();
-		System.out.print("Movie Star Rating: ");
-        temp = sc.nextLine();
-		starRating = Float.valueOf(temp);
+		starRating = -1;
 
         System.out.println();
 		System.out.print("Movie Duration: ");
@@ -130,13 +126,10 @@ public class CreateMovie {
         }
 
         System.out.println();
-		System.out.print("Director : ");
+		System.out.print("Director: ");
 		director = sc.nextLine();
 
-        System.out.println();
-		System.out.print("Sales: ");
-		temp = sc.nextLine();
-        sales = Integer.valueOf(temp);
+        sales = 0;
 
         System.out.println();
 		System.out.println("Movie Cast (Separate cast by commas): ");
@@ -149,9 +142,9 @@ public class CreateMovie {
         Movie movie = new Movie(movieName, movieType, movieStatus, synopsis, ageRating, starRating, duration, movieReleaseDate, movieEndDate, director, sales,cast);
         movie.writeMovie();
 
-        Rating rating = new Rating(movieName, numofstars);
+        Rating rating = new Rating(movieName, starRating);
         rating.createMovieRating();
-        
+
         System.out.println("Movie Created Successfully!!!");
         System.out.println();
     }

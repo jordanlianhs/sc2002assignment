@@ -37,12 +37,51 @@ public class SearchMovie {
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
-			System.out.println("\nList of Movies: ");
+			System.out.println("\nList of Movies: \n");
+			System.out.println("Movie\tMovie Type\tMovie Status\tSynopsis\tAge Rating\tStar Rating\tDuration of Movie\n");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
-				System.out.println(st);
+				String[] stToken = st.split(",");
+				int i=0;
+				for(String s:stToken){
+					if (i<7){
+						if(s.equals("-1.0") || s.equals("-1"))
+							System.out.print("NA\t");
+						else{
+							System.out.print(s + "\t");
+						}
+					}
+					else break;
+					i++;
+				}
+				System.out.println();
 			}
+
+			
+			Scanner sn = new Scanner(file);
+			System.out.println("\n");
+			System.out.println("Movie\tMovie Start Date\tMovie End Date\tDirector\tSales\tNumber of Cast Numbers\tCast\n");
+			while (sn.hasNext()) {
+				String st = sn.nextLine(); // To get current string with all Capitalisation
+				String[] stToken = st.split(",");
+				int i=0;
+				for(String s:stToken){
+					if (i>=7 || i==0){
+						if(s.equals("-1"))
+							System.out.print("NA\t");
+						else{
+							System.out.print(s + "\t");
+						}
+					}
+					i++;
+				}
+				System.out.println();
+			}
+
+
+			System.out.println("\n");
 			sc.close();
+			sn.close();
 
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
