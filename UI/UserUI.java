@@ -64,7 +64,7 @@ public class UserUI {
                     ListTop5UI.init();
                     ListTop5UI.main();
                 }else if(choice == 6) {
-                    ReviewUI.main(null);
+                    ReviewUI.main(null,user);
                 }else if(choice == 7){
                     return;
                 }else if(choice == 8) {
