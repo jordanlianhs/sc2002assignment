@@ -18,6 +18,41 @@ public class CheckSeatUI {
 	//	this.cinemaCode = cinemaCode;
 	//}
 
+	public static void main(String[] args, Guest user) throws IOException, Exception{
+		Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
+        Cineplex B = new Cineplex("Bukit Batok", "BBK");
+        Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
+		Scanner s = new Scanner(System.in);
+		boolean k = true;
+
+		while (k) {
+			System.out.println("(1) View Available Seat");
+			System.out.println("(2) Book Seat");
+			System.out.println("(3) Cancel Seat");
+			System.out.println("(4) Exit SeatUI");
+			int choice = s.nextInt();
+
+			switch (choice) {
+				case 1:
+					checkAvailableSeat(A,B,C);
+					break;
+				case 2:
+					bookSeat(user,A,B,C);
+					break;
+				case 3:
+					cancelSeat(A,B,C);
+					break;
+				case 4:
+				    saveSeatBooking(A,B,C);
+					System.out.println("Exit SeatUI");
+					k = false;
+					break;
+			}
+
+		}
+
+	}
+
 	public static void checkAvailableSeat(Cineplex A, Cineplex B, Cineplex C) {
 		//sessiono.getSeatPlan().printLayout();
 		Scanner s = new Scanner(System.in);
@@ -76,9 +111,21 @@ public class CheckSeatUI {
 			temp.get(count).printSession();
 			count++;
 		}
+
 		
-		System.out.println("Choose your Session");
-		number = s.nextInt();
+		MovieStatus moviestatus;
+		do{
+			System.out.println("Choose your Session");
+			number = s.nextInt();
+			moviestatus = temp.get(number-1).getMovie().getMovieStatus();
+			if(moviestatus.equals(MovieStatus.ENDOFSHOWING)){
+				System.out.println("Movie has ended, no longer available!!!");			
+			}
+			else if(moviestatus.equals(MovieStatus.COMINGSOON)){
+				System.out.println("Movie is coming soon, not available!!!");
+			}
+		}while(moviestatus.equals(MovieStatus.ENDOFSHOWING) || moviestatus.equals(MovieStatus.COMINGSOON));
+
 		char seatR;
 		int seatC;
 		do{
@@ -127,41 +174,6 @@ public class CheckSeatUI {
 		System.out.println("Enter row (0 to 15)");
 		int seatC = s.nextInt();
 		//sessiono.getSeatPlan().unassign(seatR, seatC);
-
-	}
-
-	public static void main(String[] args, Guest user) throws IOException, Exception{
-		Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
-        Cineplex B = new Cineplex("Bukit Batok", "BBK");
-        Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
-		Scanner s = new Scanner(System.in);
-		boolean k = true;
-
-		while (k) {
-			System.out.println("(1) View Available Seat");
-			System.out.println("(2) Book Seat");
-			System.out.println("(3) Cancel Seat");
-			System.out.println("(4) Exit SeatUI");
-			int choice = s.nextInt();
-
-			switch (choice) {
-				case 1:
-					checkAvailableSeat(A,B,C);
-					break;
-				case 2:
-					bookSeat(user,A,B,C);
-					break;
-				case 3:
-					cancelSeat(A,B,C);
-					break;
-				case 4:
-				    saveSeatBooking(A,B,C);
-					System.out.println("Exit SeatUI");
-					k = false;
-					break;
-			}
-
-		}
 
 	}
 
