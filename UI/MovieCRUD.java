@@ -38,7 +38,7 @@ public class MovieCRUD {
 					int dChoice;
 					String rez[] = new String[count];
 					// Parse file for input date
-					System.out.println("Search for something to delete: ");
+					System.out.println("Search for movie name to delete: ");
 					date = sc.nextLine();
 
 					rez = SearchMovie.getSearchedMovie(date); // Search for all entries with input term
@@ -57,7 +57,10 @@ public class MovieCRUD {
 					dChoice = sc.nextInt();
 					sc.nextLine();
 					// Delete Entry
+					RemoveSession.removeAllSession(date);
 					SearchMovie.delMovie(rez[dChoice]);
+					
+
 					break;
 				case 3:
 					// Update a variable of movie
