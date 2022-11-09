@@ -28,8 +28,7 @@ public class CheckSeatUI {
 		while (k) {
 			System.out.println("(1) View Available Seat");
 			System.out.println("(2) Book Seat");
-			System.out.println("(3) Cancel Seat");
-			System.out.println("(4) Exit SeatUI");
+			System.out.println("(3) Exit SeatUI");
 			int choice = s.nextInt();
 
 			switch (choice) {
@@ -40,9 +39,6 @@ public class CheckSeatUI {
 					bookSeat(user,A,B,C);
 					break;
 				case 3:
-					cancelSeat(A,B,C);
-					break;
-				case 4:
 				    saveSeatBooking(A,B,C);
 					System.out.println("Exit SeatUI");
 					k = false;
