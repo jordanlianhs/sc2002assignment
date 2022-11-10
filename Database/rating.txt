@@ -2,12 +2,11 @@ Power Ranger,2.6,5,2
 Power Ranger 2,4.5,1,4.5
 Doraemon,2.5,2,4.0
 Future,3.2,7,2.4
-Salak,3.3,4,2.5
+Salak,3.1,8,4.3
 Salaka,3.3,7,4.3
 Dropout,3.1,2,3.8
 Dropout 2,4.9,1,4.9
 Dropout 3,4.7,5,4.7
-Past,3.4,5,2.5
+Past,3.5,6,2.5
 Clash of Clan live action,2.8,2,4.0
-Ah Boy To Women,4.0,2,3.0
-Adam vs Eve,-1,0,-1
+Ah Boy To Women,3.7,3,3.0

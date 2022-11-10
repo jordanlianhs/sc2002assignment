@@ -41,3 +41,7 @@ Clash of Clan live action,hello@gmail.com,1.5,not enough fight scenes
 Ah Boy To Women,girl@gmail.com,3.0,intriguing
 Future,someone@gmail.com,1.0,looks bleak
 Ah Boy To Women,someone@gmail.com,4.9,no gender discrimination!
+Past,someone@gmail.com,4.0,very funny
+Ah Boy To Women,someone@gmail.com,3.0,could be better
+Salak,hello@gmail.com,4.0,nice scenery good job
+Salak,someone@gmail.com,1.3,not nice

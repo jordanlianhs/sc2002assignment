@@ -73,7 +73,22 @@ public class Review {
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
-            String shit = movieName + "," + username + "," + String.valueOf(numOfStars) + "," + additionalComment;
+
+            File fileMovie = new File("./Database/MovieCollectionNew.txt");
+            String movieCorrect = "";
+            Scanner sc = new Scanner(fileMovie); 
+            sc.useDelimiter("[,\n]");
+
+            while (sc.hasNext()) {
+                    String st = sc.next().toString();
+                    if (st.toLowerCase().equals(movieName.toLowerCase())) {
+                            movieCorrect = st;
+                            break;
+                    }
+            }
+            sc.close();
+
+            String shit = movieCorrect + "," + username + "," + String.valueOf(numOfStars) + "," + additionalComment;
             pr.println(shit);
             pr.close();
             br.close();
