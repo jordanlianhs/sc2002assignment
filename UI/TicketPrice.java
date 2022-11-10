@@ -45,311 +45,335 @@ public class TicketPrice {
                 GoldSurcharge = Double.parseDouble(sc.next());
                 PlatSurcharge = Double.parseDouble(sc.next());
             }
+            sc.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         // Scanning for user input
         Scanner s = new Scanner(System.in);
-        int choice;
+        int choice = -1;
+
         do {
-            System.out.println("What would you like to configure? Select an option");
-            System.out.println("(1) Special Seat 2D \t| (2) Special Seat 2D BlockBuster");
-            System.out.println("(3) Special Seat 3D \t| (4) Special Seat 3D BlockBuster");
-            System.out.println("(5) Senior Citizen \t| (6) Student 2D");
-            System.out.println("(7) Student 3D \t\t| (8) Normal 2D");
-            System.out.println("(9) Normal 3D \t\t| (10) Holiday 2D");
-            System.out.println("(11) Holiday 3D \t| (12) BlockBuster Surcharge");
-            System.out.println("(13) Regular Cinema Surcharge \t| (14) Gold Cinema Surcharge");
-            System.out.println("(15) PLatinum Cinema Surcharge \t| (16) List Prices");
-            System.out.println("(17) Quit");
-            choice = s.nextInt();
-            s.nextLine();
-            switch (choice) {
-                case 1:
-                    try {
-                        System.out.println("Enter new value: ");
-                        SP2D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+            try {
+                System.out.println("What would you like to configure? Select an option");
+                System.out.println("(1) Special Seat 2D \t\t| (2) Special Seat 2D BlockBuster");
+                System.out.println("(3) Special Seat 3D \t\t| (4) Special Seat 3D BlockBuster");
+                System.out.println("(5) Senior Citizen \t\t| (6) Student 2D");
+                System.out.println("(7) Student 3D \t\t\t| (8) Normal 2D");
+                System.out.println("(9) Normal 3D \t\t\t| (10) Holiday 2D");
+                System.out.println("(11) Holiday 3D \t\t| (12) BlockBuster Surcharge");
+                System.out.println("(13) Regular Cinema Surcharge \t| (14) Gold Cinema Surcharge");
+                System.out.println("(15) Platinum Cinema Surcharge \t| (16) List Prices");
+                System.out.println("(17) Quit \t\t\t|");
+                choice = s.nextInt();
+                s.nextLine();
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 2:
-                    try {
-                        System.out.println("Enter new value: ");
-                        SP2DB = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 3:
-                    try {
-                        System.out.println("Enter new value: ");
-                        SP3D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 4:
-                    try {
-                        System.out.println("Enter new value: ");
-                        SP3DB = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 5:
-                    try {
-                        System.out.println("Enter new value: ");
-                        senior = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 6:
-                    try {
-                        System.out.println("Enter new value: ");
-                        STU2D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 7:
-                    try {
-                        System.out.println("Enter new value: ");
-                        STU3D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 8:
-                    try {
-                        System.out.println("Enter new value: ");
-                        N2D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 9:
-                    try {
-                        System.out.println("Enter new value: ");
-                        N3D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                switch (choice) {
+                    case 1:
+                        try {
+                            System.out.println("Enter new value (Special Seat 2D): ");
+                            SP2D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 10:
-                    try {
-                        System.out.println("Enter new value: ");
-                        PH2D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 2:
+                        try {
+                            System.out.println("Enter new value (Special Seat 2D Blockbuster): ");
+                            SP2DB = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 3:
+                        try {
+                            System.out.println("Enter new value (Special Seat 3D): ");
+                            SP3D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 4:
+                        try {
+                            System.out.println("Enter new value (Special Seat 3D Blockbuster): ");
+                            SP3DB = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 5:
+                        try {
+                            System.out.println("Enter new value (Senior Citizen): ");
+                            senior = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 6:
+                        try {
+                            System.out.println("Enter new value (Student 2D): ");
+                            STU2D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 7:
+                        try {
+                            System.out.println("Enter new value (Student 3D): ");
+                            STU3D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 8:
+                        try {
+                            System.out.println("Enter new value (Normal 2D): ");
+                            N2D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 9:
+                        try {
+                            System.out.println("Enter new value (Normal 3D): ");
+                            N3D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 11:
-                    try {
-                        System.out.println("Enter new value: ");
-                        PH3D = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 10:
+                        try {
+                            System.out.println("Enter new value (Holiday 2D): ");
+                            PH2D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 12:
-                    try {
-                        System.out.println("Enter new value: ");
-                        DBsurcharge = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 11:
+                        try {
+                            System.out.println("Enter new value (Holiday 3D): ");
+                            PH3D = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 13:
-                    try {
-                        System.out.println("Enter new value: ");
-                        RegSurcharge = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 12:
+                        try {
+                            System.out.println("Enter new value (Blockbuster Surcharge): ");
+                            DBsurcharge = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 14:
-                    try {
-                        System.out.println("Enter new value: ");
-                        GoldSurcharge = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 13:
+                        try {
+                            System.out.println("Enter new value (Regular Cinema Surcharge): ");
+                            RegSurcharge = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid Input!");
-                    }
-                    return;
-                case 15:
-                    try {
-                        System.out.println("Enter new value: ");
-                        PlatSurcharge = s.nextDouble();
-                        FileWriter fw = new FileWriter(f, false);
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 14:
+                        try {
+                            System.out.println("Enter new value (Gold Cinema Surcharge): ");
+                            GoldSurcharge = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
 
-                        // s.nextLine();
-                        fw.write(
-                                SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + "," + STU3D
-                                        + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
-                                        + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
-                                        + System.lineSeparator());
-                        fw.close();
-                        System.out.println("Change applied!");
-                    } catch (InputMismatchException e) {
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        return;
+                    case 15:
+                        try {
+                            System.out.println("Enter new value (Platinum Cinema Surcharge): ");
+                            PlatSurcharge = s.nextDouble();
+                            FileWriter fw = new FileWriter(f, false);
+
+                            // s.nextLine();
+                            fw.write(
+                                    SP2D + "," + SP2DB + "," + SP3D + "," + SP3DB + "," + senior + "," + STU2D + ","
+                                            + STU3D
+                                            + "," + N2D + "," + N3D + "," + PH2D + "," + PH3D + "," + DBsurcharge + ","
+                                            + RegSurcharge + "," + GoldSurcharge + "," + PlatSurcharge
+                                            + System.lineSeparator());
+                            fw.close();
+                            System.out.println("Change applied!");
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid Input!");
+                        }
+                        break;
+                    case 16:
+                        System.out.println("Special Seat 2D: " + SP2D);
+                        System.out.println("Special Seat 2D Blockbuster: " + SP2DB);
+                        System.out.println("Special Seat 3D: " + SP3D);
+                        System.out.println("Special Seat 3D Blockbuster: " + SP3DB);
+                        System.out.println("Senior: " + senior);
+                        System.out.println("Student 2D: " + STU2D);
+                        System.out.println("Student 3D: " + STU3D);
+                        System.out.println("Normal 2D: " + N2D);
+                        System.out.println("Normal 3D: " + N3D);
+                        System.out.println("Holiday 2D: " + PH2D);
+                        System.out.println("Holiday 3D: " + PH3D);
+                        System.out.println("Blockbuster Surcharge: " + DBsurcharge);
+                        System.out.println("Normal Cinema Surcharge: " + RegSurcharge);
+                        System.out.println("Gold Cinema Surcharge: " + GoldSurcharge);
+                        System.out.println("Platinum Cinema Surcharge: " + PlatSurcharge);
+                        break;
+                    default:
                         System.out.println("Invalid Input!");
-                    }
-                    break;
-                case 16:
-                    System.out.println("Special Seat 2D: " + SP2D);
-                    System.out.println("Special Seat 2D Blockbuster: " + SP2DB);
-                    System.out.println("Special Seat 3D: " + SP3D);
-                    System.out.println("Special Seat 3D Blockbuster: " + SP3DB);
-                    System.out.println("Senior: " + senior);
-                    System.out.println("Student 2D: " + STU2D);
-                    System.out.println("Student 3D: " + STU3D);
-                    System.out.println("Normal 2D: " + N2D);
-                    System.out.println("Normal 3D: " + N3D);
-                    System.out.println("Holiday 2D: " + PH2D);
-                    System.out.println("Holiday 3D: " + PH3D);
-                    System.out.println("Blockbuster Surcharge: " + DBsurcharge);
-                    System.out.println("Normal Cinema Surcharge: " + RegSurcharge);
-                    System.out.println("Gold Surcharge: " + GoldSurcharge);
-                    System.out.println("Platinum Surcharge: " + PlatSurcharge);
-                    break;
-                default:
-                    break;
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input!");
+                s.nextLine();
             }
         } while (choice != 17);
+        s.close();
     }
 
     /**
