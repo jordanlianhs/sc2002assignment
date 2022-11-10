@@ -38,17 +38,29 @@ public class SearchMovie {
 
 			sc.useDelimiter(",");
 			System.out.println("\nList of Movies: \n");
-			System.out.println("Movie\tMovie Type\tMovie Status\tSynopsis\tAge Rating\tStar Rating\tDuration of Movie\n");
+			System.out.println("Movie         |Movie Type    |Movie Status  |Synopsis      |Age Rating    |Star Rating   |Movie Duration|");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String[] stToken = st.split(",");
 				int i=0;
 				for(String s:stToken){
 					if (i<7){
-						if(s.equals("-1.0") || s.equals("-1"))
-							System.out.print("NA\t");
+						if(s.equals("-1.0") || s.equals("-1")){
+								System.out.print("NA            |");
+						}
 						else{
-							System.out.print(s + "\t");
+							if (s.length()<=13) {
+								System.out.print(s);
+								int j = 15-s.length();
+								while(j!=0){
+									if (j==1) System.out.print("|");
+									else System.out.print(" ");
+									j--;
+								}
+							}
+							else{
+							System.out.print(s.substring(0, 10) + "... |");
+							}
 						}
 					}
 					else break;
@@ -60,19 +72,33 @@ public class SearchMovie {
 			
 			Scanner sn = new Scanner(file);
 			System.out.println("\n");
-			System.out.println("Movie\tMovie Start Date\tMovie End Date\tDirector\tSales\tNumber of Cast Numbers\tCast\n");
+			System.out.println("Movie         |Release Date  |End Date      |Director      |Sales         |Cast Size     |Cast");
 			while (sn.hasNext()) {
 				String st = sn.nextLine(); // To get current string with all Capitalisation
 				String[] stToken = st.split(",");
 				int i=0;
 				for(String s:stToken){
 					if (i>=7 || i==0){
-						if(s.equals("-1"))
-							System.out.print("NA\t");
+						if(s.equals("-1.0") || s.equals("-1")){
+							System.out.print("NA            |");
+					}
+					else{
+						if (i==12) System.out.print(s);
+						else if (i>12) System.out.print(", " + s);
+						else if (s.length()<=13) {
+							System.out.print(s);
+							int j = 15-s.length();
+							while(j!=0){
+								if (j==1) System.out.print("|");
+								else System.out.print(" ");
+								j--;
+							}
+						}
 						else{
-							System.out.print(s + "\t");
+							System.out.print(s.substring(0, 10) + "... |");
 						}
 					}
+				}
 					i++;
 				}
 				System.out.println();
