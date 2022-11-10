@@ -5,15 +5,34 @@ import java.util.*;
 import Model.*;
 import java.io.*;
 
+/**
+ * The UI used to List the top 5 movies ranked by either Sales or Star ratings.
+ */
+
 public class ListTop5UI {
     
+    /**
+     * List of all movies 
+     */
     static ArrayList<Movie> movieList;
+
+    /**
+     * The setting that affects whether one can list by Sales, Star ratings or both
+     */
     static int setting = 1;
     
+    
+    /** 
+     * Sets a new visibility setting for ListTop5UI
+     * @param newSetting
+     */
     public static void setSetting(int newSetting){
         setting = newSetting;
     }
 
+    /**
+     * Initialises by reading in all movies into an array
+     */
     public static void init(){
         //scan movieList from movie database
         movieList = new ArrayList<Movie>();
@@ -46,6 +65,9 @@ public class ListTop5UI {
         } 
     }
 
+    /**
+     * Prints out menu interface and collects user input to list Top 5 movies
+     */
     public static void main() {
         Scanner sc = new Scanner(System.in);    
               
@@ -115,7 +137,9 @@ public class ListTop5UI {
         
         
         
-    
+    /**
+     * Sorts movies by their sales then prints out only the Top 5
+     */
     public static void listTop5Sales(){        
         
         //sort (sort by collections by reading movie as objects using comparator)
@@ -137,6 +161,9 @@ public class ListTop5UI {
         
     }
 
+    /**
+     * Compares movies by their sales in descending order
+     */
     static class SortSales implements Comparator<Movie>{
         public int compare(Movie a, Movie b){
             //compares in reverse since collections sort in ascending and we want descending order
@@ -144,6 +171,9 @@ public class ListTop5UI {
         }
     }
 
+    /**
+     * Sorts movies by their star ratings then prints out only the Top 5
+     */
     public static void listTop5Ratings(){
         //sort (sort by collections by reading movie as objects using comparator)
         Collections.sort(movieList, new SortRatings());        
@@ -162,6 +192,9 @@ public class ListTop5UI {
         System.out.println();
     }
     
+    /**
+     * Compares movies by their Star Ratings in descending order
+     */
     static class SortRatings implements Comparator<Movie>{
         public int compare(Movie a, Movie b){
             //compares in reverse since collections sort in ascending and we want descending order
