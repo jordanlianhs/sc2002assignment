@@ -46,10 +46,21 @@ public class RemoveSession {
         }
         
         do{
-            System.out.println("Choose your Session to delete");
-            number = sc.nextInt();
-        }
-        while(number>count);
+            try{
+                do{
+                    System.out.println("Choose your Session to delete");
+                    number = sc.nextInt();
+                }
+                while(number>count);
+                break;
+            }catch (Exception e) {
+					System.out.println("Enter an integer!");
+					System.out.println();
+					sc.nextLine();
+					continue;
+				}
+        }while(true);
+
         if(number == 0){
             return;
         }

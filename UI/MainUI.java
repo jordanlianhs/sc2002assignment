@@ -30,7 +30,8 @@ public class MainUI {
 
             switch (sc.nextInt()) {
                 case 1:
-                    AdminUI.main(null);
+                AdminUI SALA = new AdminUI();
+                    SALA.main(null);
                     break;
                 case 2:
                     UserUI.main(null);
