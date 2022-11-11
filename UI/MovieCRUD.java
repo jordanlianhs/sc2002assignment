@@ -3,6 +3,9 @@ package UI;
 import java.util.*;
 
 
+/**
+ * This is the UI to Create, Remove, Update and List movies
+ */
 public class MovieCRUD {
 	static Scanner sc = new Scanner(System.in); // Console
 
