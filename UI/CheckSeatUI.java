@@ -138,24 +138,35 @@ public class CheckSeatUI {
 		
 		MovieStatus moviestatus;
 		do{
-			do{
-				System.out.println("Choose your Session");
-				System.out.println("Enter 0 to quit");
-				number = s.nextInt();
+			try{
+				do{
+					do{
+						System.out.println("Choose your Session");
+						System.out.println("Enter 0 to quit");
+						number = s.nextInt();
+					}
+					while(number>count);
+					if(number == 0){
+						return;
+					}
+					moviestatus = temp.get(number-1).getMovie().getMovieStatus();
+		
+					if(moviestatus.equals(MovieStatus.ENDOFSHOWING)){
+						System.out.println("Movie has ended, no longer available!!!");			
+					}
+					else if(moviestatus.equals(MovieStatus.COMINGSOON)){
+						System.out.println("Movie is coming soon, not available!!!");
+					}
+				}while(moviestatus.equals(MovieStatus.ENDOFSHOWING) || moviestatus.equals(MovieStatus.COMINGSOON));
+				break;
+			}catch (Exception e) {
+					System.out.println("Enter an integer!");
+					System.out.println();
+					s.nextLine();
+					continue;
 			}
-			while(number>count);
-			if(number == 0){
-				return;
-			}
-			moviestatus = temp.get(number-1).getMovie().getMovieStatus();
 
-			if(moviestatus.equals(MovieStatus.ENDOFSHOWING)){
-				System.out.println("Movie has ended, no longer available!!!");			
-			}
-			else if(moviestatus.equals(MovieStatus.COMINGSOON)){
-				System.out.println("Movie is coming soon, not available!!!");
-			}
-		}while(moviestatus.equals(MovieStatus.ENDOFSHOWING) || moviestatus.equals(MovieStatus.COMINGSOON));
+		}while(true);
 
 		char seatR;
 		int seatC;
