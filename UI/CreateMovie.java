@@ -3,13 +3,6 @@ import java.util.*;
 import java.time.*;
 import java.text.*;
 import Model.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.BufferedWriter;
-
 
 public class CreateMovie {
     static Scanner sc = new Scanner(System.in);

@@ -75,23 +75,21 @@ public class Movie {
     private int sales;
 
 
-    
-    /*
-
-    public Movie(String movieName, MovieType movieType, String synopsis, String ageRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, ArrayList<String> cast, ArrayList<Review> reviews, int sales) {
-        this.movieName = movieName;
-        this.movieType = movieType;
-        this.synopsis = synopsis;
-        this.ageRating = ageRating;
-        this.duration = duration;
-        this.movieReleaseDate = movieReleaseDate;
-        this.movieEndDate = movieEndDate;
-        this.director = director;
-        this.cast = cast;
-        this.reviews = reviews;
-        this.sales = sales;
-    }
-    */
+    /**
+     * Constructor for movie class
+     * @param movieName is the name of the mvoie
+     * @param movieType is the type of the movie
+     * @param movieStatus is the status of the movie
+     * @param synopsis is the synopsis of the movie
+     * @param ageRating is the age rating of the movie
+     * @param starRating is the star rating of the movie
+     * @param duration is the duration of the movie
+     * @param movieReleaseDate is the movie release date of the movie
+     * @param movieEndDate is the movie end date of the movie
+     * @param director is the director of the movie
+     * @param sales is the sales of the movie
+     * @param cast is the cast of the movie
+     */
     public Movie(String movieName, MovieType movieType, MovieStatus movieStatus, String synopsis, String ageRating, float starRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, int sales, ArrayList<String> cast) {
         this.movieName = movieName;
         this.movieType = movieType;
@@ -107,113 +105,195 @@ public class Movie {
         this.sales = sales;
     }
 
+    /**
+     * constructor of the movie class
+     */
     public Movie(){};
     
 
-
+    /**
+     * @return name of movie
+     */
     public String getmovieName() {
         return this.movieName;
     }
 
+    /**
+     * set name of movie
+     * @param movieName is to set the new name of the movie
+     */
     public void setmovieName(String movieName) {
         this.movieName = movieName;
     }
 
+    /**
+     * @return type of movie
+     */
     public MovieType getType() {
         return this.movieType;
     }
 
+    /**
+     * set the movie type
+     * @param movieType set the type of the movie
+     */
     public void setType(MovieType movieType) {
         this.movieType = movieType;
     }
 
+     /**
+     * @return status of movie
+     */
     public MovieStatus getMovieStatus() {
         return this.movieStatus;
     }
 
+    /**
+     * set status of movie
+     * @param movieStatus is the new movie status to be set to the movie
+     */
     public void setMovieStatus(MovieStatus movieStatus) {
         this.movieStatus = movieStatus;
     }
 
+    /**
+     * @return synopsis of movie
+     */
     public String getSynopsis() {
         return this.synopsis;
     }
 
+    /**
+     * Set the synopsis of the movie
+     * @param synopsis is the new synopsis of the movie
+     */
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
     }
 
+    /**
+     * @return agerating of movie
+     */
     public String getageRating() {
         return this.ageRating;
     }
 
+    /**
+     * Set age rating of the movie
+     * @param agerating is the new age rating of movie to be set
+     */
     public void setageRating(String ageRating) {
         this.ageRating = ageRating;
     }
 
+    /**
+     * @return starRating of the movie
+     */
     public float getstarRating() {
         return this.starRating;
     }
 
+     /**
+    * set the new star rating of the rating
+     * @param starRating is the new star rating of the movie
+     */
     public void setstarRating(float starRating) {
         this.starRating = starRating;
     }
+
+    /**
+     * @return duration of the movie
+     */
     public double getDuration() {
         return this.duration;
     }
 
+    /**
+     * Set the new duration of the movie
+     * @param duration duration of the movie
+     */
     public void setDuration(double duration) {
         this.duration = duration;
     }
 
+    /**
+     * @return the release date of the movie
+     */
     public LocalDate getMovieReleaseDate() {
         return this.movieReleaseDate;
     }
 
+    /**
+     * Set the release date of the movie
+     * @param movieReleaseDate is the new release date of the movie
+     */
     public void setMovieReleaseDate(LocalDate movieReleaseDate) {
         this.movieReleaseDate = movieReleaseDate;
     }
 
+    /**
+     * @return the movie end date
+     */
     public LocalDate getMovieEndDate() {
         return this.movieEndDate;
     }
 
+    /**
+     * Set the end date of the movie
+     * @param movieEndDate is the new end date of the movie
+     */
     public void setMovieEndDate(LocalDate movieEndDate) {
         this.movieEndDate = movieEndDate;
     }
 
+    /**
+     * @return director of the movie
+     */
     public String getDirector() {
         return this.director;
     }
 
+     /**
+     * Set the director of the movie
+     * @param movieReleaseDate is the new director of the movie
+     */
     public void setDirector(String director) {
         this.director = director;
     }
 
+    /**
+     * @return cast of the movies in an array
+     */
     public ArrayList<String> getCast() {
         return this.cast;
     }
 
+    /**
+     * Set the cast of the movie
+     * @param cast is the new cast of the movie
+     */
     public void setCast(ArrayList<String> cast) {
         this.cast = cast;
     }
-    /* 
-    public ArrayList<Review> getReviews() {
-        return this.reviews;
-    }
 
-    public void setReviews(ArrayList<Review> reviews) {
-        this.reviews = reviews;
-    }
-    */
+    /**
+     * @return sales of the movie
+     */
     public int getSales() {
         return sales;
     }
 
+    /**
+     * Set the sales of the movie
+     * @param sales is the sales of the movie
+     */
     public void setSales(int sales) {
         this.sales = sales;
     }
 
+    /**
+     * Write movie information into a database
+     */
     public void writeMovie(){
         try{
             File file = new File("Database/MovieCollectionNew.txt");

@@ -6,12 +6,15 @@ import java.time.format.DateTimeFormatter;
 import java.io.*;
 import Model.*;
 
+/**
+ * This class is used to create a new session
+ */
 public class CreateSession {
     static Scanner sc = new Scanner(System.in);
     /**
-     * This is the main method of CreateSession class
-     * @param args
-     * @throws Exception
+     * This is the main method to create a new session
+     * @param args null argument can be used to drive the function
+     * @throws Exception Throws Exception
      */
     public static void main(String[] args) throws Exception {
 

@@ -3,6 +3,9 @@ package UI;
 import java.util.*;
 import java.io.*;
 
+/**
+ * This is the main class of RemoveMovie
+ */
 public class RemoveMovie {
 
     static int count = 0; // To count the number of movies in the file

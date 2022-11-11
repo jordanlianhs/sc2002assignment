@@ -4,8 +4,10 @@ import Model.*;
 import java.util.*;
 import java.io.*;
 
+/**
+ * Checks the seats of a session
+ */
 public class CheckSeatUI {
-
 	/**
 	 * This the main method to book seats
 	 * @param args

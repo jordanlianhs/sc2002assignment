@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- * AdminUI is for 
+ * Login page for the admin and main menu for admin system
  */
 public class AdminUI {
 
@@ -72,45 +72,44 @@ public class AdminUI {
 					
 							
 							choice = sc.nextInt();
-								switch(choice){
-									case 1:
-										//list by sales
-										ListTop5UI.listTop5Sales();
-										break;
-									case 2:
-										//list by ratings
-										ListTop5UI.listTop5Ratings();
-										break;
-									case 3:
-										//change settings
+							switch(choice){
+								case 1:
+									//list by sales
+									ListTop5UI.listTop5Sales();
+									break;
+								case 2:
+									//list by ratings
+									ListTop5UI.listTop5Ratings();
+									break;
+								case 3:
+									//change settings
+								
+									System.out.println("(1) Users can only list top 5 movies by ticket sales");
+									System.out.println("(2) Users can only lsit top 5 movies by overall ratings");
+									System.out.println("(3) Users can list both");
+									System.out.println("(4) Go back");
+									System.out.println("Please enter your choice:");
+							
 									
-										System.out.println("(1) Users can only list top 5 movies by ticket sales");
-										System.out.println("(2) Users can only lsit top 5 movies by overall ratings");
-										System.out.println("(3) Users can list both");
-										System.out.println("(4) Go back");
-										System.out.println("Please enter your choice:");
+									choice = sc.nextInt();
+										switch(choice){
+											case 1:
+												//list by sales
+												ListTop5UI.setSetting(2);
+												break;
+											case 2:
+												//list by ratings
+												ListTop5UI.setSetting(3);
+												break;
+											case 3:
+												ListTop5UI.setSetting(1);
+										}
 								
 										
-										choice = sc.nextInt();
-											switch(choice){
-												case 1:
-													//list by sales
-													ListTop5UI.setSetting(2);
-													break;
-												case 2:
-													//list by ratings
-													ListTop5UI.setSetting(3);
-													break;
-												case 3:
-													ListTop5UI.setSetting(1);
-											}
-									
-											
-										break;
-								}
-					
-							} while (choice != 4);
-
+									break;
+							}
+				
+						} while (choice != 4);
 						break;
 					case 5:
 						return; // go back to the MainUI
@@ -124,8 +123,10 @@ public class AdminUI {
 
 	/**
 	 * This function checks if the user has keyed in the correct admin information
-	 * 
+	 * @param usr Username
+	 * @param pass Password
 	 * @return Flag that indicates the state of login
+	 * @throws Exception Throws Exception
 	 */
 	public static boolean auth(String usr, String pass) throws Exception {
 		boolean token = false;
