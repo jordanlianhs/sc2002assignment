@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MovieCRUD",
+            "request": "launch",
+            "mainClass": "UI.MovieCRUD",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
             "name": "Launch SearchMovie",
             "request": "launch",
             "mainClass": "UI.SearchMovie",
