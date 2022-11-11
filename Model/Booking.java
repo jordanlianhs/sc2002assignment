@@ -6,22 +6,59 @@ import java.util.*;
 import UI.*;
 import java.time.*;
 
+/**
+ * Class about movie bookings
+ */
 public class Booking {
+
+    /** 
+     * Person that books
+    */
     private Guest guest;
-
-    // private LocalDateTime movietime;
-
+    /** 
+     * Movie of the booking 
+     */
     private Movie movie;
-
+    /** 
+     * Seat Number of the booking 
+     */
     private String seatNumber;
-
+    /** 
+     * Ticket ID of the booking 
+     */
     private String ticketID;
-
+    /** 
+     * Cinema of the booking
+     */
     private String cinemaCode;
-
+    /** 
+     * Price of the booking
+     */
     private double price;
 
+    /**
+     * Get the ticket ID for the booking
+     * @return Ticket ID
+     */
+    public String getTicketID() {
+        return ticketID;
+    }
 
+    /**
+     * Get the Seat Number of the booking
+     * @return sea
+     */
+    public String getSeatNumber() {
+        return seatNumber;
+    }
+
+    /**
+     * Class about booking of cinema seat
+     * @param guest The person that book the ticket
+     * @param session The session of the booking
+     * @param seatNumber The seat that is booked
+     * @param cinemaCode The cinema that contains the booking
+     */
     public Booking(Guest guest, Session session, String seatNumber, String cinemaCode) {
 
         this.guest = guest;
@@ -114,6 +151,11 @@ public class Booking {
         }
         this.price = temp;
     }
+    /**
+     * Check if the date is a holiday
+     * @param session The session of the booking
+     * @return True if it is a holiday
+     */
     public boolean isHoliday(Session S) {
         LocalDateTime dateTime = S.getSeshDateTime(); // To check for holidays
         String DT = dateTime.toLocalDate().toString(); // Converti to JUST date, then to string, so i can search
@@ -125,6 +167,11 @@ public class Booking {
         } else
             return false;
     }
+
+    /**
+     * Function to write booking record into database
+     * @throws IOException
+     */
 
     public void writebookingstatement() throws IOException {
         try {
@@ -149,11 +196,4 @@ public class Booking {
 
     }
 
-    public String getTicketID() {
-        return ticketID;
-    }
-
-    public String getSeatNumber() {
-        return seatNumber;
-    }
 }

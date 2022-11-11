@@ -6,18 +6,13 @@ import java.io.*;
 
 public class CheckSeatUI {
 
-	//private static Session sessiono= new Session();
-
-	//private static Guest user = new Guest();
-
-	//private static String cinemaCode = null;
-
-	//public CheckSeatUI(Guest user, Session SessionNo, String cinemaCode) {
-	//	this.user = user;
-	//	sessiono = SessionNo;
-	//	this.cinemaCode = cinemaCode;
-	//}
-
+	/**
+	 * This the main method to book seats
+	 * @param args
+	 * @param user is the person that the booking belongs to
+	 * @throws IOException
+	 * @throws Exception
+	 */
 	public static void main(String[] args, Guest user) throws IOException, Exception{
 		Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
@@ -51,6 +46,12 @@ public class CheckSeatUI {
 
 	}
 
+	/**
+	 * Display seating plan of specific session
+	 * @param A is Cineplex A
+	 * @param B is cineplex B
+	 * @param C is Cineplex C
+	 */
 	public static void checkAvailableSeat(Cineplex A, Cineplex B, Cineplex C) {
 		//sessiono.getSeatPlan().printLayout();
 		Scanner s = new Scanner(System.in);
@@ -85,9 +86,6 @@ public class CheckSeatUI {
 		
 		do{
 			System.out.println("Choose your Session");
-			if(s.hasNextInt()==false){
-				continue;
-			}
 			number = s.nextInt();
 		}
 		while(number==0 || number>count);
@@ -95,11 +93,20 @@ public class CheckSeatUI {
 		temp.get(number-1).getSeatPlan().printLayout();
 	}
 
+	/**
+	 * Display seating plan of specific session
+	 * @param user is the person the booking belongs to
+	 * @param A is Cineplex A
+	 * @param B is cineplex B
+	 * @param C is Cineplex C
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
 	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C) throws IOException, Exception {
 		Scanner s = new Scanner(System.in);
 		String cpCode = s.next();
 		do{
-			System.out.println("Enter your Cineplex Code");
+			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
 			cpCode = s.next();
 		}
 		while(!cpCode.equals("AMK")&&!cpCode.equals("BBK")&&!cpCode.equals("CCK"));
@@ -129,9 +136,11 @@ public class CheckSeatUI {
 		
 		MovieStatus moviestatus;
 		do{
-			System.out.println("Choose your Session");
-			System.out.println("Enter 0 to quit");
-			number = s.nextInt();
+			do{
+				System.out.println("Choose your Session");
+				number = s.nextInt();
+			}
+			while(number>count);
 			if(number == 0){
 				return;
 			}
@@ -185,6 +194,14 @@ public class CheckSeatUI {
 		System.out.println("Ticket Price = $" + ticketPrice);
 	}
 
+	/**
+	 * Write booking records into database when booking seat UI ends
+	 * @param A is Cineplex A
+	 * @param B is Cineplex B
+	 * @param C is Cineplex C
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
 	public static void saveSeatBooking(Cineplex A, Cineplex B, Cineplex C) throws IOException,FileNotFoundException {
 
 		// Note need to add options for deleting

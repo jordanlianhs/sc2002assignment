@@ -1,8 +1,17 @@
 package Model;
 
+/**
+ * Class about timing of movie in a cinema
+ */
 public class SeatingPlan {
+	/**
+	 * Seating plan of the session
+	 */
 	public Seat[][] seatPlan; 
 	
+	/**
+	 * Seating plan construction
+	 */
 	public SeatingPlan() {
 		seatPlan = new Seat[10][16];
 		int count = 0;
@@ -17,10 +26,19 @@ public class SeatingPlan {
 		
 	}
 
+	/**
+	 * Get specific seat in seating plan of session
+	 * @param i is the row of seat
+	 * @param j is the column of seat
+	 * @return seat in the seating plan
+	 */
 	public Seat getSeat(int i,int j){
 		return seatPlan[i][j];
 	}
 	
+	/**
+	 * Display the seating plan in the session
+	 */
 	public void printLayout() {
 		int count = -1;
 		for(char alpha = 'K'; alpha >='A'; alpha--) {	
@@ -60,6 +78,11 @@ public class SeatingPlan {
 		}
 	}
 	
+	/**
+	 * Book specific seat in the seating plan of the session
+	 * @param row1 is the row number of seat
+	 * @param column1 is the column number of seat
+	 */
 	public void assign(char row1, int column1) {
 		int count = 0;
 		for(char alpha = 'J'; alpha >='A'; alpha--) {
@@ -74,6 +97,11 @@ public class SeatingPlan {
 		seatPlan[count][column1-1].book();
 	}
 	
+	/**
+	 * Unbook specific seat in the seating plan of the session
+	 * @param row1 is the row number of seat
+	 * @param column1 is the column number of seat
+	 */
 	public void unassign(char row1, int column1) {
 		int count = 0;
 		for(char alpha = 'J'; alpha >='A'; alpha--) {
