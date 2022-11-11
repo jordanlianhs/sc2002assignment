@@ -39,10 +39,11 @@ public class HolidayUI {
 			sc.nextLine(); // Clear scanner buffer
 			switch (choice) {
 				case 1:
-					FileWriter FR = new FileWriter(file, true);
-					boolean dateCheck = false;
+				boolean dateCheck = false;
 					do {
 						try {
+							FileWriter FR = new FileWriter(file, true);
+							
 							System.out.println("Enter the NAME of Holiday: ");
 							System.out.println("Type \"cancel\" to exit");
 							holName = sc.nextLine();
@@ -67,6 +68,8 @@ public class HolidayUI {
 						} catch (InputMismatchException e) {
 							System.out.println("Invalid Input!");
 							System.out.println();
+						}catch (IOException ex){
+							System.out.println("Error!");
 						}
 					} while (dateCheck != true);
 					break;
@@ -157,6 +160,8 @@ public class HolidayUI {
 						}
 					} catch (InputMismatchException e) {
 						System.out.println("INVALID INPUT!");
+					} catch (IOException x){
+						System.out.println("Error!");
 					}
 
 					break;
@@ -192,6 +197,7 @@ public class HolidayUI {
 					break;
 			}
 		} while (choice != 5);
+		sc.close();
 	}
 
 	/**
@@ -202,7 +208,7 @@ public class HolidayUI {
 	 * @exception parseException Signals that an error has been reached unexpectedly
 	 *                           while parsing. input
 	 */
-	public static boolean checkDate(String input) throws Exception {
+	public static boolean checkDate(String input) {
 		// if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
 		// System.out.println("Date Input: " + input); // Debugging Purposes
 		// return true;
@@ -227,7 +233,7 @@ public class HolidayUI {
 	 * @param n Input String to be deleted (Exact match)
 	 * @throws Exception if a file cannot be found or the wrong path is initialised
 	 */
-	public static void delHol(String n) throws Exception {
+	public void delHol(String n) {
 
 		// Note need to add options for deleting
 		try {
@@ -269,6 +275,7 @@ public class HolidayUI {
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
+
 	}
 
 	/**
