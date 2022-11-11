@@ -372,6 +372,8 @@ public class TicketPrice {
                         System.out.println("Gold Cinema Surcharge: " + GoldSurcharge);
                         System.out.println("Platinum Cinema Surcharge: " + PlatSurcharge);
                         break;
+                    case 17:
+                        break;
                     default:
                         System.out.println("Invalid Input!");
                         break;
