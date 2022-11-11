@@ -7,8 +7,12 @@ import java.io.*;
 import Model.*;
 
 public class CreateSession {
-    static Scanner sc = new Scanner(System.in); // Console
-
+    static Scanner sc = new Scanner(System.in);
+    /**
+     * This is the main method of CreateSession class
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
         String temp;
@@ -37,12 +41,19 @@ public class CreateSession {
             }
         }while(movie.getmovieName() == null);
 
-        System.out.print("Enter Cinema Code (ONE, TWO, THR): ");
-        temp = sc.nextLine();
+        do{
+			System.out.println("Enter Cinema Code (ONE, TWO, THR): ");
+			temp = sc.next();
+		}
+		while(!temp.equals("ONE")&&!temp.equals("TWO")&&!temp.equals("THR"));
+
         cinemaCode = temp;
 
-        System.out.print("Enter Cineplex Code (AMK, BBK, CCK): ");
-        temp = sc.nextLine();
+        do{
+			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
+			temp = sc.next();
+		}
+		while(!temp.equals("AMK")&&!temp.equals("BBK")&&!temp.equals("CCK"));
 
         Session wata = new Session(movie, seshDateTime, cinemaCode);
         wata.writeSession(temp);
