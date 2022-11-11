@@ -8,20 +8,24 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.*;
 
+
+/**
+ * Class for the Ratings of movies
+ */
 public class Rating {
 
   /**
-   * this Rating's movie name
+   * This Rating's movie name
    */
   private String movieName;
 
   /**
-   * this Rating's number of stars
+   * This Rating's number of stars
    */
   private double numOfStars;
 
   /**
-   * Constructor for Rating
+   * Constructor for Rating Class
    * 
    * @param moviename for the movie title
    * @param numOfStars for the average user rating
@@ -33,24 +37,40 @@ public class Rating {
 
   /**
    * 
-   * @return movieName
+   * @return movie name
    */
   public String getMovieName() {
     return this.movieName;
   }
 
+  /**
+   * Set movie name
+   * @param moviename
+   */
   public void setMovieName(String moviename) {
     this.movieName = moviename;
   }
 
+  /**
+   * 
+   * @return Number of stars for rating
+   */
   public double getNumOfStars() {
     return this.numOfStars;
   }
 
+  /**
+   * Set Number of stars
+   * @param numOfStars new number of stars
+   */
   public void setNumOfStars(double numOfStars) {
     this.numOfStars = numOfStars;
   }
 
+  /**
+   * Calculates Average rating and calls methods to update rating and movie database
+   * @throws IOException Throws IOException
+   */
   public void editAvgRating() throws IOException {
     try {
       File ratingFile = new File("./Database/rating.txt");
@@ -109,6 +129,9 @@ public class Rating {
 
   }
 
+  /**
+   * Creates movie rating for new movies, initialises values of new rating to -1, number of ratings to 0 and first rating to -1
+   */
   public void createMovieRating(){
     try {
       File file = new File("./Database/rating.txt");
@@ -130,6 +153,13 @@ public class Rating {
     }
   }
 
+  /**
+   * Updates rating database
+   * @param movieName Movie Name
+   * @param newRating New Rating
+   * @param numOfRatings Number of ratings
+   * @param firstRating First rating
+   */
   public static void appendRatingTXT(String movieName, String newRating, String numOfRatings, String firstRating)
   {
     try {
@@ -185,6 +215,11 @@ public class Rating {
 
   }
 
+  /**
+   * Updates movie database with new rating
+   * @param movieName Movie Name
+   * @param newRating New Rating
+   */
   public static void appendMovieTXT(String movieName, String newRating)
   {
     try {

@@ -117,9 +117,19 @@ public class DisplayMovie {
 				if(!temp.equals("Y") && !temp.equals("N"))
 					System.out.println("Wrong input!!! ");
 			}while(!temp.equals("Y") && !temp.equals("N"));
-			if(temp.equals("Y")){
 
-				MovieDetails.details(chooseMovie(), false);
+			String temp1;
+			if(temp.equals("Y")){
+				do{
+					MovieDetails.details(chooseMovie(), false);
+					do{
+						System.out.println("Would you like to view another movie's details? (Y/N)");
+						temp1 = sc1.nextLine();
+						if(!temp1.equals("Y") && !temp1.equals("N"))
+							System.out.println("Wrong input!!! ");
+					}while(!temp1.equals("Y") && !temp1.equals("N"));
+
+				} while (temp1.equals("Y"));
 			}
 
 		} catch (FileNotFoundException e) {
@@ -135,16 +145,14 @@ public class DisplayMovie {
 			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
 			Scanner sc1 = new Scanner(System.in);
-			int i = 1;
 
 			System.out.println("Which movie would you like to select? (Enter title of movie)");
 			while(sc.hasNext()){
 				String st = sc.nextLine();// To get current string with all Capitalisation
-				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				String st2 = st.toString(); // Changes it to string
 				
 				String[] stToken = st2.split(",");
-				System.out.println(String.valueOf(i) + ". " + String.valueOf(stToken[0]));
-				i++;
+				System.out.println(String.valueOf(stToken[0]));
 			}
 			System.out.println();
 

@@ -7,6 +7,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.*;
 
+/**
+ * Class for the Reviews for movies
+ */
 public class Review {
      /**
       * this Review's username (email)
