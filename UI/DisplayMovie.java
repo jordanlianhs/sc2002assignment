@@ -151,6 +151,11 @@ public class DisplayMovie {
 		}
 	}
 
+	/**
+	 * Prompts user to select a movie
+	 * @param userView True if used in UserUI, False if used in Admin UI
+	 * @return chosenOne Movie title input by user
+	 */
 	public static String chooseMovie(boolean userView)
 	{
 		String chosenOne="";
@@ -164,8 +169,6 @@ public class DisplayMovie {
 			String st2 = "";
 			String[] stToken;
 			boolean test;
-
-
 
 			System.out.println("Which movie would you like to select? (Enter title of movie)");
 			while(sc.hasNext()){
