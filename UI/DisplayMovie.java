@@ -7,6 +7,13 @@ import java.time.*;
 import java.time.format.*;
 
 public class DisplayMovie {
+
+    /**
+     * Main function driving the view
+     * 
+     * @param args null argument can be used to drive the function
+     * @throws Exception Throws Exception
+     */
     public static void main(String[] args) throws Exception{
         try {
 			DisplayMovie dm = new DisplayMovie();
@@ -18,6 +25,10 @@ public class DisplayMovie {
 		}
     }
 
+    /**
+     * Display all movies in the database
+     * @throws Exception Throws Exception
+     */
 	public void displayMovie() throws Exception {
 		try {
 			File file = new File("./Database/MovieCollectionNew.txt");

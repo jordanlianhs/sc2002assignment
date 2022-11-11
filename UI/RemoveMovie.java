@@ -4,7 +4,8 @@ import java.io.*;
 
 
 public class RemoveMovie {
-    static int count = 0;
+    
+    static int count = 0; // To count the number of movies in the file
     static Scanner sc = new Scanner(System.in); // Console
 
     /**
