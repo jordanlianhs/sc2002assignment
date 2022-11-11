@@ -19,7 +19,7 @@ public class MovieCRUD {
 	 * @param args null argument can be used to drive the function
 	 * @throws Exception Throws Exception
 	 */
-	public void main(String[] args) throws Exception {
+	public void main(String[] args){
 		Scanner sc = new Scanner(System.in); // Console
 		int choice;
 

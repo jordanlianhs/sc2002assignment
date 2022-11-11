@@ -18,7 +18,7 @@ public class CreateMovie {
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public void main(String[] args) throws Exception {
+    public void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String movieName;
         MovieType movieType;
@@ -159,7 +159,7 @@ public class CreateMovie {
      * @param date Date to be checked
      * @return Returns true if the date is valid
      */
-    public static boolean checkDate(String input) throws Exception {
+    public boolean checkDate(String input){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date = sdf.parse(input);

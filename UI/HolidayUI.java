@@ -20,7 +20,8 @@ public class HolidayUI {
 	 * @param args Main arument args (null)
 	 * @throws Exception throws exceptions
 	 */
-	public void main(String[] args) throws Exception {
+	public void main(String[] args){
+
 		Scanner sc = new Scanner(System.in); // Console
 		int choice;
 		String del;

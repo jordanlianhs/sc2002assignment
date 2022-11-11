@@ -21,7 +21,7 @@ public class AdminUI {
 	 * @throws Exception Throws Exception
 	 */
 	public void main(String[] args) {
-		try{
+
 			String id, pass;
 			int choice = 0;
 			int choice2 = 0;
@@ -124,9 +124,7 @@ public class AdminUI {
 				} while (choice != 5);
 				sc.close();
 			}
-		}catch(Exception e){
-			System.out.println("APP CRASH");
-		}
+
 	}
 	
 		
@@ -138,7 +136,7 @@ public class AdminUI {
 	 * @return Flag that indicates the state of login
 	 * @throws Exception Throws Exception
 	 */
-	public static boolean auth(String usr, String pass) throws Exception {
+	public boolean auth(String usr, String pass) {
 		boolean token = false;
 
 		try {

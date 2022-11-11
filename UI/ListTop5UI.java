@@ -13,7 +13,7 @@ public class ListTop5UI {
     /**
      * List of all movies 
      */
-    static ArrayList<Movie> movieList;
+    private ArrayList<Movie> movieList;
 
     /**
      * The setting that affects whether one can list by Sales, Star ratings or both
