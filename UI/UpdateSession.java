@@ -7,7 +7,7 @@ import java.io.*;
 import Model.*;
 
 public class UpdateSession {
-    static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in); // Console
     public static void main(String[] args) throws Exception {
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");

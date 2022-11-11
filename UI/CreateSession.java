@@ -7,9 +7,8 @@ import java.io.*;
 import Model.*;
 
 public class CreateSession {
-    static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in); // Console
 
-    /**
     public static void main(String[] args) throws Exception {
 
         String temp;
