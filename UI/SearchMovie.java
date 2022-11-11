@@ -24,6 +24,7 @@ public class SearchMovie {
 			input = sc.nextLine();
 			SearchMovie.find(input);
 		} while (!input.toLowerCase().equals("esc"));
+		sc.close();
 	}
 
 	/**
@@ -44,7 +45,8 @@ public class SearchMovie {
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 
-				if (st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
+				// Skips the movie if it is not showing
+				if (st.contains("ENDOFSHOWING")) {
 					continue;
 				}
 

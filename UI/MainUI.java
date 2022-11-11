@@ -6,13 +6,13 @@ import java.util.*;
  * Main UI used to drive the program 
 */
 public class MainUI {
+    
     /**
      * Main function driving the view
      * 
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-
     public static void main(String[] args) throws Exception {
 
         boolean exit = false;
