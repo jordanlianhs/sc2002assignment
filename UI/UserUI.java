@@ -1,6 +1,5 @@
 package UI;
 import java.util.*;
-import java.io.*;
 import Model.*;
 
 public class UserUI {
@@ -46,7 +45,6 @@ public class UserUI {
 				System.out.println("5. Top movies");
 				System.out.println("6. Review movie");
 				System.out.println("7. Go Back");
-				System.out.println("8. Exit");
 				System.out.print("Please enter your choice: ");
 				choice = sc.nextInt();
 				System.out.println();
@@ -67,10 +65,6 @@ public class UserUI {
                     ReviewUI.main(null,user);
                 }else if(choice == 7){
                     return;
-                }else if(choice == 8) {
-                    String anything = sc.nextLine();
-                    System.out.println("Thanks for using MOBLIMA!");
-                    System.exit(0);
                 }
                 else{
                     System.out.println("\nWrong input!\n");

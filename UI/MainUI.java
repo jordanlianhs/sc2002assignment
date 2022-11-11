@@ -1,8 +1,10 @@
 package UI;
 
 import java.util.*;
-import Model.*;
 
+/** 
+ * Main UI used to drive the program 
+*/
 public class MainUI {
     /**
      * Main function driving the view
