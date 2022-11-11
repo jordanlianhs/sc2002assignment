@@ -10,3 +10,6 @@ Dropout 3,4.7,5,4.7
 Past,3.5,6,2.5
 Clash of Clan live action,2.8,2,4.0
 Ah Boy To Women,3.7,3,3.0
+Your Mother,-1,0,-1
+your mom,-1,0,-1
+your mom,-1,0,-1

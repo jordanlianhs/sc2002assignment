@@ -14,6 +14,12 @@ import java.io.BufferedWriter;
 public class CreateMovie {
     static Scanner sc = new Scanner(System.in);
 
+    /**
+     * Main function driving the view
+     * 
+     * @param args null argument can be used to drive the function
+     * @throws Exception Throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
         String movieName;
@@ -105,6 +111,7 @@ public class CreateMovie {
 		temp = sc.nextLine();
 		duration = Double.valueOf(temp);
 
+        System.out.println();
         System.out.print("Release Date of the Movie (yyyy-MM-dd): ");
         temp = sc.nextLine();
         if(checkDate(temp)){
@@ -115,6 +122,7 @@ public class CreateMovie {
             return;
         }
 
+        System.out.println();
         System.out.print("End Date of the Movie (yyyy-MM-dd): ");
         temp = sc.nextLine();
         if(checkDate(temp)){
@@ -150,11 +158,11 @@ public class CreateMovie {
     }
 
     /**
-	 * Check for Valid Date
-	 * 
-	 * @param input
-	 * @return
-	 */
+     * Function to check if the date is valid
+     * 
+     * @param date Date to be checked
+     * @return Returns true if the date is valid
+     */ 
     public static boolean checkDate(String input) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {

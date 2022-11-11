@@ -11,6 +11,12 @@ public class MovieCRUD {
 	static Scanner sc = new Scanner(System.in); // Console
 	static int count = 0;
 
+	/**
+	 * Main function driving the view
+	 * 
+	 * @param args null argument can be used to drive the function
+	 * @throws Exception Throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		int choice;
 		String date;
@@ -31,6 +37,8 @@ public class MovieCRUD {
 					CreateMovie.main(null);
 					break;
 				case 2:
+					RemoveMovie.main(null);
+					/* 
 					// Delete and entry
 					File f = new File("./Database/MovieCollectionNew.txt");
 					lineCounter l = new lineCounter();
@@ -60,8 +68,7 @@ public class MovieCRUD {
 					RemoveSession.removeAllSession(date);
 					sc.close();
 					SearchMovie.delMovie(rez[dChoice]);
-					
-
+					*/
 					break;
 				case 3:
 					// Update a variable of movie

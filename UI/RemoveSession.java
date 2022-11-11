@@ -150,20 +150,22 @@ public class RemoveSession {
                     //System.out.println(size);
                     count++;
                 }
+                System.out.println(cpCode + " Sessions Deleted");
             }
             else if(cpCode.equals("BBK")){
                 while(count <size){
                     temp.get(count).writeSession("BBK");
                     count++;
                 }
+                System.out.println(cpCode + " Sessions Deleted");
             }
             else{
                 while(count <size){
                     temp.get(count).writeSession("CCK");
                     count++;
                 }
+                System.out.println(cpCode + " Sessions Deleted");
             }
-            System.out.println("Session Deleted");
         }
     }
     
