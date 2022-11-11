@@ -37,6 +37,7 @@ public class DisplayMovie {
 			sc.useDelimiter(",");
 			System.out.println("\nList of Movies: \n");
 			System.out.println("Movie         |Movie Type    |Movie Status  |Synopsis      |Age Rating    |Star Rating   |Movie Duration|");
+			System.out.println("---------------------------------------------------------------------------------------------------------");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String[] stToken = st.split(",");
@@ -71,6 +72,7 @@ public class DisplayMovie {
 			Scanner sn = new Scanner(file);
 			System.out.println("\n");
 			System.out.println("Movie         |Release Date  |End Date      |Director      |Sales         |Cast Size     |Cast");
+			System.out.println("---------------------------------------------------------------------------------------------------------");
 			while (sn.hasNext()) {
 				String st = sn.nextLine(); // To get current string with all Capitalisation
 				String[] stToken = st.split(",");
