@@ -144,14 +144,17 @@ public class DisplayMovie {
 		try{
 			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
+			Scanner sc2 = new Scanner(file).useDelimiter(",");
 			Scanner sc1 = new Scanner(System.in);
+            boolean flag = false;
+			String st="";
+			String st2 = "";
+			String[] stToken;
 
 			System.out.println("Which movie would you like to select? (Enter title of movie)");
 			while(sc.hasNext()){
-				String st = sc.nextLine();// To get current string with all Capitalisation
-				String st2 = st.toString(); // Changes it to string
-				
-				String[] stToken = st2.split(",");
+				st = sc.nextLine();
+				stToken = st.split(",");
 				System.out.println(String.valueOf(stToken[0]));
 			}
 			System.out.println();
@@ -159,6 +162,16 @@ public class DisplayMovie {
 			sc.close();
 
 			chosenOne = sc1.nextLine();
+			while(sc2.hasNext()){
+				st = sc2.nextLine();
+				st2 = st.toLowerCase().toString();
+				stToken = st2.split(",");
+				if (chosenOne.toLowerCase().equals(stToken[0])) flag=true;
+			}
+			
+			// if(flag == false){
+            //     System.out.println("Movie does not exist! ");
+            // }
 		}
 
 		catch (FileNotFoundException e) {

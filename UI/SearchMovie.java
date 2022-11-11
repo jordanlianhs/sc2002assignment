@@ -50,7 +50,7 @@ public class SearchMovie {
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 
-				if (st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
+				if (st.contains("ENDOFSHOWING")) {
 					continue;
 				}
 

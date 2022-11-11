@@ -20,8 +20,7 @@ public class MovieDetails {
             System.out.print("Enter a movie name: ");
             input = sc.nextLine();
             if (!input.equals("esc")) {
-                MovieDetails look = new MovieDetails();
-                look.details(input, true);
+                details(input, true);
             }
         } while (!input.toLowerCase().equals("esc"));
     }
@@ -111,7 +110,7 @@ public class MovieDetails {
                             System.out.print(s);
                             i++;
                         } else
-                            System.out.println(", " + s);
+                            System.out.print(", " + s);
                     }
                     System.out.println();
 
