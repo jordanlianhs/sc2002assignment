@@ -25,9 +25,20 @@ public class Review {
        */
       private String additionalComment;
 
+
+    /**
+     * Constructor for Review Class
+     */
     public Review(){
     }
 
+    /**
+     * Constructor for Review Class
+     * @param moviename Name of the movie
+     * @param username Username of reviewer
+     * @param numOfStars Number of stars that reviewer gave
+     * @param additionalComment Additional comment by reviewer
+     */
     public Review(String moviename, String username, double numOfStars, String additionalComment) {
         this.movieName = moviename;
         this.username = username;
@@ -35,38 +46,74 @@ public class Review {
         this.additionalComment = additionalComment;
     }
 
+    /**
+     * 
+     * @return Movie Name
+     */
     public String getMovieName() {
         return this.movieName;
     }
 
+    /**
+     * Sets movie name
+     * @param moviename New movie name
+     */
     public void setMovieName(String moviename) {
         this.movieName = moviename;
     }
 
+    /**
+     * 
+     * @return Reviewer's username
+     */
     public String getUsername() {
         return this.username;
     }
 
+    /**
+     * Sets reviewer's username
+     * @param username New Username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * 
+     * @return Number of stars given by reviewer
+     */
     public double getNumOfStars() {
         return this.numOfStars;
     }
 
+    /**
+     * Sets Number of stars given by Reviewer
+     * @param numOfStars New number of stars
+     */
     public void setNumOfStars(double numOfStars) {
         this.numOfStars = numOfStars;
     }
 
+    /**
+     * 
+     * @return Additional comment by reviewer
+     */
     public String getAdditionalComment() {
         return this.additionalComment;
     }
 
+    /**
+     * Sets Additional comment
+     * @param additionalComment New additional comment
+     */
     public void setAdditionalComment(String additionalComment) {
         this.additionalComment = additionalComment;
     }
 
+    /**
+     * Writes the review to the Review.txt database
+     * @throws IOException Throws IOException
+     */
     public void writereview() throws IOException{
         try{
             File file = new File("Database/Review.txt");
@@ -104,6 +151,11 @@ public class Review {
 
     }
 
+    /**
+     * Searches for reviews for a particular movie
+     * @param n Movie Name
+     * @throws Exception Throws Exception
+     */
     public void search(String n) throws Exception{
         
         try {
