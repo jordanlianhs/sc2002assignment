@@ -11,8 +11,8 @@ import java.io.*;
  * of tickets
  */
 public class TicketPrice {
-    static File f = new File("./Database/TicketPrice.txt");
-    static double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, DBsurcharge, RegSurcharge,
+    private File f = new File("./Database/TicketPrice.txt");
+    private double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, DBsurcharge, RegSurcharge,
             GoldSurcharge, PlatSurcharge;
 
     /**
@@ -21,7 +21,7 @@ public class TicketPrice {
      * @param args null argument can be used to drive the function
      * @throws Exception throws exception
      */
-    public void main(){
+    public void main(String[] args){
         TicketPrice ticketPrice = new TicketPrice();
         ticketPrice.configurePrice();
     }
