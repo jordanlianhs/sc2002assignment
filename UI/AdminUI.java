@@ -29,7 +29,6 @@ public class AdminUI {
 		if (auth(id, pass)) {
 			do {
 				System.out.println("===Admin System===");
-				// System.out.println("(1) Manage Holidays");
 				System.out.println("(1) Movie CRUD");
 				System.out.println("(2) Session CRUD");
 				System.out.println("(3) Configure System Settings");
@@ -113,11 +112,11 @@ public class AdminUI {
 					case 5:
 						return; // go back to the MainUI
 					default:
+						System.out.println("\nInvalid input!\n");
 						break;
 				}
-			} while (choice != 6);
-		} else
-			return;
+			} while (choice != 5);
+		}
 	}
 
 	/**
@@ -142,7 +141,7 @@ public class AdminUI {
 				System.out.println("Username or Password is incorrect!");
 				token = false;
 			} else {
-				System.out.println("Login as Administrator Successful");
+				System.out.println("Login as Administrator Successful\n");
 				token = true;
 			}
 		} catch (FileNotFoundException e) {

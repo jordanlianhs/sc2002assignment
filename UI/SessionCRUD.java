@@ -7,6 +7,12 @@ import Model.*;
 public class SessionCRUD {
     static Scanner sc = new Scanner(System.in); // Console
 
+    /**
+     * Main function driving the view
+     * 
+     * @param args null argument can be used to drive the function
+     * @throws Exception Throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
 		int choice;

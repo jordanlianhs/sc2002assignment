@@ -1,11 +1,7 @@
 package UI;
 
 import java.util.*;
-import UI.*;
-import java.io.*;
-import Model.*;
-import java.time.*;
-import java.time.format.*;
+
 
 public class MovieCRUD {
 	static Scanner sc = new Scanner(System.in); // Console
@@ -30,7 +26,6 @@ public class MovieCRUD {
 
 			switch (choice) {
 				case 1:
-					// Create Movie
 					CreateMovie.main(null);
 					break;
 				case 2:
@@ -40,11 +35,12 @@ public class MovieCRUD {
 					UpdateMovie.main(null);
 					break;					
 				case 4:
-					SearchMovie.listMovie();
+					DisplayMovie.main(null);
 					break;
 				case 5:
 					return;
 				default:
+					System.out.println("\nInvalid input!\n");
 					break;
 			}
 		} while (choice != 5);
