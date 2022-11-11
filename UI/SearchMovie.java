@@ -41,11 +41,16 @@ public class SearchMovie {
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
-			System.out.println("The movie details are as follows: ");
+			System.out.println("The movie details are as follows: \n");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
+				
+				if(st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
+					continue;
+				}
+
 				// Print the string
 				if (st2.contains(n)) {
 					System.out.println(st); // Display original capitalised version

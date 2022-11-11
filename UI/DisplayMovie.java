@@ -2,9 +2,7 @@ package UI;
 
 import java.util.*;
 import java.io.*;
-import Model.*;
-import java.time.*;
-import java.time.format.*;
+
 
 public class DisplayMovie {
 
