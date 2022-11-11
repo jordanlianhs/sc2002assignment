@@ -6,8 +6,16 @@ import java.util.*;
 import java.io.*;
 import Model.*;
 
+/**
+ * This is the main class of DisplaySession
+ */
 public class DisplaySession {
     static Scanner sc = new Scanner(System.in);
+	/**
+	 *  This is the main method to display the list of sessions in the selected cineplex
+	 * @param cineplexCode
+	 * @throws Exception
+	 */
     public static void main(String[] args) throws Exception {
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
@@ -17,8 +25,12 @@ public class DisplaySession {
         System.out.println("Display Session");
         System.out.println("-----------------------------------");
     
-        System.out.print("Enter Cineplex Code (AMK, BBK, CCK): ");
-        cpCode = sc.nextLine();
+		do{
+			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
+			cpCode = sc.next();
+		}
+		while(!cpCode.equals("AMK")&&!cpCode.equals("BBK")&&!cpCode.equals("CCK"));
+
 
 		ArrayList<Session> temp;
 		if(cpCode.equals("AMK")){

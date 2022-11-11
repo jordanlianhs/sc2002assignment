@@ -16,15 +16,25 @@ public class Rating {
   private String movieName;
 
   /**
-   * this Review's number of stars
+   * this Rating's number of stars
    */
   private double numOfStars;
 
+  /**
+   * Constructor for Rating
+   * 
+   * @param moviename for the movie title
+   * @param numOfStars for the average user rating
+   */
   public Rating(String moviename, double numOfStars) {
     this.movieName = moviename;
     this.numOfStars = numOfStars;
   }
 
+  /**
+   * 
+   * @return movieName
+   */
   public String getMovieName() {
     return this.movieName;
   }

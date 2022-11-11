@@ -66,7 +66,8 @@ public class CreateMovie {
                 movieType = MovieType.THREE_D_BB;
                 break;
             default:
-                System.out.println("Wrong input!");
+                System.out.println("\nWrong input!");
+                System.out.println("Returning to Movie CRUD UI....");
                 return;
         }
 

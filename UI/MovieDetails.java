@@ -32,11 +32,44 @@ public class MovieDetails {
                 String st = sc.nextLine();// To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
                 
+                String[] stToken1 = st.split(",");
                 String[] stToken = st2.split(",");
 
-                if(flag = stToken[0].equals(input.toLowerCase())){
-                    System.out.println("The movie details requested are as follows : ");
-                    System.out.println(st); 
+                if((flag = stToken[0].equals(input.toLowerCase())) && !(stToken1[2].equals("ENDOFSHOWING") || stToken1[2].equals("COMINGSOON"))){
+                    System.out.println("The movie details requested are as follows: \n");
+                    
+                    int i = 0;
+                    for (String s:stToken1)
+                    {
+						if(s.equals("-1.0") || s.equals("-1")){
+								s = "NA";
+						}
+                        switch(i){
+                            case 0: System.out.print("Movie:  "); break;
+                            case 1: System.out.print("\nMovie Type:  "); break;
+                            case 2: System.out.print("\nMovie Status:  "); break;
+                            case 3: System.out.print("\nSynopsis:  "); break;
+                            case 4: System.out.print("\nAge Rating:  "); break;
+                            case 5: System.out.print("\nStar Rating:  "); break;
+                            case 6: System.out.print("\nMovie Duration:  "); break;
+                            case 7: System.out.print("\nRelease Date:  "); break;
+                            case 8: System.out.print("\nEnd Date:  "); break;
+                            case 9: System.out.print("\nDirector:  "); break;
+                            case 10: System.out.print("\nSales:  "); break;
+                            case 11: System.out.print("\nCast Size:  "); break;
+                            case 12: System.out.print("\nCast:  "); break;
+                            default: break;
+
+                        }
+
+                        if (i<13){
+                            System.out.print(s);
+                            i++;
+                        }
+                        else System.out.println(", " + s);
+					}
+				    System.out.println();
+                    
                     String temp;
 
                     do{
@@ -55,7 +88,6 @@ public class MovieDetails {
             if(flag == false){
                 System.out.println("Movie does not exist! ");
             }
-            sc.close();
         }
         catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");

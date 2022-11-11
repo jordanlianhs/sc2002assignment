@@ -4,8 +4,12 @@ import java.util.*;
 import java.io.*;
 import Model.*;
 
+
 public class CheckBookingUI {
-    
+    /**
+     * This is the main method to check for bookings
+     * @param args arguments
+     */
     public static void main (String[] args){
 
         Scanner sc = new Scanner(System.in);

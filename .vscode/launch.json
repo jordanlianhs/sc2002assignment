@@ -6,17 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch HolidayUI",
+            "name": "Launch MovieCRUD",
             "request": "launch",
-            "mainClass": "UI.HolidayUI",
-            "projectName": "sc2002assignment_ef99fc60"
-        },
-        {
-            "type": "java",
-            "name": "Launch RemoveMovie",
-            "request": "launch",
-            "mainClass": "UI.RemoveMovie",
-            "projectName": "sc2002assignment_ef99fc60"
+            "mainClass": "UI.MovieCRUD",
+            "projectName": "sc2002assignment_3f352650"
         },
         {
             "type": "java",

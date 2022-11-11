@@ -5,23 +5,41 @@ import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.io.*;
 
+/**
+ * Class about a session of a cinema
+ */
 public class Session {
 	
-	//date and time of session
+	/**
+	 * date and time of session
+	 */
 	private LocalDateTime seshDateTime;
 	
-	//movie of the session
+	/**
+	 * movie of the session
+	 */
 	private Movie movie;
 	
+	/**
+	 * cinema of the session
+	 */
 	private String cinemaCode;
-	//seating plan for session
+	
+	/**
+	 * seating plan of the session
+	 */
 	private SeatingPlan seatPlan = new SeatingPlan();
 	
-	//constructor
+	/**
+	 * Constructor if session class
+	 */
 	public Session(){
 
 	};
 
+	/**
+	 * Constructor if session class
+	 */
 	public Session(Movie movie, LocalDateTime seshDateTime, String cinemaCode) {
 		this.movie = movie;
 		this.seshDateTime = seshDateTime;
@@ -29,43 +47,76 @@ public class Session {
 		//this.seatPlan = seatPlan;
 	}
 
+	/**
+	 * @return timing of session
+	 */
 	public LocalDateTime getSeshDateTime() {
 		return seshDateTime;
 	}
 
+	/**
+	 * set timing of session
+	 */
 	public void setSeshDateTime(LocalDateTime seshDateTime) {
 		this.seshDateTime = seshDateTime;
 	}
 
+	/**
+	 * @return movie of session
+	 */
 	public Movie getMovie() {
 		return movie;
 	}
 
+	/**
+	 * set movie of session
+	 * @param movie is the movie that is going to be set for the session
+	 */
 	public void setMovie(Movie movie) {
 		this.movie = movie;
 	}
 
+	/**
+	 * @return seating plan of session
+	 */
 	public SeatingPlan getSeatPlan(){
 		return seatPlan;
 	}
 
+	/**
+	 * set seating plan of session
+	 * @param seatPlan is the seat plan that is going to be set for the session
+	 */
 	public void setSeatPlan(SeatingPlan seatPlan){
 		this.seatPlan = seatPlan;
 	}
 
+	/**
+	 * 
+	 * @return cinema of the session
+	 */
 	public String getCinemaCode(){
 		return cinemaCode;
 	}
 
+	/**
+	 * set cinema of session
+	 * @param cinemaCode is the cinema of the session
+	 */
 	public void setCinemaCode(String cinemaCode){
 		this.cinemaCode = cinemaCode;
 	}
 	
-	//get start time of movie sesh
+	/**
+	 * @return start time of the session
+	 */
 	public LocalTime getStartTime() {
         return getSeshDateTime().toLocalTime();
     }
 	
+	/**
+	 * @return whether session occurs during a weekend
+	 */
 	public boolean isWeekend(){
         if(seshDateTime.getDayOfWeek() == DayOfWeek.SUNDAY || seshDateTime.getDayOfWeek() == DayOfWeek.SATURDAY){
             return true;
@@ -75,6 +126,9 @@ public class Session {
         }
     }
 
+	/**
+	 * print session of the movie
+	 */
 	public void printSession(){
 		String cinemaType = " ";
 		if(cinemaCode.equals("ONE")){
@@ -91,6 +145,11 @@ public class Session {
 		System.out.println("Timing: " + seshDateTime + " Movie Name: " + movie.getmovieName() + " CinemaType: " + cinemaType);
 	}
 
+	/**
+	 * write session into database
+	 * @param cineplexNumber is the cineplex the session is in
+	 * @throws IOException
+	 */
 	public void writeSession(String cineplexNumber) throws IOException{
         try{
 			//String fileName= "Database/SessionRecord" + CineplexNumber +".txt";
@@ -138,7 +197,13 @@ public class Session {
         }
 		//movie.writeMovie();
 	}
-
+	
+	/**
+	 * Read session from the database
+	 * @param CineplexNumber is the cineplex where the session is in
+	 * @param octo is the line number of the file for the session to be read
+	 * @throws IOException
+	 */
 	public void read(String CineplexNumber, int octo) throws IOException {
 
 		try {

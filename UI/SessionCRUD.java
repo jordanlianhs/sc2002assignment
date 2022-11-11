@@ -4,9 +4,17 @@ import java.util.*;
 import UI.*;
 import Model.*;
 
+/**
+ * Class that will run all UI about Session, Create, Remove, Update and Display
+ */
 public class SessionCRUD {
     static Scanner sc = new Scanner(System.in); // Console
 
+    /**
+     * Main function running SessionCRUD class
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
 		int choice;

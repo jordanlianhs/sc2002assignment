@@ -27,93 +27,7 @@ public class SearchMovie {
 		} while (!input.toLowerCase().equals("esc"));
 	}
 
-	/**
-	 * Lists all movies
-	 */
-
-	public static void listMovie() {
-		try {
-			File file = new File("./Database/MovieCollectionNew.txt");
-			Scanner sc = new Scanner(file);
-
-			sc.useDelimiter(",");
-			System.out.println("\nList of Movies: \n");
-			System.out.println("Movie         |Movie Type    |Movie Status  |Synopsis      |Age Rating    |Star Rating   |Movie Duration|");
-			while (sc.hasNext()) {
-				String st = sc.nextLine(); // To get current string with all Capitalisation
-				String[] stToken = st.split(",");
-				int i=0;
-				for(String s:stToken){
-					if (i<7){
-						if(s.equals("-1.0") || s.equals("-1")){
-								System.out.print("NA            |");
-						}
-						else{
-							if (s.length()<=13) {
-								System.out.print(s);
-								int j = 15-s.length();
-								while(j!=0){
-									if (j==1) System.out.print("|");
-									else System.out.print(" ");
-									j--;
-								}
-							}
-							else{
-							System.out.print(s.substring(0, 10) + "... |");
-							}
-						}
-					}
-					else break;
-					i++;
-				}
-				System.out.println();
-			}
-
-			
-			Scanner sn = new Scanner(file);
-			System.out.println("\n");
-			System.out.println("Movie         |Release Date  |End Date      |Director      |Sales         |Cast Size     |Cast");
-			while (sn.hasNext()) {
-				String st = sn.nextLine(); // To get current string with all Capitalisation
-				String[] stToken = st.split(",");
-				int i=0;
-				for(String s:stToken){
-					if (i>=7 || i==0){
-						if(s.equals("-1.0") || s.equals("-1")){
-							System.out.print("NA            |");
-					}
-					else{
-						if (i==12) System.out.print(s);
-						else if (i>12) System.out.print(", " + s);
-						else if (s.length()<=13) {
-							System.out.print(s);
-							int j = 15-s.length();
-							while(j!=0){
-								if (j==1) System.out.print("|");
-								else System.out.print(" ");
-								j--;
-							}
-						}
-						else{
-							System.out.print(s.substring(0, 10) + "... |");
-						}
-					}
-				}
-					i++;
-				}
-				System.out.println();
-			}
-
-
-			System.out.println("\n");
-			sc.close();
-			sn.close();
-
-		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-	}
+	
 
 	/**
 	 * Finds a movie entry
@@ -127,15 +41,20 @@ public class SearchMovie {
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
-			System.out.println("The movie details are as follows: ");
+			System.out.println("The movie details are as follows: \n");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
+				
+				if(st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
+					continue;
+				}
+
 				// Print the string
 				if (st2.contains(n)) {
 					System.out.println(st); // Display original capitalised version
-					// System.out.println();
+					System.out.println();
 				}
 			}
 			sc.close();

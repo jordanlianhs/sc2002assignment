@@ -6,15 +6,27 @@ import java.time.format.DateTimeFormatter;
 import java.io.*;
 import Model.*;
 
+/**
+ * This is the main class of UpdateSession
+ */
 public class UpdateSession {
     static Scanner sc = new Scanner(System.in);
+    /**
+     * This is the main method of UpdateSession class
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
         Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
         String cpCode, lol;
-        System.out.println("Enter your Cineplex Code");
-        cpCode = sc.next();
+        do{
+			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
+			cpCode = sc.next();
+		}
+		while(!cpCode.equals("AMK")&&!cpCode.equals("BBK")&&!cpCode.equals("CCK"));
+    
         int i = 0;
         int number = 0;
         LocalDateTime seshDateTime;
@@ -40,9 +52,14 @@ public class UpdateSession {
             temp.get(count).printSession();
             count++;
         }
-        
-        System.out.println("Choose your session to update");
-        number = sc.nextInt();
+        do{
+            System.out.println("Choose your Session to update");
+            number = sc.nextInt();
+        }
+        while(number>count);
+        if(number == 0){
+            return;
+        }
         System.out.println("Choose what to update: ");
         System.out.println("1. Session Time");
         System.out.println("2. Movie");
@@ -77,8 +94,11 @@ public class UpdateSession {
         }
 
         else{
-            System.out.print("Enter New Cinema Code (ONE, TWO, THR): ");
-            lol = sc.next();
+            do{
+                System.out.println("Enter Cinema Code (ONE, TWO, THR): ");
+                lol = sc.next();
+            }
+            while(!lol.equals("ONE")&&!lol.equals("TWO")&&!lol.equals("THR"));
             cinemaCode = lol;
             temp.get(number-1).setCinemaCode(cinemaCode);
         }
