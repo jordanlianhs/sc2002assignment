@@ -387,7 +387,6 @@ public class TicketPrice {
                 s.nextLine();
             }
         } while (choice != 17);
-        s.close();
     }
 
     /**
