@@ -97,7 +97,7 @@ public class HolidayUI {
 
 					// Checking if quit flag is true
 					if (quit == true) {
-						break; // break out of swicth statement
+						break; // break out of switch statement
 					}
 
 					// Prints out all options for the user if rez!= null
