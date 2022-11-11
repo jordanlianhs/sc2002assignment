@@ -4,10 +4,8 @@ import Model.*;
 import java.util.*;
 import java.io.*;
 
-/**
- * Checks the seats of a session
- */
 public class CheckSeatUI {
+
 	/**
 	 * This the main method to book seats
 	 * @param args
@@ -15,6 +13,15 @@ public class CheckSeatUI {
 	 * @throws IOException
 	 * @throws Exception
 	 */
+
+	private Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
+	
+	private Cineplex B = new Cineplex("Bukit Batok", "BBK");
+
+	private Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
+
+
+
 	public static void main(String[] args, Guest user) throws IOException, Exception{
 		Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
@@ -177,11 +184,22 @@ public class CheckSeatUI {
 				System.out.println("Enter row (A to J)");
 				seatR = s.next().charAt(0);
 			}while(seatR<'A' || seatR>'J');
-
+			
 			do{
-				System.out.println("Enter column (1 to 16)");
-				seatC = s.nextInt();
-			}while(seatC<1 || seatC>16);
+				try{
+					do{
+						System.out.println("Enter column (1 to 16)");
+						seatC = s.nextInt();
+					}while(seatC<1 || seatC>16);
+					break;
+				}catch (Exception e) {
+					System.out.println("Enter an integer!");
+					System.out.println();
+					s.nextLine();
+					continue;
+				}
+			}while(true);
+
 
 			if(!temp.get(number-1).getSeatPlan().getSeat((seatR-'J')*-1, seatC-1).checkTaken()){
 				temp.get(number-1).getSeatPlan().assign(seatR, seatC);

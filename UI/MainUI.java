@@ -6,14 +6,14 @@ import java.util.*;
  * Main UI used to drive the program 
 */
 public class MainUI {
-    
+    private AdminUI SALA = new AdminUI();
     /**
      * Main function driving the view
      * 
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public void main() {
 
         boolean exit = false;
         while (!exit) {
@@ -30,7 +30,6 @@ public class MainUI {
 
             switch (sc.nextInt()) {
                 case 1:
-                AdminUI SALA = new AdminUI();
                     SALA.main(null);
                     break;
                 case 2:
