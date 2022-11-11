@@ -107,7 +107,51 @@ public class DisplayMovie {
 			sc.close();
 			sn.close();
 
+			String temp;
+            Scanner sc1 = new Scanner(System.in);
+			do{
+				System.out.println("Do you want to view individual movie details? (Y/N)");
+				temp = sc1.nextLine();
+				if(!temp.equals("Y") && !temp.equals("N"))
+					System.out.println("Wrong input!!! ");
+			}while(!temp.equals("Y") && !temp.equals("N"));
+			if(temp.equals("Y")){
+
+				MovieDetails.details(chooseMovie(), false);
+			}
+
 		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+	}
+
+	public String chooseMovie()
+	{
+		try{
+			String chosenOne;
+			File file = new File("./Database/MovieCollectionNew.txt");
+			Scanner sc = new Scanner(file).useDelimiter(",");
+			Scanner sc1 = new Scanner(System.in);
+			int i = 1;
+
+			System.out.println("Which movie would you like to select? (Enter title of movie)");
+			while(sc.hasNext()){
+				String st = sc.nextLine();// To get current string with all Capitalisation
+				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				
+				String[] stToken = st2.split(",");
+				System.out.println(String.valueOf(i) + String.valueOf(stToken[0]));
+				i++;
+			}
+
+			sc.close();
+
+			chosenOne = sc1.nextLine();
+			return chosenOne;
+		}
+
+		catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}

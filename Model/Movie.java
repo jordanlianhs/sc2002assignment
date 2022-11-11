@@ -115,7 +115,7 @@ public class Movie {
         return this.movieName;
     }
 
-    public void setmoveiName(String movieName) {
+    public void setmovieName(String movieName) {
         this.movieName = movieName;
     }
 

@@ -18,16 +18,17 @@ public class MovieDetails {
 			System.out.print("Enter a movie name: ");
 			input = sc.nextLine();
 			MovieDetails look = new MovieDetails();
-			look.details(input);
+			look.details(input, true);
 		} while (!input.toLowerCase().equals("esc"));
 	}
 
-    public void details(String input) throws Exception{
+    public void details(String input, boolean userView) throws Exception{
         try{
             File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
             Scanner sc1 = new Scanner(System.in);
             boolean flag = false;
+            boolean test;
             while(sc.hasNext()){
                 String st = sc.nextLine();// To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
@@ -35,7 +36,13 @@ public class MovieDetails {
                 String[] stToken1 = st.split(",");
                 String[] stToken = st2.split(",");
 
-                if((flag = stToken[0].equals(input.toLowerCase())) && !(stToken1[2].equals("ENDOFSHOWING") || stToken1[2].equals("COMINGSOON"))){
+                if (userView == true) // User viewing conditions
+                {
+                    test = !(stToken1[2].equals("ENDOFSHOWING") || stToken1[2].equals("COMINGSOON"));
+                }
+                else test=true;
+
+                if((flag = stToken[0].equals(input.toLowerCase())) && test){
                     System.out.println("The movie details requested are as follows: \n");
                     
                     int i = 0;
