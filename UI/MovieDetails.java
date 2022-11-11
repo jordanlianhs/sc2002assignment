@@ -38,7 +38,8 @@ public class MovieDetails {
 
                 if (userView == true) // User viewing conditions
                 {
-                    test = !(stToken1[2].equals("ENDOFSHOWING") || stToken1[2].equals("COMINGSOON"));
+                    // Skips the movie if it is not showing
+                    test = !(stToken1[2].equals("ENDOFSHOWING"));
                 }
                 else test=true;
 
