@@ -2,6 +2,9 @@ package UI;
 import java.util.*;
 import Model.*;
 
+/**
+ * This is the UI for users
+ */
 public class UserUI {
     /**
 	 * The main function for this view
