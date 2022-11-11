@@ -1,4 +1,5 @@
 package UI;
+
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -46,5 +47,6 @@ public class RemoveMovie {
         // Delete Entry with the movie name
         RemoveSession.removeAllSession(rez[dChoice].split(",")[0]);
         SearchMovie.delMovie(rez[dChoice]);
+        sc.close();
     }
 }

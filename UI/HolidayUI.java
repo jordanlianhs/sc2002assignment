@@ -18,13 +18,13 @@ public class HolidayUI {
 	/**
 	 * Driver for Creating/Deleting/Clearing Holidays
 	 * 
-	 * @param args Main arument args
-	 * @throws Exception
+	 * @param args Main arument args (null)
+	 * @throws Exception throws exceptions
 	 */
 	public static void main(String[] args) throws Exception {
 		int choice;
 		String del;
-		String holName, date;
+		String holName = "", date = "";
 		lineCounter l = new lineCounter();
 		count = l.counter(file);
 		do {
@@ -39,42 +39,101 @@ public class HolidayUI {
 			switch (choice) {
 				case 1:
 					FileWriter FR = new FileWriter(file, true);
-					System.out.print("Enter the NAME of Holiday: ");
-					holName = sc.nextLine();
+					boolean dateCheck = false;
+					do {
+						try {
+							System.out.println("Enter the NAME of Holiday: ");
+							System.out.println("Type \"cancel\" to exit");
+							holName = sc.nextLine();
 
-					System.out.print("Enter the DATE of Holiday (YYYY-MM-DD): ");
-					date = sc.nextLine();
+							if (holName.toLowerCase().equals("cancel")) { // break switch
+								break;
+							}
 
-					// Validate if its a valid date
-					if (checkDate(date)) {
-						// If it is, write to file holiday.txt
-						FR.write(holName + "," + date + System.lineSeparator());
-						System.out.println("Date added!");
-						FR.close();
-					}
+							System.out.println("Enter the DATE of Holiday (YYYY-MM-DD): ");
+							date = sc.nextLine();
+
+							// Validate if its a valid date
+							if (dateCheck = checkDate(date)) {
+								// If it is, write to file holiday.txt
+								FR.write(holName + "," + date + System.lineSeparator());
+								System.out.println("Date added!");
+								FR.close();
+							} else {
+								System.out.println("Invalid Date!");
+								System.out.println();
+							}
+						} catch (InputMismatchException e) {
+							System.out.println("Invalid Input!");
+							System.out.println();
+						}
+					} while (dateCheck != true);
 					break;
 				case 2:
 					// Delete and entry
-					int dChoice;
+					int dChoice = -1;
+					boolean quit = false; // Flag to quit out of the case (Used beause of error checking)
 					String rez[] = new String[count];
+
 					// Parse file for input date
-					System.out.println("Search for something to delete: ");
-					date = sc.nextLine();
+					do {// Check if the searched items are null
+						System.out.println("Search for something to delete: ");
+						System.out.println("Type \"cancel\" to exit");
+						date = sc.nextLine();
 
-					rez = searchHol(date); // Search for all entries with input term
+						if (date.toLowerCase().equals("cancel")) { // Exit flag to break while, break swicth
+							quit = true;
+							break; // break out of while loop
+						}
 
-					// Prints out all options for the user
-					for (int i = 0; i < count; i++) {
+						rez = searchHol(date); // Search for all entries with input term
+												// If nothing is found
+						if (rez == null) {
+							System.out.println("No entries match your search!");
+							System.out.println();
+							continue;
+						}
+					} while (rez == null);
+
+					// Checking if quit flag is true
+					if (quit == true) {
+						break; // break out of swicth statement
+					}
+
+					// Prints out all options for the user if rez!= null
+					int i;
+					for (i = 0; i < count; i++) {
 						if (rez[i] == null) {
 							break;
 						}
 						System.out.println(i + ": " + rez[i]);
 					}
 
-					// Scan for deletion choice
-					System.out.println("Which would you like to delete?");
+					do {
+						try {
+							// Scan for deletion choice
+							System.out.println("Which would you like to delete?");
+							System.out.println("Type \"-1\" to exit");
+							dChoice = sc.nextInt();
 
-					dChoice = sc.nextInt();
+							if (dChoice < 0 || dChoice > i) {
+								System.out.println("Invalid index range! Enter a valid index.");
+								sc.nextLine(); // Clear buffer in the event that there is an invalid input
+								continue;
+							}
+							break;
+						} catch (Exception e) {
+							System.out.println("Enter an integer!");
+							System.out.println();
+							sc.nextLine();
+							continue;
+						}
+					} while (true);
+
+					if (dChoice == -1) { // If its the initialised value, just break;
+						sc.nextLine(); // Clear buffer in the event that there is an invalid input
+						break;
+					}
 					// Delete Entry
 					delHol(rez[dChoice]);
 					break;
@@ -153,10 +212,9 @@ public class HolidayUI {
 		try {
 			Date date = sdf.parse(input);
 			System.out.println("Date input: " + date); // This is just for debugging
-
 		} catch (ParseException e) {
 			// e.printStackTrace();
-			System.out.println("INVALID DATE!");
+			// System.out.println("INVALID DATE!");
 			return false;
 		}
 		return true;
@@ -226,10 +284,12 @@ public class HolidayUI {
 		try {
 			File file = new File("./Database/holiday.txt");
 			Scanner sc = new Scanner(file);
+			String st = null;
+			String st2 = null;
 			// sc.useDelimiter(",");
 			while (sc.hasNext()) {
-				String st = sc.nextLine();// To get current string with all Capitalisation
-				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				st = sc.nextLine();// To get current string with all Capitalisation
+				st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 				// Print the string
 
@@ -240,7 +300,12 @@ public class HolidayUI {
 					}
 				}
 			}
+
 			sc.close();
+			if (searchResults[0] == null) {
+				// System.out.println("return Null");
+				return null;
+			}
 			// return searchResults;
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
