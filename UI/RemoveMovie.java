@@ -1,12 +1,7 @@
 package UI;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-
-import UI.*;
 import java.io.*;
-import Model.*;
-import java.time.*;
-import java.time.format.*;
+
 
 public class RemoveMovie {
     static int count = 0;
@@ -23,7 +18,7 @@ public class RemoveMovie {
         lineCounter l = new lineCounter();
         count = l.counter(f);
         int dChoice;
-        String rez[] = new String[count];
+        String[] rez = new String[count];
         // Parse file for input date
         System.out.println("Search for movie name to delete: ");
         String date = sc.nextLine();
