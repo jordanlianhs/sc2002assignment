@@ -24,26 +24,28 @@ public class CheckSeatUI {
         Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
 		Scanner s = new Scanner(System.in);
 		boolean k = true;
-
+		int choice;
 		while (k) {
-			System.out.println("(1) View Available Seat");
-			System.out.println("(2) Book Seat");
-			System.out.println("(3) Exit SeatUI");
-			int choice = s.nextInt();
-
-			switch (choice) {
-				case 1:
-					checkAvailableSeat(A,B,C);
-					break;
-				case 2:
-					bookSeat(user,A,B,C);
-					break;
-				case 3:
-				    saveSeatBooking(A,B,C);
-					System.out.println("Exit SeatUI");
-					k = false;
-					break;
-			}
+			do{
+				System.out.println("(1) View Available Seat");
+				System.out.println("(2) Book Seat");
+				System.out.println("(3) Exit SeatUI");
+				choice = s.nextInt();
+	
+				switch (choice) {
+					case 1:
+						checkAvailableSeat(A,B,C);
+						break;
+					case 2:
+						bookSeat(user,A,B,C);
+						break;
+					case 3:
+						saveSeatBooking(A,B,C);
+						System.out.println("Exit SeatUI");
+						k = false;
+						break;
+				}
+			}while(choice!=3);
 
 		}
 
@@ -52,8 +54,13 @@ public class CheckSeatUI {
 	public static void checkAvailableSeat(Cineplex A, Cineplex B, Cineplex C) {
 		//sessiono.getSeatPlan().printLayout();
 		Scanner s = new Scanner(System.in);
-		System.out.println("Enter your Cineplex Code");
-		String cpCode = s.next();
+		String cpCode;
+		do{
+			System.out.println("Enter your Cineplex Code");
+			cpCode = s.next();
+		}
+		while(!cpCode.equals("AMK")&&!cpCode.equals("BBK")&&!cpCode.equals("CCK"));
+
 
 		int number = 0;
 		ArrayList<Session> temp;
@@ -76,16 +83,27 @@ public class CheckSeatUI {
 			count++;
 		}
 		
-		System.out.println("Choose your Session");
-		number = s.nextInt();
+		do{
+			System.out.println("Choose your Session");
+			if(s.hasNextInt()==false){
+				continue;
+			}
+			number = s.nextInt();
+		}
+		while(number==0 || number>count);
 
 		temp.get(number-1).getSeatPlan().printLayout();
 	}
 
 	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C) throws IOException, Exception {
 		Scanner s = new Scanner(System.in);
-		System.out.println("Enter your Cineplex Code");
 		String cpCode = s.next();
+		do{
+			System.out.println("Enter your Cineplex Code");
+			cpCode = s.next();
+		}
+		while(!cpCode.equals("AMK")&&!cpCode.equals("BBK")&&!cpCode.equals("CCK"));
+
 		int i = 0;
 		int number = 0;
 		ArrayList<Session> temp;
@@ -165,17 +183,6 @@ public class CheckSeatUI {
 		TicketPrice calculator = new TicketPrice();
 		double ticketPrice = calculator.calculateTix(user, temp.get(number-1), book);
 		System.out.println("Ticket Price = $" + ticketPrice);
-	}
-
-	public static void cancelSeat(Cineplex A, Cineplex B, Cineplex C) {
-		Scanner s = new Scanner(System.in);
-		System.out.println("Choose your Seat");
-		System.out.println("Enter row (A to J)");
-		char seatR = s.next().charAt(0);
-		System.out.println("Enter row (0 to 15)");
-		int seatC = s.nextInt();
-		//sessiono.getSeatPlan().unassign(seatR, seatC);
-
 	}
 
 	public static void saveSeatBooking(Cineplex A, Cineplex B, Cineplex C) throws IOException,FileNotFoundException {
