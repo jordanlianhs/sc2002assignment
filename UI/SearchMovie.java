@@ -29,7 +29,7 @@ public class SearchMovie {
 			input = sc.nextLine();
 			SearchMovie.find(input);
 		} while (!input.toLowerCase().equals("esc"));
-		sc.close();
+		
 	}
 
 	/**

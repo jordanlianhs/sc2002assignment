@@ -18,15 +18,15 @@ public class UserUI {
         System.out.println("****************");
 
         System.out.println("Enter your name");
-        String name = sc.next();
+        String name = sc.nextLine();
         System.out.println("Enter your age");
-        int age = sc.nextInt();
+        int age = Integer.parseInt(sc.nextLine());
         System.out.println("Enter your phone number");
-        String phone = sc.next();
+        String phone = sc.nextLine();
         System.out.println("Enter your email");
-        String email = sc.next();
+        String email = sc.nextLine();
         System.out.println("Are you a student? (Enter 'true' or 'false')");
-        boolean student = sc.nextBoolean();
+        boolean student = Boolean.valueOf(sc.nextLine());
 
         Guest user = new Guest(name, age, phone, email, student);
         
@@ -46,7 +46,7 @@ public class UserUI {
 				System.out.println("6. Review movie");
 				System.out.println("7. Go Back");
 				System.out.print("Please enter your choice: ");
-				choice = sc.nextInt();
+				choice = Integer.parseInt(sc.nextLine());
 				System.out.println();
 			
 			
