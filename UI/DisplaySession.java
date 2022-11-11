@@ -6,18 +6,21 @@ import Model.*;
  * This is the main class of DisplaySession
  */
 public class DisplaySession {
-    
+	private Cineplex A;
+    private Cineplex B;
+    private Cineplex C;
 	/**
 	 *  This is the main method to display the list of sessions in the selected cineplex
 	 * @param cineplexCode
 	 * @throws Exception
 	 */
-    public void main(String[] args) throws Exception {
+    public void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-        Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
-        Cineplex B = new Cineplex("Bukit Batok", "BBK");
-        Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
+        A = new Cineplex("Ang Mo Kio", "AMK");
+        B = new Cineplex("Bukit Batok", "BBK");
+        C = new Cineplex("Choa Chu Kang", "CCK");
+		
         String cpCode;
         System.out.println("-----------------------------------");
         System.out.println("Display Session");

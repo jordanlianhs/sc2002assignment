@@ -18,7 +18,7 @@ public class SessionCRUD {
      * @param args
      * @throws Exception
      */
-    public void main(String[] args) throws Exception {
+    public void main(String[] args){
         Scanner sc = new Scanner(System.in); // Console
 
 		int choice;
@@ -36,7 +36,7 @@ public class SessionCRUD {
 					this.createSession.main(null);
                     break;
                 case 2:
-                    this.removeSession.main(null);
+                    this.removeSession.main();
                     break;
                 case 3:
                     this.updateSession.main(null);

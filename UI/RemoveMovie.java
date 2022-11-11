@@ -8,8 +8,10 @@ import java.io.*;
  */
 public class RemoveMovie {
 
+    private RemoveSession rm;
+    private SearchMovie sm;
     static int count = 0; // To count the number of movies in the file
-    static Scanner sc = new Scanner(System.in); // Console
+    
 
     /**
      * Main function driving the view
@@ -18,6 +20,7 @@ public class RemoveMovie {
      * @throws Exception Throws Exception
      */
     public void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in); // Console
         File f = new File("./Database/MovieCollectionNew.txt");
         lineCounter l = new lineCounter();
         count = l.counter(f);
@@ -26,8 +29,9 @@ public class RemoveMovie {
         // Parse file for input date
         System.out.println("Search for movie name to delete: ");
         String date = sc.nextLine();
-
-        rez = SearchMovie.getSearchedMovie(date); // Search for all entries with input term
+        
+        sm = new SearchMovie();
+        rez = sm.getSearchedMovie(date); // Search for all entries with input term
 
         // Prints out all options for the user
         boolean check = false;
@@ -46,8 +50,10 @@ public class RemoveMovie {
             dChoice = Integer.valueOf(sc.nextLine());
 
             // Delete Entry with the movie name
-            RemoveSession.removeAllSession(rez[dChoice].split(",")[0]);
-            SearchMovie.delMovie(rez[dChoice]);
+            rm = new RemoveSession();
+            rm.removeAllSession(rez[dChoice].split(",")[0]);
+            
+            sm.delMovie(rez[dChoice]);
         } else
             System.out.println("\nNo movie found\n");
     }

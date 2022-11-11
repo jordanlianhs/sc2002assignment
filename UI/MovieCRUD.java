@@ -7,7 +7,7 @@ import java.util.*;
  * This is the UI to Create, Remove, Update and List movies
  */
 public class MovieCRUD {
-	static Scanner sc = new Scanner(System.in); // Console
+	
 	private CreateMovie createMovie = new CreateMovie();
 	private RemoveMovie removeMovie = new RemoveMovie();
 	private UpdateMovie updateMovie = new UpdateMovie();
@@ -20,6 +20,7 @@ public class MovieCRUD {
 	 * @throws Exception Throws Exception
 	 */
 	public void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in); // Console
 		int choice;
 
 		do {

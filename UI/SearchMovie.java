@@ -74,7 +74,7 @@ public class SearchMovie {
 	 * @param n String search term
 	 * @return returns an array containing the list of results
 	 */
-	public static String[] getSearchedMovie(String n) {
+	public String[] getSearchedMovie(String n) {
 		// Stores in index i of an array
 		lineCounter l = new lineCounter();
 		int count = l.counter(file); // Count is the total num of elements in file
@@ -111,7 +111,7 @@ public class SearchMovie {
 	 * 
 	 * @param n Exact Input string to be deleted
 	 */
-	public static void delMovie(String n) {
+	public void delMovie(String n) {
 		// Note need to add options for deleting
 		try {
 

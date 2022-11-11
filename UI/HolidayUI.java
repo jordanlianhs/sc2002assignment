@@ -11,7 +11,6 @@ import java.io.*;
  */
 
 public class HolidayUI {
-	static Scanner sc = new Scanner(System.in); // Console
 	static File file = new File("./Database/holiday.txt");
 	static int count = 0; // To track num of elements in list
 
@@ -22,6 +21,7 @@ public class HolidayUI {
 	 * @throws Exception throws exceptions
 	 */
 	public void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in); // Console
 		int choice;
 		String del;
 		String holName = "", date = "";
@@ -163,20 +163,20 @@ public class HolidayUI {
 					// List all Holidays
 					try {
 						File file = new File("./Database/holiday.txt");
-						Scanner sc = new Scanner(file);
+						Scanner sc1 = new Scanner(file);
 
-						sc.useDelimiter(",");
+						sc1.useDelimiter(",");
 						System.out.println("===============");
 						System.out.println("List of Holidays:");
-						while (sc.hasNext()) {
+						while (sc1.hasNext()) {
 							// Print the string
-							System.out.println(sc.nextLine()); // Display original capitalised version
+							System.out.println(sc1.nextLine()); // Display original capitalised version
 						}
 						System.out.println("===============");
 						if (file.length() == 0) {
 							System.out.println("No entries!");
 						}
-						sc.close();
+						sc1.close();
 						System.out.println();
 
 					} catch (FileNotFoundException e) {

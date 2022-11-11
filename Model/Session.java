@@ -150,7 +150,7 @@ public class Session {
 	 * @param cineplexNumber is the cineplex the session is in
 	 * @throws IOException
 	 */
-	public void writeSession(String cineplexNumber) throws IOException{
+	public void writeSession(String cineplexNumber){
         try{
 			//String fileName= "Database/SessionRecord" + CineplexNumber +".txt";
             //File file = new File(fileName);

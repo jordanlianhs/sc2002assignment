@@ -16,8 +16,7 @@ public class DisplayMovie {
      */
     public void main(String[] args){
         try {
-			DisplayMovie dm = new DisplayMovie();
-            dm.displayMovie(false);
+            displayMovie(false);
 		} 
         catch (Exception e) {
 			System.out.println("An error occurred.");
