@@ -1,7 +1,6 @@
 package UI;
 
 import java.util.*;
-import java.io.IOException;
 import Model.*;
 import java.io.File;
 
@@ -9,14 +8,11 @@ import java.io.File;
  * This is the main class of ReveiwUI
  */
 public class ReviewUI {
-
         /**
-         * This is the main method of ReviewUI class
-         * @param arg null argument can be used to drive the function
+         * This is the main method of ReviewUI classn
          * @param user This is the user who is using the system
-         * @throws IOException Throws IOException
          */
-        public void main(String arg[], Guest user){
+        public void main(Guest user){
                 try{
                         Scanner s = new Scanner(System.in);
                 

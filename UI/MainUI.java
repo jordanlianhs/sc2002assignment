@@ -6,14 +6,18 @@ import java.util.*;
  * Main UI used to drive the program 
 */
 public class MainUI {
+    /**
+     * New AdminUI object driving the view
+     */
     private AdminUI adminUI = new AdminUI();
+
+    /**
+     * New UserUI object driving the view
+     */
     private UserUI userUI = new UserUI();
 
     /**
      * Main function driving the view
-     * 
-     * @param args null argument can be used to drive the function
-     * @throws Exception Throws Exception
      */
     public void main(){
 
@@ -32,10 +36,10 @@ public class MainUI {
 
             switch (sc.nextInt()) {
                 case 1:
-                    this.adminUI.main(null);
+                    this.adminUI.main();
                     break;
                 case 2:
-                    this.userUI.main(null);
+                    this.userUI.main();
                     break;
                 case 3:
                     exit = true;

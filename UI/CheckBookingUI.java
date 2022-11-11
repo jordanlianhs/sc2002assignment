@@ -13,7 +13,7 @@ public class CheckBookingUI {
      * @param args null argument can be used to drive the function
      * @exception Throws Exception
      */
-    public void main (String[] args){
+    public void main (){
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your email address");

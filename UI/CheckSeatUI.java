@@ -4,28 +4,35 @@ import Model.*;
 import java.util.*;
 import java.io.*;
 
+/**
+ * UI for the user to check the seats available for a movie
+ */
 public class CheckSeatUI {
 
 	/**
-	 * This the main method to book seats
-	 * @param args
-	 * @param user is the person that the booking belongs to
-	 * @throws IOException
-	 * @throws Exception
+	 * New Ang Mo Kio Cineplex Object
 	 */
-
 	private Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
 	
+	/**
+	 * New Bukit Batok Cineplex Object
+	 */
 	private Cineplex B = new Cineplex("Bukit Batok", "BBK");
 
+	/**
+	 * New Choa Chu Kang Cineplex Object
+	 */
 	private Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
 
 
-
-	public void main(String[] args, Guest user){
-		Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
-        Cineplex B = new Cineplex("Bukit Batok", "BBK");
-        Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
+	/**
+	 * Main function driving the view
+	 * @param user is the person that the booking belongs to
+	 */
+	public void main(Guest user){
+		A = new Cineplex("Ang Mo Kio", "AMK");
+        B = new Cineplex("Bukit Batok", "BBK");
+        C = new Cineplex("Choa Chu Kang", "CCK");
 		Scanner s = new Scanner(System.in);
 		boolean k = true;
 		int choice;
@@ -57,9 +64,9 @@ public class CheckSeatUI {
 
 	/**
 	 * Display seating plan of specific session
-	 * @param A is Cineplex A
-	 * @param B is cineplex B
-	 * @param C is Cineplex C
+	 * @param A is Ang Mo Kio Cineplex
+	 * @param B is Bukit Batok Cineplex
+	 * @param C is Choa Chu Kang Cineplex
 	 */
 	public static void checkAvailableSeat(Cineplex A, Cineplex B, Cineplex C) {
 		//sessiono.getSeatPlan().printLayout();
@@ -103,15 +110,13 @@ public class CheckSeatUI {
 	}
 
 	/**
-	 * Display seating plan of specific session
+	 * Book seat of specific session
 	 * @param user is the person the booking belongs to
-	 * @param A is Cineplex A
-	 * @param B is cineplex B
-	 * @param C is Cineplex C
-	 * @throws IOException
-	 * @throws FileNotFoundException
+	 * @param A is Ang Mo Kio Cineplex
+	 * @param B is Bukit Batok Cineplex
+	 * @param C is Choa Chu Kang Cineplex
 	 */
-	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C){
+	public void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C){
 		Scanner s = new Scanner(System.in);
 		String cpCode;
 		do{
@@ -228,11 +233,9 @@ public class CheckSeatUI {
 
 	/**
 	 * Write booking records into database when booking seat UI ends
-	 * @param A is Cineplex A
-	 * @param B is Cineplex B
-	 * @param C is Cineplex C
-	 * @throws IOException
-	 * @throws FileNotFoundException
+	 * @param A is Ang Mo Kio Cineplex
+	 * @param B is Bukit Batok Cineplex
+	 * @param C is Choa Chu Kang Cineplex
 	 */
 	public static void saveSeatBooking(Cineplex A, Cineplex B, Cineplex C){
 		try{
@@ -281,8 +284,11 @@ public class CheckSeatUI {
 		
 	}
 
-	public static void changeMovieSales(String movieName)
-  {
+	/**
+	 * Write booking records into database when booking seat UI ends
+	 * @param movieName is the name of the movie
+	 */
+	public void changeMovieSales(String movieName){
     try {
       // append movie.txt
       String file1 = "./Database/MovieCollectionNew.txt";

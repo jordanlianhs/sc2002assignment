@@ -8,19 +8,31 @@ import java.io.*;
  */
 public class AdminUI {
 
+	/**
+	 * New MovieCRUD object driving the view
+	 */
 	private MovieCRUD movieCRUD = new MovieCRUD();
+	/**
+	 * New SessionCRUD object driving the view
+	 */
 	private SessionCRUD sessionCRUD = new SessionCRUD();
+	/**
+	 * New ListTop5UI object driving the view
+	 */
 	private ListTop5UI listTop5UI= new ListTop5UI();
+	/**
+	 * New HolidayUI object driving the view
+	 */
 	private HolidayUI holidayUI = new HolidayUI();
+	/**
+	 * New TicketPrice object driving the view
+	 */
 	private TicketPrice ticketPrice = new TicketPrice();
 
 	/**
 	 * Main function driving the view
-	 * 
-	 * @param args null argument can be used to drive the function
-	 * @throws Exception Throws Exception
 	 */
-	public void main(String[] args) {
+	public void main() {
 
 			String id, pass;
 			int choice = 0;
@@ -48,10 +60,10 @@ public class AdminUI {
 					sc.nextLine();
 					switch (choice) {
 						case 1:
-							this.movieCRUD.main(null);
+							this.movieCRUD.main();
 							break;
 						case 2:
-							this.sessionCRUD.main(null);
+							this.sessionCRUD.main();
 							break;
 						case 3:
 							System.out.println("Select item to configure: ");
@@ -60,7 +72,7 @@ public class AdminUI {
 							choice2 = sc.nextInt();
 							sc.nextLine();
 							if (choice2 == 1) {
-								this.holidayUI.main(null);
+								this.holidayUI.main();
 							} else if (choice2 == 2) {
 								// Configure Ticket prices (not working)
 								this.ticketPrice.configurePrice();
@@ -134,7 +146,6 @@ public class AdminUI {
 	 * @param usr  Username
 	 * @param pass Password
 	 * @return Flag that indicates the state of login
-	 * @throws Exception Throws Exception
 	 */
 	public boolean auth(String usr, String pass) {
 		boolean token = false;

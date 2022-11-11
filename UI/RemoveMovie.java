@@ -19,7 +19,7 @@ public class RemoveMovie {
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public void main(String[] args){
+    public void main(){
         Scanner sc = new Scanner(System.in); // Console
         File f = new File("./Database/MovieCollectionNew.txt");
         lineCounter l = new lineCounter();

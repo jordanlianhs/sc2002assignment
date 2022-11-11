@@ -18,7 +18,7 @@ public class SessionCRUD {
      * @param args
      * @throws Exception
      */
-    public void main(String[] args){
+    public void main(){
         Scanner sc = new Scanner(System.in); // Console
 
 		int choice;

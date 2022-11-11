@@ -10,6 +10,9 @@ import Model.*;
  * MovieCollectionNew.txt file.
  */
 public class CreateMovie {
+    /**
+     * Movie Object
+     */
     private Movie movie;
 
     /**
@@ -18,7 +21,7 @@ public class CreateMovie {
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public void main(String[] args){
+    public void main(){
         Scanner sc = new Scanner(System.in);
         String movieName;
         MovieType movieType;

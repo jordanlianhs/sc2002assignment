@@ -6,19 +6,41 @@ import Model.*;
  * This is the UI for users
  */
 public class UserUI {
+    /**
+     * New SearchMovie Object to drive the view
+     */
     private SearchMovie searchMovie = new SearchMovie();
+    /**
+     * New MovieDetails Object to drive the view
+     */
     private MovieDetails movieDetails = new MovieDetails();
+    /**
+     * New CheckSeatUI Object to drive the view
+     */
     private CheckSeatUI checkSeatUI = new CheckSeatUI();
+    /**
+     * new CheckBookingUI Object to drive the view
+     */
     private CheckBookingUI checkBookingUI = new CheckBookingUI();
+    /**
+     * New ListTop5UI Object to drive the view
+     */
     private ListTop5UI listTop5UI = new ListTop5UI();
+    /**
+     * New ReviewUI Object to drive the view
+     */
     private ReviewUI reviewUI = new ReviewUI();
 
     /**
-	 * The main function for this view
-	 * @param args for the main function
-	 * @throws Exception to throw the exception
-	 */
-	public void main(String[] args){
+     * New Guest Object 
+     */
+    private Guest user;
+
+
+    /**
+     * Main function driving the view
+     */
+	public void main(){
 		try (Scanner sc = new Scanner(System.in)) {
             /**
              * to keep track of when to exit the used module
@@ -35,9 +57,9 @@ public class UserUI {
             System.out.println("Enter your email");
             String email = sc.nextLine();
             System.out.println("Are you a student? (Enter 'true' or 'false')");
-            boolean student = Boolean.valueOf(sc.nextLine());
+            boolean student = Boolean.parseBoolean(sc.nextLine());
 
-            Guest user = new Guest(name, age, phone, email, student);
+            user = new Guest(name, age, phone, email, student);
             
             int exit = 0;
             while(exit != 1) {
@@ -60,18 +82,18 @@ public class UserUI {
             	
             	
                     if(choice == 1) {
-                        this.searchMovie.main(null);
+                        this.searchMovie.main();
                     }else if (choice == 2) {
-                        this.movieDetails.main(null);
+                        this.movieDetails.main();
                     }else if(choice == 3) {
-                        this.checkSeatUI.main (null,user);
+                        this.checkSeatUI.main(user);
                     }else if(choice == 4) {
-                        this.checkBookingUI.main(null);
+                        this.checkBookingUI.main();
                     }else if(choice == 5) {
                         this.listTop5UI.init();
                         this.listTop5UI.main();
                     }else if(choice == 6) {
-                        this.reviewUI.main(null,user);
+                        this.reviewUI.main(user);
                     }else if(choice == 7){
                         return;
                     }

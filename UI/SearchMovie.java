@@ -12,13 +12,9 @@ public class SearchMovie {
 	static File file = new File("./Database/MovieCollectionNew.txt"); // Edit this if you wana to change directory
 
 	/**
-	 * The main function for this view, searches the movie the user wants
-	 * 
-	 * @param args for the main function
-	 * @throws Exception to throw the exception
-	 * 
+	 * The main function for this view, searches the movie the user wants to find
 	 */
-	public void main(String[] args){
+	public void main(){
 		String input;
 		Scanner sc = new Scanner(System.in);
 

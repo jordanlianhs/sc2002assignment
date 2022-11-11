@@ -7,19 +7,25 @@ import java.util.*;
  * This is the UI to Create, Remove, Update and List movies
  */
 public class MovieCRUD {
-	
+	/** */
 	private CreateMovie createMovie = new CreateMovie();
+
+	/** */
 	private RemoveMovie removeMovie = new RemoveMovie();
+
+	/**
+	 * 
+	 */
 	private UpdateMovie updateMovie = new UpdateMovie();
+
+	/** */
 	private DisplayMovie displayMovie = new DisplayMovie();
 
 	/**
 	 * Main function driving the view
-	 * 
 	 * @param args null argument can be used to drive the function
-	 * @throws Exception Throws Exception
-	 */
-	public void main(String[] args){
+	*/
+	public void main(){
 		Scanner sc = new Scanner(System.in); // Console
 		int choice;
 
@@ -34,16 +40,16 @@ public class MovieCRUD {
 
 			switch (choice) {
 				case 1:
-					createMovie.main(null);
+					createMovie.main();
 					break;
 				case 2:
-					removeMovie.main(null);
+					removeMovie.main();
 					break;					
 				case 3:
-					updateMovie.main(null);
+					updateMovie.main();
 					break;					
 				case 4:
-					displayMovie.main(null);
+					displayMovie.main();
 					break;
 				case 5:
 					return;
