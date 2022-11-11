@@ -2,40 +2,70 @@ package Model;
 
 import java.util.*;
 import java.io.*;
+
+/**
+ * Class for Cineplexes 
+ */
 public class Cineplex{
+    /**
+     * Name of location
+     */
     private String locationName;
 
+    /**
+     * Code of cineplex
+     */
     private String cineplexCode;
 
+    /**
+     * Array list of movie sessions
+     */
     private ArrayList<Session> sessionList;
 
+    /**
+     * 
+     * @return Location name
+     */
     public String getLocationName(){
         return this.locationName;
     }
 
+    /**
+     * 
+     * @return Cineplex code
+     */
     public String getCinePlexCode(){
         return this.cineplexCode;
     }
 
+    /**
+     * 
+     * @return Array list of movie sessions
+     */
     public ArrayList<Session> getSessionList(){
         return sessionList;
     }
 
-    //private List<String> cinemaCode = Arrays.asList(new String[3]);
+    
 
+    /**
+     * Constructor for Cineplex class
+     * @param locationName Location Name
+     * @param cineplexCode Cineplex Code
+     * @throws IOException Throws IOException
+     */
     public Cineplex(String locationName, String cineplexCode) throws IOException{
         this.locationName = locationName;
         this.cineplexCode = cineplexCode;
         this.sessionList = new ArrayList<>();
         String fileName = "DataBase/SessionRecord" + cineplexCode + ".txt";
         File Document = new File(fileName);
-        //String fileName = "DataBase/SessionRecordAMK.txt";
+        
 
         Scanner sc = new Scanner(Document);
         int i=0;
         while(sc.hasNextLine()){
-            sc.nextLine();
-            //System.out.println(txt);
+            sc.nextLine();            
             i++;
         }
         
@@ -44,8 +74,7 @@ public class Cineplex{
             this.sessionList.get(j).read(cineplexCode, j);
         }
         
-        //Sessionsfrombackside.add(new Session());
-        //Sessionsfrombackside.get(j).read(j);
+        
     }
 
 }

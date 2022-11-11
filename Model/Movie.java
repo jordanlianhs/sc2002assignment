@@ -7,6 +7,9 @@ import java.io.*;
 
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class for Movies
+ */
 public class Movie {
         
     /**
