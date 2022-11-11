@@ -76,14 +76,14 @@ public class MovieDetails {
                             System.out.print(s);
                             i++;
                         }
-                        else System.out.println(", " + s);
+                        else System.out.print(", " + s);
 					}
 				    System.out.println();
                     
                     String temp;
 
                     do{
-                        System.out.println("Do you want to view this Movie's Reviews: " + stToken[0] + " (Y/N)");
+                        System.out.println("Do you want to view this Movie's Reviews: " + stToken1[0] + " (Y/N)");
                         temp = sc1.nextLine();
                         if(!temp.equals("Y") && !temp.equals("N"))
                             System.out.println("Wrong input!!! ");
