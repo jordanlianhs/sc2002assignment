@@ -1,8 +1,23 @@
 package Model;
 
+/**
+ * Status of the movie
+ */
 public enum MovieStatus {
-    COMINGSOON, 
-    PREVIEW, 
+    /**
+     * Coming soon (User + Admin)
+     */
+    COMINGSOON,
+    /**
+     * Preview (User + Admin)
+     */
+    PREVIEW,
+    /**
+     * Now Showing (User + Admin)
+     */
     NOWSHOWING,
-    ENDOFSHOWING 
-} 
+    /**
+     * End of Shower (Admin)
+     */
+    ENDOFSHOWING
+}
