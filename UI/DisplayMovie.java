@@ -130,8 +130,8 @@ public class DisplayMovie {
 
 	public String chooseMovie()
 	{
+		String chosenOne="";
 		try{
-			String chosenOne;
 			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
 			Scanner sc1 = new Scanner(System.in);
@@ -143,19 +143,21 @@ public class DisplayMovie {
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				
 				String[] stToken = st2.split(",");
-				System.out.println(String.valueOf(i) + String.valueOf(stToken[0]));
+				System.out.println(String.valueOf(i) + ". " + String.valueOf(stToken[0]));
 				i++;
 			}
+			System.out.println();
 
 			sc.close();
 
 			chosenOne = sc1.nextLine();
-			return chosenOne;
 		}
 
 		catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+		
+		return chosenOne;
 	}
 }

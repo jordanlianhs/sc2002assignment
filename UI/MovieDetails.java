@@ -24,7 +24,7 @@ public class MovieDetails {
 		} while (!input.toLowerCase().equals("esc"));
 	}
 
-    public void details(String input, boolean userView) throws Exception{
+    public static void details(String input, boolean userView) throws Exception{
         try{
             File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
