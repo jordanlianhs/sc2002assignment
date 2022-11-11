@@ -15,14 +15,15 @@ public class MovieDetails {
     public static void main(String[] args) throws Exception {
         String input;
         Scanner sc = new Scanner(System.in);
-        do {
+        //do {
             System.out.println("\nEnter \"esc\" to quit movie details UI");
-            System.out.print("Enter a movie name: ");
-            input = sc.nextLine();
-            if (!input.equals("esc")) {
-                details(input, true);
-            }
-        } while (!input.toLowerCase().equals("esc"));
+            DisplayMovie.displayMovie(true);
+            // System.out.print("Enter a movie name: ");
+            // input = sc.nextLine();
+            // if (!input.equals("esc")) {
+            //     details(input, true);
+            // }
+        //} while (!input.toLowerCase().equals("esc"));
     }
 
     /**

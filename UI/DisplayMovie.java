@@ -17,7 +17,7 @@ public class DisplayMovie {
     public static void main(String[] args) throws Exception{
         try {
 			DisplayMovie dm = new DisplayMovie();
-            dm.displayMovie();
+            dm.displayMovie(false);
 		} 
         catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
@@ -29,10 +29,12 @@ public class DisplayMovie {
      * Display all movies in the database
      * @throws Exception Throws Exception
      */
-	public void displayMovie() throws Exception {
+	public static void displayMovie(boolean userView) throws Exception {
 		try {
 			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file);
+			boolean test;
+
 
 			sc.useDelimiter(",");
 			System.out.println("\nList of Movies: \n");
@@ -42,30 +44,41 @@ public class DisplayMovie {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String[] stToken = st.split(",");
 				int i=0;
-				for(String s:stToken){
-					if (i<7){
-						if(s.equals("-1.0") || s.equals("-1")){
-								System.out.print("NA            |");
-						}
-						else{
-							if (s.length()<=13) {
-								System.out.print(s);
-								int j = 15-s.length();
-								while(j!=0){
-									if (j==1) System.out.print("|");
-									else System.out.print(" ");
-									j--;
-								}
+
+				if (userView == true) // User viewing conditions
+				{
+					// Skips the movie if it is not showing
+					test = !(stToken[2].equals("ENDOFSHOWING"));
+				} else
+					test = true;
+
+				if (test){
+					
+					for(String s:stToken){
+						if (i<7){
+							if(s.equals("-1.0") || s.equals("-1")){
+									System.out.print("NA            |");
 							}
 							else{
-							System.out.print(s.substring(0, 10) + "... |");
+								if (s.length()<=13) {
+									System.out.print(s);
+									int j = 15-s.length();
+									while(j!=0){
+										if (j==1) System.out.print("|");
+										else System.out.print(" ");
+										j--;
+									}
+								}
+								else{
+								System.out.print(s.substring(0, 10) + "... |");
+								}
 							}
 						}
+						else break;
+						i++;
 					}
-					else break;
-					i++;
+					System.out.println();
 				}
-				System.out.println();
 			}
 
 			
@@ -121,7 +134,7 @@ public class DisplayMovie {
 			String temp1;
 			if(temp.equals("Y")){
 				do{
-					MovieDetails.details(chooseMovie(), false);
+					MovieDetails.details(chooseMovie(userView), false);
 					do{
 						System.out.println("Would you like to view another movie's details? (Y/N)");
 						temp1 = sc1.nextLine();
@@ -138,7 +151,7 @@ public class DisplayMovie {
 		}
 	}
 
-	public String chooseMovie()
+	public static String chooseMovie(boolean userView)
 	{
 		String chosenOne="";
 		try{
@@ -150,12 +163,23 @@ public class DisplayMovie {
 			String st="";
 			String st2 = "";
 			String[] stToken;
+			boolean test;
+
+
 
 			System.out.println("Which movie would you like to select? (Enter title of movie)");
 			while(sc.hasNext()){
 				st = sc.nextLine();
 				stToken = st.split(",");
-				System.out.println(String.valueOf(stToken[0]));
+
+				if (userView == true) // User viewing conditions
+				{
+					// Skips the movie if it is not showing
+					test = !(stToken[2].equals("ENDOFSHOWING"));
+				} else
+					test = true;
+
+				if (test==true) System.out.println(String.valueOf(stToken[0]));
 			}
 			System.out.println();
 
