@@ -63,52 +63,49 @@ public class AdminUI {
 						break;
 					case 4:
 						ListTop5UI.init();
-						do{
+						do {
 							System.out.println("(1) List top 5 movies by ticket sales");
 							System.out.println("(2) List top 5 movies by overall ratings");
 							System.out.println("(3) Visibility settings for users");
 							System.out.println("(4) Go back");
 							System.out.println("Please enter your choice:");
-					
-							
+
 							choice = sc.nextInt();
-							switch(choice){
+							switch (choice) {
 								case 1:
-									//list by sales
+									// list by sales
 									ListTop5UI.listTop5Sales();
 									break;
 								case 2:
-									//list by ratings
+									// list by ratings
 									ListTop5UI.listTop5Ratings();
 									break;
 								case 3:
-									//change settings
-								
+									// change settings
+
 									System.out.println("(1) Users can only list top 5 movies by ticket sales");
 									System.out.println("(2) Users can only lsit top 5 movies by overall ratings");
 									System.out.println("(3) Users can list both");
 									System.out.println("(4) Go back");
 									System.out.println("Please enter your choice:");
-							
-									
+
 									choice = sc.nextInt();
-										switch(choice){
-											case 1:
-												//list by sales
-												ListTop5UI.setSetting(2);
-												break;
-											case 2:
-												//list by ratings
-												ListTop5UI.setSetting(3);
-												break;
-											case 3:
-												ListTop5UI.setSetting(1);
-										}
-								
-										
+									switch (choice) {
+										case 1:
+											// list by sales
+											ListTop5UI.setSetting(2);
+											break;
+										case 2:
+											// list by ratings
+											ListTop5UI.setSetting(3);
+											break;
+										case 3:
+											ListTop5UI.setSetting(1);
+									}
+
 									break;
 							}
-				
+
 						} while (choice != 4);
 						break;
 					case 5:
@@ -118,12 +115,14 @@ public class AdminUI {
 						break;
 				}
 			} while (choice != 5);
+			sc.close();
 		}
 	}
 
 	/**
 	 * This function checks if the user has keyed in the correct admin information
-	 * @param usr Username
+	 * 
+	 * @param usr  Username
 	 * @param pass Password
 	 * @return Flag that indicates the state of login
 	 * @throws Exception Throws Exception
@@ -148,6 +147,7 @@ public class AdminUI {
 				System.out.println("Login as Administrator Successful\n");
 				token = true;
 			}
+			ar.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

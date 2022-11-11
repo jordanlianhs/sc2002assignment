@@ -17,8 +17,10 @@ public class MovieDetails {
 			System.out.println("\nEnter \"esc\" to quit movie details UI");
 			System.out.print("Enter a movie name: ");
 			input = sc.nextLine();
-			MovieDetails look = new MovieDetails();
-			look.details(input, true);
+            if(!input.equals("esc")){
+                MovieDetails look = new MovieDetails();
+                look.details(input, true);
+            }			
 		} while (!input.toLowerCase().equals("esc"));
 	}
 
