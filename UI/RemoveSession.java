@@ -1,8 +1,5 @@
 package UI;
-
-import java.time.*;
 import java.util.*;
-
 import java.io.*;
 import Model.*;
 
@@ -111,7 +108,7 @@ public class RemoveSession {
     /**
      * This method remove every session with the specific movie name
      * @param moviename is the name of the movie
-     * @throws Exception
+     * @throws Exception Throws exception
      */
     public static void removeAllSession(String moviename) throws Exception{
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");

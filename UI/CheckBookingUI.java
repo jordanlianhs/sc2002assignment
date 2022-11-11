@@ -4,13 +4,16 @@ import java.util.*;
 import java.io.*;
 import Model.*;
 
-
+/**
+ * Using the Check Booking UI, the user can check the booking details of a session
+ */
 public class CheckBookingUI {
     /**
      * This is the main method to check for bookings
-     * @param args arguments
+     * @param args null argument can be used to drive the function
+     * @exception Throws Exception
      */
-    public static void main (String[] args){
+    public static void main (String[] args) throws Exception{
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your email address");

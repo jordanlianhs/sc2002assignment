@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- * AdminUI is for showing the admin module
+ * Login page for the admin and main menu for admin system
  */
 public class AdminUI {
 

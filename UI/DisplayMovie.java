@@ -3,7 +3,9 @@ package UI;
 import java.util.*;
 import java.io.*;
 
-
+/**
+ * This is the main class of DisplayMovie
+ */
 public class DisplayMovie {
 
     /**
