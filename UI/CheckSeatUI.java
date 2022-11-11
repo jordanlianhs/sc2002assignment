@@ -104,7 +104,7 @@ public class CheckSeatUI {
 	 */
 	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C) throws IOException, Exception {
 		Scanner s = new Scanner(System.in);
-		String cpCode = s.next();
+		String cpCode;
 		do{
 			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
 			cpCode = s.next();
@@ -138,6 +138,7 @@ public class CheckSeatUI {
 		do{
 			do{
 				System.out.println("Choose your Session");
+				System.out.println("Enter 0 to quit");
 				number = s.nextInt();
 			}
 			while(number>count);

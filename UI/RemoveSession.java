@@ -6,15 +6,26 @@ import java.util.*;
 import java.io.*;
 import Model.*;
 
+/**
+ * This is the main class of RemoveSession
+ */
 public class RemoveSession {
-    static Scanner sc = new Scanner(System.in); // Console
+    static Scanner sc = new Scanner(System.in);
+    /**
+     * This is the main method of RemoveSession class
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
         Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
         String cpCode;
-        System.out.println("Enter your Cineplex Code (AMK, BBK, CCK):");
-        cpCode = sc.next();
+		do{
+			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
+			cpCode = sc.next();
+		}
+		while(!cpCode.equals("AMK")&&!cpCode.equals("BBK")&&!cpCode.equals("CCK"));
 
         int number = 0;
         ArrayList<Session> temp;
@@ -37,8 +48,14 @@ public class RemoveSession {
             count++;
         }
         
-        System.out.println("Choose your session to delete");
-        number = sc.nextInt();
+        do{
+            System.out.println("Choose your Session to delete");
+            number = sc.nextInt();
+        }
+        while(number>count);
+        if(number == 0){
+            return;
+        }
         temp.remove(number-1);
         size = temp.size();
         count =0;
@@ -91,6 +108,11 @@ public class RemoveSession {
         System.out.println("Session Deleted");
     }
 
+    /**
+     * This method remove every session with the specific movie name
+     * @param moviename is the name of the movie
+     * @throws Exception
+     */
     public static void removeAllSession(String moviename) throws Exception{
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
