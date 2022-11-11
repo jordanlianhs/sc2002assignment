@@ -1,9 +1,14 @@
 package UI;
+
 import java.util.*;
 import java.time.*;
 import java.text.*;
 import Model.*;
 
+/**
+ * This class initialises movie variables and writes an entry into the
+ * MovieCollectionNew.txt file.
+ */
 public class CreateMovie {
     static Scanner sc = new Scanner(System.in);
 
@@ -18,34 +23,33 @@ public class CreateMovie {
         String movieName;
         MovieType movieType;
         MovieStatus movieStatus;
-        String synopsis; 
-        String ageRating; 
-        float starRating; 
+        String synopsis;
+        String ageRating;
+        float starRating;
         double duration;
         LocalDate movieReleaseDate;
         LocalDate movieEndDate;
-        String director; 
+        String director;
         int sales;
         ArrayList<String> cast = new ArrayList<String>();
         String temp;
 
-
         System.out.println("-----------------------------------");
-		System.out.println("Create Movie");
-		System.out.println("-----------------------------------");
+        System.out.println("Create Movie");
+        System.out.println("-----------------------------------");
 
-		System.out.print("Movie Name: ");
+        System.out.print("Movie Name: ");
         movieName = sc.nextLine();
 
         System.out.println();
-		System.out.println("What is the movie type? ");
-		System.out.println("1: 2D");
-		System.out.println("2: 3D");
+        System.out.println("What is the movie type? ");
+        System.out.println("1: 2D");
+        System.out.println("2: 3D");
         System.out.println("3: 2D Blockbuster");
         System.out.println("4: 3D Blockbuster");
-		System.out.println("Enter your option:");
+        System.out.println("Enter your option:");
         temp = sc.nextLine();
-        switch(Integer.valueOf(temp)){
+        switch (Integer.valueOf(temp)) {
             case 1:
                 movieType = MovieType.TWO_D;
                 break;
@@ -65,14 +69,14 @@ public class CreateMovie {
         }
 
         System.out.println();
-		System.out.println("Movie Status: ");
-		System.out.println("1: Coming soon!");
-		System.out.println("2: Preview");
-		System.out.println("3: Now showing");
-		System.out.println("4: End of showing");
+        System.out.println("Movie Status: ");
+        System.out.println("1: Coming soon!");
+        System.out.println("2: Preview");
+        System.out.println("3: Now showing");
+        System.out.println("4: End of showing");
         System.out.println("Enter your option:");
         temp = sc.nextLine();
-        switch(Integer.valueOf(temp)){
+        switch (Integer.valueOf(temp)) {
             case 1:
                 movieStatus = MovieStatus.COMINGSOON;
                 break;
@@ -91,27 +95,26 @@ public class CreateMovie {
         }
 
         System.out.println();
-		System.out.print("Movie Synopsis: ");
-		synopsis = sc.nextLine();
+        System.out.print("Movie Synopsis: ");
+        synopsis = sc.nextLine();
 
         System.out.println();
-		System.out.print("Movie Age Rating: ");
-		ageRating = sc.nextLine();
+        System.out.print("Movie Age Rating: ");
+        ageRating = sc.nextLine();
 
-		starRating = -1;
+        starRating = -1;
 
         System.out.println();
-		System.out.print("Movie Duration: ");
-		temp = sc.nextLine();
-		duration = Double.valueOf(temp);
+        System.out.print("Movie Duration: ");
+        temp = sc.nextLine();
+        duration = Double.valueOf(temp);
 
         System.out.println();
         System.out.print("Release Date of the Movie (yyyy-MM-dd): ");
         temp = sc.nextLine();
-        if(checkDate(temp)){
+        if (checkDate(temp)) {
             movieReleaseDate = LocalDate.parse(temp);
-        }
-        else{
+        } else {
             System.out.println("Wrong input!");
             return;
         }
@@ -119,29 +122,29 @@ public class CreateMovie {
         System.out.println();
         System.out.print("End Date of the Movie (yyyy-MM-dd): ");
         temp = sc.nextLine();
-        if(checkDate(temp)){
+        if (checkDate(temp)) {
             movieEndDate = LocalDate.parse(temp);
-        }
-        else{
+        } else {
             System.out.println("Wrong input!");
             return;
         }
 
         System.out.println();
-		System.out.print("Director: ");
-		director = sc.nextLine();
+        System.out.print("Director: ");
+        director = sc.nextLine();
 
         sales = 0;
 
         System.out.println();
-		System.out.println("Movie Cast (Separate cast by commas): ");
-		temp = sc.nextLine();
-		String[] tempArr = temp.split("\\s*,\\s*");
-        for(String s:tempArr){
+        System.out.println("Movie Cast (Separate cast by commas): ");
+        temp = sc.nextLine();
+        String[] tempArr = temp.split("\\s*,\\s*");
+        for (String s : tempArr) {
             cast.add(s);
         }
 
-        Movie movie = new Movie(movieName, movieType, movieStatus, synopsis, ageRating, starRating, duration, movieReleaseDate, movieEndDate, director, sales,cast);
+        Movie movie = new Movie(movieName, movieType, movieStatus, synopsis, ageRating, starRating, duration,
+                movieReleaseDate, movieEndDate, director, sales, cast);
         movie.writeMovie();
 
         Rating rating = new Rating(movieName, starRating);
@@ -156,18 +159,18 @@ public class CreateMovie {
      * 
      * @param date Date to be checked
      * @return Returns true if the date is valid
-     */ 
+     */
     public static boolean checkDate(String input) throws Exception {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			Date date = sdf.parse(input);
-			System.out.println("Date input: " + date); // This is just for debugging
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = sdf.parse(input);
+            System.out.println("Date input: " + date); // This is just for debugging
 
-		} catch (ParseException e) {
-			// e.printStackTrace();
-			System.out.println("INVALID DATE!");
-			return false;
-		}
-		return true;
-	}
+        } catch (ParseException e) {
+            // e.printStackTrace();
+            System.out.println("INVALID DATE!");
+            return false;
+        }
+        return true;
+    }
 }
