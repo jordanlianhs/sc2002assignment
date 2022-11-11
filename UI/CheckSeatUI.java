@@ -22,7 +22,7 @@ public class CheckSeatUI {
 
 
 
-	public static void main(String[] args, Guest user) throws IOException, Exception{
+	public void main(String[] args, Guest user){
 		Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
         Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
@@ -111,7 +111,7 @@ public class CheckSeatUI {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C) throws IOException, Exception {
+	public static void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C){
 		Scanner s = new Scanner(System.in);
 		String cpCode;
 		do{
@@ -234,46 +234,50 @@ public class CheckSeatUI {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	public static void saveSeatBooking(Cineplex A, Cineplex B, Cineplex C) throws IOException,FileNotFoundException {
+	public static void saveSeatBooking(Cineplex A, Cineplex B, Cineplex C){
+		try{
+			// Note need to add options for deleting
+			ArrayList<Session> temp1, temp2, temp3;
+			temp1 =  A.getSessionList();
+			temp2 =  B.getSessionList();
+			temp3 =  C.getSessionList();
 
-		// Note need to add options for deleting
-		ArrayList<Session> temp1, temp2, temp3;
-		temp1 =  A.getSessionList();
-		temp2 =  B.getSessionList();
-		temp3 =  C.getSessionList();
+			String fileName1= "Database/SessionRecordAMK.txt";
+			String fileName2= "Database/SessionRecordBBK.txt";
+			String fileName3= "Database/SessionRecordCCK.txt";
+			PrintWriter writer1 = new PrintWriter(fileName1);
+			writer1.print("");
+			writer1.close();
+			PrintWriter writer2 = new PrintWriter(fileName2);
+			writer2.print("");
+			writer2.close();
+			PrintWriter writer3 = new PrintWriter(fileName3);
+			writer3.print("");
+			writer3.close();
 
-		String fileName1= "Database/SessionRecordAMK.txt";
-		String fileName2= "Database/SessionRecordBBK.txt";
-		String fileName3= "Database/SessionRecordCCK.txt";
-		PrintWriter writer1 = new PrintWriter(fileName1);
-        writer1.print("");
-        writer1.close();
-		PrintWriter writer2 = new PrintWriter(fileName2);
-        writer2.print("");
-        writer2.close();
-		PrintWriter writer3 = new PrintWriter(fileName3);
-        writer3.print("");
-        writer3.close();
+
+			int size = temp1.size();
+			int count =0;
+			while(count <size){
+				temp1.get(count).writeSession("AMK");
+				count++;
+			}
+			size = temp2.size();
+			count =0;
+			while(count <size){
+				temp2.get(count).writeSession("BBK");
+				count++;
+			}
+			size = temp3.size();
+			count =0;
+			while(count <size){
+				temp3.get(count).writeSession("CCK");
+				count++;
+			}
+		}catch (Exception e) {
+			System.out.println("Error in saving booking records" + e.getLocalizedMessage());
+		}
 		
-		
-		int size = temp1.size();
-		int count =0;
-		while(count <size){
-			temp1.get(count).writeSession("AMK");
-			count++;
-		}
-		size = temp2.size();
-		count =0;
-		while(count <size){
-			temp2.get(count).writeSession("BBK");
-			count++;
-		}
-		size = temp3.size();
-		count =0;
-		while(count <size){
-			temp3.get(count).writeSession("CCK");
-			count++;
-		}
 		
 	}
 

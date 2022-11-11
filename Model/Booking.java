@@ -173,7 +173,7 @@ public class Booking {
      * @throws IOException
      */
 
-    public void writebookingstatement() throws IOException {
+    public void writebookingstatement(){
         try {
             File file = new File("Database/BookingStatement.txt");
             FileWriter fr = new FileWriter(file, true);

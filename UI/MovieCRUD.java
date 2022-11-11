@@ -8,6 +8,10 @@ import java.util.*;
  */
 public class MovieCRUD {
 	static Scanner sc = new Scanner(System.in); // Console
+	private CreateMovie createMovie = new CreateMovie();
+	private RemoveMovie removeMovie = new RemoveMovie();
+	private UpdateMovie updateMovie = new UpdateMovie();
+	private DisplayMovie displayMovie = new DisplayMovie();
 
 	/**
 	 * Main function driving the view
@@ -15,7 +19,7 @@ public class MovieCRUD {
 	 * @param args null argument can be used to drive the function
 	 * @throws Exception Throws Exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public void main(String[] args) throws Exception {
 		int choice;
 
 		do {
@@ -29,16 +33,16 @@ public class MovieCRUD {
 
 			switch (choice) {
 				case 1:
-					CreateMovie.main(null);
+					createMovie.main(null);
 					break;
 				case 2:
-					RemoveMovie.main(null);
+					removeMovie.main(null);
 					break;					
 				case 3:
-					UpdateMovie.main(null);
+					updateMovie.main(null);
 					break;					
 				case 4:
-					DisplayMovie.main(null);
+					displayMovie.main(null);
 					break;
 				case 5:
 					return;

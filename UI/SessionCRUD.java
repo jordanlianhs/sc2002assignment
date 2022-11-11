@@ -8,18 +8,20 @@ import Model.*;
  * Class that will run all UI about Session, Create, Remove, Update and Display
  */
 public class SessionCRUD {
-    static Scanner sc = new Scanner(System.in); // Console
+    private CreateSession createSession = new CreateSession();
+    private RemoveSession removeSession = new RemoveSession();
+    private UpdateSession updateSession = new UpdateSession();
+    private DisplaySession displaySession = new DisplaySession();
 
     /**
      * Main function running SessionCRUD class
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in); // Console
 
 		int choice;
-		String del;
-		String holName, date;
 		do {
 			System.out.println("===Configure Session Listing UI===");
 			System.out.println("(1) Create Session");
@@ -31,16 +33,16 @@ public class SessionCRUD {
 			sc.nextLine(); // Clear scanner buffer
 			switch (choice) {
                 case 1:
-					CreateSession.main(null);
+					this.createSession.main(null);
                     break;
                 case 2:
-                    RemoveSession.main(null);
+                    this.removeSession.main(null);
                     break;
                 case 3:
-                    UpdateSession.main(null);
+                    this.updateSession.main(null);
                     break;
                 case 4:
-                    DisplaySession.main(null);
+                    this.displaySession.main(null);
                     break;
                 case 5:
 					return;

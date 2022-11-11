@@ -6,12 +6,19 @@ import Model.*;
  * This is the UI for users
  */
 public class UserUI {
+    private SearchMovie searchMovie = new SearchMovie();
+    private MovieDetails movieDetails = new MovieDetails();
+    private CheckSeatUI checkSeatUI = new CheckSeatUI();
+    private CheckBookingUI checkBookingUI = new CheckBookingUI();
+    private ListTop5UI listTop5UI = new ListTop5UI();
+    private ReviewUI reviewUI = new ReviewUI();
+
     /**
 	 * The main function for this view
 	 * @param args for the main function
 	 * @throws Exception to throw the exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		
 		/**
@@ -54,18 +61,18 @@ public class UserUI {
 			
 			
                 if(choice == 1) {
-                    SearchMovie.main(null);
+                    this.searchMovie.main(null);
                 }else if (choice == 2) {
-                    MovieDetails.main(null);
+                    this.movieDetails.main(null);
                 }else if(choice == 3) {
-                    CheckSeatUI.main (null,user);
+                    this.checkSeatUI.main (null,user);
                 }else if(choice == 4) {
-                    CheckBookingUI.main(null);
+                    this.checkBookingUI.main(null);
                 }else if(choice == 5) {
-                    ListTop5UI.init();
-                    ListTop5UI.main();
+                    this.listTop5UI.init();
+                    this.listTop5UI.main();
                 }else if(choice == 6) {
-                    ReviewUI.main(null,user);
+                    this.reviewUI.main(null,user);
                 }else if(choice == 7){
                     return;
                 }

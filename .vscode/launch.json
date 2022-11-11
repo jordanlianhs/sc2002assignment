@@ -9,6 +9,13 @@
             "name": "Launch MOBLIMA",
             "request": "launch",
             "mainClass": "MOBLIMA",
+            "projectName": "sc2002assignment_3f352650"
+        },
+        {
+            "type": "java",
+            "name": "Launch MOBLIMA",
+            "request": "launch",
+            "mainClass": "MOBLIMA",
             "projectName": "sc2002assignment_3ed0f619"
         },
         {

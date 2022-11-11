@@ -6,14 +6,16 @@ import java.time.*;
 import java.time.format.*;
 
 public class UpdateMovie {
-    static Scanner sc = new Scanner(System.in); // Console
+    
     
     /**
      * Main function driving the view
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in); // Console
+        
         // Update a variable of movie
         String file1 = "./Database/MovieCollectionNew.txt";
         File movieFile = new File(file1);

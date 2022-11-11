@@ -5,6 +5,7 @@ import java.util.*;
 import java.io.*;
 
 public class MovieDetails {
+    private DisplayMovie displayMovie = new DisplayMovie();
     /**
      * MovieDetails asks for user input to find a movie and returns the details of
      * said movie
@@ -12,18 +13,12 @@ public class MovieDetails {
      * @param args null
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public void main(String[] args){
         String input;
         Scanner sc = new Scanner(System.in);
-        //do {
-            System.out.println("\nEnter \"esc\" to quit movie details UI");
-            DisplayMovie.displayMovie(true);
-            // System.out.print("Enter a movie name: ");
-            // input = sc.nextLine();
-            // if (!input.equals("esc")) {
-            //     details(input, true);
-            // }
-        //} while (!input.toLowerCase().equals("esc"));
+        System.out.println("\nEnter \"esc\" to quit movie details UI");
+
+        this.displayMovie.displayMovie(true);
     }
 
     /**
@@ -33,7 +28,7 @@ public class MovieDetails {
      * @param userView (Enables/Disables User View)
      * @throws Exception Throws FilenotFound Exception
      */
-    public static void details(String input, boolean userView) throws Exception {
+    public static void details(String input, boolean userView){
         try {
             File file = new File("./Database/MovieCollectionNew.txt");
             Scanner sc = new Scanner(file).useDelimiter(",");

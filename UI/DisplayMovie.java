@@ -14,12 +14,12 @@ public class DisplayMovie {
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public static void main(String[] args) throws Exception{
+    public void main(String[] args){
         try {
 			DisplayMovie dm = new DisplayMovie();
             dm.displayMovie(false);
 		} 
-        catch (FileNotFoundException e) {
+        catch (Exception e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
@@ -29,7 +29,7 @@ public class DisplayMovie {
      * Display all movies in the database
      * @throws Exception Throws Exception
      */
-	public static void displayMovie(boolean userView) throws Exception {
+	public void displayMovie(boolean userView) {
 		try {
 			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file);

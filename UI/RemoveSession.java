@@ -7,13 +7,15 @@ import Model.*;
  * This is the main class of RemoveSession
  */
 public class RemoveSession {
-    static Scanner sc = new Scanner(System.in);
+    
     /**
      * This is the main method of RemoveSession class
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+
         Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
         Cineplex B = new Cineplex("Bukit Batok", "BBK");
         Cineplex C = new Cineplex("Choa Chu Kang", "CCK");

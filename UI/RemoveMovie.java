@@ -17,7 +17,7 @@ public class RemoveMovie {
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public void main(String[] args) throws Exception {
         File f = new File("./Database/MovieCollectionNew.txt");
         lineCounter l = new lineCounter();
         count = l.counter(f);

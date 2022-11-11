@@ -10,7 +10,7 @@ import Model.*;
  * MovieCollectionNew.txt file.
  */
 public class CreateMovie {
-    static Scanner sc = new Scanner(System.in);
+    private Movie movie;
 
     /**
      * Main function driving the view
@@ -18,8 +18,8 @@ public class CreateMovie {
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public static void main(String[] args) throws Exception {
-
+    public void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
         String movieName;
         MovieType movieType;
         MovieStatus movieStatus;
@@ -143,8 +143,7 @@ public class CreateMovie {
             cast.add(s);
         }
 
-        Movie movie = new Movie(movieName, movieType, movieStatus, synopsis, ageRating, starRating, duration,
-                movieReleaseDate, movieEndDate, director, sales, cast);
+        movie = new Movie(movieName, movieType, movieStatus, synopsis, ageRating, starRating, duration, movieReleaseDate, movieEndDate, director, sales, cast);
         movie.writeMovie();
 
         Rating rating = new Rating(movieName, starRating);
@@ -167,7 +166,6 @@ public class CreateMovie {
             System.out.println("Date input: " + date); // This is just for debugging
 
         } catch (ParseException e) {
-            // e.printStackTrace();
             System.out.println("INVALID DATE!");
             return false;
         }

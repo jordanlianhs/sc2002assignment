@@ -117,7 +117,7 @@ public class Review {
      * Writes the review to the Review.txt database
      * @throws IOException Throws IOException
      */
-    public void writereview() throws IOException{
+    public void writereview(){
         try{
             File file = new File("Database/Review.txt");
             FileWriter fr = new FileWriter(file, true);
@@ -159,7 +159,7 @@ public class Review {
      * @param n Movie Name
      * @throws Exception Throws Exception
      */
-    public void search(String n) throws Exception{
+    public void search(String n){
         
         try {
 			File file = new File("Database/Review.txt");

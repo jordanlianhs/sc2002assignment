@@ -10,14 +10,15 @@ import Model.*;
  * This class is used to create a new session
  */
 public class CreateSession {
-    static Scanner sc = new Scanner(System.in);
+    
     /**
      * This is the main method to create a new session
      * @param args null argument can be used to drive the function
      * @throws Exception Throws Exception
      */
-    public static void main(String[] args) throws Exception {
-
+    public void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        
         String temp;
         LocalDateTime seshDateTime;
         Movie movie = new Movie();

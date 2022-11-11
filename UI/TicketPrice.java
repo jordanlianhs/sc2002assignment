@@ -2,7 +2,7 @@ package UI;
 
 import Model.*;
 import java.util.*;
-
+import java.util.concurrent.ExecutionException;
 import java.time.*;
 import java.io.*;
 
@@ -21,8 +21,9 @@ public class TicketPrice {
      * @param args null argument can be used to drive the function
      * @throws Exception throws exception
      */
-    public static void main(String[] args) throws Exception {
-        TicketPrice.configurePrice();
+    public void main(){
+        TicketPrice ticketPrice = new TicketPrice();
+        ticketPrice.configurePrice();
     }
 
     /**
@@ -30,7 +31,7 @@ public class TicketPrice {
      * 
      * @throws Exception throws exception
      */
-    public static void configurePrice() throws Exception {
+    public void configurePrice(){
         // Initialise all the variables to their original values
         try {
             Scanner sc = new Scanner(f);
@@ -381,6 +382,9 @@ public class TicketPrice {
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input!");
                 s.nextLine();
+            } catch( IOException e){
+                System.out.println("Invalid Input!");
+                s.nextLine();
             }
         } while (choice != 17);
         s.close();
@@ -394,7 +398,7 @@ public class TicketPrice {
      * @param B The user's movie booking
      * @return Calculated price
      */
-    public double calculateTix(Guest g, Session S, Booking B) throws Exception {
+    public double calculateTix(Guest g, Session S, Booking B){
         try {
             Scanner sc = new Scanner(f);
             sc.useDelimiter(",");

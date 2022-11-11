@@ -21,7 +21,7 @@ public class HolidayUI {
 	 * @param args Main arument args (null)
 	 * @throws Exception throws exceptions
 	 */
-	public static void main(String[] args) throws Exception {
+	public void main(String[] args) throws Exception {
 		int choice;
 		String del;
 		String holName = "", date = "";

@@ -8,7 +8,11 @@ import java.io.*;
  */
 public class AdminUI {
 
-	public AdminUI(){};
+	private MovieCRUD movieCRUD = new MovieCRUD();
+	private SessionCRUD sessionCRUD = new SessionCRUD();
+	private ListTop5UI listTop5UI= new ListTop5UI();
+	private HolidayUI holidayUI = new HolidayUI();
+	private TicketPrice ticketPrice = new TicketPrice();
 
 	/**
 	 * Main function driving the view
@@ -44,10 +48,10 @@ public class AdminUI {
 					sc.nextLine();
 					switch (choice) {
 						case 1:
-							MovieCRUD.main(null);
+							this.movieCRUD.main(null);
 							break;
 						case 2:
-							SessionCRUD.main(null);
+							this.sessionCRUD.main(null);
 							break;
 						case 3:
 							System.out.println("Select item to configure: ");
@@ -56,16 +60,16 @@ public class AdminUI {
 							choice2 = sc.nextInt();
 							sc.nextLine();
 							if (choice2 == 1) {
-								HolidayUI.main(null);
+								this.holidayUI.main(null);
 							} else if (choice2 == 2) {
 								// Configure Ticket prices (not working)
-								TicketPrice.configurePrice();
+								this.ticketPrice.configurePrice();
 							} else {
 								System.out.println("Invalid input!");
 							}
 							break;
 						case 4:
-							ListTop5UI.init();
+							this.listTop5UI.init();
 							do {
 								System.out.println("(1) List top 5 movies by ticket sales");
 								System.out.println("(2) List top 5 movies by overall ratings");
@@ -77,11 +81,11 @@ public class AdminUI {
 								switch (choice) {
 									case 1:
 										// list by sales
-										ListTop5UI.listTop5Sales();
+										this.listTop5UI.listTop5Sales();
 										break;
 									case 2:
 										// list by ratings
-										ListTop5UI.listTop5Ratings();
+										this.listTop5UI.listTop5Ratings();
 										break;
 									case 3:
 										// change settings
@@ -96,14 +100,14 @@ public class AdminUI {
 										switch (choice) {
 											case 1:
 												// list by sales
-												ListTop5UI.setSetting(2);
+												this.listTop5UI.setSetting(2);
 												break;
 											case 2:
 												// list by ratings
-												ListTop5UI.setSetting(3);
+												this.listTop5UI.setSetting(3);
 												break;
 											case 3:
-												ListTop5UI.setSetting(1);
+												this.listTop5UI.setSetting(1);
 										}
 
 										break;
@@ -145,7 +149,6 @@ public class AdminUI {
 			String UN = ar.next();
 			String PW = ar.next();
 
-			// System.out.println(UN + " " + PW);
 
 			if (!usr.equals(UN) || !pass.equals(PW)) {
 				System.out.println("Username or Password is incorrect!");

@@ -71,7 +71,7 @@ public class Rating {
    * Calculates Average rating and calls methods to update rating and movie database
    * @throws IOException Throws IOException
    */
-  public void editAvgRating() throws IOException {
+  public void editAvgRating(){
     try {
       File ratingFile = new File("./Database/rating.txt");
       Scanner sc = new Scanner(ratingFile);

@@ -18,7 +18,7 @@ public class SearchMovie {
 	 * @throws Exception to throw the exception
 	 * 
 	 */
-	public static void main(String[] args) throws Exception {
+	public void main(String[] args){
 		String input;
 		Scanner sc = new Scanner(System.in);
 
@@ -27,7 +27,7 @@ public class SearchMovie {
 			System.out.println("\nEnter \"esc\" to quit movie search UI");
 			System.out.print("Enter a search term: ");
 			input = sc.nextLine();
-			SearchMovie.find(input);
+			find(input);
 		} while (!input.toLowerCase().equals("esc"));
 		
 	}
@@ -38,9 +38,8 @@ public class SearchMovie {
 	 * @param n Input String search term
 	 * @throws Exception Throw FilenotFound exception
 	 */
-	public static void find(String n) throws Exception {
+	public void find(String n){
 		try {
-			// File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
