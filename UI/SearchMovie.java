@@ -3,6 +3,11 @@ package UI;
 import java.util.*;
 import java.io.*;
 
+/**
+ * This class provides fundamental functions to access txt files. Finding a
+ * movie, Searching for a movie (Returns an array of results),
+ * and deleting an entry in the txt file.
+ */
 public class SearchMovie {
 	static File file = new File("./Database/MovieCollectionNew.txt"); // Edit this if you wana to change directory
 
@@ -28,10 +33,10 @@ public class SearchMovie {
 	}
 
 	/**
-	 * Finds a movie entry
+	 * Finds a movie entry excluding those that are coming soon or no longer showing
 	 * 
-	 * @param n
-	 * @throws Exception
+	 * @param n Input String search term
+	 * @throws Exception Throw FilenotFound exception
 	 */
 	public static void find(String n) throws Exception {
 		try {
@@ -45,8 +50,7 @@ public class SearchMovie {
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
 
-				// Skips the movie if it is not showing
-				if (st.contains("ENDOFSHOWING")) {
+				if (st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
 					continue;
 				}
 
@@ -64,6 +68,13 @@ public class SearchMovie {
 		}
 	}
 
+	/**
+	 * Function returns the result array of entries that have matching elements with
+	 * the search term
+	 * 
+	 * @param n String search term
+	 * @return returns an array containing the list of results
+	 */
 	public static String[] getSearchedMovie(String n) {
 		// Stores in index i of an array
 		lineCounter l = new lineCounter();
@@ -96,6 +107,11 @@ public class SearchMovie {
 		return searchResults;
 	}
 
+	/**
+	 * Function deletes an entry in the file with the exact as the one being input
+	 * 
+	 * @param n Exact Input string to be deleted
+	 */
 	public static void delMovie(String n) {
 		// Note need to add options for deleting
 		try {
