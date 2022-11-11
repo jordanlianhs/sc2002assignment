@@ -35,7 +35,8 @@ public class MovieDetails {
                 String[] stToken1 = st.split(",");
                 String[] stToken = st2.split(",");
 
-                if((flag = stToken[0].equals(input.toLowerCase())) && !(stToken1[2].equals("ENDOFSHOWING") || stToken1[2].equals("COMINGSOON"))){
+                // Skips the movie if it is not showing
+                if((flag = stToken[0].equals(input.toLowerCase())) && !(stToken1[2].equals("ENDOFSHOWING"))){
                     System.out.println("The movie details requested are as follows: \n");
                     
                     int i = 0;
