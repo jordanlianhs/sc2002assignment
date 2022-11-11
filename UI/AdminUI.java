@@ -8,13 +8,15 @@ import java.io.*;
  */
 public class AdminUI {
 
+	public AdminUI(){};
+
 	/**
 	 * Main function driving the view
 	 * 
 	 * @param args null argument can be used to drive the function
 	 * @throws Exception Throws Exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public void main(String[] args) throws Exception {
 		String id, pass;
 		int choice = 0;
 		int choice2 = 0;

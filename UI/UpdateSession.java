@@ -60,11 +60,22 @@ public class UpdateSession {
         if(number == 0){
             return;
         }
-        System.out.println("Choose what to update: ");
-        System.out.println("1. Session Time");
-        System.out.println("2. Movie");
-        System.out.println("3. Cinema");
-        i = sc.nextInt();
+        do{
+            try{
+                System.out.println("Choose what to update: ");
+                System.out.println("1. Session Time");
+                System.out.println("2. Movie");
+                System.out.println("3. Cinema");
+                i = sc.nextInt();
+                break;
+            }catch (Exception e) {
+					System.out.println("Enter an integer!");
+					System.out.println();
+					sc.nextLine();
+					continue;
+				}
+        }while(true);
+
 
         if(i==1){
             System.out.print("Enter New Session Date Time (YYYY-MM-DD hh:mm): ");

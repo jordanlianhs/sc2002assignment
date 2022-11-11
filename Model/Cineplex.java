@@ -54,27 +54,35 @@ public class Cineplex{
      * @param cineplexCode Cineplex Code
      * @throws IOException Throws IOException
      */
-    public Cineplex(String locationName, String cineplexCode) throws IOException{
-        this.locationName = locationName;
-        this.cineplexCode = cineplexCode;
-        this.sessionList = new ArrayList<>();
-        String fileName = "DataBase/SessionRecord" + cineplexCode + ".txt";
-        File Document = new File(fileName);
-        
+    public Cineplex(String locationName, String cineplexCode){
+        try{
+            this.locationName = locationName;
+            this.cineplexCode = cineplexCode;
+            this.sessionList = new ArrayList<>();
+            String fileName = "DataBase/SessionRecord" + cineplexCode + ".txt";
+            File Document = new File(fileName);
+            
+    
+            Scanner sc = new Scanner(Document);
+            int i=0;
+            while(sc.hasNextLine()){
+                sc.nextLine();            
+                i++;
+            }
+            
+            for(int j =0; j<i; j++){
+                this.sessionList.add(new Session());
+                this.sessionList.get(j).read(cineplexCode, j);
+            }
+            
 
-        Scanner sc = new Scanner(Document);
-        int i=0;
-        while(sc.hasNextLine()){
-            sc.nextLine();            
-            i++;
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
         }
-        
-        for(int j =0; j<i; j++){
-            this.sessionList.add(new Session());
-            this.sessionList.get(j).read(cineplexCode, j);
+
+        catch(IOException e){
+            e.printStackTrace();
         }
-        
-        
     }
 
 }
