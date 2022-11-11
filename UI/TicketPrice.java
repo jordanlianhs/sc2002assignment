@@ -7,7 +7,8 @@ import java.time.*;
 import java.io.*;
 
 /**
- * This class is used to retrieve and update Ticket prices for the various types of tickets
+ * This class is used to retrieve and update Ticket prices for the various types
+ * of tickets
  */
 public class TicketPrice {
     static File f = new File("./Database/TicketPrice.txt");
@@ -16,6 +17,7 @@ public class TicketPrice {
 
     /**
      * This is the main function that calls the method to configure the price
+     * 
      * @param args null argument can be used to drive the function
      * @throws Exception throws exception
      */
@@ -25,6 +27,7 @@ public class TicketPrice {
 
     /**
      * Scans user input and uses it to update the prices of the various tickets
+     * 
      * @throws Exception throws exception
      */
     public static void configurePrice() throws Exception {
@@ -387,7 +390,7 @@ public class TicketPrice {
      * @param g User who is booking the ticket
      * @param S Movie Session
      * @param B The user's movie booking
-     * @return Calculated price 
+     * @return Calculated price
      */
     public double calculateTix(Guest g, Session S, Booking B) throws Exception {
         try {
@@ -478,6 +481,7 @@ public class TicketPrice {
 
     /**
      * This function checks if the date that the user is trying to book is a holiday
+     * 
      * @param S Movie Session
      * @return True if holiday, false if it is not
      */

@@ -22,12 +22,9 @@ public class SearchMovie {
 			System.out.println("\nEnter \"esc\" to quit movie search UI");
 			System.out.print("Enter a search term: ");
 			input = sc.nextLine();
-			SearchMovie look = new SearchMovie();
-			look.find(input);
+			SearchMovie.find(input);
 		} while (!input.toLowerCase().equals("esc"));
 	}
-
-	
 
 	/**
 	 * Finds a movie entry
@@ -46,8 +43,8 @@ public class SearchMovie {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
-				
-				if(st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
+
+				if (st.contains("COMINGSOON") || st.contains("ENDOFSHOWING")) {
 					continue;
 				}
 
