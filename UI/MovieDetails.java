@@ -35,7 +35,7 @@ public class MovieDetails {
                 String[] stToken = st2.split(",");
 
                 if(flag = stToken[0].equals(input.toLowerCase())){
-                    System.out.println("The movie details requested are as follows : ");
+                    System.out.println("The movie details requested are as follows: \n");
                     System.out.println(st); 
                     String temp;
 
@@ -56,6 +56,7 @@ public class MovieDetails {
                 System.out.println("Movie does not exist! ");
             }
             sc.close();
+            sc1.close();
         }
         catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");

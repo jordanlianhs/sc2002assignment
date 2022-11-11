@@ -8,7 +8,6 @@ import java.io.*;
 /**
  * The UI used to List the top 5 movies ranked by either Sales or Star ratings.
  */
-
 public class ListTop5UI {
     
     /**

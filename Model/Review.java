@@ -111,21 +111,17 @@ public class Review {
 			Scanner sc = new Scanner(file);
 
 			sc.useDelimiter(",");
-			System.out.println("The movie reviews are as follows: ");
+			System.out.println("The movie reviews are as follows: \n");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
 				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
                 String[] stToken = st2.split(",");
-				// Print the string
-				System.out.println(); // Just formatting line
 				if (stToken[0].equals(n)) {
 					System.out.println(st); // Display original capitalised version
-					// System.out.println();
+					System.out.println();
 				}
-                else{
-                    System.out.print("");
-                }
+                
 			}
 			sc.close();
 

@@ -49,7 +49,7 @@ public class SearchMovie {
 				// Print the string
 				if (st2.contains(n)) {
 					System.out.println(st); // Display original capitalised version
-					// System.out.println();
+					System.out.println();
 				}
 			}
 			sc.close();

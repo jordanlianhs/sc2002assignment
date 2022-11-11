@@ -1,8 +1,6 @@
 package UI;
 
 import java.util.*;
-import UI.*;
-import Model.*;
 
 public class SessionCRUD {
     static Scanner sc = new Scanner(System.in); // Console
