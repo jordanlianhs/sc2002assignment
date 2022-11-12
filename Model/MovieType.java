@@ -20,11 +20,10 @@ public enum MovieType {
     }
 
     /**
-     * Returns the type of movie as a String
-     * 
+     * Get the type of movie
      * @return movieType
      */
-    public String getType() {
+    public String getMovieType() {
         return this.type;
     }
 }

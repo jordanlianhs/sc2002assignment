@@ -65,7 +65,7 @@ public class Movie {
     /** 
      * This movie's list of cast 
      */
-    private ArrayList<String> cast;
+    private List<String> cast;
 
     /**
      * This movie's list of reviews
@@ -93,7 +93,7 @@ public class Movie {
      * @param sales is the sales of the movie
      * @param cast is the cast of the movie
      */
-    public Movie(String movieName, MovieType movieType, MovieStatus movieStatus, String synopsis, String ageRating, float starRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, int sales, ArrayList<String> cast) {
+    public Movie(String movieName, MovieType movieType, MovieStatus movieStatus, String synopsis, String ageRating, float starRating, double duration, LocalDate movieReleaseDate, LocalDate movieEndDate, String director, int sales, List<String> cast) {
         this.movieName = movieName;
         this.movieType = movieType;
         this.movieStatus = movieStatus;
@@ -267,7 +267,7 @@ public class Movie {
     /**
      * @return cast of the movies in an array
      */
-    public ArrayList<String> getCast() {
+    public List<String> getCast() {
         return this.cast;
     }
 
@@ -275,7 +275,7 @@ public class Movie {
      * Set the cast of the movie
      * @param cast is the new cast of the movie
      */
-    public void setCast(ArrayList<String> cast) {
+    public void setCast(List<String> cast) {
         this.cast = cast;
     }
 
@@ -303,20 +303,16 @@ public class Movie {
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
-            String cast= String.join(",", this.getCast());
-            //String review= String.join(",", this.getReviews());
-            String shit = movieName + "," + movieType.toString() + "," + movieStatus.toString() + "," + synopsis + "," + ageRating + "," + String.valueOf(starRating)
-            + "," + String.valueOf(duration) + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
-            + "," + director + "," + String.valueOf(sales) + "," + this.getCast().size()  + "," + cast; 
+            String castString= String.join(",", this.getCast());
+
+            String shit = movieName + "," + movieType.toString() + "," + movieStatus.toString() + "," + synopsis + "," + ageRating + "," + starRating
+            + "," + duration + "," + movieReleaseDate.toString() + "," + movieEndDate.toString() 
+            + "," + director + "," + sales + "," + this.getCast().size()  + "," + castString; 
             pr.println(shit);
             pr.close();
             br.close();
             fr.close();
         }
-        catch(FileNotFoundException e){
-            e.printStackTrace();
-        }
-
         catch(IOException e){
             e.printStackTrace();
         }

@@ -20,12 +20,18 @@ public class Seat {
 	 */
 	private boolean taken = false;
 	
+	/**
+	 * Constructor of seat class
+	 * @param row1 is the row of seat
+	 * @param column1 is the column of seay
+	 */
 	public Seat(char row1, int column1) {
 		row = row1;
 		column = column1;
 	}
 	
 	/**
+	 * get row of seat
 	 * @return row of seat
 	 */
 	public char getSeatrow() {
@@ -33,12 +39,14 @@ public class Seat {
 	}
 	
 	/**
+	 * get column of seat
 	 * @return column of seat
 	 */
 	public int getSeatColumn() {
 		return column;
 	}
 	/**
+	 * check whether seat is taken
 	 * @return whether seat is taken
 	 */
 	public boolean checkTaken() {
@@ -54,7 +62,7 @@ public class Seat {
 	
 	/**
 	 * book unbook seat
-	 */
+	*/
 	public void clear() {
 		taken = false;
 	}

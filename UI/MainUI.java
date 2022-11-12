@@ -34,7 +34,7 @@ public class MainUI {
             System.out.println("3: Exit");
             System.out.print("Please enter the module you want to access: ");
 
-            switch (sc.nextInt()) {
+            switch (Integer.parseInt(sc.nextLine())) {
                 case 1:
                     this.adminUI.main();
                     break;

@@ -41,7 +41,8 @@ public class UserUI {
      * Main function driving the view
      */
 	public void main(){
-		try (Scanner sc = new Scanner(System.in)) {
+		try{
+            Scanner sc = new Scanner(System.in);
             /**
              * to keep track of when to exit the used module
              */

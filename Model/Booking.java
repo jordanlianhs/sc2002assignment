@@ -46,14 +46,14 @@ public class Booking {
 
     /**
      * Get the Seat Number of the booking
-     * @return sea
+     * @return Seat Number
      */
     public String getSeatNumber() {
         return seatNumber;
     }
 
     /**
-     * Class about booking of cinema seat
+     * Constrcutor about booking of cinema seat
      * @param guest The person that book the ticket
      * @param session The session of the booking
      * @param seatNumber The seat that is booked
@@ -64,7 +64,6 @@ public class Booking {
         this.guest = guest;
         this.movie = session.getMovie();
         this.seatNumber = seatNumber;
-        // this.movietime = movie.getMovieTime;
         this.cinemaCode = cinemaCode;
         // timestamp is formatted current time
         String timestamp = new SimpleDateFormat("YYYYMMddHHmm").format(new Date());
@@ -151,10 +150,11 @@ public class Booking {
         }
         this.price = temp;
     }
+
     /**
      * Check if the date is a holiday
      * @param session The session of the booking
-     * @return True if it is a holiday
+     * @return true if it is a holiday
      */
     public boolean isHoliday(Session S) {
         LocalDateTime dateTime = S.getSeshDateTime(); // To check for holidays
@@ -162,17 +162,12 @@ public class Booking {
 
         // System.out.println("DT: " + DT); //For debugging
 
-        if (HolidayUI.findHol(DT)) {
-            return true;
-        } else
-            return false;
+        return HolidayUI.findHol(DT); // Check if its a holiday
     }
 
     /**
      * Function to write booking record into database
-     * @throws IOException
      */
-
     public void writebookingstatement(){
         try {
             File file = new File("Database/BookingStatement.txt");
@@ -180,17 +175,13 @@ public class Booking {
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
             String statement = guest.getEmail() + "," + guest.getPhone() + "," 
-            + String.valueOf(price) + "," + ticketID + "," + movie.getmovieName()
+            + price + "," + ticketID + "," + movie.getmovieName()
             + "," + seatNumber + "," + cinemaCode;
             pr.println(statement);
             pr.close();
             br.close();
             fr.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

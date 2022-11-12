@@ -23,7 +23,7 @@ public class Cineplex{
     private ArrayList<Session> sessionList;
 
     /**
-     * 
+     * Getter for location name
      * @return Location name
      */
     public String getLocationName(){
@@ -31,7 +31,7 @@ public class Cineplex{
     }
 
     /**
-     * 
+     * Getter for cineplex code
      * @return Cineplex code
      */
     public String getCinePlexCode(){
@@ -39,7 +39,7 @@ public class Cineplex{
     }
 
     /**
-     * 
+     * Getter for session list
      * @return Array list of movie sessions
      */
     public ArrayList<Session> getSessionList(){
@@ -76,11 +76,7 @@ public class Cineplex{
             }
             
 
-        }catch(FileNotFoundException e){
-            e.printStackTrace();
-        }
-
-        catch(IOException e){
+        }catch(IOException e){
             e.printStackTrace();
         }
     }

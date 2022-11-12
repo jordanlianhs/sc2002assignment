@@ -50,7 +50,7 @@ public class Review {
     }
 
     /**
-     * 
+     * Getter for movie name
      * @return Movie Name
      */
     public String getMovieName() {
@@ -58,7 +58,7 @@ public class Review {
     }
 
     /**
-     * Sets movie name
+     * Setter movie name
      * @param moviename New movie name
      */
     public void setMovieName(String moviename) {
@@ -66,7 +66,7 @@ public class Review {
     }
 
     /**
-     * 
+     * getter for Reviewer's username
      * @return Reviewer's username
      */
     public String getUsername() {
@@ -74,7 +74,7 @@ public class Review {
     }
 
     /**
-     * Sets reviewer's username
+     * Seter reviewer's username
      * @param username New Username
      */
     public void setUsername(String username) {
@@ -82,7 +82,7 @@ public class Review {
     }
 
     /**
-     * 
+     * getter for number of stars
      * @return Number of stars given by reviewer
      */
     public double getNumOfStars() {
@@ -98,7 +98,7 @@ public class Review {
     }
 
     /**
-     * 
+     * Getter for additional comment
      * @return Additional comment by reviewer
      */
     public String getAdditionalComment() {
@@ -115,7 +115,6 @@ public class Review {
 
     /**
      * Writes the review to the Review.txt database
-     * @throws IOException Throws IOException
      */
     public void writereview(){
         try{
@@ -130,24 +129,20 @@ public class Review {
             sc.useDelimiter("[,\n]");
 
             while (sc.hasNext()) {
-                    String st = sc.next().toString();
-                    if (st.toLowerCase().equals(movieName.toLowerCase())) {
+                    String st = sc.next();
+                    if (st.equalsIgnoreCase(movieName)) {
                             movieCorrect = st;
                             break;
                     }
             }
             sc.close();
 
-            String shit = movieCorrect + "," + username + "," + String.valueOf(numOfStars) + "," + additionalComment;
+            String shit = movieCorrect + "," + username + "," + numOfStars + "," + additionalComment;
             pr.println(shit);
             pr.close();
             br.close();
             fr.close();
         }
-        catch(FileNotFoundException e){
-            e.printStackTrace();
-        }
-
         catch(IOException e){
             e.printStackTrace();
         }
@@ -169,7 +164,7 @@ public class Review {
 			System.out.println("The movie reviews are as follows: \n");
 			while (sc.hasNext()) {
 				String st = sc.nextLine(); // To get current string with all Capitalisation
-				String st2 = st.toLowerCase().toString(); // Changes it to lowercase and string for searching
+				String st2 = st.toLowerCase(); // Changes it to lowercase and string for searching
 				n = n.toLowerCase(); // Convert input string toLower to compare
                 String[] stToken = st2.split(",");
 				if (stToken[0].equals(n)) {

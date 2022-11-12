@@ -36,7 +36,7 @@ public class Rating {
   }
 
   /**
-   * 
+   * Getter for movie name
    * @return movie name
    */
   public String getMovieName() {
@@ -44,7 +44,7 @@ public class Rating {
   }
 
   /**
-   * Set movie name
+   * Setter for movie name
    * @param moviename
    */
   public void setMovieName(String moviename) {
@@ -52,7 +52,7 @@ public class Rating {
   }
 
   /**
-   * 
+   * getter for number of stars
    * @return Number of stars for rating
    */
   public double getNumOfStars() {
@@ -60,7 +60,7 @@ public class Rating {
   }
 
   /**
-   * Set Number of stars
+   * setter for number of stars
    * @param numOfStars new number of stars
    */
   public void setNumOfStars(double numOfStars) {
@@ -69,7 +69,6 @@ public class Rating {
 
   /**
    * Calculates Average rating and calls methods to update rating and movie database
-   * @throws IOException Throws IOException
    */
   public void editAvgRating(){
     try {
@@ -84,7 +83,7 @@ public class Rating {
 
 
       while (sc.hasNext()) {
-        String st = sc.next().toLowerCase().toString();
+        String st = sc.next().toLowerCase();
         if (st.contains(movieName.toLowerCase())) {
           // go to the rating column and get the orig rating
           curAvgRating = Double.parseDouble(sc.next());
@@ -118,11 +117,6 @@ public class Rating {
       appendMovieTXT(movieName, newRating);
 
     } 
-    
-    catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-
     catch (IOException e) {
       e.printStackTrace();
     }
@@ -186,7 +180,7 @@ public class Rating {
         oldNumOfRatings = x.next();
         oldFirstRating = x.next();
 
-        if (movietitle.toLowerCase().equals(movieName.toLowerCase())) {
+        if (movietitle.equalsIgnoreCase(movieName)) {
           pw.print(movietitle + "," + newRating + "," + numOfRatings + "," + firstRating + "\n");
           pw.flush();
         }
@@ -202,12 +196,16 @@ public class Rating {
       bw.close();
       fw.close();
 
-      oldFile.delete();
-      File dump = new File(file);
-      newFile.renameTo(dump);
-      
+      if(oldFile.delete()){
+        File dump = new File(file);
+        if(!newFile.renameTo(dump)){
+          System.out.println("Error");
+        }
+      }
+      else{
+        System.out.println("Error");
+      }
     }
-
     catch (Exception e) {
       e.printStackTrace();
     }
@@ -277,11 +275,16 @@ public class Rating {
       bw1.close();
       fw1.close();
 
-      oldFile1.delete();
-      File dump1 = new File(file1);
-      newFile1.renameTo(dump1);
+      if(oldFile1.delete()){
+        File dump1 = new File(file1);
+        if(!newFile1.renameTo(dump1)){
+          System.out.println("Error");
+        }
+      }
+      else{
+        System.out.println("Error");
+      }
     }
-
     catch (Exception e) {
       e.printStackTrace();
     }

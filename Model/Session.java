@@ -31,23 +31,21 @@ public class Session {
 	private SeatingPlan seatPlan = new SeatingPlan();
 	
 	/**
-	 * Constructor if session class
+	 * Empty Constructor of session class
 	 */
-	public Session(){
-
-	};
+	public Session(){};
 
 	/**
-	 * Constructor if session class
+	 * Constructor of session class
 	 */
 	public Session(Movie movie, LocalDateTime seshDateTime, String cinemaCode) {
 		this.movie = movie;
 		this.seshDateTime = seshDateTime;
 		this.cinemaCode = cinemaCode;
-		//this.seatPlan = seatPlan;
 	}
 
 	/**
+	 * get date and time of session
 	 * @return timing of session
 	 */
 	public LocalDateTime getSeshDateTime() {
@@ -62,6 +60,7 @@ public class Session {
 	}
 
 	/**
+	 * get movie of session
 	 * @return movie of session
 	 */
 	public Movie getMovie() {
@@ -77,6 +76,7 @@ public class Session {
 	}
 
 	/**
+	 * get seating plan of session
 	 * @return seating plan of session
 	 */
 	public SeatingPlan getSeatPlan(){
@@ -108,6 +108,7 @@ public class Session {
 	}
 	
 	/**
+	 * get start time of session
 	 * @return start time of the session
 	 */
 	public LocalTime getStartTime() {
@@ -115,6 +116,7 @@ public class Session {
     }
 	
 	/**
+	 * check if session is on weekend
 	 * @return whether session occurs during a weekend
 	 */
 	public boolean isWeekend(){
@@ -148,7 +150,6 @@ public class Session {
 	/**
 	 * write session into database
 	 * @param cineplexNumber is the cineplex the session is in
-	 * @throws IOException
 	 */
 	public void writeSession(String cineplexNumber){
         try{
@@ -200,15 +201,15 @@ public class Session {
 	
 	/**
 	 * Read session from the database
-	 * @param CineplexNumber is the cineplex where the session is in
+	 * @param cineplexNumber is the cineplex where the session is in
 	 * @param octo is the line number of the file for the session to be read
-	 * @throws IOException
+	 * @throws IOException if file is not found
 	 */
-	public void read(String CineplexNumber, int octo) throws IOException {
+	public void read(String cineplexNumber, int octo) throws IOException {
 
 		try {
 			String text;
-			String fileName= "Database/SessionRecord" + CineplexNumber +".txt";
+			String fileName= "Database/SessionRecord" + cineplexNumber +".txt";
 			File file = new File(fileName);
 			Scanner scanfile = new Scanner(file);
 			for(int i=0; i<octo; i++){

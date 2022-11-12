@@ -7,19 +7,17 @@ public class SeatingPlan {
 	/**
 	 * Seating plan of the session
 	 */
-	public Seat[][] seatPlan; 
+	private Seat[][] seatPlan = new Seat[10][16];
 	
 	/**
-	 * Seating plan construction
+	 * Seating plan constructor
 	 */
 	public SeatingPlan() {
-		seatPlan = new Seat[10][16];
 		int count = 0;
 		for(char alpha = 'J'; alpha >='A'; alpha--) {
 			for(int i = 0; i<16; i++) {
 				//String temp = Character.toString(alpha)+Integer.toString(i);
 				seatPlan[count][i] = new Seat(alpha, i);
-				
 			}
 			count++;
 		}

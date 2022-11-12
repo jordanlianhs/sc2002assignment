@@ -30,7 +30,7 @@ public class Guest {
     private boolean student;
 
     /**
-     * Constructor for Guest class
+     * Empty Constructor for Guest class
      */
     public Guest(){};
 
@@ -51,6 +51,7 @@ public class Guest {
     }
 
     /**
+     * Getter for name
      * @return name of guest
      */
     public String getName() {
@@ -58,6 +59,7 @@ public class Guest {
     }
 
     /**
+     * Getter for age
      * @return age of guest
      */
     public int getAge() {
@@ -65,6 +67,7 @@ public class Guest {
     }
 
     /**
+     * Getter for phone number
      * @return phone number of guest
      */
     public String getPhone() {
@@ -72,6 +75,7 @@ public class Guest {
     }
 
     /**
+     * Getter for email
      * @return email address of guest
      */
     public String getEmail() {
@@ -79,6 +83,7 @@ public class Guest {
     }
 
     /**
+     * Getter for student
      * @return whether guest is student
      */
     public boolean getStudent() {
