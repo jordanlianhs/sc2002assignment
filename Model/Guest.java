@@ -3,12 +3,7 @@ package Model;
 /**
  * Class containing information about guest
  */
-public class Guest {
-    /**
-     * Name of guest
-     */
-    private String name;
-
+public class Guest extends Person {
     /**
      * Age of guest
      */
@@ -43,19 +38,11 @@ public class Guest {
      * @param student is whether guest is student
      */
     public Guest(String name, int age, String phone, String email, boolean student) {
-        this.name = name;
+        super.setName(name);
         this.age = age;
         this.phone = phone;
         this.email = email;
         this.student = student;
-    }
-
-    /**
-     * Getter for name
-     * @return name of guest
-     */
-    public String getName() {
-        return name;
     }
 
     /**

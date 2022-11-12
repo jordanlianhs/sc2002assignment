@@ -8,7 +8,7 @@ import java.io.*;
  * movie, Searching for a movie (Returns an array of results),
  * and deleting an entry in the txt file.
  */
-public class SearchMovie {
+public class SearchMovie implements SearchInterface, DisplayInterface{
 	/**
 	 * File name for movie database
 	 */
@@ -58,62 +58,8 @@ public class SearchMovie {
 					// System.out.println(st); // Display original capitalised version
 					// System.out.println();
 
-					int i = 0;
-                    for (String s : stToken1) {
-                        if (s.equals("-1.0") || s.equals("-1")) {
-                            s = "NA";
-                        }
-                        switch (i) {
-                            case 0:
-                                System.out.print("Movie:  ");
-                                break;
-                            case 1:
-                                System.out.print("\nMovie Type:  ");
-                                break;
-                            case 2:
-                                System.out.print("\nMovie Status:  ");
-                                break;
-                            case 3:
-                                System.out.print("\nSynopsis:  ");
-                                break;
-                            case 4:
-                                System.out.print("\nAge Rating:  ");
-                                break;
-                            case 5:
-                                System.out.print("\nStar Rating:  ");
-                                break;
-                            case 6:
-                                System.out.print("\nMovie Duration:  ");
-                                break;
-                            case 7:
-                                System.out.print("\nRelease Date:  ");
-                                break;
-                            case 8:
-                                System.out.print("\nEnd Date:  ");
-                                break;
-                            case 9:
-                                System.out.print("\nDirector:  ");
-                                break;
-                            case 10:
-                                System.out.print("\nSales:  ");
-                                break;
-                            case 11:
-                                System.out.print("\nCast Size:  ");
-                                break;
-                            case 12:
-                                System.out.print("\nCast:  ");
-                                break;
-                            default:
-                                break;
+					display(stToken1);
 
-                        }
-
-                        if (i < 13) {
-                            System.out.print(s);
-                            i++;
-                        } else
-                            System.out.print(", " + s);
-                    }
                     System.out.println();
 					System.out.println();
 				}
@@ -123,6 +69,65 @@ public class SearchMovie {
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
+		}
+	}
+
+	public void display(String[] stToken1){
+		int i = 0;
+		for (String s : stToken1) {
+			if (s.equals("-1.0") || s.equals("-1")) {
+				s = "NA";
+			}
+			switch (i) {
+				case 0:
+					System.out.print("Movie:  ");
+					break;
+				case 1:
+					System.out.print("\nMovie Type:  ");
+					break;
+				case 2:
+					System.out.print("\nMovie Status:  ");
+					break;
+				case 3:
+					System.out.print("\nSynopsis:  ");
+					break;
+				case 4:
+					System.out.print("\nAge Rating:  ");
+					break;
+				case 5:
+					System.out.print("\nStar Rating:  ");
+					break;
+				case 6:
+					System.out.print("\nMovie Duration:  ");
+					break;
+				case 7:
+					System.out.print("\nRelease Date:  ");
+					break;
+				case 8:
+					System.out.print("\nEnd Date:  ");
+					break;
+				case 9:
+					System.out.print("\nDirector:  ");
+					break;
+				case 10:
+					System.out.print("\nSales:  ");
+					break;
+				case 11:
+					System.out.print("\nCast Size:  ");
+					break;
+				case 12:
+					System.out.print("\nCast:  ");
+					break;
+				default:
+					break;
+
+			}
+
+			if (i < 13) {
+				System.out.print(s);
+				i++;
+			} else
+				System.out.print(", " + s);
 		}
 	}
 

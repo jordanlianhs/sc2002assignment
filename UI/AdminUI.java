@@ -2,6 +2,7 @@ package UI;
 
 import java.util.*;
 import java.io.*;
+import Model.*;
 
 /**
  * Login page for the admin and main menu for admin system
@@ -28,6 +29,11 @@ public class AdminUI {
 	 * New TicketPrice object driving the view
 	 */
 	private TicketPrice ticketPrice = new TicketPrice();
+
+	/**
+	 * Array list of admins
+	 */
+	private ArrayList<Admin> adminList = new ArrayList<Admin>();
 
 	/**
 	 * Main function driving the view
@@ -155,17 +161,25 @@ public class AdminUI {
 			Scanner ar = new Scanner(adminFile); // adminreader, ar
 
 			ar.useDelimiter(",");
-			String UN = ar.next();
-			String PW = ar.next();
-
-
-			if (!usr.equals(UN) || !pass.equals(PW)) {
-				System.out.println("Username or Password is incorrect!");
-				token = false;
-			} else {
-				System.out.println("Login as Administrator Successful\n");
-				token = true;
+			while(ar.hasNextLine()){
+				String line = ar.nextLine();
+				String[] parts = line.split(",");
+				String username = parts[0];
+				String password = parts[1];
+				adminList.add(new Admin(username, password));
 			}
+			
+
+			for(Admin admin : adminList){
+				if(usr.equals(admin.getName()) && pass.equals(admin.getPassword())){
+					System.out.println("Login as Administrator Successful\n");
+					token = true;
+					ar.close();
+					return token;
+				}
+			}
+			System.out.println("Username or Password is incorrect!");
+			token = false;
 			ar.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
