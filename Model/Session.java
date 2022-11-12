@@ -144,7 +144,8 @@ public class Session {
 		else{
 			cinemaType = "Platinum";
 		}
-		System.out.println("Timing: " + seshDateTime + " Movie Name: " + movie.getmovieName() + " CinemaType: " + cinemaType);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+		System.out.println("Timing: " + seshDateTime.format(formatter) + " Movie Name: " + movie.getmovieName() + " CinemaType: " + cinemaType);
 	}
 
 	/**
