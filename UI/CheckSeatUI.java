@@ -118,6 +118,7 @@ public class CheckSeatUI {
 	 */
 	public void bookSeat(Guest user, Cineplex A, Cineplex B, Cineplex C){
 		Scanner s = new Scanner(System.in);
+		Boolean c = true;
 		String cpCode;
 		do{
 			System.out.println("Enter Cineplex Code (AMK, BBK, CCK): ");
@@ -164,11 +165,11 @@ public class CheckSeatUI {
 					moviestatus = temp.get(number-1).getMovie().getMovieStatus();
 		
 					if(moviestatus.equals(MovieStatus.ENDOFSHOWING)){
-						System.out.println("Movie has ended, no longer available!!!");			
+						System.out.println("Movie has ended, no longer available!!!");	
 					}
 					else if(moviestatus.equals(MovieStatus.COMINGSOON)){
 						System.out.println("Movie is coming soon, not available!!!");
-					}
+						}
 				}while(moviestatus.equals(MovieStatus.ENDOFSHOWING) || moviestatus.equals(MovieStatus.COMINGSOON));
 				break;
 			}catch (Exception e) {
@@ -208,10 +209,12 @@ public class CheckSeatUI {
 
 			if(!temp.get(number-1).getSeatPlan().getSeat((seatR-'J')*-1, seatC-1).checkTaken()){
 				temp.get(number-1).getSeatPlan().assign(seatR, seatC);
+				c = true;
 				break;
 			}
 			else{
 				System.out.println("Seat is taken!");
+				c = false;
 			}
 		}while(temp.get(number-1).getSeatPlan().getSeat((seatR-'J')*-1, seatC-1).checkTaken());
 		
@@ -219,16 +222,18 @@ public class CheckSeatUI {
 		String adam = seatR+String.valueOf(seatC);	
 
 		
+		if(c){
+			Booking book = new Booking(user, temp.get(number-1), adam, temp.get(number-1).getCinemaCode());
+			book.writebookingstatement();
+			//increment sales in movie.txt
+			changeMovieSales(temp.get(number-1).getMovie().getmovieName());
+	
+	
+			TicketPrice calculator = new TicketPrice();
+			double ticketPrice = calculator.calculateTix(user, temp.get(number-1), book);
+			System.out.println("Ticket Price = $" + ticketPrice);
+		}
 
-		Booking book = new Booking(user, temp.get(number-1), adam, temp.get(number-1).getCinemaCode());
-		book.writebookingstatement();
-		//increment sales in movie.txt
-		changeMovieSales(temp.get(number-1).getMovie().getmovieName());
-
-
-		TicketPrice calculator = new TicketPrice();
-		double ticketPrice = calculator.calculateTix(user, temp.get(number-1), book);
-		System.out.println("Ticket Price = $" + ticketPrice);
 	}
 
 	/**

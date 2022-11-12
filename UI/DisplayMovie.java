@@ -89,31 +89,40 @@ public class DisplayMovie {
 				String st = sn.nextLine(); // To get current string with all Capitalisation
 				String[] stToken = st.split(",");
 				int i=0;
-				for(String s:stToken){
-					if (i>=7 || i==0){
-						if(s.equals("-1.0") || s.equals("-1")){
-							System.out.print("NA            |");
-					}
-					else{
-						if (i==12) System.out.print(s);
-						else if (i>12) System.out.print(", " + s);
-						else if (s.length()<=13) {
-							System.out.print(s);
-							int j = 15-s.length();
-							while(j!=0){
-								if (j==1) System.out.print("|");
-								else System.out.print(" ");
-								j--;
-							}
+				if (userView == true) // User viewing conditions
+				{
+					// Skips the movie if it is not showing
+					test = !(stToken[2].equals("ENDOFSHOWING"));
+				} else
+					test = true;
+
+				if (test){
+					for(String s:stToken){
+						if (i>=7 || i==0){
+							if(s.equals("-1.0") || s.equals("-1")){
+								System.out.print("NA            |");
 						}
 						else{
-							System.out.print(s.substring(0, 10) + "... |");
+							if (i==12) System.out.print(s);
+							else if (i>12) System.out.print(", " + s);
+							else if (s.length()<=13) {
+								System.out.print(s);
+								int j = 15-s.length();
+								while(j!=0){
+									if (j==1) System.out.print("|");
+									else System.out.print(" ");
+									j--;
+								}
+							}
+							else{
+								System.out.print(s.substring(0, 10) + "... |");
+							}
 						}
 					}
-				}
-					i++;
-				}
+						i++;
+					}
 				System.out.println();
+				}
 			}
 
 

@@ -70,6 +70,7 @@ public class UpdateMovie {
             int choosed = Integer.parseInt(sc.nextLine());
             
             String updateChoice;
+            MovieStatus movieStatus;
     
             // date formatter for release and end dates
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -86,8 +87,33 @@ public class UpdateMovie {
                 case 2:
                     // movieStatus
                     System.out.println("\nWhat is the updated value?");
+
+                    System.out.println();
+                    System.out.println("Movie Status: ");
+                    System.out.println("1: Coming soon!");
+                    System.out.println("2: Preview");
+                    System.out.println("3: Now showing");
+                    System.out.println("4: End of showing");
+                    System.out.println("Enter your option:");
                     updateChoice = sc.nextLine();
-                    movieArray.get(movieIndex).setMovieStatus(MovieStatus.valueOf(updateChoice));
+                    switch (Integer.valueOf(updateChoice)) {
+                        case 1:
+                            movieStatus = MovieStatus.COMINGSOON;
+                            break;
+                        case 2:
+                            movieStatus = MovieStatus.PREVIEW;
+                            break;
+                        case 3:
+                            movieStatus = MovieStatus.NOWSHOWING;
+                            break;
+                        case 4:
+                            movieStatus = MovieStatus.ENDOFSHOWING;
+                            break;
+                        default:
+                            System.out.println("Wrong input!");
+                            return;
+                    }
+                    movieArray.get(movieIndex).setMovieStatus(movieStatus);
                     break;
     
                 case 3:
