@@ -10,16 +10,15 @@ import java.io.*;
  * the ticketing system TicketPrice.java
  */
 
-public class HolidayUI {
-	static File file = new File("./Database/holiday.txt");
-	static int count = 0; // To track num of elements in list
+public class HolidayUI extends Events {
+	private static File file = new File("./Database/holiday.txt");
+	private static int count = 0; // To track num of elements in list
 
-	/**
-	 * Driver for Creating/Deleting/Clearing Holidays
-	 * 
-	 * @param args Main arument args (null)
-	 * @throws Exception throws exceptions
-	 */
+	public HolidayUI() {
+		super();
+	}
+
+	@Override
 	public void main() {
 		Scanner sc = new Scanner(System.in); // Console
 		int choice;
@@ -27,6 +26,7 @@ public class HolidayUI {
 		String holName = "", date = "";
 		lineCounter l = new lineCounter();
 		count = l.counter(file);
+
 		do {
 			System.out.println("===HolidayUI===");
 			System.out.println("(1) Create Holiday");
@@ -200,33 +200,6 @@ public class HolidayUI {
 	}
 
 	/**
-	 * Check for Valid Date format
-	 * 
-	 * @param input check the input string against a set date format
-	 * @return returns true if the format is correct
-	 * @exception parseException Signals that an error has been reached unexpectedly
-	 *                           while parsing. input
-	 */
-	public static boolean checkDate(String input) {
-		// if (input.matches("\\d{2}-\\d{2}-\\d{4}")) {
-		// System.out.println("Date Input: " + input); // Debugging Purposes
-		// return true;
-		// } else
-		// return false;
-
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			Date date = sdf.parse(input);
-			System.out.println("Date input: " + date); // This is just for debugging
-		} catch (ParseException e) {
-			// e.printStackTrace();
-			// System.out.println("INVALID DATE!");
-			return false;
-		}
-		return true;
-	}
-
-	/**
 	 * Deletes the input entry (entries with the same name)
 	 * 
 	 * @param n Input String to be deleted (Exact match)
@@ -237,7 +210,7 @@ public class HolidayUI {
 		// Note need to add options for deleting
 		try {
 
-			File inputFile = new File("./Database/holiday.txt");
+			File inputFile = file; // new File("./Database/holiday.txt");
 			if (!inputFile.isFile()) {
 				System.out.println("File does not exist");
 				return;
@@ -285,11 +258,11 @@ public class HolidayUI {
 	 * @return Array of entries that match the search term
 	 */
 
-	public static String[] searchHol(String n) {
+	public String[] searchHol(String n) {
 		String[] searchResults = new String[count];
 		int i = 0;
 		try {
-			File file = new File("./Database/holiday.txt");
+			// File file = new File("./Database/holiday.txt");
 			Scanner sc = new Scanner(file);
 			String st = null;
 			String st2 = null;
@@ -326,11 +299,11 @@ public class HolidayUI {
 	 * 
 	 * @return String array containing 1 line per entry
 	 */
-	public static String[] getHols() {
+	public String[] getHols() {
 		String[] arr = new String[count];
 		int i = 0;
 		try {
-			File file = new File("./Database/holiday.txt");
+			// File file = new File("./Database/holiday.txt");
 			Scanner sc = new Scanner(file);
 			// sc.useDelimiter(",");
 			while (sc.hasNext()) {
@@ -353,9 +326,9 @@ public class HolidayUI {
 	 * @return If the specific date is found, return true, else return false
 	 */
 
-	public static boolean findHol(String n) {
+	public boolean findHol(String n) {
 		try {
-			File file = new File("./Database/holiday.txt");
+			// File file = new File("./Database/holiday.txt");
 			Scanner sc = new Scanner(file);
 			// sc.useDelimiter(",");
 			while (sc.hasNext()) {

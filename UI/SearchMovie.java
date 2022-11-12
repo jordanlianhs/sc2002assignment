@@ -17,7 +17,7 @@ public class SearchMovie {
 	/**
 	 * The main function for this view, searches the movie the user wants to find
 	 */
-	public void main(){
+	public void main() {
 		String input;
 		Scanner sc = new Scanner(System.in);
 
@@ -28,7 +28,7 @@ public class SearchMovie {
 			input = sc.nextLine();
 			find(input);
 		} while (!input.toLowerCase().equals("esc"));
-		
+
 	}
 
 	/**
@@ -37,7 +37,7 @@ public class SearchMovie {
 	 * @param n Input String search term
 	 * @throws Exception Throw FilenotFound exception
 	 */
-	public void find(String n){
+	public void find(String n) {
 		try {
 			Scanner sc = new Scanner(file);
 
@@ -59,62 +59,62 @@ public class SearchMovie {
 					// System.out.println();
 
 					int i = 0;
-                    for (String s : stToken1) {
-                        if (s.equals("-1.0") || s.equals("-1")) {
-                            s = "NA";
-                        }
-                        switch (i) {
-                            case 0:
-                                System.out.print("Movie:  ");
-                                break;
-                            case 1:
-                                System.out.print("\nMovie Type:  ");
-                                break;
-                            case 2:
-                                System.out.print("\nMovie Status:  ");
-                                break;
-                            case 3:
-                                System.out.print("\nSynopsis:  ");
-                                break;
-                            case 4:
-                                System.out.print("\nAge Rating:  ");
-                                break;
-                            case 5:
-                                System.out.print("\nStar Rating:  ");
-                                break;
-                            case 6:
-                                System.out.print("\nMovie Duration:  ");
-                                break;
-                            case 7:
-                                System.out.print("\nRelease Date:  ");
-                                break;
-                            case 8:
-                                System.out.print("\nEnd Date:  ");
-                                break;
-                            case 9:
-                                System.out.print("\nDirector:  ");
-                                break;
-                            case 10:
-                                System.out.print("\nSales:  ");
-                                break;
-                            case 11:
-                                System.out.print("\nCast Size:  ");
-                                break;
-                            case 12:
-                                System.out.print("\nCast:  ");
-                                break;
-                            default:
-                                break;
+					for (String s : stToken1) {
+						if (s.equals("-1.0") || s.equals("-1")) {
+							s = "NA";
+						}
+						switch (i) {
+							case 0:
+								System.out.print("Movie:  ");
+								break;
+							case 1:
+								System.out.print("\nMovie Type:  ");
+								break;
+							case 2:
+								System.out.print("\nMovie Status:  ");
+								break;
+							case 3:
+								System.out.print("\nSynopsis:  ");
+								break;
+							case 4:
+								System.out.print("\nAge Rating:  ");
+								break;
+							case 5:
+								System.out.print("\nStar Rating:  ");
+								break;
+							case 6:
+								System.out.print("\nMovie Duration:  ");
+								break;
+							case 7:
+								System.out.print("\nRelease Date:  ");
+								break;
+							case 8:
+								System.out.print("\nEnd Date:  ");
+								break;
+							case 9:
+								System.out.print("\nDirector:  ");
+								break;
+							case 10:
+								System.out.print("\nSales:  ");
+								break;
+							case 11:
+								System.out.print("\nCast Size:  ");
+								break;
+							case 12:
+								System.out.print("\nCast:  ");
+								break;
+							default:
+								break;
 
-                        }
+						}
 
-                        if (i < 13) {
-                            System.out.print(s);
-                            i++;
-                        } else
-                            System.out.print(", " + s);
-                    }
-                    System.out.println();
+						if (i < 13) {
+							System.out.print(s);
+							i++;
+						} else
+							System.out.print(", " + s);
+					}
+					System.out.println();
 					System.out.println();
 				}
 			}

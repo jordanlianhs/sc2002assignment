@@ -11,33 +11,34 @@ import java.time.*;
  */
 public class Booking {
 
-    /** 
+    /**
      * Person that books
-    */
+     */
     private Guest guest;
-    /** 
-     * Movie of the booking 
+    /**
+     * Movie of the booking
      */
     private Movie movie;
-    /** 
-     * Seat Number of the booking 
+    /**
+     * Seat Number of the booking
      */
     private String seatNumber;
-    /** 
-     * Ticket ID of the booking 
+    /**
+     * Ticket ID of the booking
      */
     private String ticketID;
-    /** 
+    /**
      * Cinema of the booking
      */
     private String cinemaCode;
-    /** 
+    /**
      * Price of the booking
      */
     private double price;
 
     /**
      * Get the ticket ID for the booking
+     * 
      * @return Ticket ID
      */
     public String getTicketID() {
@@ -46,6 +47,7 @@ public class Booking {
 
     /**
      * Get the Seat Number of the booking
+     * 
      * @return Seat Number
      */
     public String getSeatNumber() {
@@ -54,8 +56,9 @@ public class Booking {
 
     /**
      * Constrcutor about booking of cinema seat
-     * @param guest The person that book the ticket
-     * @param session The session of the booking
+     * 
+     * @param guest      The person that book the ticket
+     * @param session    The session of the booking
      * @param seatNumber The seat that is booked
      * @param cinemaCode The cinema that contains the booking
      */
@@ -69,10 +72,12 @@ public class Booking {
         String timestamp = new SimpleDateFormat("YYYYMMddHHmm").format(new Date());
 
         this.ticketID = cinemaCode + timestamp;
-        
-        //price
+
+        // price
         File f = new File("./Database/TicketPrice.txt");
-        Double SP2D  = 0.0, SP2DB = 0.0, SP3D = 0.0, SP3DB  = 0.0, senior  = 0.0, STU2D  = 0.0, STU3D = 0.0, N2D = 0.0, N3D = 0.0, PH2D = 0.0, PH3D = 0.0, DBsurcharge = 0.0, RegSurcharge =0.0, GoldSurcharge = 0.0, PlatSurcharge = 0.0;
+        Double SP2D = 0.0, SP2DB = 0.0, SP3D = 0.0, SP3DB = 0.0, senior = 0.0, STU2D = 0.0, STU3D = 0.0, N2D = 0.0,
+                N3D = 0.0, PH2D = 0.0, PH3D = 0.0, DBsurcharge = 0.0, RegSurcharge = 0.0, GoldSurcharge = 0.0,
+                PlatSurcharge = 0.0;
         try {
             Scanner sc = new Scanner(f);
             sc.useDelimiter(",");
@@ -103,7 +108,7 @@ public class Booking {
         boolean weekend = session.isWeekend(); // Weekend?
         MovieType type = session.getMovie().getType(); // Get the movie Type
         int age = guest.getAge(); // Get the age of the guest
-  
+
         // Ammending temp based on SPECIAL seats
         String seat = seatNumber;
         if ((seat.contains("A") || seat.contains("B") || seat.contains("C")) && type == MovieType.THREE_D) {
@@ -153,6 +158,7 @@ public class Booking {
 
     /**
      * Check if the date is a holiday
+     * 
      * @param session The session of the booking
      * @return true if it is a holiday
      */
@@ -161,22 +167,22 @@ public class Booking {
         String DT = dateTime.toLocalDate().toString(); // Converti to JUST date, then to string, so i can search
 
         // System.out.println("DT: " + DT); //For debugging
-
-        return HolidayUI.findHol(DT); // Check if its a holiday
+        HolidayUI HUI = new HolidayUI();
+        return HUI.findHol(DT); // Check if its a holiday
     }
 
     /**
      * Function to write booking record into database
      */
-    public void writebookingstatement(){
+    public void writebookingstatement() {
         try {
             File file = new File("Database/BookingStatement.txt");
             FileWriter fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             PrintWriter pr = new PrintWriter(br);
-            String statement = guest.getEmail() + "," + guest.getPhone() + "," 
-            + price + "," + ticketID + "," + movie.getmovieName()
-            + "," + seatNumber + "," + cinemaCode;
+            String statement = guest.getEmail() + "," + guest.getPhone() + ","
+                    + price + "," + ticketID + "," + movie.getmovieName()
+                    + "," + seatNumber + "," + cinemaCode;
             pr.println(statement);
             pr.close();
             br.close();
