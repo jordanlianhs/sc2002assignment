@@ -8,7 +8,13 @@ import java.io.File;
  * This is the main class of ReveiwUI
  */
 public class ReviewUI {
+        /**
+         * New Review object
+         */
         private Review review;
+        /**
+         * New Rating object
+         */
         private Rating star;
 
         /**
