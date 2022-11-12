@@ -12,17 +12,17 @@ public class CheckSeatUI {
 	/**
 	 * New Ang Mo Kio Cineplex Object
 	 */
-	private Cineplex A = new Cineplex("Ang Mo Kio", "AMK");
+	private Cineplex A;
 	
 	/**
 	 * New Bukit Batok Cineplex Object
 	 */
-	private Cineplex B = new Cineplex("Bukit Batok", "BBK");
+	private Cineplex B;
 
 	/**
 	 * New Choa Chu Kang Cineplex Object
 	 */
-	private Cineplex C = new Cineplex("Choa Chu Kang", "CCK");
+	private Cineplex C;
 
 
 	/**
