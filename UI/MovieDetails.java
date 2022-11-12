@@ -14,10 +14,6 @@ public class MovieDetails {
      * @throws Exception
      */
     public void main(){
-        String input;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("\nEnter \"esc\" to quit movie details UI");
-
         this.displayMovie.displayMovie(true);
     }
 
