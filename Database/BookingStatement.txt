@@ -28,3 +28,5 @@ tommytan@gmail.com,85559444,10.0,TWO202211121707,Future,I4,TWO
 tommytan@gmail.com,85559444,99.0,THR202211121736,Dropout 3,E9,THR
 xiao@gmail.com,90007000,7.0,TWO202211121756,Future,I6,TWO
 grandpa@gmail.com,98765432,4.0,TWO202211121800,Future,J3,TWO
+jordanlian@gmail.com,84285178,15.5,ONE202211121909,Future,F5,ONE
+jordanlian@gmail.com,84285178,10.0,ONE202211121911,Future,F6,ONE
