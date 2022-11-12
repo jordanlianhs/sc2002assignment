@@ -1,6 +1,6 @@
 package UI;
 
-import java.util.*;
+import java.util.Scanner;
 
 /** 
  * Main UI used to drive the program 

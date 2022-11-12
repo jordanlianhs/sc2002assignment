@@ -1,9 +1,16 @@
 package UI;
 
-import java.util.*;
-import java.time.*;
-import java.text.*;
-import Model.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+
+import Model.Movie;
+import Model.MovieStatus;
+import Model.MovieType;
+import Model.Rating;
 
 /**
  * This class initialises movie variables and writes an entry into the

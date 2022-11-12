@@ -1,8 +1,6 @@
 package UI;
 
-import java.util.*;
-import UI.*;
-import Model.*;
+import java.util.Scanner;
 
 /**
  * Class that will run all UI about Session, Create, Remove, Update and Display

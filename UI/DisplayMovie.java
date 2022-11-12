@@ -1,8 +1,10 @@
 package UI;
 
-import Model.*;
-import java.util.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import Model.Review;
 
 /**
  * This is the main class of DisplayMovie

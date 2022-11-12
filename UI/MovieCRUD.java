@@ -1,7 +1,6 @@
 package UI;
 
-import java.util.*;
-
+import java.util.Scanner;
 
 /**
  * This is the UI to Create, Remove, Update and List movies

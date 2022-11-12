@@ -1,8 +1,17 @@
 package UI;
 
-import Model.*;
-import java.util.*;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Model.Booking;
+import Model.Cineplex;
+import Model.Guest;
+import Model.MovieStatus;
+import Model.Session;
 
 /**
  * UI for the user to check the seats available for a movie

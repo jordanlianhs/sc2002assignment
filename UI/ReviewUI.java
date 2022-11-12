@@ -1,8 +1,11 @@
 package UI;
 
-import java.util.*;
-import Model.*;
 import java.io.File;
+import java.util.Scanner;
+
+import Model.Guest;
+import Model.Rating;
+import Model.Review;
 
 /**
  * This is the main class of ReveiwUI

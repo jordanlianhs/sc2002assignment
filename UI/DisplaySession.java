@@ -1,6 +1,10 @@
 package UI;
-import java.util.*;
-import Model.*;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Model.Cineplex;
+import Model.Session;
 
 /**
  * This is the main class of DisplaySession

@@ -1,7 +1,7 @@
 package UI;
 
-import java.util.*;
-import java.io.*;
+import java.io.File;
+import java.util.Scanner;
 
 /**
  * This is the main class of RemoveMovie

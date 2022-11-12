@@ -1,8 +1,11 @@
 package UI;
 
-import java.util.*;
-import java.io.*;
-import Model.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Model.Admin;
 
 /**
  * Login page for the admin and main menu for admin system

@@ -1,7 +1,8 @@
 package UI;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * This class counts the number of lines in a txt file

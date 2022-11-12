@@ -1,7 +1,11 @@
 package UI;
-import java.util.*;
-import java.io.*;
-import Model.*;
+
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Model.Cineplex;
+import Model.Session;
 
 /**
  * This is the main class of RemoveSession

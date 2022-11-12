@@ -1,9 +1,16 @@
 package UI;
-import java.util.*;
-import java.io.*;
-import Model.*;
-import java.time.*;
-import java.time.format.*;
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import Model.Movie;
+import Model.MovieStatus;
+import Model.MovieType;
 
 public class UpdateMovie {
     /**

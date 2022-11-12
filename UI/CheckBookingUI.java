@@ -1,8 +1,8 @@
 package UI;
 
-import java.util.*;
-import java.io.*;
-import Model.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * Using the Check Booking UI, the user can check the booking details of a session

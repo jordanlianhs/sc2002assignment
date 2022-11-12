@@ -1,9 +1,17 @@
 package UI;
-import java.time.*;
-import java.time.format.*;
-import java.util.*;
-import Model.*;
-import java.io.*;
+
+import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
+
+import Model.Movie;
+import Model.MovieStatus;
+import Model.MovieType;
 
 /**
  * The UI used to List the top 5 movies ranked by either Sales or Star ratings.

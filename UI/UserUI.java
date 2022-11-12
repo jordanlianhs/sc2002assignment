@@ -1,6 +1,8 @@
 package UI;
-import java.util.*;
-import Model.*;
+
+import java.util.Scanner;
+
+import Model.Guest;
 
 /**
  * This is the UI for users

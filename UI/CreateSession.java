@@ -1,10 +1,11 @@
 package UI;
 
-import java.time.*;
-import java.util.*;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.io.*;
-import Model.*;
+import java.util.Scanner;
+
+import Model.Movie;
+import Model.Session;
 
 /**
  * This class is used to create a new session

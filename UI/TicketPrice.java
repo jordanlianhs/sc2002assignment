@@ -1,9 +1,17 @@
 package UI;
 
-import Model.*;
-import java.util.*;
-import java.time.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import Model.Booking;
+import Model.Guest;
+import Model.MovieType;
+import Model.Session;
 
 /**
  * This class is used to retrieve and update Ticket prices for the various types

@@ -1,10 +1,14 @@
 package UI;
 
-import java.time.*;
-import java.util.*;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.io.*;
-import Model.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Model.Cineplex;
+import Model.Movie;
+import Model.Session;
 
 /**
  * This is the main class of UpdateSession
