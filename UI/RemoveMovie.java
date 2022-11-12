@@ -29,7 +29,7 @@ public class RemoveMovie {
         // Parse file for input date
         System.out.println("Search for movie name to delete: ");
         String date = sc.nextLine();
-        
+
         sm = new SearchMovie();
         rez = sm.getSearchedMovie(date); // Search for all entries with input term
 
@@ -48,7 +48,7 @@ public class RemoveMovie {
             System.out.println("Which would you like to delete?");
 
             dChoice = Integer.valueOf(sc.nextLine());
-
+            sc.close();
             // Delete Entry with the movie name
             rm = new RemoveSession();
             rm.removeAllSession(rez[dChoice].split(",")[0]);

@@ -14,3 +14,4 @@ Your Mother,-1,0,-1
 your mom,-1,1,4.0
 your mom,-1,1,4.0
 your mom,-1,1,4.0
+Yellow Panther,-1,0,-1

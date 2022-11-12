@@ -7,7 +7,7 @@ import UI.*;
 public class MOBLIMA {
     /**
      * The main method of the MOBLIMA application.
-     * @param args null argument can be used to drive the function
+     * @param args null argument can be used to drive the functio
      */
     public static void main(String[] args){
         MainUI oo = new MainUI();

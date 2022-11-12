@@ -32,10 +32,9 @@ public class MovieCRUD {
 	 * @param args null argument can be used to drive the function
 	*/
 	public void main(){
-		Scanner sc = new Scanner(System.in); // Console
 		int choice;
-
 		do {
+			Scanner sc = new Scanner(System.in); // Console
 			System.out.println("===Configure Movie Listing UI===");
 			System.out.println("(1) Create Movie");
 			System.out.println("(2) Remove Movie");
