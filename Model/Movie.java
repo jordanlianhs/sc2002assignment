@@ -1,11 +1,18 @@
 package Model;
 
-import java.time.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-import java.io.*;
-
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Class for Movies
