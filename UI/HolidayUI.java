@@ -20,7 +20,7 @@ public class HolidayUI {
 	 * @param args Main arument args (null)
 	 * @throws Exception throws exceptions
 	 */
-	public void main(){
+	public void main() {
 		Scanner sc = new Scanner(System.in); // Console
 		int choice;
 		String del;
@@ -38,11 +38,11 @@ public class HolidayUI {
 			sc.nextLine(); // Clear scanner buffer
 			switch (choice) {
 				case 1:
-				boolean dateCheck = false;
+					boolean dateCheck = false;
 					do {
 						try {
 							FileWriter FR = new FileWriter(file, true);
-							
+
 							System.out.println("Enter the NAME of Holiday: ");
 							System.out.println("Type \"cancel\" to exit");
 							holName = sc.nextLine();
@@ -67,7 +67,7 @@ public class HolidayUI {
 						} catch (InputMismatchException e) {
 							System.out.println("Invalid Input!");
 							System.out.println();
-						}catch (IOException ex){
+						} catch (IOException ex) {
 							System.out.println("Error!");
 						}
 					} while (dateCheck != true);
@@ -159,7 +159,7 @@ public class HolidayUI {
 						}
 					} catch (InputMismatchException e) {
 						System.out.println("INVALID INPUT!");
-					} catch (IOException x){
+					} catch (IOException x) {
 						System.out.println("Error!");
 					}
 
