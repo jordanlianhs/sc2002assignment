@@ -203,7 +203,7 @@ public class DisplayMovie {
 				stToken = st2.split(",");
 				if (chosenOne.toLowerCase().equals(stToken[0])) flag=true;
 			}
-			
+			sc2.close();
 			// if(flag == false){
             //     System.out.println("Movie does not exist! ");
             // }
