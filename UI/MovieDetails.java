@@ -124,6 +124,7 @@ public class MovieDetails {
             if (flag == false) {
                 System.out.println("Movie does not exist! ");
             }
+            sc.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
