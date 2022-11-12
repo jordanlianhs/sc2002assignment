@@ -1,4 +1,4 @@
-Power Ranger,THREE_D,NOWSHOWING,The power rangers vs the bad guy,PG13,2.0,2.0,2002-09-17,2042-12-20,Sakamoto,516,2,Annie,Bryan
+Power Ranger,THREE_D,NOWSHOWING,The power rangers vs the bad guy,PG13,2.0,2.0,2002-09-17,2042-12-20,Sakamoto,520,2,Annie,Bryan
 Power Ranger 2,THREE_D,COMINGSOON,Red Ranger rebel,R21,4.5,2.0,2002-09-17,2032-12-20,Sakamoto,901,2,Muthu,Lucy
 Doraemon,THREE_D,ENDOFSHOWING,Doraemon lost his pocket,PG,4.8,2.0,2002-09-17,2042-12-20,Sakamoto,345,2,Adam,John
 Future,TWO_D,NOWSHOWING,What happen tomorrow,M16,3.2,2.1,2002-01-21,2052-11-01,Jack Neo,599,2,Alice,Tom

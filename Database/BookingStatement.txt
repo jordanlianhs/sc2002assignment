@@ -30,3 +30,5 @@ xiao@gmail.com,90007000,7.0,TWO202211121756,Future,I6,TWO
 grandpa@gmail.com,98765432,4.0,TWO202211121800,Future,J3,TWO
 jordanlian@gmail.com,84285178,15.5,ONE202211121909,Future,F5,ONE
 jordanlian@gmail.com,84285178,10.0,ONE202211121911,Future,F6,ONE
+jordanlian@gmail.com,84285178,11.0,ONE202211121928,Power Ranger,H5,ONE
+jordanlian@gmail.com,84285178,11.0,TWO202211121928,Power Ranger,H5,TWO
