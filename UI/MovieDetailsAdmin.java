@@ -8,7 +8,7 @@ package UI;
 public class MovieDetailsAdmin extends MovieDetails{
 
     public MovieDetailsAdmin(){
-        super(false);
+        super.setUserView(false);
     }
 
 }

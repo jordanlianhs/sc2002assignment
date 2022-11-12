@@ -17,7 +17,7 @@ public class MovieDetails {
      * Constructor for MovieDetails
      * @param userView
      */
-    public MovieDetails(boolean userView){}
+    public MovieDetails(){}
     
     /**
      * MovieDetails asks for user input to find a movie and 

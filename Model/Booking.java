@@ -1,10 +1,18 @@
 package Model;
 
-import java.io.*;
-import java.text.*;
-import java.util.*;
-import UI.*;
-import java.time.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.Scanner;
+
+import UI.HolidayUI;
+
 
 /**
  * Class about movie bookings

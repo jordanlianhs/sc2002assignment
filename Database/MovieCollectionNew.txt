@@ -10,4 +10,3 @@ Dropout 3,THREE_D,NOWSHOWING,How Adam finally decides to dropout after 2 years,P
 Past,TWO_D,ENDOFSHOWING,What happen yesterday,M16,3.5,2.1,2022-01-21,2067-11-01,Joel,593,2,Steven Lim,Kurt Tay
 Clash of Clan live action,THREE_D,NOWSHOWING,Barbarian King finally got enough of Wizards and decide to start a war,PG,4.4,4.2,2000-10-11,2043-10-15,Hershey,200,2,Greg,Mag
 Ah Boy To Women,THREE_D,PREVIEW,The 5th sequel to AH Boy To Men,PG13,3.7,35.0,2022-10-20,2055-11-20,Jack Neo,201,3,Robert,Romeo,Apple
-your mom,TWO_D,NOWSHOWING,sadfd,pg12,-1.0,2.3,2022-11-11,2022-12-12,asdf,0,2,hae,ho
