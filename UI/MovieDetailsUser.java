@@ -1,9 +1,5 @@
 package UI;
 
-import Model.*;
-import java.util.*;
-import java.io.*;
-
 public class MovieDetailsUser extends MovieDetails{
     
     private DisplayMovie displayMovie = new DisplayMovie();
