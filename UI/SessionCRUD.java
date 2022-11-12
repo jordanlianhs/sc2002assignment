@@ -54,7 +54,7 @@ public class SessionCRUD {
                     this.updateSession.main(null);
                     break;
                 case 4:
-                    this.displaySession.main(null);
+                    this.displaySession.display(null);
                     break;
                 case 5:
 					return;

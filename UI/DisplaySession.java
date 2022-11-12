@@ -5,7 +5,7 @@ import Model.*;
 /**
  * This is the main class of DisplaySession
  */
-public class DisplaySession {
+public class DisplaySession implements DisplayInterface{
 	/**
 	 * New Cineplex Object for Ang Mo Kio
 	 */
@@ -25,7 +25,7 @@ public class DisplaySession {
 	 * @param cineplexCode
 	 * @throws Exception
 	 */
-    public void main(String[] args) {
+    public void display(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
         A = new Cineplex("Ang Mo Kio", "AMK");

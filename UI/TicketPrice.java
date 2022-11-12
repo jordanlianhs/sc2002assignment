@@ -501,8 +501,8 @@ public class TicketPrice {
         String DT = dateTime.toLocalDate().toString(); // Converti to JUST date, then to string, so i can search
 
         // System.out.println("DT: " + DT); //For debugging
-
-        if (HolidayUI.findHol(DT)) {
+        HolidayUI HUI = new HolidayUI();
+        if (HUI.findHol(DT)) {
             return true;
         } else
             return false;
