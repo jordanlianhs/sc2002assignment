@@ -2,7 +2,6 @@ package UI;
 
 import Model.*;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
 import java.time.*;
 import java.io.*;
 
@@ -11,8 +10,9 @@ import java.io.*;
  * of tickets
  */
 public class TicketPrice {
-    private File f = new File("./Database/TicketPrice.txt");
-    private double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, DBsurcharge, RegSurcharge,
+    private static File f = new File("./Database/TicketPrice.txt");
+    private static double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, DBsurcharge,
+            RegSurcharge,
             GoldSurcharge, PlatSurcharge;
 
     /**
@@ -21,7 +21,7 @@ public class TicketPrice {
      * @param args null argument can be used to drive the function
      * @throws Exception throws exception
      */
-    public void main(String[] args){
+    public void main(String[] args) {
         TicketPrice ticketPrice = new TicketPrice();
         ticketPrice.configurePrice();
     }
@@ -31,7 +31,7 @@ public class TicketPrice {
      * 
      * @throws Exception throws exception
      */
-    public void configurePrice(){
+    public void configurePrice() {
         // Initialise all the variables to their original values
         try {
             Scanner sc = new Scanner(f);
@@ -382,7 +382,7 @@ public class TicketPrice {
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input!");
                 s.nextLine();
-            } catch( IOException e){
+            } catch (IOException e) {
                 System.out.println("Invalid Input!");
                 s.nextLine();
             }
@@ -397,7 +397,7 @@ public class TicketPrice {
      * @param B The user's movie booking
      * @return Calculated price
      */
-    public double calculateTix(Guest g, Session S, Booking B){
+    public double calculateTix(Guest g, Session S, Booking B) {
         try {
             Scanner sc = new Scanner(f);
             sc.useDelimiter(",");

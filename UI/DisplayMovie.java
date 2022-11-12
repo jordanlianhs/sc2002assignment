@@ -133,7 +133,7 @@ public class DisplayMovie {
 			String temp1;
 			if(temp.equals("Y")){
 				do{
-					MovieDetails.details(chooseMovie(userView), false);
+					MovieDetails.details(chooseMovie(userView), userView);
 					do{
 						System.out.println("Would you like to view another movie's details? (Y/N)");
 						temp1 = sc1.nextLine();
