@@ -10,9 +10,23 @@ import Model.*;
  * This is the main class of UpdateSession
  */
 public class UpdateSession {
-    private Cineplex A;
-    private Cineplex B;
-    private Cineplex C;
+    /**
+	 * New Cineplex Object for Ang Mo Kio
+	 */
+	private Cineplex A;
+	
+	/**
+	 * New Cineplex Object for Bukit Batok
+	 */
+	private Cineplex B;
+
+	/**
+	 * New Cineplex Object for Choa Chu Kang
+	 */
+	private Cineplex C;
+    /**
+     * New Movie object
+     */
     private Movie movie;
     /**
      * This is the main method of UpdateSession class

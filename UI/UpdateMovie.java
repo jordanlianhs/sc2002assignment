@@ -6,6 +6,9 @@ import java.time.*;
 import java.time.format.*;
 
 public class UpdateMovie {
+    /**
+     * Array List for movies
+     */
     private ArrayList<Movie> movieArray;
     
     /**

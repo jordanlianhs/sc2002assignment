@@ -10,17 +10,17 @@ import java.io.*;
 public class CheckSeatUI {
 
 	/**
-	 * New Ang Mo Kio Cineplex Object
+	 * New Cineplex Object for Ang Mo Kio
 	 */
 	private Cineplex A;
 	
 	/**
-	 * New Bukit Batok Cineplex Object
+	 * New Cineplex Object for Bukit Batok
 	 */
 	private Cineplex B;
 
 	/**
-	 * New Choa Chu Kang Cineplex Object
+	 * New Cineplex Object for Choa Chu Kang
 	 */
 	private Cineplex C;
 

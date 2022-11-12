@@ -10,6 +10,10 @@ import Model.*;
  * This class is used to create a new session
  */
 public class CreateSession {
+
+    /**
+     * Movie object
+     */
     private Movie movie;
     /**
      * This is the main method to create a new session

@@ -7,18 +7,24 @@ import java.util.*;
  * This is the UI to Create, Remove, Update and List movies
  */
 public class MovieCRUD {
-	/** */
+	/**
+	 * CreateMovie object
+	 */
 	private CreateMovie createMovie = new CreateMovie();
 
-	/** */
+	/**
+	 * RemoveMovie object
+	 */
 	private RemoveMovie removeMovie = new RemoveMovie();
 
 	/**
-	 * 
+	 * UpdateMovie object
 	 */
 	private UpdateMovie updateMovie = new UpdateMovie();
 
-	/** */
+	/**
+	 * DisplayMovie object
+	 */
 	private DisplayMovie displayMovie = new DisplayMovie();
 
 	/**

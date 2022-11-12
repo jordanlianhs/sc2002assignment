@@ -6,9 +6,20 @@ import Model.*;
  * This is the main class of DisplaySession
  */
 public class DisplaySession {
+	/**
+	 * New Cineplex Object for Ang Mo Kio
+	 */
 	private Cineplex A;
-    private Cineplex B;
-    private Cineplex C;
+	
+	/**
+	 * New Cineplex Object for Bukit Batok
+	 */
+	private Cineplex B;
+
+	/**
+	 * New Cineplex Object for Choa Chu Kang
+	 */
+	private Cineplex C;
 	/**
 	 *  This is the main method to display the list of sessions in the selected cineplex
 	 * @param cineplexCode
