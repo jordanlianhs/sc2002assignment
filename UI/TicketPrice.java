@@ -478,11 +478,11 @@ public class TicketPrice {
             if (type == MovieType.TWO_D_BB || type == MovieType.THREE_D_BB) { // If its a blockbuster
                 price += DBsurcharge;
             }
-            if (S.getCinemaCode() == "ONE") {
+            if (S.getCinemaCode().equals("ONE")) {
                 price += RegSurcharge;
-            } else if (S.getCinemaCode() == "TWO") {
+            } else if (S.getCinemaCode().equals( "TWO")) {
                 price += GoldSurcharge;
-            } else if (S.getCinemaCode() == "THR") {
+            } else if (S.getCinemaCode().equals( "THR")) {
                 price += PlatSurcharge;
             }
 

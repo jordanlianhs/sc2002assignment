@@ -38,7 +38,7 @@ public class UpdateMovie {
                 movieArray.add(m);
             }
     
-    
+            y.close();
     
             // Scan for movie to update
             System.out.println("Which movie's details would you like to edit?");

@@ -13,7 +13,7 @@ public class UserUI {
     /**
      * New MovieDetails Object
      */
-    private MovieDetails movieDetails = new MovieDetails();
+    private MovieDetailsUser movieDetails = new MovieDetailsUser();
     /**
      * New CheckSeatUI Object
      */

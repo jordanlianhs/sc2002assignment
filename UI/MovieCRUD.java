@@ -25,7 +25,7 @@ public class MovieCRUD {
 	/**
 	 * DisplayMovie object
 	 */
-	private DisplayMovie displayMovie = new DisplayMovie();
+	private MovieDetailsAdmin displayMovie = new MovieDetailsAdmin();
 
 	/**
 	 * Main function driving the view
