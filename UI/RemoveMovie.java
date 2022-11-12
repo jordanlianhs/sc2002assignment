@@ -48,7 +48,7 @@ public class RemoveMovie {
             System.out.println("Which would you like to delete?");
 
             dChoice = Integer.valueOf(sc.nextLine());
-            sc.close();
+            //sc.close();
             // Delete Entry with the movie name
             rm = new RemoveSession();
             rm.removeAllSession(rez[dChoice].split(",")[0]);
