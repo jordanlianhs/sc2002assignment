@@ -173,7 +173,6 @@ public class DisplayMovie {
 			Scanner sc2 = new Scanner(file).useDelimiter(",");
 			Scanner sc1 = new Scanner(System.in);
 			String st="";
-			String st2 = "";
 			String[] stToken;
 			boolean test;
 
