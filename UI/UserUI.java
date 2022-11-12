@@ -7,27 +7,27 @@ import Model.*;
  */
 public class UserUI {
     /**
-     * New SearchMovie Object to drive the view
+     * New SearchMovie Object
      */
     private SearchMovie searchMovie = new SearchMovie();
     /**
-     * New MovieDetails Object to drive the view
+     * New MovieDetails Object
      */
     private MovieDetails movieDetails = new MovieDetails();
     /**
-     * New CheckSeatUI Object to drive the view
+     * New CheckSeatUI Object
      */
     private CheckSeatUI checkSeatUI = new CheckSeatUI();
     /**
-     * new CheckBookingUI Object to drive the view
+     * new CheckBookingUI Object
      */
     private CheckBookingUI checkBookingUI = new CheckBookingUI();
     /**
-     * New ListTop5UI Object to drive the view
+     * New ListTop5UI Object
      */
     private ListTop5UI listTop5UI = new ListTop5UI();
     /**
-     * New ReviewUI Object to drive the view
+     * New ReviewUI Object
      */
     private ReviewUI reviewUI = new ReviewUI();
 
@@ -38,7 +38,7 @@ public class UserUI {
 
 
     /**
-     * Main function driving the view
+     * Main function that takes in inputs for user data and calls other functions for users
      */
 	public void main(){
 		try{

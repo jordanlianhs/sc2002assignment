@@ -10,7 +10,13 @@ import java.io.*;
  * of tickets
  */
 public class TicketPrice {
+    /**
+     * File name for ticket price database
+     */
     private static File f = new File("./Database/TicketPrice.txt");
+    /**
+     * Ticket price values
+     */
     private static double SP2D, SP2DB, SP3D, SP3DB, senior, STU2D, STU3D, N2D, N3D, PH2D, PH3D, DBsurcharge,
             RegSurcharge,
             GoldSurcharge, PlatSurcharge;

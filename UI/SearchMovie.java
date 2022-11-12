@@ -9,6 +9,9 @@ import java.io.*;
  * and deleting an entry in the txt file.
  */
 public class SearchMovie {
+	/**
+	 * File name for movie database
+	 */
 	static File file = new File("./Database/MovieCollectionNew.txt"); // Edit this if you wana to change directory
 
 	/**

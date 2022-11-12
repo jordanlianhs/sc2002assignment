@@ -68,11 +68,6 @@ public class Movie {
     private List<String> cast;
 
     /**
-     * This movie's list of reviews
-     */
-    //private ArrayList<Review> reviews; 
-
-    /**
      * This is the number of tickets sold 
      */
     private int sales;
@@ -295,7 +290,7 @@ public class Movie {
     }
 
     /**
-     * Write movie information into a database
+     * Writes movie information into movie database
      */
     public void writeMovie(){
         try{
@@ -318,6 +313,10 @@ public class Movie {
         }
     }
 
+    /**
+     * Reads movie information from movie database
+     * @param movieMingZhi Name of the movie to read in
+     */
     public void readMovie(String movieMingZhi){
         String text;
         try {

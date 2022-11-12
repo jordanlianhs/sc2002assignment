@@ -9,11 +9,11 @@ import java.io.File;
  */
 public class ReviewUI {
         /**
-         * New Review object
+         * Review object
          */
         private Review review;
         /**
-         * New Rating object
+         * Rating object
          */
         private Rating star;
 

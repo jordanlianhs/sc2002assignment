@@ -8,9 +8,21 @@ import Model.*;
  * Class that will run all UI about Session, Create, Remove, Update and Display
  */
 public class SessionCRUD {
+    /**
+     * CreateSession object
+     */
     private CreateSession createSession = new CreateSession();
+    /**
+     * RemoveSession object
+     */
     private RemoveSession removeSession = new RemoveSession();
+    /**
+     * UpdateSession object
+     */
     private UpdateSession updateSession = new UpdateSession();
+    /**
+     * DisplaySession object
+     */
     private DisplaySession displaySession = new DisplaySession();
 
     /**
