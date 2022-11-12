@@ -129,7 +129,6 @@ public class RemoveSession {
     /**
      * This method remove every session with the specific movie name
      * @param moviename is the name of the movie
-     * @throws Exception Throws exception
      */
     public void removeAllSession(String moviename){
         try{
@@ -143,7 +142,7 @@ public class RemoveSession {
                 String cpCode;
                 cpCode = tempSession[i];
                 ArrayList<Session> temp;
-    
+                
                 if(cpCode.equals("AMK")){
                     temp =  A.getSessionList();
                 }
@@ -153,19 +152,21 @@ public class RemoveSession {
                 else{
                     temp =  C.getSessionList();
                 }
-    
+
+                
                 int size = temp.size();
                 int count = 0;
                 while(count <size){
-                    if(temp.get(count).getMovie().getmovieName().equals(moviename)){
+                    if(temp.get(count).getMovie().getmovieName().equalsIgnoreCase(moviename)){
                         temp.remove(count);
                         size--;
                         continue;
                     }
                     count++;
                 }
+                
     
-    
+                
                 String fileName;
                 if(cpCode.equals("AMK")){
                     fileName= "Database/SessionRecordAMK.txt";
@@ -177,7 +178,7 @@ public class RemoveSession {
                     fileName= "Database/SessionRecordCCK.txt";
                 }
                 
-    
+                
                 PrintWriter writer = new PrintWriter(fileName);
                 writer.print("");
                 writer.close();
