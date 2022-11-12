@@ -170,7 +170,6 @@ public class DisplayMovie {
 		try{
 			File file = new File("./Database/MovieCollectionNew.txt");
 			Scanner sc = new Scanner(file).useDelimiter(",");
-			Scanner sc2 = new Scanner(file).useDelimiter(",");
 			Scanner sc1 = new Scanner(System.in);
 			String st="";
 			String[] stToken;
@@ -195,8 +194,6 @@ public class DisplayMovie {
 			sc.close();
 
 			chosenOne = sc1.nextLine();
-
-			sc2.close();
 		}
 
 		catch (FileNotFoundException e) {
