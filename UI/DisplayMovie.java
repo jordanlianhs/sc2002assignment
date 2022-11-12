@@ -172,7 +172,6 @@ public class DisplayMovie {
 			Scanner sc = new Scanner(file).useDelimiter(",");
 			Scanner sc2 = new Scanner(file).useDelimiter(",");
 			Scanner sc1 = new Scanner(System.in);
-            boolean flag = false;
 			String st="";
 			String st2 = "";
 			String[] stToken;
@@ -197,16 +196,8 @@ public class DisplayMovie {
 			sc.close();
 
 			chosenOne = sc1.nextLine();
-			while(sc2.hasNext()){
-				st = sc2.nextLine();
-				st2 = st.toLowerCase().toString();
-				stToken = st2.split(",");
-				if (chosenOne.toLowerCase().equals(stToken[0])) flag=true;
-			}
+
 			sc2.close();
-			// if(flag == false){
-            //     System.out.println("Movie does not exist! ");
-            // }
 		}
 
 		catch (FileNotFoundException e) {
