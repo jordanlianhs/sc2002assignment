@@ -8,6 +8,9 @@ import java.io.File;
  * This is the main class of ReveiwUI
  */
 public class ReviewUI {
+        private Review review;
+        private Rating star;
+
         /**
          * This is the main method of ReviewUI classn
          * @param user This is the user who is using the system
@@ -49,10 +52,10 @@ public class ReviewUI {
                         System.out.println("Enter your comments:");
                         String comment = s.nextLine();
 
-                        Review review = new Review(moviename, user.getEmail(), stars, comment);
+                        review = new Review(moviename, user.getEmail(), stars, comment);
                         review.writereview();
 
-                        Rating star = new Rating(moviename, stars);
+                        star = new Rating(moviename, stars);
                         star.editAvgRating();
                 }
                 catch(Exception e){
