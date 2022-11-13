@@ -1,0 +1,177 @@
+Video
+1->Admin
+admin
+123
+1->MovieCRUD
+4->LIST MOVIE
+N->no view detail
+1->Create Movie
+Chicken Little->Movie name
+2 -> 3D
+3 -> Now showing
+Chicken Little goes to the gym -> synopsis
+PG13->age rating
+2->duration
+2022-11-11 ->release date
+2023-11-11 ->end date
+Tim ->Director
+Chicken Little, Sam ->cast
+4->LIST MOVIE
+N->no view detail
+5->quit configure movie
+3
+1
+4
+1
+Boxing Day
+2022-12-26
+4
+5
+3
+2
+16
+11
+90
+16
+17
+2
+1
+2022-12-26 09:00
+Chicken Little
+ONE
+CCK
+4
+CCK
+5
+5
+
+
+
+2->USERUI
+Timothy
+29
+89760044
+timothy@gmail.com
+false
+
+3
+1
+CCK
+16
+2
+CCK
+16
+J
+10
+1->Check seat plan again
+CCK
+16
+2->BOOK ANOTHER SEAT(WEEKDAY on GOLD class)
+CCK
+11
+F
+4
+3
+4
+timothy@gmail.com
+7
+
+1->GO BACK ADMINUI
+admin
+123
+1
+3
+Future
+2
+4
+4->list movie
+N
+5
+5
+
+2->USERUI
+Timothy
+29
+89760044
+timothy@gmail.com
+false
+
+2-> to list all movie(cannot see ENDOFSHOWING for user)
+N
+
+3
+2
+CCK
+9-> try book power ranger 2 that is COMINGSOON
+0
+3
+7
+
+2---->change user to student
+David
+12
+88886666
+david@gmail.com
+true
+
+3
+2
+CCK
+11-> try book future that is ENDOFSHOWING
+
+4 
+F
+4 -> try to book and show at student price
+
+3
+5 -> try to show user display both of top 5
+1
+2
+3
+7
+1
+admin
+123
+4
+3
+2 -> admin configures user to show only top 5 movie rating
+4
+5
+
+2 ->log in as elderly
+Grand
+88
+99990000
+grandpa@gmail.com
+false
+
+5
+1 -> user can only display top 5 movie rating
+2
+
+3 -> book ticket for elderly
+2
+CCK
+4
+G
+7 -> showed elderly price
+3
+7
+
+1 -> Delete holiday
+admin
+123
+3
+1
+2
+Wilson
+0 -> Deleted wilson day
+
+5 -> remove movie
+1
+2
+Future
+0 -> Movie Removed
+5
+5
+3 -> END
